@@ -1,17 +1,12 @@
 import Link from 'next/link';
-import { getAllLabEntries, getAllEssays } from '@/lib/content';
+import { getAllLabEntries } from '@/lib/content';
 import { topics } from '@/lib/topics';
 import { Container, Eyebrow, TopicChip, formatDate, CodeChip } from '@/components/ui';
 import SourceFlow from '@/components/SourceFlow';
 
 export default async function HomePage() {
   const labEntries = (await getAllLabEntries()).slice(0, 3);
-  const essays = (await getAllEssays()).slice(0, 2);
-  const currentTopics = topics.filter((t) =>
-    ['strategy', 'finance', 'entrepreneurship', 'artificial-intelligence', 'organizational-behavior', 'marketing'].includes(
-      t.slug
-    )
-  );
+  const currentTopics = topics;
 
   return (
     <div>
@@ -37,12 +32,6 @@ export default async function HomePage() {
                 className="rounded-full bg-ink px-6 py-3 font-mono text-[12px] uppercase tracking-widest text-paper transition hover:bg-gold dark:bg-dark-ink dark:text-dark-bg"
               >
                 Explore MBA Lab →
-              </Link>
-              <Link
-                href="/essays"
-                className="font-mono text-[12px] uppercase tracking-widest text-ink/60 underline decoration-rule underline-offset-4 hover:text-gold dark:text-dark-soft"
-              >
-                Read the essays
               </Link>
             </div>
           </div>
@@ -119,45 +108,6 @@ export default async function HomePage() {
                 </Link>
               ))}
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Latest essays */}
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-20">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <Eyebrow>Independent writing</Eyebrow>
-              <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
-                Latest essays
-              </h2>
-            </div>
-            <Link
-              href="/essays"
-              className="hidden font-mono text-[12px] uppercase tracking-widest text-ink/50 hover:text-gold sm:block"
-            >
-              All essays →
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            {essays.map((essay) => (
-              <Link
-                key={essay.slug}
-                href={`/essays/${essay.slug}`}
-                className="group block rounded-lg border border-rule p-7 transition hover:border-gold dark:border-dark-rule"
-              >
-                <span className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
-                  {formatDate(essay.date)} · {essay.readingTime}
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
-                  {essay.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-                  {essay.summary}
-                </p>
-              </Link>
-            ))}
           </div>
         </Container>
       </section>

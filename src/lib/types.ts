@@ -1,15 +1,4 @@
-export type TopicSlug =
-  | 'strategy'
-  | 'finance'
-  | 'economics'
-  | 'entrepreneurship'
-  | 'leadership'
-  | 'organizational-behavior'
-  | 'innovation'
-  | 'artificial-intelligence'
-  | 'technology'
-  | 'business-philosophy'
-  | 'marketing';
+export type TopicSlug = 'strategy' | 'finance' | 'marketing';
 
 export interface Topic {
   slug: TopicSlug;

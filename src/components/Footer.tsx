@@ -18,7 +18,6 @@ export default function Footer() {
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link className="hover:text-gold" href="/mba-lab">MBA Lab</Link></li>
-              <li><Link className="hover:text-gold" href="/essays">Essays</Link></li>
               <li><Link className="hover:text-gold" href="/topics">Topics</Link></li>
               <li><Link className="hover:text-gold" href="/courses">Courses &amp; Sources</Link></li>
             </ul>

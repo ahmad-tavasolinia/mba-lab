@@ -8,7 +8,6 @@ import ThemeToggle from './ThemeToggle';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/mba-lab', label: 'MBA Lab' },
-  { href: '/essays', label: 'Essays' },
   { href: '/topics', label: 'Topics' },
   { href: '/about', label: 'About' },
   { href: '/cv', label: 'CV' },
