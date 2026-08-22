@@ -8,7 +8,8 @@ export type TopicSlug =
   | 'innovation'
   | 'artificial-intelligence'
   | 'technology'
-  | 'business-philosophy';
+  | 'business-philosophy'
+  | 'marketing';
 
 export interface Topic {
   slug: TopicSlug;
