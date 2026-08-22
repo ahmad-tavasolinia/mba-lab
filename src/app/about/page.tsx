@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Container, Eyebrow } from '@/components/ui';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   title: 'About',
   description: 'About Ahmad Tavasolinia and the thinking behind MBA Lab.',
@@ -52,7 +54,7 @@ export default function AboutPage() {
 
           <aside className="space-y-6 md:sticky md:top-24 md:self-start">
             <Image
-              src="/me.png"
+              src={`${basePath}/me.png`}
               alt="Ahmad Tavasolinia"
               width={200}
               height={200}
