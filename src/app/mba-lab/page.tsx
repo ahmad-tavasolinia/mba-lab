@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getAllLabEntries } from '@/lib/content';
 import { Container, Eyebrow } from '@/components/ui';
-import Timeline from '@/components/Timeline';
 import LabLibrary from '@/components/LabLibrary';
 
 export const metadata: Metadata = {
@@ -35,21 +34,6 @@ export default async function MbaLabPage() {
               The goal is not simply to collect knowledge. The goal is to learn how to think about
               business.
             </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-16">
-          <Eyebrow>Learning journey</Eyebrow>
-          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
-            Five phases, and counting
-          </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-            This structure is deliberately open-ended — MBA Lab continues after the MBA begins.
-          </p>
-          <div className="mt-10 max-w-2xl">
-            <Timeline />
           </div>
         </Container>
       </section>

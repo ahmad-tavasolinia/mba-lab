@@ -8,7 +8,7 @@ export default async function HomePage() {
   const labEntries = (await getAllLabEntries()).slice(0, 3);
   const essays = (await getAllEssays()).slice(0, 2);
   const currentTopics = topics.filter((t) =>
-    ['strategy', 'finance', 'entrepreneurship', 'artificial-intelligence', 'organizational-behavior'].includes(
+    ['strategy', 'finance', 'entrepreneurship', 'artificial-intelligence', 'organizational-behavior', 'marketing'].includes(
       t.slug
     )
   );

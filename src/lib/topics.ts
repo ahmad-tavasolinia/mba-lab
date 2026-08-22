@@ -65,6 +65,12 @@ export const topics: Topic[] = [
     code: 'PHIL',
     description: 'The underlying assumptions of business thinking — and where they deserve scrutiny.',
   },
+  {
+    slug: 'marketing',
+    name: 'Marketing',
+    code: 'MKT',
+    description: 'How value gets communicated, positioned, and made desirable in the mind of the customer.',
+  },
 ];
 
 export function getTopic(slug: string): Topic | undefined {

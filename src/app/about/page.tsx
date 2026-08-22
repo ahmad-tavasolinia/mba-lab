@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container, Eyebrow } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -50,6 +51,14 @@ export default function AboutPage() {
           </div>
 
           <aside className="space-y-6 md:sticky md:top-24 md:self-start">
+            <Image
+              src="/me.png"
+              alt="Ahmad Tavasolinia"
+              width={200}
+              height={200}
+              className="mx-auto h-40 w-40 rounded-full object-cover md:mx-0"
+              priority
+            />
             <div className="rounded-lg border border-rule p-6 dark:border-dark-rule">
               <p className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
                 Areas of interest
