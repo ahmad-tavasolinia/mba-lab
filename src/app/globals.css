@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f2ea;
+  color: #1b1d19;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background-color: #141e19;
+  color: #ede8dc;
+}
+
+::selection {
+  background-color: #a67c3d;
+  color: #f5f2ea;
+}
+
+* {
+  border-color: #d8d2c2;
+}
+
+html.dark * {
+  border-color: #2c382f;
+}
+
+:focus-visible {
+  outline: 2px solid #a67c3d;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Long-form reading content */
+.prose-lab {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.prose-lab h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  color: #1b1d19;
+}
+
+html.dark .prose-lab h2 {
+  color: #ede8dc;
+}
+
+.prose-lab p {
+  margin-bottom: 1.4rem;
+}
+
+.prose-lab strong {
+  font-weight: 600;
+}
+
+.prose-lab a {
+  color: #a67c3d;
+  text-underline-offset: 3px;
+}
+
+.prose-lab a:hover {
+  color: #c79a52;
+}
+
+/* Card catalog index code chip */
+.code-chip {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Hairline divider */
+.hr-rule {
+  border-top: 1px solid #d8d2c2;
+}
+
+html.dark .hr-rule {
+  border-top: 1px solid #2c382f;
+}
