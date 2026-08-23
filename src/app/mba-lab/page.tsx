@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { getAllLabEntries } from '@/lib/content';
+import { categories } from '@/lib/categories';
 import { Container, Eyebrow } from '@/components/ui';
-import LabLibrary from '@/components/LabLibrary';
 
 export const metadata: Metadata = {
   title: 'MBA Lab',
@@ -40,12 +41,41 @@ export default async function MbaLabPage() {
 
       <section>
         <Container className="py-16">
-          <Eyebrow>Latest lab notes</Eyebrow>
+          <Eyebrow>Browse by kind</Eyebrow>
           <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
-            All entries
+            Cases, essays, projects
           </h2>
-          <div className="mt-8">
-            <LabLibrary entries={entries} />
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+            Every entry lives under one of three keys, depending on what kind of work it is.
+          </p>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((c) => {
+              const count = entries.filter((e) => e.category === c.slug).length;
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/mba-lab/category/${c.slug}`}
+                  className="group flex flex-col justify-between rounded-lg border border-rule p-6 transition hover:border-gold dark:border-dark-rule"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[11px] uppercase tracking-widest text-gold">
+                        {c.code}
+                      </span>
+                      <span className="font-mono text-[11px] text-ink/30 dark:text-dark-soft/50">
+                        {count} {count === 1 ? 'piece' : 'pieces'}
+                      </span>
+                    </div>
+                    <h3 className="mt-3 font-serif text-2xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
+                      {c.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+                      {c.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </Container>
       </section>

@@ -1,4 +1,5 @@
 export type TopicSlug = 'strategy' | 'finance' | 'marketing';
+export type CategorySlug = 'cases' | 'essays' | 'projects';
 
 export interface Topic {
   slug: TopicSlug;
@@ -12,6 +13,7 @@ export interface LabEntryFrontmatter {
   date: string;
   code: string; // e.g. "MBA·STRAT·04"
   phase: string; // e.g. "Phase 03 — Strategy and Competition"
+  category: CategorySlug; // Cases, Essays, or Projects — the "key" this entry lives under
   topics: TopicSlug[];
   summary: string;
   centralQuestion: string;
