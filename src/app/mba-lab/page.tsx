@@ -16,7 +16,7 @@ export default async function MbaLabPage() {
   return (
     <div className="flex flex-1 flex-col">
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-14 md:py-16">
+        <Container className="py-10 md:py-12">
           <Eyebrow>The lab notebook</Eyebrow>
           <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
             MBA Lab
