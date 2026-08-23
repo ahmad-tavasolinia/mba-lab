@@ -2,6 +2,7 @@
 title: "Pepsi's Fifth Attempt at a Product Nobody Asked For"
 date: "2026-08-22"
 code: "MBA·MKT·07"
+category: "cases"
 phase: "Phase 03 — Strategy and Competition"
 topics: ["marketing"]
 summary: "A case on Pepsi Next, worked cold — and the moment good-looking data almost talked me out of a sound instinct."
