@@ -38,7 +38,7 @@ export default async function MbaLabPage() {
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
             Every entry lives under one of three keys, depending on what kind of work it is.
           </p>
-          <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((c) => {
               const count = entries.filter((e) => e.category === c.slug).length;
               const col = getCategoryColor(c.slug);

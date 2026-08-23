@@ -21,6 +21,13 @@ export const topics: Topic[] = [
     code: 'MKT',
     description: 'How value gets communicated, positioned, and made desirable in the mind of the customer.',
   },
+  {
+    slug: 'entrepreneurship',
+    name: 'Entrepreneurship',
+    code: 'ENTR',
+    description:
+      'Building under uncertainty — how opportunity is recognized, tested, and turned into an organization.',
+  },
 ];
 
 export function getTopic(slug: string): Topic | undefined {

@@ -1,5 +1,5 @@
-export type TopicSlug = 'strategy' | 'finance' | 'marketing';
-export type CategorySlug = 'cases' | 'essays' | 'projects';
+export type TopicSlug = 'strategy' | 'finance' | 'marketing' | 'entrepreneurship';
+export type CategorySlug = 'cases' | 'essays' | 'projects' | 'interviews';
 export type PhaseSlug = 'phase-1' | 'phase-2' | 'phase-3';
 
 export interface Topic {

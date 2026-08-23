@@ -26,6 +26,12 @@ export const categories: Category[] = [
     code: 'PROJ',
     description: 'Applied work — models, frameworks, and things actually built.',
   },
+  {
+    slug: 'interviews',
+    name: 'Interviews',
+    code: 'INTV',
+    description: 'Field conversations with people actually doing the work — what they worry about, off the slide deck.',
+  },
 ];
 
 export function getCategory(slug: string): Category | undefined {

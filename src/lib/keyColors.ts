@@ -76,12 +76,14 @@ export const topicColors: Record<string, KeyColorClasses> = {
   strategy: cognac,
   finance: cognac,
   marketing: cognac,
+  entrepreneurship: cognac,
 };
 
 export const categoryColors: Record<string, KeyColorClasses> = {
   cases: cognac,
   essays: cognac,
   projects: cognac,
+  interviews: cognac,
 };
 
 const fallback: KeyColorClasses = gold;
