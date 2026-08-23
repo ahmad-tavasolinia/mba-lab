@@ -24,19 +24,11 @@ export default async function MbaLabPage() {
           <p className="mt-4 max-w-2xl font-serif text-xl italic text-ink/70 dark:text-dark-soft">
             A personal laboratory for exploring the ideas behind business.
           </p>
-          <div className="mt-6 max-w-2xl space-y-4 text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-            <p>MBA Lab is not a collection of course notes.</p>
-            <p>
-              It is a public record of an ongoing intellectual journey through the core ideas of
-              business and management. I study concepts from academic courses, books, research, and
-              real-world cases, then attempt to synthesize them, connect them, question them, and
-              develop my own understanding.
-            </p>
-            <p className="font-medium text-ink dark:text-dark-ink">
-              The goal is not simply to collect knowledge. The goal is to learn how to think about
-              business.
-            </p>
-          </div>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
+            Not a collection of course notes — a public record of an ongoing intellectual journey
+            through the core ideas of business and management, synthesized, connected, and
+            questioned as I study them.
+          </p>
         </Container>
       </section>
 
