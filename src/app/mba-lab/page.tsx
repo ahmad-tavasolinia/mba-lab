@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { getAllLabEntries } from '@/lib/content';
-import { categories } from '@/lib/categories';
-import { getCategoryColor } from '@/lib/keyColors';
 import { Container, Eyebrow } from '@/components/ui';
+import Timeline from '@/components/Timeline';
+import LabLibrary from '@/components/LabLibrary';
 
 export const metadata: Metadata = {
   title: 'MBA Lab',
@@ -16,15 +15,15 @@ export default async function MbaLabPage() {
   return (
     <div>
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-20 md:py-24">
+        <Container className="py-14 md:py-16">
           <Eyebrow>The lab notebook</Eyebrow>
           <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
             MBA Lab
           </h1>
-          <p className="mt-4 max-w-2xl font-serif text-xl italic text-ink/70 dark:text-dark-soft">
+          <p className="mt-3 max-w-2xl font-serif text-xl italic text-ink/70 dark:text-dark-soft">
             A personal laboratory for exploring the ideas behind business.
           </p>
-          <div className="mt-8 max-w-2xl space-y-4 text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
+          <div className="mt-5 max-w-2xl space-y-3 text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
             <p>MBA Lab is not a collection of course notes.</p>
             <p>
               It is a public record of an ongoing intellectual journey through the core ideas of
@@ -40,41 +39,29 @@ export default async function MbaLabPage() {
         </Container>
       </section>
 
-      <section>
-        <Container className="py-16">
-          <Eyebrow>Browse by kind</Eyebrow>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-            Every entry lives under one of three keys, depending on what kind of work it is.
+      <section className="border-b border-rule dark:border-dark-rule">
+        <Container className="py-10">
+          <Eyebrow>Learning journey</Eyebrow>
+          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
+            Five phases, and counting
+          </h2>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+            This structure is deliberately open-ended — MBA Lab continues after the MBA begins.
           </p>
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((c) => {
-              const count = entries.filter((e) => e.category === c.slug).length;
-              const col = getCategoryColor(c.slug);
-              return (
-                <Link
-                  key={c.slug}
-                  href={`/mba-lab/category/${c.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${col.border} ${col.bg} ${col.hoverBorder}`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className={`font-mono text-[11px] uppercase tracking-widest ${col.code}`}>
-                        {c.code}
-                      </span>
-                      <span className="font-mono text-[11px] text-ink/30 dark:text-dark-soft/50">
-                        {count} {count === 1 ? 'piece' : 'pieces'}
-                      </span>
-                    </div>
-                    <h3 className={`mt-3 font-serif text-2xl font-medium text-ink transition-colors dark:text-dark-ink ${col.hoverTitle}`}>
-                      {c.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-                      {c.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="mt-6 max-w-2xl">
+            <Timeline />
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="py-10">
+          <Eyebrow>Latest lab notes</Eyebrow>
+          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
+            All entries
+          </h2>
+          <div className="mt-5">
+            <LabLibrary entries={entries} />
           </div>
         </Container>
       </section>
