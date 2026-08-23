@@ -86,23 +86,69 @@ export default function CvPage() {
         <Container className="py-14">
           <Eyebrow>Experience</Eyebrow>
           <div className="mt-6">
-            <Entry role="[Add your role here]" place="[Add your company]" time="[Years]">
-              <p>Replace this placeholder with your professional experience.</p>
+            <Entry
+              role="Business Operations &amp; Strategy"
+              place="Small Tech Startup · South Khorasan Science and Technology Park"
+              time="Jul 2023 – May 2024 · 5-person team"
+            >
+              <ul className="list-disc space-y-1.5 pl-5">
+                <li>
+                  Contributed to product strategy by researching market demand across three product
+                  lines and helping the team focus resources on the most viable one
+                </li>
+                <li>Supported team coordination, including setting project deadlines and tracking progress</li>
+                <li>Handled day-to-day office and operational tasks alongside a small founding team</li>
+              </ul>
             </Entry>
-            <Entry role="[Add another role]" place="[Add your company]" time="[Years]" />
+            <Entry
+              role="Sustainability Communication Intern (Remote)"
+              place="Sustainable Alignment Association · Zurich, Switzerland"
+              time="Mar – Jun 2021"
+            >
+              <ul className="list-disc space-y-1.5 pl-5">
+                <li>Designed and led an educational sustainability project, from concept to execution</li>
+                <li>Secured project partners and sponsorship funding</li>
+                <li>Managed social media and remote team communication in an international setting</li>
+              </ul>
+            </Entry>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-rule dark:border-dark-rule">
+        <Container className="py-14">
+          <Eyebrow>Skills</Eyebrow>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {['Strategy', 'Financial Analysis', 'Business Writing', 'AI & Technology', 'Leadership', 'Research & Synthesis', 'SQL', 'Power BI'].map((s) => (
+              <span key={s} className="rounded-full border border-rule px-4 py-1.5 text-sm text-ink/70 dark:border-dark-rule dark:text-dark-soft">
+                {s}
+              </span>
+            ))}
           </div>
         </Container>
       </section>
 
       <section>
         <Container className="py-14">
-          <Eyebrow>Skills</Eyebrow>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {['Strategy', 'Financial Analysis', 'Business Writing', 'AI & Technology', 'Leadership', 'Research & Synthesis'].map((s) => (
-              <span key={s} className="rounded-full border border-rule px-4 py-1.5 text-sm text-ink/70 dark:border-dark-rule dark:text-dark-soft">
-                {s}
-              </span>
-            ))}
+          <Eyebrow>Honors &amp; Qualifications</Eyebrow>
+          <div className="mt-6">
+            <Entry
+              role="NODET Graduate"
+              place="National Organization for Development of Exceptional Talents — Iran's selective national high school program for gifted students"
+              time="2016"
+            >
+              <p>
+                Admitted through national entrance examinations to NODET, Iran's most selective
+                public high school network for academically gifted students, established to
+                cultivate talent in mathematics, science, and analytical thinking from an early age.
+              </p>
+            </Entry>
+            <Entry role="IELTS Academic — Band 7.0 (CEFR C1)" place="English language proficiency" time="2022" />
+            <Entry
+              role="Management of Smart Cities"
+              place="École Polytechnique Fédérale de Lausanne (EPFL), via Coursera"
+              time="2022"
+            />
           </div>
         </Container>
       </section>
