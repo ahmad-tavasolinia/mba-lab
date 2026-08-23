@@ -9,10 +9,10 @@ export default async function HomePage() {
   const currentPhaseLabel = phases.find((p) => p.slug === activePhase)?.fullLabel ?? '';
 
   return (
-    <div>
+    <div className="flex flex-1 flex-col">
       {/* Hero */}
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="grid gap-8 py-16 md:grid-cols-[1.3fr,1fr] md:py-24">
+      <section className="flex flex-1 flex-col justify-center border-b border-rule dark:border-dark-rule">
+        <Container className="grid gap-8 py-12 md:grid-cols-[1.3fr,1fr]">
           <div className="animate-fadeUp">
             <Eyebrow>Independent study · Business, technology, ideas</Eyebrow>
             <h1 className="mt-3 font-serif text-5xl font-medium leading-[1.08] tracking-tight text-ink dark:text-dark-ink md:text-6xl">
