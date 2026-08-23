@@ -43,9 +43,6 @@ export default async function MbaLabPage() {
       <section>
         <Container className="py-16">
           <Eyebrow>Browse by kind</Eyebrow>
-          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
-            Cases, essays, projects
-          </h2>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
             Every entry lives under one of three keys, depending on what kind of work it is.
           </p>
