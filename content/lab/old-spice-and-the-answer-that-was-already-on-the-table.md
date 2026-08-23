@@ -3,7 +3,6 @@ title: "Old Spice and the Answer That Was Already on the Table"
 date: "2026-08-22"
 code: "MBA·MKT·13"
 category: "cases"
-phase: "Phase 03 — Strategy and Competition"
 journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on the \"Man Your Man Could Smell Like\" campaign, worked cold — and a clever theory that lost to a simpler, correct one."

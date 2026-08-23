@@ -3,7 +3,6 @@ title: "Ferrari's Bet Against Its Own Roadmap"
 date: "2026-08-22"
 code: "MBA·STRAT·06"
 category: "cases"
-phase: "Phase 03 — Strategy and Competition"
 journeyPhase: "phase-1"
 topics: ["strategy"]
 summary: "A case on Ferrari's EV strategy, worked cold — and a real-world outcome that landed closer than expected."

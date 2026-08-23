@@ -3,7 +3,6 @@ title: "Jaguar and the Trap of Convincing Yourself"
 date: "2026-08-22"
 code: "MBA·MKT·08"
 category: "cases"
-phase: "Phase 03 — Strategy and Competition"
 journeyPhase: "phase-1"
 topics: ["marketing"]
 summary: "A case on Jaguar's rebrand, worked cold — including a good-sounding fix that didn't survive its own logic."

@@ -3,7 +3,6 @@ title: "Pepsi A.M. and the Room That Already Knew"
 date: "2026-08-22"
 code: "MBA·MKT·09"
 category: "cases"
-phase: "Phase 03 — Strategy and Competition"
 journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on a 1980s product launch, worked cold — and a lesson in not mistaking confidence for a correct argument."
