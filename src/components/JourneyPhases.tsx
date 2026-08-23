@@ -14,10 +14,8 @@ export default function JourneyPhases() {
               <Link href={`/mba-lab/phase/${phase.slug}`} className="group flex flex-col items-center">
                 <span
                   className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-[10px] transition ${
-                    status === 'complete'
+                    status === 'complete' || status === 'active'
                       ? 'border-gold bg-gold text-paper dark:text-dark-bg'
-                      : status === 'active'
-                      ? 'border-gold text-gold'
                       : 'border-rule text-ink/30 dark:border-dark-rule dark:text-dark-soft/40'
                   }`}
                 >
