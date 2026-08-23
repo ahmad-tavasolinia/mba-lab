@@ -2,6 +2,7 @@
 title: "Real Burger World and the Contradiction Built Into the Name"
 date: "2026-08-22"
 code: "MBA·STRAT·07"
+category: "cases"
 phase: "Phase 04 — Entrepreneurship and Innovation"
 topics: ["entrepreneurship", "strategy"]
 summary: "A case on a failed UK burger startup, worked cold — and the pivot the founders couldn't bring themselves to make."
