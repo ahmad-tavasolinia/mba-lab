@@ -13,7 +13,6 @@ export interface LabEntryFrontmatter {
   title: string;
   date: string;
   code: string; // e.g. "MBA·STRAT·04"
-  phase: string; // legacy free-text label, no longer shown in the UI — kept so old entries don't break
   journeyPhase: PhaseSlug; // where this entry falls in the pre-MBA / during / post-MBA journey
   category: CategorySlug; // Cases, Essays, or Projects — the "key" this entry lives under
   topics: TopicSlug[];
