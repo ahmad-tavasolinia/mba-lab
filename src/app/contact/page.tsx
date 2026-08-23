@@ -30,14 +30,11 @@ export default function ContactPage() {
                 Email
               </p>
               <a
-                href="mailto:hello@ahmadtavasolinia.com"
+                href="mailto:amd.tavasolinia@gmail.com"
                 className="mt-2 block font-serif text-2xl text-ink hover:text-gold dark:text-dark-ink"
               >
-                hello@ahmadtavasolinia.com
+                amd.tavasolinia@gmail.com
               </a>
-              <p className="mt-6 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-                Replace this address with your real contact email before publishing.
-              </p>
             </div>
             <div>
               <p className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
@@ -46,18 +43,10 @@ export default function ContactPage() {
               <ul className="mt-3 space-y-2">
                 <li>
                   <a
-                    href="https://www.linkedin.com/"
+                    href="https://www.linkedin.com/in/ahmad-tavasolinia-0a4903202/"
                     className="text-sm text-ink/70 underline decoration-rule underline-offset-4 hover:text-gold dark:text-dark-soft"
                   >
-                    LinkedIn — add your profile URL
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/"
-                    className="text-sm text-ink/70 underline decoration-rule underline-offset-4 hover:text-gold dark:text-dark-soft"
-                  >
-                    X / Twitter — add your profile URL
+                    LinkedIn
                   </a>
                 </li>
               </ul>
