@@ -2,6 +2,7 @@
 title: "Venture Southeast Asia and the Melting Ice Cube"
 date: "2026-08-22"
 code: "MBA·FIN·04"
+category: "cases"
 phase: "Phase 01 — Foundations"
 topics: ["finance", "strategy"]
 summary: "A case on a private equity valuation, worked cold — including a real math error that produced a conclusion too clean to be true."
