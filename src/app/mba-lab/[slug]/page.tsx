@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllLabEntries, getLabEntry, getLabSlugs, getAllSources } from '@/lib/content';
+import { getPhase } from '@/lib/phases';
 import { Container, Eyebrow, TopicChip, CodeChip, formatDate } from '@/components/ui';
 
 export async function generateStaticParams() {
@@ -29,6 +30,7 @@ export default async function LabEntryPage({ params }: { params: { slug: string 
   const allEntries = await getAllLabEntries();
   const sources = getAllSources().filter((s) => entry.sources.includes(s.slug));
   const connectedEntries = allEntries.filter((e) => entry.connections.includes(e.slug));
+  const journeyPhase = getPhase(entry.journeyPhase);
 
   return (
     <article>
@@ -42,9 +44,14 @@ export default async function LabEntryPage({ params }: { params: { slug: string 
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <CodeChip>{entry.code}</CodeChip>
-            <span className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
-              {entry.phase}
-            </span>
+            {journeyPhase && (
+              <Link
+                href={`/mba-lab/phase/${journeyPhase.slug}`}
+                className="rounded-full border border-gold/40 bg-gold/5 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-gold hover:border-gold"
+              >
+                {journeyPhase.pageTitle}
+              </Link>
+            )}
           </div>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
             {entry.title}
