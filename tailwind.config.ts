@@ -59,7 +59,7 @@ const config: Config = {
       },
       maxWidth: {
         prose: '42rem',
-        content: '72rem',
+        content: '82.8rem',
       },
       typography: () => ({
         DEFAULT: {
