@@ -2,6 +2,7 @@
 title: "Heinz and the Problem With Accusing the Wrong Culprit"
 date: "2026-08-22"
 code: "MBA·MKT·10"
+category: "cases"
 phase: "Phase 03 — Strategy and Competition"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on Heinz's \"Ketchup Fraud\" campaign, worked cold — and a stock number I found but chose not to use."
