@@ -15,9 +15,9 @@ export default async function TopicsPage() {
   const essays = await getAllEssays();
 
   return (
-    <div>
+    <div className="flex flex-1 flex-col">
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-14 md:py-16">
+        <Container className="py-10 md:py-12">
           <Eyebrow>Browse by idea</Eyebrow>
           <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
             Topics
@@ -29,8 +29,8 @@ export default async function TopicsPage() {
         </Container>
       </section>
 
-      <section>
-        <Container className="py-10 md:py-12">
+      <section className="flex flex-1 flex-col justify-center">
+        <Container className="py-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {topics.map((t) => {
               const count =
