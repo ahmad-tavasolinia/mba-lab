@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import { getAllLabEntries } from '@/lib/content';
 import { topics } from '@/lib/topics';
-import { Container, Eyebrow, TopicChip, formatDate, CodeChip } from '@/components/ui';
-import SourceFlow from '@/components/SourceFlow';
+import { Container, Eyebrow } from '@/components/ui';
 
 export default async function HomePage() {
-  const labEntries = (await getAllLabEntries()).slice(0, 3);
   const currentTopics = topics;
 
   return (
@@ -53,76 +50,6 @@ export default async function HomePage() {
             <p className="mt-10 border-t border-rule pt-4 text-[11px] leading-relaxed text-ink/40 dark:border-dark-rule dark:text-dark-soft/50">
               Log started 2026 · Phase 03 in progress
             </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* MBA Lab intro module */}
-      <section className="border-b border-rule bg-paper-dim/60 dark:border-dark-rule dark:bg-dark-paper/40">
-        <Container className="py-20">
-          <div className="grid gap-10 md:grid-cols-[1fr,1.1fr] md:gap-16">
-            <div>
-              <Eyebrow>The centerpiece of this site</Eyebrow>
-              <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-ink dark:text-dark-ink">
-                MBA Lab
-              </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-                MBA Lab is an independent intellectual project exploring the ideas behind business,
-                strategy, finance, technology, and leadership.
-              </p>
-              <p className="mt-4 text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-                Drawing from leading academic sources, real-world cases, and independent analysis, I
-                use this space to synthesize what I learn, connect ideas across disciplines, and
-                develop my own perspective — not simply to record what I watched.
-              </p>
-              <div className="mt-8">
-                <SourceFlow />
-              </div>
-              <Link
-                href="/mba-lab"
-                className="mt-8 inline-block font-mono text-[12px] uppercase tracking-widest text-gold hover:text-gold-bright"
-              >
-                Explore MBA Lab →
-              </Link>
-            </div>
-
-            <div className="space-y-0">
-              {labEntries.map((entry) => (
-                <Link
-                  key={entry.slug}
-                  href={`/mba-lab/${entry.slug}`}
-                  className="group block border-t border-rule py-6 first:border-t-0 dark:border-dark-rule"
-                >
-                  <div className="flex items-center gap-3">
-                    <CodeChip>{entry.code}</CodeChip>
-                    <span className="font-mono text-[11px] text-ink/40 dark:text-dark-soft/60">
-                      {formatDate(entry.date)}
-                    </span>
-                  </div>
-                  <h3 className="mt-2 font-serif text-xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
-                    {entry.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-                    {entry.summary}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Topics */}
-      <section>
-        <Container className="py-20">
-          <Eyebrow>Browse by idea</Eyebrow>
-          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight text-ink dark:text-dark-ink">
-            Topics currently in view
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {topics.map((t) => (
-              <TopicChip key={t.slug} slug={t.slug} />
-            ))}
           </div>
         </Container>
       </section>
