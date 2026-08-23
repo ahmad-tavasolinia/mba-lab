@@ -2,6 +2,7 @@
 title: "ESPN and the Question Underneath the Question"
 date: "2026-08-22"
 code: "MBA·STRAT·08"
+category: "cases"
 phase: "Phase 03 — Strategy and Competition"
 topics: ["strategy", "technology"]
 summary: "A case on ESPN's streaming pivot, worked cold — and an analogy that didn't survive being challenged."
