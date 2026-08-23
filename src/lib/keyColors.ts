@@ -73,15 +73,15 @@ const coffee: KeyColorClasses = {
 };
 
 export const topicColors: Record<string, KeyColorClasses> = {
-  strategy: chocolate,
-  finance: caramel,
-  marketing: gold,
+  strategy: cognac,
+  finance: cognac,
+  marketing: cognac,
 };
 
 export const categoryColors: Record<string, KeyColorClasses> = {
   cases: cognac,
-  essays: camel,
-  projects: coffee,
+  essays: cognac,
+  projects: cognac,
 };
 
 const fallback: KeyColorClasses = gold;
