@@ -2,6 +2,7 @@
 title: "Burger King and the Habit They Were Actually Selling"
 date: "2026-08-22"
 code: "MBA·MKT·12"
+category: "cases"
 phase: "Phase 03 — Strategy and Competition"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on the Whopper Detour, worked cold — and the mechanism hiding under a viral stunt."
