@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·STRAT·09"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["strategy", "finance"]
 summary: "A case on a biotech acquisition, worked cold — and the difference between a real reason and a reason that just sounds true."
 centralQuestion: "How do you tell the difference between an instinct that sounds true because it's comforting and an instinct that's actually load-bearing?"

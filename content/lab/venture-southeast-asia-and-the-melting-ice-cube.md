@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·FIN·04"
 category: "cases"
 phase: "Phase 01 — Foundations"
+journeyPhase: "phase-1"
 topics: ["finance", "strategy"]
 summary: "A case on a private equity valuation, worked cold — including a real math error that produced a conclusion too clean to be true."
 centralQuestion: "When a calculation produces a conclusion that feels clean and reassuring, is that a reason to trust it more, or a reason to check it harder?"

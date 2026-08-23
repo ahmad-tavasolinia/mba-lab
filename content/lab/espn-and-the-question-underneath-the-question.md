@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·STRAT·08"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["strategy", "technology"]
 summary: "A case on ESPN's streaming pivot, worked cold — and an analogy that didn't survive being challenged."
 centralQuestion: "When a strategic choice is framed as a binary — protect the old business or accelerate into the new one — is the binary itself the thing worth questioning first?"

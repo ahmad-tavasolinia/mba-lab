@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·10"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on Heinz's \"Ketchup Fraud\" campaign, worked cold — and a stock number I found but chose not to use."
 centralQuestion: "Can a campaign be correct about a real problem and still be aimed at the wrong cause of it — and does winning on attention hide that mismatch rather than resolve it?"

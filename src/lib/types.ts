@@ -1,5 +1,6 @@
 export type TopicSlug = 'strategy' | 'finance' | 'marketing';
 export type CategorySlug = 'cases' | 'essays' | 'projects';
+export type PhaseSlug = 'phase-1' | 'phase-2' | 'phase-3';
 
 export interface Topic {
   slug: TopicSlug;
@@ -12,7 +13,8 @@ export interface LabEntryFrontmatter {
   title: string;
   date: string;
   code: string; // e.g. "MBA·STRAT·04"
-  phase: string; // e.g. "Phase 03 — Strategy and Competition"
+  phase: string; // legacy free-text label, no longer shown in the UI — kept so old entries don't break
+  journeyPhase: PhaseSlug; // where this entry falls in the pre-MBA / during / post-MBA journey
   category: CategorySlug; // Cases, Essays, or Projects — the "key" this entry lives under
   topics: TopicSlug[];
   summary: string;

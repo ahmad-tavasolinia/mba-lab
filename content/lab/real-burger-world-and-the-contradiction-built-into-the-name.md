@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·STRAT·07"
 category: "cases"
 phase: "Phase 04 — Entrepreneurship and Innovation"
+journeyPhase: "phase-1"
 topics: ["entrepreneurship", "strategy"]
 summary: "A case on a failed UK burger startup, worked cold — and the pivot the founders couldn't bring themselves to make."
 centralQuestion: "When a company's own founding premise is what's breaking it operationally, why is the fix so rarely to change the premise?"

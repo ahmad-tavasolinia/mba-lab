@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·07"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["marketing"]
 summary: "A case on Pepsi Next, worked cold — and the moment good-looking data almost talked me out of a sound instinct."
 centralQuestion: "Can a mid-calorie cola find real demand between people who don't care about calories and people who've already made peace with diet soda?"

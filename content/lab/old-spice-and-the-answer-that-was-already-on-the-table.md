@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·13"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on the \"Man Your Man Could Smell Like\" campaign, worked cold — and a clever theory that lost to a simpler, correct one."
 centralQuestion: "When a good explanation is already sitting on the table, why does it so often lose out to a more interesting-sounding invented one?"

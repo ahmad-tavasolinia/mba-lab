@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·12"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on the Whopper Detour, worked cold — and the mechanism hiding under a viral stunt."
 centralQuestion: "When a promotion changes what someone physically does under real conditions, is that a different, more durable kind of win than one that just makes people laugh and share?"

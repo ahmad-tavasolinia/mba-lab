@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·08"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["marketing"]
 summary: "A case on Jaguar's rebrand, worked cold — including a good-sounding fix that didn't survive its own logic."
 centralQuestion: "Can a 90-year-old brand convince a younger, design-focused audience it belongs to them, while betting on losing most of its existing customers?"

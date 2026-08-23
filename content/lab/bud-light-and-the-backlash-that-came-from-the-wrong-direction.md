@@ -4,6 +4,7 @@ date: "2026-08-22"
 code: "MBA·MKT·11"
 category: "cases"
 phase: "Phase 03 — Strategy and Competition"
+journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on Bud Light's 2023 campaign, worked cold — and the difference between being right and being right for the reason you claimed."
 centralQuestion: "When a prediction turns out correct, how do you tell which part of your reasoning the outcome actually confirms, and which part just happened to land nearby?"
