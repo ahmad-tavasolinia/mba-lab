@@ -15,7 +15,7 @@ export default function JourneyPhases() {
                 <span
                   className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-[10px] transition ${
                     status === 'complete' || status === 'active'
-                      ? 'border-gold bg-gold/50 text-ink dark:text-dark-ink'
+                      ? 'border-gold bg-gold text-paper dark:text-dark-bg'
                       : 'border-rule text-ink/30 dark:border-dark-rule dark:text-dark-soft/40'
                   }`}
                 >
