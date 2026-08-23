@@ -23,6 +23,26 @@ const config: Config = {
           DEFAULT: '#2F4A3D',
           bright: '#3F6350',
         },
+        camel: {
+          DEFAULT: '#B08B5C',
+          bright: '#CBA877',
+        },
+        caramel: {
+          DEFAULT: '#A66A3D',
+          bright: '#C68955',
+        },
+        cognac: {
+          DEFAULT: '#8C4F35',
+          bright: '#B06E4F',
+        },
+        coffee: {
+          DEFAULT: '#5C4030',
+          bright: '#7A5A45',
+        },
+        chocolate: {
+          DEFAULT: '#3E2A1E',
+          bright: '#5C4231',
+        },
         rule: '#D8D2C2',
         dark: {
           bg: '#141E19',

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getTopic } from '@/lib/topics';
+import { getTopicColor } from '@/lib/keyColors';
 
 export function Container({
   children,
@@ -28,10 +29,11 @@ export function CodeChip({ children }: { children: React.ReactNode }) {
 export function TopicChip({ slug }: { slug: string }) {
   const topic = getTopic(slug);
   if (!topic) return null;
+  const c = getTopicColor(topic.slug);
   return (
     <Link
       href={`/topics/${topic.slug}`}
-      className="inline-flex items-center gap-1.5 rounded-full border border-forest/30 bg-forest/5 px-3 py-1 text-[11px] font-medium text-forest transition hover:border-forest hover:bg-forest/10 dark:border-forest-bright/30 dark:bg-forest-bright/10 dark:text-forest-bright"
+      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-medium transition hover:opacity-80 ${c.badge}`}
     >
       {topic.name}
     </Link>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { categories, getCategory } from '@/lib/categories';
 import { getAllLabEntries } from '@/lib/content';
+import { getCategoryColor } from '@/lib/keyColors';
 import { Container, Eyebrow } from '@/components/ui';
 import LabLibrary from '@/components/LabLibrary';
 
@@ -23,6 +24,7 @@ export async function generateMetadata({
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const category = getCategory(params.slug);
   if (!category) notFound();
+  const color = getCategoryColor(category.slug);
 
   const entries = (await getAllLabEntries()).filter((e) => e.category === category.slug);
   const otherCategories = categories.filter((c) => c.slug !== category.slug);
@@ -38,7 +40,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
             ← MBA Lab
           </Link>
           <div className="mt-6 flex items-center gap-3">
-            <span className="rounded-full border border-gold/40 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-gold">
+            <span className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-widest ${color.badge}`}>
               {category.code}
             </span>
           </div>

@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { topics, getTopic } from '@/lib/topics';
 import { getAllLabEntries, getAllEssays, getAllSources } from '@/lib/content';
-import { Container, Eyebrow, CodeChip, formatDate } from '@/components/ui';
+import { getTopicColor } from '@/lib/keyColors';
+import { Container, Eyebrow, formatDate } from '@/components/ui';
 
 export async function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
@@ -22,6 +23,7 @@ export async function generateMetadata({
 export default async function TopicPage({ params }: { params: { slug: string } }) {
   const topic = getTopic(params.slug);
   if (!topic) notFound();
+  const color = getTopicColor(topic.slug);
 
   const labEntries = (await getAllLabEntries()).filter((e) => e.topics.includes(topic.slug));
   const essays = (await getAllEssays()).filter((e) => e.topics.includes(topic.slug));
@@ -39,7 +41,9 @@ export default async function TopicPage({ params }: { params: { slug: string } }
             ← Topics
           </Link>
           <div className="mt-6 flex items-center gap-3">
-            <CodeChip>{topic.code}</CodeChip>
+            <span className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-widest ${color.badge}`}>
+              {topic.code}
+            </span>
           </div>
           <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
             {topic.name}

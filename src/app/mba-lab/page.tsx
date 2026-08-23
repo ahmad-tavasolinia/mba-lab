@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllLabEntries } from '@/lib/content';
 import { categories } from '@/lib/categories';
+import { getCategoryColor } from '@/lib/keyColors';
 import { Container, Eyebrow } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -51,22 +52,23 @@ export default async function MbaLabPage() {
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c) => {
               const count = entries.filter((e) => e.category === c.slug).length;
+              const col = getCategoryColor(c.slug);
               return (
                 <Link
                   key={c.slug}
                   href={`/mba-lab/category/${c.slug}`}
-                  className="group flex flex-col justify-between rounded-lg border border-rule p-6 transition hover:border-gold dark:border-dark-rule"
+                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${col.border} ${col.hoverBorder}`}
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-[11px] uppercase tracking-widest text-gold">
+                      <span className={`font-mono text-[11px] uppercase tracking-widest ${col.code}`}>
                         {c.code}
                       </span>
                       <span className="font-mono text-[11px] text-ink/30 dark:text-dark-soft/50">
                         {count} {count === 1 ? 'piece' : 'pieces'}
                       </span>
                     </div>
-                    <h3 className="mt-3 font-serif text-2xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
+                    <h3 className={`mt-3 font-serif text-2xl font-medium text-ink transition-colors dark:text-dark-ink ${col.hoverTitle}`}>
                       {c.name}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
