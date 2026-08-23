@@ -5,15 +5,17 @@
 
 export interface KeyColorClasses {
   code: string; // small mono code label at the top of the card
-  border: string; // card border, resting state
-  hoverBorder: string; // card border, hover state
+  border: string; // card border, always visible
+  bg: string; // subtle background tint, always visible
+  hoverBorder: string; // card border, hover state (stronger)
   hoverTitle: string; // card title color on hover
   badge: string; // pill/chip used on the entry's own detail page
 }
 
 const chocolate: KeyColorClasses = {
   code: 'text-chocolate dark:text-chocolate-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-chocolate/35 dark:border-chocolate-bright/35',
+  bg: 'bg-chocolate/[0.04] dark:bg-chocolate-bright/[0.06]',
   hoverBorder: 'hover:border-chocolate dark:hover:border-chocolate-bright',
   hoverTitle: 'group-hover:text-chocolate dark:group-hover:text-chocolate-bright',
   badge:
@@ -22,7 +24,8 @@ const chocolate: KeyColorClasses = {
 
 const caramel: KeyColorClasses = {
   code: 'text-caramel dark:text-caramel-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-caramel/35 dark:border-caramel-bright/35',
+  bg: 'bg-caramel/[0.04] dark:bg-caramel-bright/[0.06]',
   hoverBorder: 'hover:border-caramel dark:hover:border-caramel-bright',
   hoverTitle: 'group-hover:text-caramel dark:group-hover:text-caramel-bright',
   badge:
@@ -31,7 +34,8 @@ const caramel: KeyColorClasses = {
 
 const gold: KeyColorClasses = {
   code: 'text-gold dark:text-gold-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-gold/35 dark:border-gold-bright/35',
+  bg: 'bg-gold/[0.04] dark:bg-gold-bright/[0.06]',
   hoverBorder: 'hover:border-gold dark:hover:border-gold-bright',
   hoverTitle: 'group-hover:text-gold dark:group-hover:text-gold-bright',
   badge:
@@ -40,7 +44,8 @@ const gold: KeyColorClasses = {
 
 const cognac: KeyColorClasses = {
   code: 'text-cognac dark:text-cognac-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-cognac/35 dark:border-cognac-bright/35',
+  bg: 'bg-cognac/[0.04] dark:bg-cognac-bright/[0.06]',
   hoverBorder: 'hover:border-cognac dark:hover:border-cognac-bright',
   hoverTitle: 'group-hover:text-cognac dark:group-hover:text-cognac-bright',
   badge:
@@ -49,7 +54,8 @@ const cognac: KeyColorClasses = {
 
 const camel: KeyColorClasses = {
   code: 'text-camel dark:text-camel-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-camel/35 dark:border-camel-bright/35',
+  bg: 'bg-camel/[0.04] dark:bg-camel-bright/[0.06]',
   hoverBorder: 'hover:border-camel dark:hover:border-camel-bright',
   hoverTitle: 'group-hover:text-camel dark:group-hover:text-camel-bright',
   badge:
@@ -58,7 +64,8 @@ const camel: KeyColorClasses = {
 
 const coffee: KeyColorClasses = {
   code: 'text-coffee dark:text-coffee-bright',
-  border: 'border-rule dark:border-dark-rule',
+  border: 'border-coffee/35 dark:border-coffee-bright/35',
+  bg: 'bg-coffee/[0.04] dark:bg-coffee-bright/[0.06]',
   hoverBorder: 'hover:border-coffee dark:hover:border-coffee-bright',
   hoverTitle: 'group-hover:text-coffee dark:group-hover:text-coffee-bright',
   badge:

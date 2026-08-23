@@ -57,7 +57,7 @@ export default async function MbaLabPage() {
                 <Link
                   key={c.slug}
                   href={`/mba-lab/category/${c.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${col.border} ${col.hoverBorder}`}
+                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${col.border} ${col.bg} ${col.hoverBorder}`}
                 >
                   <div>
                     <div className="flex items-center justify-between">

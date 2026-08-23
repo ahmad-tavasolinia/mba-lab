@@ -41,7 +41,7 @@ export default async function TopicsPage() {
                 <Link
                   key={t.slug}
                   href={`/topics/${t.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${c.border} ${c.hoverBorder}`}
+                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${c.border} ${c.bg} ${c.hoverBorder}`}
                 >
                   <div>
                     <div className="flex items-center justify-between">
