@@ -2,6 +2,7 @@
 title: "Bud Light and the Backlash That Came From the Wrong Direction"
 date: "2026-08-22"
 code: "MBA·MKT·11"
+category: "cases"
 phase: "Phase 03 — Strategy and Competition"
 topics: ["business-philosophy", "strategy"]
 summary: "A case on Bud Light's 2023 campaign, worked cold — and the difference between being right and being right for the reason you claimed."
