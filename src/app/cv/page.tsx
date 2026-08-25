@@ -87,17 +87,20 @@ export default function CvPage() {
           <Eyebrow>Experience</Eyebrow>
           <div className="mt-4">
             <Entry
-              role="Business Operations &amp; Strategy"
-              place="Small Tech Startup · South Khorasan Science and Technology Park"
-              time="Jul 2023 – May 2024 · 5-person team"
+              role="Interim Operations/Product Lead"
+              place="South Khorasan Science and Technology Park"
+              time="Jul 2023 – May 2024"
             >
               <ul className="list-disc space-y-1.5 pl-5">
                 <li>
-                  Contributed to product strategy by researching market demand across three product
-                  lines and helping the team focus resources on the most viable one
+                  Served as interim team lead for a pre-revenue, 5-person startup with no formal
+                  business background — evaluated three competing MVP concepts and narrowed the
+                  team to the direction they ultimately built and shipped
                 </li>
-                <li>Supported team coordination, including setting project deadlines and tracking progress</li>
-                <li>Handled day-to-day office and operational tasks alongside a small founding team</li>
+                <li>
+                  Directed initial branding and go-to-market planning for a technical founding
+                  team; the selected product launched publicly two years later
+                </li>
               </ul>
             </Entry>
             <Entry
