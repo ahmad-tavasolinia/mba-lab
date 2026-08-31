@@ -30,7 +30,7 @@ export default async function TopicsPage() {
 
       <section className="flex flex-1 flex-col justify-center">
         <Container className="py-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {topics.map((t) => {
               const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
               const c = getTopicColor(t.slug);
