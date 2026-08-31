@@ -34,7 +34,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
   return (
     <div>
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-20 md:py-24">
+        <Container className="py-10 md:py-12">
           <Link
             href="/topics"
             className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
