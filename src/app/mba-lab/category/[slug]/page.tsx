@@ -30,9 +30,9 @@ export default async function CategoryPage({ params }: { params: { slug: string 
   const otherCategories = categories.filter((c) => c.slug !== category.slug);
 
   return (
-    <div>
+    <div className="flex flex-1 flex-col">
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-20 md:py-24">
+        <Container className="py-10 md:py-12">
           <Link
             href="/mba-lab"
             className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
@@ -53,8 +53,8 @@ export default async function CategoryPage({ params }: { params: { slug: string 
         </Container>
       </section>
 
-      <section>
-        <Container className="py-16">
+      <section className="flex flex-1 flex-col justify-center">
+        <Container className="py-8">
           {entries.length === 0 ? (
             <p className="text-sm text-ink/50 dark:text-dark-soft">
               Nothing under {category.name} yet — check back soon.
@@ -66,7 +66,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       </section>
 
       <section className="border-t border-rule dark:border-dark-rule">
-        <Container className="py-14">
+        <Container className="py-8">
           <Eyebrow>Other keys</Eyebrow>
           <div className="mt-6 flex flex-wrap gap-3">
             {otherCategories.map((c) => (
