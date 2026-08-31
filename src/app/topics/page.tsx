@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { topics } from '@/lib/topics';
-import { getAllLabEntries, getAllEssays } from '@/lib/content';
+import { getAllLabEntries } from '@/lib/content';
 import { getTopicColor } from '@/lib/keyColors';
 import { Container, Eyebrow } from '@/components/ui';
 
@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 
 export default async function TopicsPage() {
   const labEntries = await getAllLabEntries();
-  const essays = await getAllEssays();
 
   return (
     <div className="flex flex-1 flex-col">
@@ -33,9 +32,7 @@ export default async function TopicsPage() {
         <Container className="py-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {topics.map((t) => {
-              const count =
-                labEntries.filter((e) => e.topics.includes(t.slug)).length +
-                essays.filter((e) => e.topics.includes(t.slug)).length;
+              const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
               const c = getTopicColor(t.slug);
               return (
                 <Link
