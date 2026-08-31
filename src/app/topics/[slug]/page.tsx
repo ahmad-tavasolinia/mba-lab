@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { topics, getTopic } from '@/lib/topics';
-import { getAllLabEntries, getAllEssays, getAllSources } from '@/lib/content';
-import { getTopicColor } from '@/lib/keyColors';
-import { Container, Eyebrow, formatDate } from '@/components/ui';
+import { categories } from '@/lib/categories';
+import { getAllLabEntries, getAllSources } from '@/lib/content';
+import { getTopicColor, getCategoryColor } from '@/lib/keyColors';
+import { Container, Eyebrow } from '@/components/ui';
+import LabLibrary from '@/components/LabLibrary';
 
 export async function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
@@ -25,8 +27,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
   if (!topic) notFound();
   const color = getTopicColor(topic.slug);
 
-  const labEntries = (await getAllLabEntries()).filter((e) => e.topics.includes(topic.slug));
-  const essays = (await getAllEssays()).filter((e) => e.topics.includes(topic.slug));
+  const entries = (await getAllLabEntries()).filter((e) => e.topics.includes(topic.slug));
   const sources = getAllSources().filter((s) => s.subject === topic.slug);
   const related = topics.filter((t) => t.slug !== topic.slug).slice(0, 4);
 
@@ -54,49 +55,30 @@ export default async function TopicPage({ params }: { params: { slug: string } }
         </Container>
       </section>
 
-      {labEntries.length > 0 && (
+      {entries.length > 0 && (
         <section className="border-b border-rule dark:border-dark-rule">
           <Container className="py-14">
-            <Eyebrow>MBA Lab entries</Eyebrow>
-            <div className="mt-6">
-              {labEntries.map((e) => (
-                <Link
-                  key={e.slug}
-                  href={`/mba-lab/${e.slug}`}
-                  className="group block border-t border-rule py-6 first:border-t-0 dark:border-dark-rule"
-                >
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
-                    {formatDate(e.date)}
-                  </span>
-                  <h3 className="mt-2 font-serif text-xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
-                    {e.title}
-                  </h3>
-                </Link>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {essays.length > 0 && (
-        <section className="border-b border-rule dark:border-dark-rule">
-          <Container className="py-14">
-            <Eyebrow>Essays</Eyebrow>
-            <div className="mt-6">
-              {essays.map((e) => (
-                <Link
-                  key={e.slug}
-                  href={`/essays/${e.slug}`}
-                  className="group block border-t border-rule py-6 first:border-t-0 dark:border-dark-rule"
-                >
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
-                    {formatDate(e.date)}
-                  </span>
-                  <h3 className="mt-2 font-serif text-xl font-medium text-ink transition-colors group-hover:text-gold dark:text-dark-ink">
-                    {e.title}
-                  </h3>
-                </Link>
-              ))}
+            <div className="space-y-14">
+              {categories.map((cat) => {
+                const catEntries = entries.filter((e) => e.category === cat.slug);
+                if (catEntries.length === 0) return null;
+                const col = getCategoryColor(cat.slug);
+                return (
+                  <div key={cat.slug}>
+                    <div className="flex items-baseline gap-3">
+                      <span className={`font-mono text-[11px] uppercase tracking-widest ${col.code}`}>
+                        {cat.code}
+                      </span>
+                      <h2 className="font-serif text-2xl font-medium text-ink dark:text-dark-ink">
+                        {cat.name}
+                      </h2>
+                    </div>
+                    <div className="mt-6">
+                      <LabLibrary entries={catEntries} />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Container>
         </section>
