@@ -28,6 +28,13 @@ export const topics: Topic[] = [
     description:
       'Building under uncertainty — how opportunity is recognized, tested, and turned into an organization.',
   },
+  {
+    slug: 'artificial-intelligence',
+    name: 'Artificial Intelligence',
+    code: 'AI',
+    description:
+      'How AI is changing the cost of building things, the value of expertise, and what a competitive advantage even is.',
+  },
 ];
 
 export function getTopic(slug: string): Topic | undefined {

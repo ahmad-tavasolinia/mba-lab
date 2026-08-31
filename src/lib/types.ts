@@ -1,4 +1,4 @@
-export type TopicSlug = 'strategy' | 'finance' | 'marketing' | 'entrepreneurship';
+export type TopicSlug = 'strategy' | 'finance' | 'marketing' | 'entrepreneurship' | 'artificial-intelligence';
 export type CategorySlug = 'cases' | 'essays' | 'projects' | 'interviews';
 export type PhaseSlug = 'phase-1' | 'phase-2' | 'phase-3';
 
@@ -48,7 +48,9 @@ export interface Essay extends EssayFrontmatter {
 export interface SourceFrontmatter {
   institution: string;
   course: string;
+  courseUrl?: string;
   instructor?: string;
+  instructorUrl?: string;
   subject: TopicSlug;
   why: string;
   outputs: string[]; // lab entry slugs

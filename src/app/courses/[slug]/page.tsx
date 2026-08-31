@@ -45,11 +45,35 @@ export default async function SourcePage({ params }: { params: { slug: string } 
             {source.institution}
           </p>
           <h1 className="mt-2 max-w-2xl font-serif text-4xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-5xl">
-            {source.course}
+            {source.courseUrl ? (
+              <a href={source.courseUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                {source.course}
+              </a>
+            ) : (
+              source.course
+            )}
           </h1>
           <p className="mt-3 text-sm text-ink/50 dark:text-dark-soft/70">
             {topic?.name}
-            {source.instructor ? ` · ${source.instructor}` : ''}
+            {source.instructor ? (
+              <>
+                {' · '}
+                {source.instructorUrl ? (
+                  <a
+                    href={source.instructorUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gold"
+                  >
+                    {source.instructor}
+                  </a>
+                ) : (
+                  source.instructor
+                )}
+              </>
+            ) : (
+              ''
+            )}
           </p>
         </Container>
       </section>

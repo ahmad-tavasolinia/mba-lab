@@ -77,6 +77,7 @@ export const topicColors: Record<string, KeyColorClasses> = {
   finance: cognac,
   marketing: cognac,
   entrepreneurship: cognac,
+  'artificial-intelligence': cognac,
 };
 
 export const categoryColors: Record<string, KeyColorClasses> = {
