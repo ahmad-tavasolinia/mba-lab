@@ -88,7 +88,7 @@ export default function AboutPage() {
 
           <aside className="space-y-6 md:sticky md:top-24 md:self-start">
             <Image
-              src={`${basePath}/me.png`}
+              src={`${basePath}/me.jpg`}
               alt="Ahmad Tavasolinia"
               width={200}
               height={200}
