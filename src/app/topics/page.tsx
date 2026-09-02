@@ -30,7 +30,7 @@ export default async function TopicsPage() {
 
       <section className="flex flex-1 flex-col justify-center">
         <Container className="py-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {topics.map((t) => {
               const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
               const c = getTopicColor(t.slug);
@@ -38,21 +38,21 @@ export default async function TopicsPage() {
                 <Link
                   key={t.slug}
                   href={`/topics/${t.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-6 transition ${c.border} ${c.bg} ${c.hoverBorder}`}
+                  className={`group flex flex-col justify-between rounded-lg border p-4 transition ${c.border} ${c.bg} ${c.hoverBorder}`}
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className={`font-mono text-[11px] uppercase tracking-widest ${c.code}`}>
+                      <span className={`font-mono text-[10px] uppercase tracking-widest ${c.code}`}>
                         {t.code}
                       </span>
-                      <span className="font-mono text-[11px] text-ink/30 dark:text-dark-soft/50">
+                      <span className="font-mono text-[10px] text-ink/30 dark:text-dark-soft/50">
                         {count} {count === 1 ? 'piece' : 'pieces'}
                       </span>
                     </div>
-                    <h2 className={`mt-3 font-serif text-2xl font-medium text-ink transition-colors dark:text-dark-ink ${c.hoverTitle}`}>
+                    <h2 className={`mt-2 font-serif text-lg font-medium leading-snug text-ink transition-colors dark:text-dark-ink ${c.hoverTitle}`}>
                       {t.name}
                     </h2>
-                    <p className="mt-2 text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+                    <p className="mt-1.5 text-xs leading-relaxed text-ink/60 dark:text-dark-soft">
                       {t.description}
                     </p>
                   </div>

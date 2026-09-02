@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-serif text-2xl font-medium tracking-tight text-gold md:text-3xl">
+    <h2 className="font-serif text-lg font-medium tracking-tight text-gold md:text-xl">
       {children}
     </h2>
   );
@@ -27,7 +27,7 @@ function Entry({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="border-t border-rule py-4 first:border-t-0 dark:border-dark-rule">
+    <div className="border-t border-rule py-3 first:border-t-0 dark:border-dark-rule">
       <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
         <h3 className="font-serif text-xl font-medium text-ink dark:text-dark-ink">{role}</h3>
         <span className="font-mono text-[11px] uppercase tracking-widest text-ink/40 dark:text-dark-soft/60">
@@ -44,7 +44,7 @@ export default function CvPage() {
   return (
     <div>
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:items-end sm:justify-between md:py-12">
+        <Container className="flex flex-col gap-6 py-6 sm:flex-row sm:items-end sm:justify-between md:py-8">
           <div>
             <Eyebrow>Curriculum vitae</Eyebrow>
             <h1 className="mt-3 font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
@@ -61,8 +61,8 @@ export default function CvPage() {
       </section>
 
       <section>
-        <Container className="py-10 md:py-12">
-          <div className="space-y-10">
+        <Container className="py-6 md:py-8">
+          <div className="space-y-6">
             <div>
               <SectionHeading>Independent Project</SectionHeading>
               <div className="mt-4">
@@ -79,7 +79,7 @@ export default function CvPage() {
               </div>
             </div>
 
-            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+            <div className="border-t border-rule pt-6 dark:border-dark-rule">
               <SectionHeading>Education</SectionHeading>
               <div className="mt-4">
                 <Entry role="Self-directed graduate-level study" place="MIT OpenCourseWare, Yale open lectures, independent reading" time="2026">
@@ -89,7 +89,7 @@ export default function CvPage() {
               </div>
             </div>
 
-            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+            <div className="border-t border-rule pt-6 dark:border-dark-rule">
               <SectionHeading>Experience</SectionHeading>
               <div className="mt-4">
                 <Entry
@@ -123,7 +123,7 @@ export default function CvPage() {
               </div>
             </div>
 
-            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+            <div className="border-t border-rule pt-6 dark:border-dark-rule">
               <SectionHeading>Skills</SectionHeading>
               <div className="mt-4 flex flex-wrap gap-2">
                 {['Strategy', 'Financial Analysis', 'Business Writing', 'AI & Technology', 'Leadership', 'Research & Synthesis', 'SQL', 'Power BI'].map((s) => (
@@ -134,7 +134,7 @@ export default function CvPage() {
               </div>
             </div>
 
-            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+            <div className="border-t border-rule pt-6 dark:border-dark-rule">
               <SectionHeading>Honors &amp; Qualifications</SectionHeading>
               <div className="mt-4">
                 <Entry
