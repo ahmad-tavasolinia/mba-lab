@@ -92,7 +92,7 @@ export default function AboutPage() {
               alt="Ahmad Tavasolinia"
               width={200}
               height={200}
-              className="mx-auto h-40 w-40 rounded-full object-cover md:mx-0"
+              className="mx-auto h-40 w-40 rounded-full object-cover"
               priority
             />
             <div className="rounded-lg border border-rule p-6 dark:border-dark-rule">
