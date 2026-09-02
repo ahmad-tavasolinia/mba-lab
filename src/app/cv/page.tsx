@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Curriculum vitae — Ahmad Tavasolinia.',
 };
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="font-serif text-2xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-3xl">
+      {children}
+    </h2>
+  );
+}
+
 function Entry({
   role,
   place,
@@ -36,7 +44,7 @@ export default function CvPage() {
   return (
     <div>
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="flex flex-col gap-6 py-20 sm:flex-row sm:items-end sm:justify-between md:py-24">
+        <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:items-end sm:justify-between md:py-12">
           <div>
             <Eyebrow>Curriculum vitae</Eyebrow>
             <h1 className="mt-3 font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
@@ -52,106 +60,103 @@ export default function CvPage() {
         </Container>
       </section>
 
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-8">
-          <Eyebrow>Independent Project</Eyebrow>
-          <div className="mt-4">
-            <Entry role="Founder & Author — MBA Lab" place="Independent intellectual project" time="2026 – Present">
-              <p>
-                Founded and developed an independent digital platform exploring business, strategy,
-                finance, technology, and management through the synthesis of academic sources,
-                real-world cases, and original analysis.
-              </p>
-              <Link href="/mba-lab" className="mt-3 inline-block font-mono text-[12px] uppercase tracking-widest text-gold hover:text-gold-bright">
-                Explore MBA Lab →
-              </Link>
-            </Entry>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-8">
-          <Eyebrow>Education</Eyebrow>
-          <div className="mt-4">
-            <Entry role="Self-directed graduate-level study" place="MIT OpenCourseWare, Yale open lectures, independent reading" time="2026">
-              <p>Strategy, finance, economics, organizational behavior, and the intersection of AI and business — see Courses &amp; Sources for full detail.</p>
-            </Entry>
-            <Entry role="[Add your degree here]" place="[Add your university]" time="[Years]" />
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-8">
-          <Eyebrow>Experience</Eyebrow>
-          <div className="mt-4">
-            <Entry
-              role="Interim Operations/Product Lead"
-              place="South Khorasan Science and Technology Park"
-              time="Jul 2023 – May 2024"
-            >
-              <ul className="list-disc space-y-1.5 pl-5">
-                <li>
-                  Served as interim team lead for a pre-revenue, 5-person startup with no formal
-                  business background — evaluated three competing MVP concepts and narrowed the
-                  team to the direction they ultimately built and shipped
-                </li>
-                <li>
-                  Directed initial branding and go-to-market planning for a technical founding
-                  team; the selected product launched publicly two years later
-                </li>
-              </ul>
-            </Entry>
-            <Entry
-              role="Sustainability Communication Intern (Remote)"
-              place="Sustainable Alignment Association · Zurich, Switzerland"
-              time="Mar – Jun 2021"
-            >
-              <ul className="list-disc space-y-1.5 pl-5">
-                <li>Designed and led an educational sustainability project, from concept to execution</li>
-                <li>Secured project partners and sponsorship funding</li>
-                <li>Managed social media and remote team communication in an international setting</li>
-              </ul>
-            </Entry>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-8">
-          <Eyebrow>Skills</Eyebrow>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {['Strategy', 'Financial Analysis', 'Business Writing', 'AI & Technology', 'Leadership', 'Research & Synthesis', 'SQL', 'Power BI'].map((s) => (
-              <span key={s} className="rounded-full border border-rule px-4 py-1.5 text-sm text-ink/70 dark:border-dark-rule dark:text-dark-soft">
-                {s}
-              </span>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section>
-        <Container className="py-8">
-          <Eyebrow>Honors &amp; Qualifications</Eyebrow>
-          <div className="mt-4">
-            <Entry
-              role="NODET Graduate"
-              place="National Organization for Development of Exceptional Talents — Iran's selective national high school program for gifted students"
-              time="2016"
-            >
-              <p>
-                Admitted through national entrance examinations to NODET, Iran's most selective
-                public high school network for academically gifted students, established to
-                cultivate talent in mathematics, science, and analytical thinking from an early age.
-              </p>
-            </Entry>
-            <Entry role="IELTS Academic — Band 7.0 (CEFR C1)" place="English language proficiency" time="2022" />
-            <Entry
-              role="Management of Smart Cities"
-              place="École Polytechnique Fédérale de Lausanne (EPFL), via Coursera"
-              time="2022"
-            />
+        <Container className="py-10 md:py-12">
+          <div className="space-y-10">
+            <div>
+              <SectionHeading>Independent Project</SectionHeading>
+              <div className="mt-4">
+                <Entry role="Founder & Author — MBA Lab" place="Independent intellectual project" time="2026 – Present">
+                  <p>
+                    Founded and developed an independent digital platform exploring business,
+                    strategy, finance, technology, and management through the synthesis of
+                    academic sources, real-world cases, and original analysis.
+                  </p>
+                  <Link href="/mba-lab" className="mt-3 inline-block font-mono text-[12px] uppercase tracking-widest text-gold hover:text-gold-bright">
+                    Explore MBA Lab →
+                  </Link>
+                </Entry>
+              </div>
+            </div>
+
+            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+              <SectionHeading>Education</SectionHeading>
+              <div className="mt-4">
+                <Entry role="Self-directed graduate-level study" place="MIT OpenCourseWare, Yale open lectures, independent reading" time="2026">
+                  <p>Strategy, finance, economics, organizational behavior, and the intersection of AI and business — see Courses &amp; Sources for full detail.</p>
+                </Entry>
+                <Entry role="[Add your degree here]" place="[Add your university]" time="[Years]" />
+              </div>
+            </div>
+
+            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+              <SectionHeading>Experience</SectionHeading>
+              <div className="mt-4">
+                <Entry
+                  role="Interim Operations/Product Lead"
+                  place="South Khorasan Science and Technology Park"
+                  time="Jul 2023 – May 2024"
+                >
+                  <ul className="list-disc space-y-1.5 pl-5">
+                    <li>
+                      Served as interim team lead for a pre-revenue, 5-person startup with no
+                      formal business background — evaluated three competing MVP concepts and
+                      narrowed the team to the direction they ultimately built and shipped
+                    </li>
+                    <li>
+                      Directed initial branding and go-to-market planning for a technical founding
+                      team; the selected product launched publicly two years later
+                    </li>
+                  </ul>
+                </Entry>
+                <Entry
+                  role="Sustainability Communication Intern (Remote)"
+                  place="Sustainable Alignment Association · Zurich, Switzerland"
+                  time="Mar – Jun 2021"
+                >
+                  <ul className="list-disc space-y-1.5 pl-5">
+                    <li>Designed and led an educational sustainability project, from concept to execution</li>
+                    <li>Secured project partners and sponsorship funding</li>
+                    <li>Managed social media and remote team communication in an international setting</li>
+                  </ul>
+                </Entry>
+              </div>
+            </div>
+
+            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+              <SectionHeading>Skills</SectionHeading>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['Strategy', 'Financial Analysis', 'Business Writing', 'AI & Technology', 'Leadership', 'Research & Synthesis', 'SQL', 'Power BI'].map((s) => (
+                  <span key={s} className="rounded-full border border-rule px-4 py-1.5 text-sm text-ink/70 dark:border-dark-rule dark:text-dark-soft">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-t border-rule pt-10 dark:border-dark-rule">
+              <SectionHeading>Honors &amp; Qualifications</SectionHeading>
+              <div className="mt-4">
+                <Entry
+                  role="NODET Graduate"
+                  place="National Organization for Development of Exceptional Talents — Iran's selective national high school program for gifted students"
+                  time="2016"
+                >
+                  <p>
+                    Admitted through national entrance examinations to NODET, Iran's most
+                    selective public high school network for academically gifted students,
+                    established to cultivate talent in mathematics, science, and analytical
+                    thinking from an early age.
+                  </p>
+                </Entry>
+                <Entry role="IELTS Academic — Band 7.0 (CEFR C1)" place="English language proficiency" time="2022" />
+                <Entry
+                  role="Management of Smart Cities"
+                  place="École Polytechnique Fédérale de Lausanne (EPFL), via Coursera"
+                  time="2022"
+                />
+              </div>
+            </div>
           </div>
         </Container>
       </section>
