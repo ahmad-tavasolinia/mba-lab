@@ -9,7 +9,7 @@ export default async function HomePage() {
   const currentPhaseLabel = phases.find((p) => p.slug === activePhase)?.fullLabel ?? '';
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col [zoom:1.25]">
       {/* Hero */}
       <section className="flex flex-1 flex-col justify-center border-b border-rule dark:border-dark-rule">
         <Container className="grid gap-8 py-12 md:grid-cols-[1.3fr,1fr]">
