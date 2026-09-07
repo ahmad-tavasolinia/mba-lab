@@ -2,38 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
-  font-size: 116%;
+  background: #050708;
 }
 
 body {
-  background-color: #f5f2ea;
-  color: #1b1d19;
+  margin: 0;
+  background: #050708;
+  color: #eee9df;
+  font-family: var(--font-body), system-ui, sans-serif;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-html.dark body {
-  background-color: #141e19;
-  color: #ede8dc;
+* {
+  box-sizing: border-box;
+  border-color: rgba(238, 233, 223, 0.14);
 }
 
 ::selection {
-  background-color: #a67c3d;
-  color: #f5f2ea;
-}
-
-* {
-  border-color: #d8d2c2;
-}
-
-html.dark * {
-  border-color: #2c382f;
+  background: #c8965d;
+  color: #090a0a;
 }
 
 :focus-visible {
-  outline: 2px solid #a67c3d;
-  outline-offset: 3px;
+  outline: 1px solid #c8965d;
+  outline-offset: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -44,6 +42,274 @@ html.dark * {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Editorial left rail                                                        */
+/* -------------------------------------------------------------------------- */
+.site-rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 50;
+  width: 156px;
+  flex-direction: column;
+  border-right: 1px solid rgba(238, 233, 223, 0.10);
+  background: rgba(4, 6, 7, 0.93);
+  backdrop-filter: blur(8px);
+}
+
+.rail-mark {
+  display: block;
+  padding: 49px 0 0 67px;
+  color: #d2a06c;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-decoration: none;
+}
+
+.rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 87px;
+  padding-left: 42px;
+}
+
+.rail-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(232, 228, 219, 0.56);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.rail-link:hover,
+.rail-link.is-active {
+  color: #d3a16c;
+}
+
+.rail-dot {
+  width: 5px;
+  height: 5px;
+  margin-left: -20px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background 180ms ease;
+}
+
+.rail-link.is-active .rail-dot {
+  background: #d3a16c;
+}
+
+.rail-motto {
+  position: absolute;
+  left: 64px;
+  bottom: 42px;
+  color: rgba(231, 225, 215, 0.58);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.rail-motto-line {
+  display: block;
+  width: 1px;
+  height: 20px;
+  margin-bottom: 15px;
+  background: rgba(238, 233, 223, 0.38);
+}
+
+.mobile-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(238, 233, 223, 0.10);
+  background: rgba(4, 6, 7, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-mark {
+  color: #d2a06c;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 29px;
+  letter-spacing: -0.08em;
+  text-decoration: none;
+}
+
+.mobile-menu {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu span {
+  width: 15px;
+  height: 1px;
+  background: rgba(238, 233, 223, 0.78);
+}
+
+.mobile-nav {
+  position: fixed;
+  inset: 68px 0 auto;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid rgba(238, 233, 223, 0.10);
+  background: rgba(4, 6, 7, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-nav a {
+  color: rgba(238, 233, 223, 0.68);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.mobile-nav a.is-active {
+  color: #d3a16c;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Home hero                                                                  */
+/* -------------------------------------------------------------------------- */
+.home-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #050708;
+}
+
+.home-hero-image,
+.home-hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.home-hero-image {
+  background-image: url('/hero-mba-lab.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* The supplied image already has the dark left workspace baked in. This very
+   subtle overlay keeps text legible across displays without hiding the scene. */
+.home-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(3, 5, 6, 0.16) 0%, rgba(3, 5, 6, 0.04) 42%, rgba(3, 5, 6, 0) 66%),
+    linear-gradient(0deg, rgba(3, 5, 6, 0.14), rgba(3, 5, 6, 0));
+  pointer-events: none;
+}
+
+.home-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
+  width: min(620px, calc(100vw - 220px));
+  margin-left: max(22vw, 310px);
+  padding: 64px 0 72px;
+}
+
+.home-eyebrow {
+  margin: 0 0 22px;
+  color: rgba(242, 237, 228, 0.92);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.36em;
+}
+
+.home-copy h1 {
+  margin: 0;
+  color: #f2eee7;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(56px, 5.1vw, 88px);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.home-copy h1 em {
+  color: #d19b63;
+  font-style: normal;
+}
+
+.home-description {
+  margin: 33px 0 0;
+  color: rgba(239, 234, 225, 0.62);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: 0.16em;
+}
+
+.home-cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 23px;
+  margin-top: 45px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #bd8b56;
+  color: #eee9df;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.home-cta:hover {
+  color: #d2a06c;
+  gap: 29px;
+}
+
+.home-arrow {
+  font-size: 18px;
+  line-height: 0.5;
+  letter-spacing: 0;
+}
+
+/* Give non-home pages a dark editorial canvas beneath the same rail. */
+main {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  body > div > main {
+    margin-left: 156px;
   }
 }
 
@@ -60,11 +326,7 @@ html.dark * {
   font-weight: 600;
   margin-top: 2.75rem;
   margin-bottom: 1rem;
-  color: #1b1d19;
-}
-
-html.dark .prose-lab h2 {
-  color: #ede8dc;
+  color: #eee9df;
 }
 
 .prose-lab p {
@@ -76,29 +338,46 @@ html.dark .prose-lab h2 {
 }
 
 .prose-lab a {
-  color: #a67c3d;
+  color: #c8965d;
   text-underline-offset: 3px;
 }
 
 .prose-lab a:hover {
-  color: #c79a52;
+  color: #d8ac77;
 }
 
-/* Card catalog index code chip */
 .code-chip {
   font-family: var(--font-mono), monospace;
   letter-spacing: 0.02em;
 }
 
-/* Hairline divider */
 .hr-rule {
-  border-top: 1px solid #d8d2c2;
+  border-top: 1px solid rgba(238, 233, 223, 0.14);
 }
 
-html.dark .hr-rule {
-  border-top: 1px solid #2c382f;
-}
-h1 {
-  font-family: 'Inter', system-ui, sans-serif;
-  letter-spacing: -0.04em;
+@media (max-width: 767px) {
+  .home-hero-image {
+    background-position: 59% center;
+  }
+
+  .home-hero-shade {
+    background: linear-gradient(180deg, rgba(3, 5, 6, 0.38) 0%, rgba(3, 5, 6, 0.10) 42%, rgba(3, 5, 6, 0.74) 100%);
+  }
+
+  .home-copy {
+    width: auto;
+    min-height: 100svh;
+    margin-left: 0;
+    justify-content: flex-end;
+    padding: 128px 28px 70px;
+  }
+
+  .home-copy h1 {
+    font-size: clamp(49px, 15vw, 72px);
+  }
+
+  .home-description {
+    font-size: 13px;
+    letter-spacing: 0.11em;
+  }
 }

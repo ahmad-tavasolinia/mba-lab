@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -11,6 +10,7 @@ const navItems = [
   { href: '/topics', label: 'Topics' },
   { href: '/about', label: 'About' },
   { href: '/cv', label: 'CV' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
@@ -23,73 +23,74 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur dark:border-dark-rule dark:bg-dark-bg/90">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif text-lg font-medium tracking-tight text-ink dark:text-dark-ink">
-            Ahmad Tavasolinia
-          </span>
-          <span className="hidden font-mono text-[11px] uppercase tracking-widest text-gold sm:inline">
-            / MBA Lab
-          </span>
+    <>
+      {/* Desktop: quiet editorial rail, matching the reference composition. */}
+      <aside className="site-rail hidden md:flex" aria-label="Primary navigation">
+        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">
+          AT
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="rail-nav">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`font-mono text-[12px] uppercase tracking-widest transition-colors ${
-                isActive(item.href)
-                  ? 'text-gold'
-                  : 'text-ink/60 hover:text-ink dark:text-dark-soft dark:hover:text-dark-ink'
-              }`}
+              className={`rail-link ${isActive(item.href) ? 'is-active' : ''}`}
+            >
+              <span className="rail-dot" aria-hidden="true" />
+              <span>{item.label}</span>
+            </Link>
+          ))}
+        </nav>
+
+        <div className="rail-motto" aria-label="Site motto">
+          <span className="rail-motto-line" />
+          <p>
+            Better
+            <br />
+            questions.
+            <br />
+            Deeper
+            <br />
+            thinking.
+            <br />
+            A bigger
+            <br />
+            future.
+          </p>
+        </div>
+      </aside>
+
+      {/* Mobile: compact top bar. */}
+      <header className="mobile-header md:hidden">
+        <Link href="/" className="mobile-mark" onClick={() => setOpen(false)}>
+          AT
+        </Link>
+        <button
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="mobile-menu"
+        >
+          <span />
+          <span />
+        </button>
+      </header>
+
+      {open && (
+        <nav className="mobile-nav md:hidden" aria-label="Mobile navigation">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={isActive(item.href) ? 'is-active' : ''}
             >
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-[12px] uppercase tracking-widest text-ink transition hover:border-gold hover:text-gold dark:border-dark-ink/30 dark:text-dark-ink"
-          >
-            Contact
-          </Link>
-          <ThemeToggle />
-        </nav>
-
-        <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-rule dark:border-dark-rule"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              {open ? <path d="M5 5l14 14M19 5L5 19" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {open && (
-        <nav className="border-t border-rule px-6 py-4 md:hidden dark:border-dark-rule">
-          <ul className="flex flex-col gap-4">
-            {[...navItems, { href: '/contact', label: 'Contact' }].map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`font-mono text-sm uppercase tracking-widest ${
-                    isActive(item.href) ? 'text-gold' : 'text-ink/70 dark:text-dark-soft'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </nav>
       )}
-    </header>
+    </>
   );
 }

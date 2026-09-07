@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Newsreader, Inter, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 const display = Newsreader({
   subsets: ['latin'],
@@ -47,28 +46,15 @@ export const metadata: Metadata = {
   },
 };
 
-// Inline script to set dark/light class before hydration to avoid a flash.
-const themeInitScript = `
-(function() {
-  try {
-    var stored = localStorage.getItem('mba-lab-theme');
-    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (theme === 'dark') document.documentElement.classList.add('dark');
-  } catch (e) {}
-})();
-`;
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable} dark`}>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="font-sans antialiased">
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
-          <Footer />
         </div>
       </body>
     </html>
