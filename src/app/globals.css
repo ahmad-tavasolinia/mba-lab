@@ -17,6 +17,9 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .rail-link:hover,.rail-link.is-active{color:#d3a16c}
 .rail-dot{width:5px;height:5px;margin-left:-21px;border-radius:50%;background:transparent}
 .rail-link.is-active .rail-dot{background:#d3a16c;box-shadow:0 0 7px rgba(211,161,108,.7)}
+.rail-note{position:absolute;left:64px;bottom:58px;color:rgba(238,233,223,.58)}
+.rail-note-line{display:block;width:1px;height:22px;margin-bottom:15px;background:rgba(238,233,223,.35)}
+.rail-note p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;line-height:1.55;letter-spacing:.01em}
 
 .mobile-header{position:fixed;inset:0 0 auto;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid rgba(238,233,223,.10);background:rgba(4,6,7,.90);backdrop-filter:blur(10px)}
 .mobile-mark{color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:29px;letter-spacing:-.08em;text-decoration:none}
@@ -30,81 +33,39 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
    The artwork is the right-hand scene from the reference. It is scaled by
    HEIGHT and pinned to the right, so the entire chair/desk/window remains visible. */
 .home-hero{position:relative;min-height:100svh;overflow:hidden;background:#050708}
-.home-hero-image{position:absolute;top:0;right:0;bottom:0;width:100%;background-repeat:no-repeat;background-position:right top;background-size:auto 100%;}
-.home-hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(3,5,6,.06) 0%,rgba(3,5,6,0) 60%)}
+/* The supplied artwork is already composed for the desktop hero. Keep its native 1385×1024
+   geometry and pin it to the right. Never use cover: cover is what caused the chair/window to zoom. */
+.home-hero-image{position:absolute;inset:0;z-index:0;background-image:url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:right top;background-size:1385px 1024px}
+.home-hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,5,6,.02) 0%,rgba(3,5,6,0) 48%,rgba(3,5,6,.02) 100%)}
 
-/* Reference composition: text is in the black workspace, left of the window — never centered. */
-.home-copy{position:absolute;z-index:2;left:clamp(60px,calc(20.5vw - 189px),126px);top:calc(25.5% - 189px);width:min(540px,38vw);display:block;padding:0}
+/* Match the reference composition: the copy sits in the open black workspace, not at the edge
+   and not centered. At a 1536px-wide reference it begins around x=315px. */
+.home-copy{position:absolute;z-index:2;left:clamp(260px,20.5vw,315px);top:25.5vh;width:min(540px,38vw);display:block;padding:0}
 .home-eyebrow{margin:0 0 23px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
 .home-copy h1{margin:0;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:clamp(56px,5.1vw,88px);font-weight:400;line-height:.94;letter-spacing:-.045em;text-wrap:balance}
 .home-copy h1 em{color:#d19b63;font-style:normal}
 .home-description{margin:33px 0 0;color:rgba(239,234,225,.62);font-size:15px;line-height:1.95;letter-spacing:.16em}
 .home-cta{display:inline-flex;width:fit-content;align-items:center;gap:23px;margin-top:45px;padding-bottom:15px;border-bottom:1px solid #bd8b56;color:#eee9df;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;transition:.18s ease}
-.home-cta:hover{color:#d2a06c;gap:29px}
-.home-arrow{font-size:18px;line-height:.5;letter-spacing:0}
+.home-cta:hover{color:#d2a06c;gap:29px}.home-arrow{font-size:18px;line-height:.5;letter-spacing:0}
 
-/* Home journey — the evolution of the site, given a proper place in the composition. */
-.home-journey{
-  position:absolute;
-  z-index:3;
-  left:clamp(190px,14vw,260px);
-  right:clamp(48px,6vw,100px);
-  bottom:46px;
-  padding:22px 28px 20px;
-  border-top:1px solid rgba(238,233,223,.20);
-  background:linear-gradient(90deg,rgba(5,7,8,.34),rgba(5,7,8,.10) 70%,rgba(5,7,8,0));
-  backdrop-filter:blur(2px);
-}
-.home-journey > div > p{
-  margin:0 0 16px;
-  color:rgba(211,161,108,.95);
-  font-family:var(--font-mono),monospace;
-  font-size:10px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-}
-.home-journey > div > div{
-  margin-top:0;
-  display:flex;
-  align-items:flex-start;
-  width:100%;
-}
-.home-journey .group{
-  min-width:150px;
-  align-items:flex-start;
-}
-.home-journey .group > span:first-child{
-  width:42px;
-  height:42px;
-  border-color:rgba(238,233,223,.30);
-  font-size:11px;
-  background:rgba(5,7,8,.42);
-}
-.home-journey .group > span:nth-child(2){
-  margin-top:10px;
-  font-size:11px;
-  letter-spacing:.12em;
-}
-.home-journey .group:hover > span:first-child{
-  border-color:#d3a16c;
-  color:#d3a16c;
-}
-.home-journey .flex-1 > span{
-  margin-top:21px;
-  margin-left:16px;
-  margin-right:16px;
-  background:rgba(238,233,223,.18);
-}
-.home-journey .text-gold{color:#d3a16c}
-.home-journey .border-gold{border-color:#d3a16c}
-.home-journey .bg-gold\/15{background:rgba(211,161,108,.15)}
+/* The journey is a central idea of MBA Lab, so it belongs in the main composition. */
+.home-journey{position:absolute;z-index:3;left:clamp(300px,23.5vw,360px);right:clamp(44px,6vw,92px);bottom:64px;padding:20px 28px 22px;border-top:1px solid rgba(238,233,223,.24);background:linear-gradient(90deg,rgba(5,7,8,.42),rgba(5,7,8,.18) 72%,rgba(5,7,8,.04));backdrop-filter:blur(2px)}
+.home-journey > div > p{margin:0 0 18px;color:#d3a16c;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase}
+.home-journey > div > div{margin-top:0;display:flex;align-items:flex-start;width:100%}
+.home-journey .group{min-width:190px;align-items:flex-start}
+.home-journey .group > span:first-child{width:44px;height:44px;border-color:rgba(238,233,223,.34);font-size:11px;background:rgba(5,7,8,.52);transition:all .2s ease}
+.home-journey .group > span:nth-child(2){margin-top:11px;font-size:11px;letter-spacing:.14em}
+.home-journey .group:hover > span:first-child{border-color:#d3a16c;color:#d3a16c}
+.home-journey .journey-number-active{color:#e8bd8a!important;border-color:#d3a16c!important;background:rgba(211,161,108,.16)!important;box-shadow:0 0 0 4px rgba(211,161,108,.06),0 0 18px rgba(211,161,108,.24)}
+.home-journey .journey-label-active{color:#d3a16c!important}
+.home-journey .flex-1 > span{margin-top:22px;margin-left:20px;margin-right:20px;background:rgba(238,233,223,.24)}
+.home-journey .text-gold{color:#d3a16c}.home-journey .border-gold{border-color:#d3a16c}.home-journey .bg-gold\/15{background:rgba(211,161,108,.15)}
 
 @media(max-width:767px){
+ .rail-note{display:none}
  .home-journey{left:24px;right:24px;bottom:24px;padding:16px 18px}
- .home-journey > div > div{overflow-x:auto;padding-bottom:4px}
- .home-journey .group{min-width:120px}
- .home-journey .group > span:first-child{width:34px;height:34px;font-size:10px}
- .home-journey .group > span:nth-child(2){font-size:9px}
+ .home-journey > div > div{overflow-x:auto;padding-bottom:4px}.home-journey .group{min-width:140px}
+ .home-journey .group > span:first-child{width:36px;height:36px;font-size:10px}.home-journey .group > span:nth-child(2){font-size:9px}
 }
 
 main{min-width:0}
@@ -126,9 +87,9 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 .page-about{zoom:1.10}
 
 @media(max-width:767px){
- .home-hero-image{background-size:auto 100%;background-position:68% top}
- .home-hero-shade{background:linear-gradient(180deg,rgba(3,5,6,.28),rgba(3,5,6,.08) 45%,rgba(3,5,6,.68))}
- .home-copy{left:28px;right:28px;top:auto;bottom:70px;width:auto}
+ .home-hero-image{background-size:auto 100%;background-position:right top}
+ .home-hero-shade{background:linear-gradient(180deg,rgba(3,5,6,.18),rgba(3,5,6,.08) 50%,rgba(3,5,6,.52))}
+ .home-copy{left:28px;right:28px;top:112px;width:auto}
  .home-copy h1{font-size:clamp(49px,15vw,72px)}
  .home-description{font-size:13px;letter-spacing:.11em}
 }
