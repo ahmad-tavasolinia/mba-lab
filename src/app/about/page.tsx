@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="page-about">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-20 md:py-24">
           <Eyebrow>About</Eyebrow>
