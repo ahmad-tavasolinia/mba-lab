@@ -49,4 +49,5 @@ How often does a cost-saving proposal get evaluated only against the cost it rem
 
 The recommendation isn't a rejection of the underlying concern — it's a rejection of using flawed math to justify it. If the goal is genuinely to protect employee time, that's worth solving directly, rather than by quietly cutting an hour of access a real, measurable slice of customers depend on.
 
-If you'd like to read more about the case, here it is: [Mud Bay's Good Jobs Journey — MIT Sloan case (PDF)]([https://mitsloan.mit.edu/sites/default/files/2025-05/Ferrari%202025%20to%20circulate%2011%20MAY%2025%20%282%29.pdf](https://mitsloan.mit.edu/sites/default/files/2024-04/Mud%20Bay%27s%20Good%20Jobs%20Journey.pdf))
+If you'd like to read more about the case, here it is:
+[Mud Bay's Good Jobs Journey — MIT Sloan case (PDF)](https://mitsloan.mit.edu/sites/default/files/2024-04/Mud%20Bay%27s%20Good%20Jobs%20Journey.pdf)
