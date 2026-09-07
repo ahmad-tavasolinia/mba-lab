@@ -1,15 +1,10 @@
 import Link from 'next/link';
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+import JourneyPhases from '@/components/JourneyPhases';
 
 export default function HomePage() {
   return (
     <div className="home-hero">
-      <div
-        className="home-hero-image"
-        aria-hidden="true"
-        style={{ backgroundImage: `url(${basePath}/hero-mba-lab.png)` }}
-      />
+      <div className="home-hero-image" aria-hidden="true" />
       <div className="home-hero-shade" aria-hidden="true" />
 
       <section className="home-copy" aria-labelledby="home-title">
@@ -31,6 +26,9 @@ export default function HomePage() {
           <span className="home-arrow" aria-hidden="true">→</span>
         </Link>
       </section>
+      <div className="home-journey">
+        <JourneyPhases />
+      </div>
     </div>
   );
 }
