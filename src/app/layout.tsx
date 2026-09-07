@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Newsreader, Inter, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const display = Newsreader({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
