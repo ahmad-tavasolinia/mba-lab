@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { activePhase, phases, getPhaseStatus } from '@/lib/phases';
+import { phases, activePhase } from '@/lib/phases';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -17,6 +17,7 @@ const navItems = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isHome = pathname === '/';
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/';
@@ -26,75 +27,52 @@ export default function Header() {
   return (
     <>
       <aside className="site-rail hidden md:flex" aria-label="Primary navigation">
-        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">
-          AT
-        </Link>
-
+        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">AT</Link>
         <nav className="rail-nav">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`rail-link ${isActive(item.href) ? 'is-active' : ''}`}
-            >
+            <Link key={item.href} href={item.href} className={`rail-link ${isActive(item.href) ? 'is-active' : ''}`}>
               <span className="rail-dot" aria-hidden="true" />
               <span>{item.label}</span>
             </Link>
           ))}
         </nav>
 
-        {/* The MBA Lab journey: three real phases, with the current phase lit. */}
-        <div className="rail-journey" aria-label="MBA journey phases">
-          <div className="rail-journey-label">THE JOURNEY</div>
-          <div className="rail-journey-track">
-            {phases.map((phase, index) => {
-              const status = getPhaseStatus(phase.slug);
-              const isCurrent = phase.slug === activePhase;
-              return (
-                <div
-                  key={phase.slug}
-                  className={`rail-phase rail-phase-${status}`}
-                >
-                  <span className="rail-phase-line" aria-hidden="true" />
+        {isHome && (
+          <div className="rail-journey" aria-label="MBA journey">
+            <p className="rail-journey-title">The journey</p>
+            <div className="rail-journey-list">
+              {phases.map((phase, index) => {
+                const active = phase.slug === activePhase;
+                return (
                   <Link
+                    key={phase.slug}
                     href={`/mba-lab/phase/${phase.slug}`}
-                    className="rail-phase-link"
-                    aria-current={isCurrent ? 'step' : undefined}
+                    className={`rail-phase ${active ? 'is-active' : ''}`}
+                    aria-current={active ? 'step' : undefined}
                   >
-                    <span className="rail-phase-number">{String(index + 1).padStart(2, '0')}</span>
-                    <span className="rail-phase-name">{phase.name}</span>
+                    <span className="rail-phase-dot" aria-hidden="true" />
+                    <span className="rail-phase-copy">
+                      <span className="rail-phase-number">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="rail-phase-name">{phase.name}</span>
+                    </span>
                   </Link>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </aside>
 
       <header className="mobile-header md:hidden">
-        <Link href="/" className="mobile-mark" onClick={() => setOpen(false)}>
-          AT
-        </Link>
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="mobile-menu"
-        >
-          <span />
-          <span />
+        <Link href="/" className="mobile-mark" onClick={() => setOpen(false)}>AT</Link>
+        <button aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(v => !v)} className="mobile-menu">
+          <span /><span />
         </button>
       </header>
-
       {open && (
         <nav className="mobile-nav md:hidden" aria-label="Mobile navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className={isActive(item.href) ? 'is-active' : ''}
-            >
+          {navItems.map(item => (
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={isActive(item.href) ? 'is-active' : ''}>
               {item.label}
             </Link>
           ))}
