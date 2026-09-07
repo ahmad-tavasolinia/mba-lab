@@ -19,7 +19,7 @@ export default async function HomePage() {
               Ahmad Tavasolinia
             </h1>
             <p className="mt-3 font-serif text-xl italic text-ink/70 dark:text-dark-soft md:text-2xl">
-              Exploring the intersection of business, technology, ideas, and the future.
+              Exploring the intersection of business, technology and the future.
             </p>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/60 dark:text-dark-soft">
               This site documents my intellectual work: independent research, essays, and a running
