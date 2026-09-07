@@ -18,21 +18,6 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .rail-dot{width:5px;height:5px;margin-left:-21px;border-radius:50%;background:transparent}
 .rail-link.is-active .rail-dot{background:#d3a16c;box-shadow:0 0 7px rgba(211,161,108,.7)}
 
-/* Home-only three-stage journey. Large enough to actually read. */
-.rail-journey{position:absolute;left:28px;right:18px;bottom:60px}
-.rail-journey-title{margin:0 0 16px;color:#d3a16c;font-family:var(--font-mono),monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
-.rail-journey-list{position:relative;margin:0;padding:0;list-style:none}
-.rail-journey-list::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:rgba(238,233,223,.18)}
-.rail-phase{position:relative;display:flex;align-items:flex-start;gap:12px;margin:0 0 15px;text-decoration:none}
-.rail-phase:last-child{margin-bottom:0}
-.rail-phase-dot{position:relative;z-index:1;flex:0 0 13px;width:13px;height:13px;margin-top:1px;border:1px solid rgba(238,233,223,.35);border-radius:50%;background:#050708}
-.rail-phase-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
-.rail-phase-number{font-family:var(--font-mono),monospace;font-size:9px;letter-spacing:.12em;color:rgba(238,233,223,.38);line-height:1}
-.rail-phase-name{font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:rgba(238,233,223,.48);line-height:1.2;white-space:nowrap}
-.rail-phase.is-active .rail-phase-dot{border-color:#d3a16c;background:#d3a16c;box-shadow:0 0 0 3px rgba(211,161,108,.12),0 0 12px rgba(211,161,108,.8)}
-.rail-phase.is-active .rail-phase-number,.rail-phase.is-active .rail-phase-name{color:#d3a16c}
-.rail-phase:hover .rail-phase-name{color:#eee9df}
-
 .mobile-header{position:fixed;inset:0 0 auto;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid rgba(238,233,223,.10);background:rgba(4,6,7,.90);backdrop-filter:blur(10px)}
 .mobile-mark{color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:29px;letter-spacing:-.08em;text-decoration:none}
 .mobile-menu{display:flex;width:40px;height:40px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(238,233,223,.16);background:transparent;cursor:pointer}
@@ -58,6 +43,70 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .home-cta:hover{color:#d2a06c;gap:29px}
 .home-arrow{font-size:18px;line-height:.5;letter-spacing:0}
 
+/* Home journey — the evolution of the site, given a proper place in the composition. */
+.home-journey{
+  position:absolute;
+  z-index:3;
+  left:clamp(190px,14vw,260px);
+  right:clamp(48px,6vw,100px);
+  bottom:46px;
+  padding:22px 28px 20px;
+  border-top:1px solid rgba(238,233,223,.20);
+  background:linear-gradient(90deg,rgba(5,7,8,.34),rgba(5,7,8,.10) 70%,rgba(5,7,8,0));
+  backdrop-filter:blur(2px);
+}
+.home-journey > div > p{
+  margin:0 0 16px;
+  color:rgba(211,161,108,.95);
+  font-family:var(--font-mono),monospace;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+.home-journey > div > div{
+  margin-top:0;
+  display:flex;
+  align-items:flex-start;
+  width:100%;
+}
+.home-journey .group{
+  min-width:150px;
+  align-items:flex-start;
+}
+.home-journey .group > span:first-child{
+  width:42px;
+  height:42px;
+  border-color:rgba(238,233,223,.30);
+  font-size:11px;
+  background:rgba(5,7,8,.42);
+}
+.home-journey .group > span:nth-child(2){
+  margin-top:10px;
+  font-size:11px;
+  letter-spacing:.12em;
+}
+.home-journey .group:hover > span:first-child{
+  border-color:#d3a16c;
+  color:#d3a16c;
+}
+.home-journey .flex-1 > span{
+  margin-top:21px;
+  margin-left:16px;
+  margin-right:16px;
+  background:rgba(238,233,223,.18);
+}
+.home-journey .text-gold{color:#d3a16c}
+.home-journey .border-gold{border-color:#d3a16c}
+.home-journey .bg-gold\/15{background:rgba(211,161,108,.15)}
+
+@media(max-width:767px){
+ .home-journey{left:24px;right:24px;bottom:24px;padding:16px 18px}
+ .home-journey > div > div{overflow-x:auto;padding-bottom:4px}
+ .home-journey .group{min-width:120px}
+ .home-journey .group > span:first-child{width:34px;height:34px;font-size:10px}
+ .home-journey .group > span:nth-child(2){font-size:9px}
+}
+
 main{min-width:0}
 @media(min-width:768px){body > div > main{margin-left:151px}}
 
@@ -82,5 +131,4 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
  .home-copy{left:28px;right:28px;top:auto;bottom:70px;width:auto}
  .home-copy h1{font-size:clamp(49px,15vw,72px)}
  .home-description{font-size:13px;letter-spacing:.11em}
- .rail-journey{display:none}
 }
