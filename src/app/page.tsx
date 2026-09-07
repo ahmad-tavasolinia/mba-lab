@@ -23,9 +23,9 @@ export default async function HomePage() {
             </p>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/60 dark:text-dark-soft">
               MBA Lab is my personal intellectual workspace: a place where I study ideas, work
-              work through real business cases, write essays and build things. It is an evolving 
+              through real business cases, write essays and build things. It is an evolving 
               space where I explore, question, and connect what I learn.
-              Started before the MBA · Continuing through it · And beyond
+              Started before my MBA, continuing throughout and beyond it.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
