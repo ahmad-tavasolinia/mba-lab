@@ -32,8 +32,8 @@ export default async function MbaLabPage() {
         </Container>
       </section>
 
-      <section className="flex flex-1 flex-col justify-center">
-        <Container className="py-6">
+      <section>
+        <Container className="py-10 md:py-12">
           <Eyebrow>Browse by kind</Eyebrow>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
             Every entry lives under one of three keys, depending on what kind of work it is.
