@@ -14,7 +14,7 @@ export default async function MbaLabPage() {
   const entries = await getAllLabEntries();
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col page-mba-lab">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-8 md:py-10">
           <Eyebrow>The lab notebook</Eyebrow>
@@ -32,8 +32,8 @@ export default async function MbaLabPage() {
         </Container>
       </section>
 
-      <section>
-        <Container className="py-10 md:py-12">
+      <section className="flex flex-1 flex-col justify-center">
+        <Container className="py-6">
           <Eyebrow>Browse by kind</Eyebrow>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
             Every entry lives under one of three keys, depending on what kind of work it is.
