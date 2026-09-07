@@ -52,7 +52,7 @@ body {
   position: fixed;
   inset: 0 auto 0 0;
   z-index: 50;
-  width: 156px;
+  width: 151px;
   flex-direction: column;
   border-right: 1px solid rgba(238, 233, 223, 0.10);
   background: rgba(4, 6, 7, 0.93);
@@ -296,6 +296,7 @@ body {
 .home-hero {
   position: relative;
   min-height: 100svh;
+  margin-left: 151px;
   overflow: hidden;
   background: #050708;
 }
@@ -309,8 +310,8 @@ body {
 .home-hero-image {
   /* The actual image URL is injected by page.tsx so GitHub Pages project paths work correctly. */
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-position: left top;
+  background-size: 100% 100%;
 }
 
 /* The supplied image already has the dark left workspace baked in. This very
@@ -323,15 +324,14 @@ body {
 }
 
 .home-copy {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  display: flex;
-  min-height: 100svh;
-  flex-direction: column;
-  justify-content: center;
-  width: min(620px, calc(100vw - 220px));
-  margin-left: max(22vw, 310px);
-  padding: 64px 0 72px;
+  left: 164px;
+  top: 258px;
+  display: block;
+  width: 620px;
+  margin: 0;
+  padding: 0;
 }
 
 .home-eyebrow {
@@ -404,7 +404,7 @@ main {
 
 @media (min-width: 768px) {
   body > div > main {
-    margin-left: 156px;
+    margin-left: 151px;
   }
 }
 
@@ -451,8 +451,13 @@ main {
 }
 
 @media (max-width: 767px) {
+  .home-hero {
+    margin-left: 0;
+  }
+
   .home-hero-image {
     background-position: 59% center;
+    background-size: cover;
   }
 
   .home-hero-shade {
@@ -460,9 +465,13 @@ main {
   }
 
   .home-copy {
+    position: relative;
+    left: auto;
+    top: auto;
     width: auto;
     min-height: 100svh;
-    margin-left: 0;
+    margin: 0;
+    display: flex;
     justify-content: flex-end;
     padding: 128px 28px 70px;
   }
