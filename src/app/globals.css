@@ -212,10 +212,11 @@ body {
 }
 
 .home-hero-image {
-  /* The supplied 1385×1024 artwork is the complete hero scene.
-     At the reference 1536×1024 viewport it sits directly to the right
-     of the 151px navigation rail with no cropping or zoom. */
-  left: 0;
+  /* The supplied artwork is exactly the 1385px-wide scene that belongs
+     to the right of the 151px navigation rail in the 1536px reference.
+     Keep the full image visible: never cover/crop it. */
+  left: 151px;
+  right: 0;
   background-repeat: no-repeat;
   background-position: left top;
   background-size: 100% 100%;
@@ -238,7 +239,7 @@ body {
   width: 560px;
   margin-left: 164px;
   padding: 0;
-  padding-top: 258px;
+  padding-top: 220px;
 }
 
 .home-eyebrow {
