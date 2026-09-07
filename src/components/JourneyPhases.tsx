@@ -11,10 +11,12 @@ export default function JourneyPhases() {
           const isLast = i === phases.length - 1;
           return (
             <div key={phase.slug} className={`flex items-center ${isLast ? '' : 'flex-1'}`}>
-              <Link href={`/mba-lab/phase/${phase.slug}`} className="group flex flex-col items-center">
+              <Link href={`/mba-lab/phase/${phase.slug}`} className={`journey-phase group flex flex-col items-center ${status === 'active' ? 'is-active' : ''}`}>
                 <span
                   className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-[10px] transition ${
-                    status === 'complete' || status === 'active'
+                    status === 'active'
+                      ? 'journey-number-active border-gold bg-gold/15 text-ink dark:text-dark-ink'
+                      : status === 'complete'
                       ? 'border-gold bg-gold/15 text-ink dark:text-dark-ink'
                       : 'border-rule text-ink/30 dark:border-dark-rule dark:text-dark-soft/40'
                   }`}
@@ -23,7 +25,9 @@ export default function JourneyPhases() {
                 </span>
                 <span
                   className={`mt-2 whitespace-nowrap font-mono text-[10px] uppercase tracking-wide transition group-hover:text-gold ${
-                    status === 'upcoming'
+                    status === 'active'
+                      ? 'journey-label-active text-gold'
+                      : status === 'upcoming'
                       ? 'text-ink/30 dark:text-dark-soft/40'
                       : 'text-ink/70 dark:text-dark-soft'
                   }`}
