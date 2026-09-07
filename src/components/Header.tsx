@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { phases, activePhase } from '@/lib/phases';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -37,30 +36,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {isHome && (
-          <div className="rail-journey" aria-label="MBA journey">
-            <p className="rail-journey-title">The journey</p>
-            <div className="rail-journey-list">
-              {phases.map((phase, index) => {
-                const active = phase.slug === activePhase;
-                return (
-                  <Link
-                    key={phase.slug}
-                    href={`/mba-lab/phase/${phase.slug}`}
-                    className={`rail-phase ${active ? 'is-active' : ''}`}
-                    aria-current={active ? 'step' : undefined}
-                  >
-                    <span className="rail-phase-dot" aria-hidden="true" />
-                    <span className="rail-phase-copy">
-                      <span className="rail-phase-number">{String(index + 1).padStart(2, '0')}</span>
-                      <span className="rail-phase-name">{phase.name}</span>
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        )}
       </aside>
 
       <header className="mobile-header md:hidden">
