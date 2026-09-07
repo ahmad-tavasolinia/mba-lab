@@ -22,9 +22,10 @@ export default async function HomePage() {
               Exploring the intersection of business, technology and the future.
             </p>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/60 dark:text-dark-soft">
-              This site documents my intellectual work: independent research, essays, and a running
-              laboratory notebook where I study, question, and synthesize ideas about how
-              organizations actually work — before, during, and after an MBA.
+              MBA Lab is my personal intellectual workspace: a place where I study ideas, work
+              work through real business cases, write essays and build things. It is an evolving 
+              space where I explore, question, and connect what I learn.
+              Started before the MBA · Continuing through it · And beyond
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
