@@ -35,7 +35,10 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-
+        <div className="rail-note" aria-label="Site philosophy">
+          <span className="rail-note-line" aria-hidden="true" />
+          <p>Better<br />questions.<br />Deeper<br />thinking.<br />A bigger<br />future.</p>
+        </div>
       </aside>
 
       <header className="mobile-header md:hidden">
