@@ -28,8 +28,8 @@ export default async function TopicsPage() {
         </Container>
       </section>
 
-      <section className="flex flex-1 flex-col justify-center">
-        <Container className="py-8">
+      <section>
+        <Container className="py-10 md:py-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {topics.map((t) => {
               const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
