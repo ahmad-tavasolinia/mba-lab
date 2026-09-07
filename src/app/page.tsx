@@ -1,66 +1,102 @@
-import Link from 'next/link';
-import { topics } from '@/lib/topics';
-import { phases, activePhase } from '@/lib/phases';
-import { Container, Eyebrow } from '@/components/ui';
-import JourneyPhases from '@/components/JourneyPhases';
+// src/app/page.tsx
+'use client';
+import Image from 'next/image';
 
-export default async function HomePage() {
-  const currentTopics = topics;
-  const currentPhaseLabel = phases.find((p) => p.slug === activePhase)?.fullLabel ?? '';
-
+export default function Home() {
   return (
-    <div className="flex flex-1 flex-col">
-      {/* Hero */}
-      <section className="flex flex-1 flex-col justify-center border-b border-rule dark:border-dark-rule">
-        <Container className="grid gap-8 py-12 md:grid-cols-[1.3fr,1fr]">
-          <div className="animate-fadeUp">
-            <Eyebrow>Independent study · Business, technology, ideas</Eyebrow>
-            <h1 className="mt-3 font-serif text-5xl font-medium leading-[1.08] tracking-tight text-ink dark:text-dark-ink md:text-6xl">
-              Ahmad Tavasolinia
+    <main className="relative min-h-screen">
+      {/* Hero Background - exact same view as your new image */}
+      <div className="relative h-screen w-full overflow-hidden">
+        <Image
+          src="/images/home-hero.jpg"           // ← place your exact new hero image here
+          alt="Dramatic mountain lake view at dusk"
+          fill
+          priority
+          className="object-cover object-center"
+          quality={100}
+        />
+        
+        {/* Dark overlay for perfect contrast */}
+        <div className="absolute inset-0 bg-black/70" />
+        
+        {/* Floating desk & elements (overlayed on the image) */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* The desk / workspace container */}
+          <div className="absolute bottom-0 left-0 right-0 h-[520px] bg-gradient-to-t from-black/95 via-black/90 to-transparent" />
+          
+          {/* The actual desk */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[980px] h-[420px] bg-zinc-900/90 border border-zinc-700 rounded-3xl overflow-hidden shadow-2xl">
+            
+            {/* Books stack */}
+            <div className="absolute bottom-[90px] left-8 flex flex-col gap-3">
+              <div className="bg-zinc-800 p-4 rounded-2xl shadow-inner">
+                <div className="text-[10px] font-mono text-zinc-400 mb-1">BUSINESS</div>
+                <div className="text-[10px] font-mono text-zinc-400 mb-1">TECHNOLOGY</div>
+                <div className="text-[10px] font-mono text-zinc-400"> text-zinc-400">HUMANITY</div>
+              </div10px] font-mono text-zinc-400">HUMANITY</div>
+              </div>
+              <div className="h-2 w-3 bg-zinc-600 rounded-full" />
+            </div>
+
+            {/* Laptop */}
+            <div className="absolute bottom-[110px] left-1/2 -translate-x-1/2 w-[620px] bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="h-5 bg-zinc-900 flex items-center justify-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+              </div>
+              <div className="aspect-video bg-[radial-gradient(at_center,#27272a_1px,transparent_1px)] bg-[length:20px_20px] relative">
+                <Image
+                  src="/laptop-screen.png"           // optional subtle screen content
+                  alt="Laptop screen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Coffee mug */}
+            <div className="absolute bottom-[165px] left-[110px] w-10 h-12 bg-zinc-800 rounded-xl flex items-center justify-center shadow-inner">
+              <div className="w-6 h-5 bg-zinc-700 rounded-t-xl flex items-end">
+                <div className="w-2 h-2 bg-amber-300 rounded-full" />
+              </div>
+            </div>
+
+            {/* Plant / branch */}
+            <div className="absolute top-12 right-12 w-28 h-28 opacity-30">
+              <Image src="/plant.png" alt="Decorative plant" width={112} height={112} />
+            </div>
+          </div>
+        </div>
+
+        {/* Text overlay - exactly like your new image */}
+        <div className="absolute inset-0 flex flex-col justify-center px-16">
+          <div className="max-w-3xl">
+           0.92] tracking-[-0.04em]">
+              Ideas today.
+0.92] tracking-[-0.04em]">
+              Ideas today.
             </h1>
-            <p className="mt-3 font-serif text-xl italic text-ink/70 dark:text-dark-soft md:text-2xl">
-              Exploring the intersection of business, technology and the future.
-            </p>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/60 dark:text-dark-soft">
-              MBA Lab is my personal intellectual workspace: a place where I study ideas, work
-              through real business cases, write essays and build things. It is an evolving 
-              space where I explore, question, and connect what I learn.
-              Started before my MBA, continuing throughout and beyond it.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Link
-                href="/mba-lab"
-                className="rounded-full bg-ink px-6 py-3 font-mono text-[12px] uppercase tracking-widest text-paper transition hover:bg-gold dark:bg-dark-ink dark:text-dark-bg"
-              >
-                Explore MBA Lab →
-              </Link>
-            </div>
-          </div>
+            <h1 className="text-8xl font-light text-[#c8a35f] leading-[0.92] tracking-[-0.04em]">
+              Impact tomorrow.
+            </h1>
 
-          <div className="flex flex-col justify-between border-t border-rule pt-6 font-mono text-xs text-ink/50 dark:border-dark-rule dark:text-dark-soft/70 md:border-t-0 md:border-l md:pl-10 md:pt-0">
-            <div>
-              <p className="text-[11px] uppercase tracking-widest text-gold">Currently exploring</p>
-              <ul className="mt-3 space-y-2">
-                {currentTopics.map((t) => (
-                  <li key={t.slug} className="flex items-baseline justify-between gap-4">
-                    <Link href={`/topics/${t.slug}`} className="hover:text-gold">
-                      {t.name}
-                    </Link>
-                    <span className="text-ink/30 dark:text-dark-soft/40">{t.code}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="mt-8 max-w-lg text-xl text-zinc-300 font-light">
+              A personal intellectual workspace to study ideas, build knowledge, and prepare for what’s next.
+            </p>
 
-            <div className="mt-6 border-t border-rule pt-5 dark:border-dark-rule">
-              <JourneyPhases />
-              <p className="mt-4 text-[11px] leading-relaxed text-ink/40 dark:text-dark-soft/50">
-                Log started 2026 · {currentPhaseLabel} in progress
-              </p>
-            </div>
+            <button
+              onClick={() => document.getElementById('mba-lab')?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-12 px-10 py-4 border border-white/70 hover:border-white/90 text-white text-lg tracking-widest transition-all hover:bg-white/5"
+            >
+              EXPLORE MBA LAB →
+            </button>
           </div>
-        </Container>
-      </section>
-    </div>
+        </div>
+      </div>
+
+      {/* Rest of your page (sections, courses, lab, etc.) */}
+      {/* ... your existing content ... */}
+    </main>
   );
 }
