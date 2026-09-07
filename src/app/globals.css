@@ -212,7 +212,7 @@ body {
 }
 
 .home-hero-image {
-  background-image: url('/hero-mba-lab.png');
+  /* The actual image URL is injected by page.tsx so GitHub Pages project paths work correctly. */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
