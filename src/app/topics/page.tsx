@@ -14,7 +14,7 @@ export default async function TopicsPage() {
   const labEntries = await getAllLabEntries();
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col page-topics">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-10 md:py-12">
           <Eyebrow>Browse by idea</Eyebrow>
@@ -28,8 +28,8 @@ export default async function TopicsPage() {
         </Container>
       </section>
 
-      <section>
-        <Container className="py-10 md:py-12">
+      <section className="flex flex-1 flex-col justify-center">
+        <Container className="py-8">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {topics.map((t) => {
               const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
