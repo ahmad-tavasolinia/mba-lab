@@ -98,3 +98,7 @@ html.dark .prose-lab h2 {
 html.dark .hr-rule {
   border-top: 1px solid #2c382f;
 }
+h1 {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.04em;
+}
