@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const links = [
   { href: '/mba-lab', label: 'MBA Lab' },
@@ -11,6 +14,9 @@ const links = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === '/') return null;
+
   return (
     <footer className="border-t border-rule dark:border-dark-rule">
       <div className="mx-auto max-w-content px-6 py-5 md:px-10">
