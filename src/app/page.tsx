@@ -37,11 +37,6 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <button className="home-menu" aria-label="Open menu">
-        <span />
-        <span />
-      </button>
-
       <div className="home-journey">
         <JourneyPhases />
       </div>
