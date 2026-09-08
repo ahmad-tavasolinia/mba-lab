@@ -7,7 +7,7 @@ import { useState } from 'react';
 const navItems = [
   { href: '/', label: 'Home', icon: 'home' },
   { href: '/mba-lab', label: 'The Lab', icon: 'lab' },
-  { href: '/topics', label: 'Field Notes', icon: 'pen' },
+  { href: '/topics', label: 'Topics', icon: 'pen' },
   { href: '/courses', label: 'Library', icon: 'book' },
   { href: '/about', label: 'About', icon: 'person' },
   { href: '/cv', label: 'CV', icon: 'file' },
@@ -52,10 +52,6 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="rail-note">
-          <span className="rail-note-rule" />
-          <p>Better<br />questions.<br />Deeper<br />thinking.</p>
-        </div>
       </aside>
 
       <header className="mobile-header md:hidden">
