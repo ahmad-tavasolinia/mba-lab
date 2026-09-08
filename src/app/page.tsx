@@ -7,15 +7,8 @@ export default function HomePage() {
       <div className="home-hero-image" aria-hidden="true" />
       <div className="home-hero-shade" aria-hidden="true" />
 
-      <button type="button" className="home-menu" aria-label="Menu">
-        <span /><span />
-      </button>
-
       <section className="home-copy" aria-labelledby="home-title">
-        <p className="home-eyebrow">
-          <span>MBA LAB</span>
-          <span className="home-eyebrow-line" aria-hidden="true" />
-        </p>
+        <p className="home-eyebrow">MBA LAB</p>
         <h1 id="home-title">
           Ideas today.
           <br />
@@ -29,7 +22,7 @@ export default function HomePage() {
           and prepare for what&apos;s next.
         </p>
         <Link href="/mba-lab" className="home-cta">
-          <span>Explore the Lab</span>
+          <span>Explore MBA Lab</span>
           <span className="home-arrow" aria-hidden="true">→</span>
         </Link>
       </section>

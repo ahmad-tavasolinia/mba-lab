@@ -16,29 +16,18 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
    is only ever visible on the other pages. */
 .site-bg{position:fixed;inset:-60px;z-index:0;background-image:linear-gradient(rgba(5,7,8,.87),rgba(5,7,8,.87)),url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:center;background-size:cover;filter:blur(32px);pointer-events:none}
 
-/* Desktop editorial rail: wordmark + subtitle, icon nav with an active-item
-   dot on the rail's edge, and a closing quote sitting above a soft rock
-   texture at the foot. */
-.site-rail{position:fixed;inset:0 auto 0 0;z-index:50;width:240px;flex-direction:column;overflow:hidden;border-right:1px solid rgba(238,233,223,.10);background:#050708}
+/* Desktop editorial rail — quiet and understated: a serif wordmark, a plain
+   list of links with no icons or numbers, and a small signature line at the
+   foot. No decorative motifs borrowed from elsewhere on the site. */
+.site-rail{position:fixed;inset:0 auto 0 0;z-index:50;width:160px;flex-direction:column;border-right:1px solid rgba(238,233,223,.10);background:#050708}
 
-.rail-brand{position:relative;z-index:1;padding:52px 40px 0}
-.rail-logo{display:block;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:19px;font-weight:500;letter-spacing:.22em;text-decoration:none}
-.rail-sub{margin:8px 0 0;color:rgba(238,233,223,.4);font-family:var(--font-mono),monospace;font-size:9px;letter-spacing:.16em}
-
-.rail-nav{position:relative;z-index:1;display:flex;flex-direction:column;gap:25px;margin-top:34px;padding-left:40px;border-top:1px solid rgba(238,233,223,.10);padding-top:36px}
-.rail-link{position:relative;display:flex;align-items:center;gap:14px;color:rgba(232,228,219,.5);font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;letter-spacing:.01em;text-decoration:none;transition:color .2s ease}
+.rail-nav{display:flex;flex-direction:column;gap:26px;margin-top:64px;padding-left:40px;border-top:1px solid rgba(238,233,223,.08);padding-top:44px}
+.rail-link{display:block;color:rgba(232,228,219,.5);font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;letter-spacing:.01em;text-decoration:none;transition:color .2s ease,padding-left .2s ease}
 .rail-link:hover{color:rgba(238,233,223,.85)}
-.rail-icon{display:flex;align-items:center;justify-content:center;color:inherit}
-.rail-dot{position:absolute;left:-40px;top:50%;width:6px;height:6px;border-radius:50%;background:#d3a16c;opacity:0;transform:translateY(-50%);transition:opacity .2s ease}
-.rail-link.is-active{color:#d9ac78;font-weight:500}
-.rail-link.is-active .rail-dot{opacity:1}
+.rail-link.is-active{padding-left:8px;color:#d3a16c}
 
-.rail-foot{position:relative;z-index:1;margin-top:auto;padding:0 40px 40px}
-.rail-quote{margin:0;padding-top:20px;border-top:1px solid rgba(238,233,223,.14);color:rgba(238,233,223,.5);font-family:var(--font-display),Georgia,serif;font-size:13px;font-style:italic;line-height:1.5}
-.rail-texture{position:absolute;left:0;right:0;bottom:0;z-index:0;height:220px;pointer-events:none;opacity:.5;background:
-  radial-gradient(120% 90% at 0% 100%,rgba(90,78,64,.55),rgba(20,17,14,0) 60%),
-  linear-gradient(200deg,rgba(60,52,44,.5),rgba(5,7,8,0) 55%);
-  clip-path:polygon(0% 100%,0% 55%,9% 48%,16% 58%,24% 42%,33% 52%,42% 36%,52% 50%,63% 40%,74% 55%,86% 46%,100% 60%,100% 100%)}
+.rail-note{position:absolute;left:40px;bottom:48px}
+.rail-note span{display:block;color:rgba(238,233,223,.3);font-family:var(--font-mono),monospace;font-size:10px;letter-spacing:.14em}
 
 .mobile-header{position:fixed;inset:0 0 auto;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid rgba(238,233,223,.10);background:rgba(4,6,7,.90);backdrop-filter:blur(10px)}
 .mobile-mark{color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:29px;letter-spacing:-.08em;text-decoration:none}
@@ -60,12 +49,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 /* Match the reference composition: the copy sits in the open black workspace, not at the edge
    and not centered. At a 1536px-wide reference it begins around x=315px. */
 .home-copy{position:absolute;z-index:2;left:clamp(64px,8vw,140px);top:20vh;width:min(540px,38vw);display:block;padding:0}
-.home-eyebrow{display:flex;align-items:center;gap:18px;margin:0 0 16px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
-.home-eyebrow-line{height:1px;width:64px;background:rgba(211,161,108,.5)}
-
-.home-menu{position:absolute;z-index:4;top:36px;right:clamp(28px,4vw,56px);display:flex;width:36px;height:36px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;background:transparent;cursor:pointer}
-.home-menu span{width:22px;height:1px;background:rgba(238,233,223,.8)}
-@media(max-width:767px){.home-menu{display:none}}
+.home-eyebrow{margin:0 0 16px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
 .home-copy h1{margin:0;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:clamp(42px,3.6vw,64px);font-weight:400;line-height:.98;letter-spacing:-.04em;text-wrap:balance}
 .home-copy h1 em{color:#d19b63;font-style:normal}
 .home-description{margin:18px 0 0;color:rgba(239,234,225,.62);font-size:15px;line-height:1.6;letter-spacing:.1em}
@@ -86,13 +70,14 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .home-journey .text-gold{color:#d3a16c}.home-journey .border-gold{border-color:#d3a16c}.home-journey .bg-gold\/15{background:rgba(211,161,108,.15)}
 
 @media(max-width:767px){
+ .rail-note{display:none}
  .home-journey{left:24px;right:24px;bottom:24px;padding:16px 18px}
  .home-journey > div > div{overflow-x:auto;padding-bottom:4px}.home-journey .group{min-width:140px}
  .home-journey .group > span:first-child{width:36px;height:36px;font-size:10px}.home-journey .group > span:nth-child(2){font-size:9px}
 }
 
 main{min-width:0}
-@media(min-width:768px){body > div > main{margin-left:240px}}
+@media(min-width:768px){body > div > main{margin-left:160px}}
 
 /* Compact non-home pages: don't vertically center catalog content. */
 body > div > main > div.flex-1.flex-col > section.flex-1.flex-col.justify-center{justify-content:flex-start}
@@ -115,4 +100,49 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
  .home-copy{left:28px;right:28px;top:112px;width:auto}
  .home-copy h1{font-size:clamp(49px,15vw,72px)}
  .home-description{font-size:13px;letter-spacing:.11em}
+}
+
+/* -------------------------------------------------------------------------
+   Homepage — reference-locked composition
+   ------------------------------------------------------------------------- */
+.site-rail-home{width:276px;background:#050606;border-right:1px solid rgba(238,233,223,.10)}
+.site-rail-home .home-rail-brand{position:absolute;left:58px;top:84px;color:#eadfcf;font-family:var(--font-display),Georgia,serif;letter-spacing:.34em;font-size:17px;line-height:1}
+.site-rail-home .home-rail-brand span{display:block;margin-top:13px;color:rgba(238,233,223,.48);font-family:var(--font-mono),monospace;font-size:9px;letter-spacing:.26em}
+.site-rail-home .home-rail-brand i{display:block;width:40px;height:1px;margin-top:35px;background:#a87947}
+.site-rail-home .rail-nav{margin:0;padding:198px 0 0 58px;border:0;gap:0}
+.site-rail-home .rail-link{position:relative;display:flex;align-items:center;gap:23px;height:55px;padding:0;color:rgba(238,233,223,.48);font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;letter-spacing:.10em;transition:color .2s ease}
+.site-rail-home .rail-link:hover{color:#e8ddcd}
+.site-rail-home .rail-link.is-active{padding-left:0;color:#d6a269}
+.site-rail-home .rail-link.is-active:before{content:"";position:absolute;left:-29px;top:0;width:1px;height:55px;background:#d3a16c}
+.site-rail-home .rail-link.is-active:after{content:"";position:absolute;left:-33px;top:25px;width:8px;height:8px;border-radius:50%;background:#d3a16c;box-shadow:0 0 0 1px rgba(211,161,108,.2)}
+.site-rail-home .rail-icon{width:22px;height:22px;display:grid;place-items:center;color:rgba(238,233,223,.72);font-style:normal}
+.site-rail-home .rail-link.is-active .rail-icon{color:#d3a16c}
+.rail-note-home{position:absolute;left:58px;bottom:54px;color:rgba(238,233,223,.72);font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;line-height:1.38}
+.rail-note-home span{display:block}
+.home-menu{position:fixed;z-index:70;top:44px;right:76px;width:46px;height:30px;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0;cursor:pointer}
+.home-menu span{display:block;width:45px;height:1px;background:rgba(238,233,223,.60)}
+
+.home-hero{min-height:100svh;height:100svh;margin:0;background:#050606}
+.home-hero-image{background-image:url('/hero-mba-lab.png');background-position:right top;background-size:auto 100%;}
+.home-hero-shade{background:linear-gradient(90deg,rgba(3,5,6,0) 0%,rgba(3,5,6,0) 100%)}
+.home-copy{left:356px;top:168px;width:540px}
+.home-eyebrow{margin-bottom:29px;color:#d6a269;font-size:13px;letter-spacing:.43em}
+.home-copy h1{font-size:66px;line-height:.99;letter-spacing:-.045em}
+.home-copy h1 em{color:#d5a06a;font-style:italic}
+.home-description{margin-top:35px;color:rgba(239,234,225,.70);font-size:16px;line-height:1.55;letter-spacing:.035em}
+.home-cta{margin-top:34px;padding-bottom:14px;gap:25px;color:#e8dfd4;font-size:11px;letter-spacing:.30em;border-bottom-color:#c48d55}
+.home-cta:hover{gap:31px}
+.home-journey{left:356px;right:auto;width:906px;bottom:53px;padding:28px 0 0;border-top-color:rgba(238,233,223,.26);background:transparent}
+.home-journey > div > p{margin-bottom:25px;font-size:11px;letter-spacing:.33em}
+.home-journey > div > div{align-items:flex-start}
+.home-journey .group{min-width:78px}
+.home-journey .group > span:first-child{width:54px;height:54px;font-size:11px}
+.home-journey .group > span:nth-child(2){margin-top:14px;font-size:10px;letter-spacing:.23em}
+.home-journey .flex-1 > span{margin-top:27px;margin-left:16px;margin-right:16px;background:rgba(238,233,223,.26)}
+
+@media(max-width:767px){
+ .home-menu{display:none}
+ .home-copy{left:28px;top:112px;width:auto}
+ .home-hero-image{background-size:auto 100%;background-position:right top}
+ .home-journey{left:24px;right:24px;width:auto;bottom:24px}
 }
