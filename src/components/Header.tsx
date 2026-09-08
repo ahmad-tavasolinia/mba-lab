@@ -26,9 +26,6 @@ export default function Header() {
   return (
     <>
       <aside className="site-rail hidden md:flex" aria-label="Primary navigation">
-        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">
-          MBA<br />Lab
-        </Link>
         <nav className="rail-nav">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={`rail-link ${isActive(item.href) ? 'is-active' : ''}`}>
