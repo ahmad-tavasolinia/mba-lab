@@ -36,8 +36,8 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
   background-color:#050607;
   background-image:url('/mba-lab/rail-texture.png');
   background-repeat:no-repeat;
-  background-position:left top;
-  background-size:100% auto;
+  background-position:center bottom;
+  background-size:cover;
 }
 
 .rail-brand{ position:absolute; top:86px; left:21.2%; right:auto; margin:0; }
@@ -116,7 +116,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .rail-icon{ width:25px; height:25px; display:grid; place-items:center; flex:0 0 25px; color:inherit; }
 .rail-icon svg{ width:24px; height:24px; }
 
-.rail-note{ position:absolute; left:21.2%; bottom:170px; margin:0; }
+.rail-note{ position:absolute; left:21.2%; top:68%; bottom:auto; margin:0; }
 .rail-note-rule{ display:block; width:40px; height:1px; margin-bottom:27px; background:#bd8b56; }
 .rail-note p{
   margin:0;
@@ -133,7 +133,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
   .rail-nav{ top:196px; gap:17px; }
   .rail-link,
   .rail-link.is-active{ min-height:28px; }
-  .rail-note{ bottom:34px; }
+  .rail-note{ top:auto; bottom:34px; }
   .rail-note-rule{ margin-bottom:18px; }
 }
 
@@ -276,12 +276,12 @@ body:has(.home-hero) main { height:100dvh; min-height:0; }
 .home-journey .group > span:first-child{
   width:54px;
   height:54px;
-  border-color:rgba(238,233,223,.40);
-  background:rgba(5,7,8,.24);
+  border-color:rgba(238,233,223,.55);
+  background:rgba(5,7,8,.55);
   font-size:11px;
 }
 .home-journey .group > span:nth-child(2){ margin-top:14px; font-size:10px; letter-spacing:.20em; }
-.home-journey .flex-1 > span{ margin:27px 26px 0; background:rgba(238,233,223,.30); }
+.home-journey .flex-1 > span{ margin:27px 26px 0; height:1.5px; background:rgba(238,233,223,.55); box-shadow:0 0 6px rgba(0,0,0,.6); }
 .home-journey .journey-number-active{ border-color:#d3a16c!important; color:#e8bd8a!important; background:rgba(211,161,108,.10)!important; box-shadow:0 0 0 5px rgba(211,161,108,.04),0 0 20px rgba(211,161,108,.16); }
 .home-journey .journey-label-active{ color:#d3a16c!important; }
 
