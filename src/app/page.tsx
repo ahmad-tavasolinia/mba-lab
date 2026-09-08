@@ -1,10 +1,18 @@
 import Link from 'next/link';
 import JourneyPhases from '@/components/JourneyPhases';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function HomePage() {
   return (
     <div className="home-hero">
-      <div className="home-hero-image" aria-hidden="true" />
+      {/* Use a real img element so GitHub Pages' /mba-lab base path cannot break the hero asset. */}
+      <img
+        className="home-hero-image"
+        src={`${basePath}/hero-mba-lab.png`}
+        alt=""
+        aria-hidden="true"
+      />
       <div className="home-hero-shade" aria-hidden="true" />
 
       <section className="home-copy" aria-labelledby="home-title">
@@ -16,16 +24,22 @@ export default function HomePage() {
         </h1>
         <p className="home-description">
           A personal intellectual workspace
-          <br className="hidden sm:block" />
+          <br />
           to study ideas, build knowledge,
-          <br className="hidden sm:block" />
+          <br />
           and prepare for what&apos;s next.
         </p>
         <Link href="/mba-lab" className="home-cta">
-          <span>Explore MBA Lab</span>
+          <span>Explore the Lab</span>
           <span className="home-arrow" aria-hidden="true">→</span>
         </Link>
       </section>
+
+      <button className="home-menu" aria-label="Open menu">
+        <span />
+        <span />
+      </button>
+
       <div className="home-journey">
         <JourneyPhases />
       </div>
