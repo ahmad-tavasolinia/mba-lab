@@ -6,7 +6,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 export default function HomePage() {
   return (
     <div className="home-hero">
-      {/* Use a real img element so GitHub Pages' /mba-lab base path cannot break the hero asset. */}
       <img
         className="home-hero-image"
         src={`${basePath}/hero-mba-lab.png`}
@@ -17,18 +16,21 @@ export default function HomePage() {
 
       <section className="home-copy" aria-labelledby="home-title">
         <p className="home-eyebrow">MBA LAB</p>
+
         <h1 id="home-title">
           Ideas today.
           <br />
           Impact <em>tomorrow.</em>
         </h1>
+
         <p className="home-description">
           A personal intellectual workspace
           <br />
           to study ideas, build knowledge,
           <br />
-          and prepare for what&apos;s next.
+          and prepare for what's next.
         </p>
+
         <Link href="/mba-lab" className="home-cta">
           <span>Explore the Lab</span>
           <span className="home-arrow" aria-hidden="true">→</span>
