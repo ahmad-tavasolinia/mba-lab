@@ -10,7 +10,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 :focus-visible { outline:1px solid #c8965d; outline-offset:4px; }
 
 /* Desktop editorial rail */
-.site-rail{position:fixed;inset:0 auto 0 0;z-index:50;width:151px;display:flex;flex-direction:column;border-right:1px solid rgba(238,233,223,.10);background:#050708}
+.site-rail{position:fixed;inset:0 auto 0 0;z-index:50;width:151px;flex-direction:column;border-right:1px solid rgba(238,233,223,.10);background:#050708}
 .rail-mark{display:block;padding:50px 0 0 67px;color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:34px;line-height:1;letter-spacing:-.07em;text-decoration:none}
 .rail-nav{display:flex;flex-direction:column;gap:25px;margin-top:88px;padding-left:43px}
 .rail-link{position:relative;display:flex;align-items:center;gap:16px;color:rgba(232,228,219,.56);font-family:var(--font-mono),monospace;font-size:12px;letter-spacing:.10em;text-transform:uppercase;text-decoration:none;transition:color .18s ease}
@@ -35,17 +35,17 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .home-hero{position:relative;min-height:100svh;overflow:hidden;background:#050708}
 /* The supplied artwork is already composed for the desktop hero. Keep its native 1385×1024
    geometry and pin it to the right. Never use cover: cover is what caused the chair/window to zoom. */
-.home-hero-image{position:absolute;inset:0;z-index:0;background-image:url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:right top;background-size:1385px 1024px}
+.home-hero-image{position:absolute;inset:0;z-index:0;background-image:url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:right top;background-size:contain}
 .home-hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,5,6,.02) 0%,rgba(3,5,6,0) 48%,rgba(3,5,6,.02) 100%)}
 
 /* Match the reference composition: the copy sits in the open black workspace, not at the edge
    and not centered. At a 1536px-wide reference it begins around x=315px. */
 .home-copy{position:absolute;z-index:2;left:clamp(64px,8vw,140px);top:20vh;width:min(540px,38vw);display:block;padding:0}
-.home-eyebrow{margin:0 0 23px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
+.home-eyebrow{margin:0 0 16px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
 .home-copy h1{margin:0;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:clamp(42px,3.6vw,64px);font-weight:400;line-height:.98;letter-spacing:-.04em;text-wrap:balance}
 .home-copy h1 em{color:#d19b63;font-style:normal}
-.home-description{margin:33px 0 0;color:rgba(239,234,225,.62);font-size:15px;line-height:1.95;letter-spacing:.16em}
-.home-cta{display:inline-flex;width:fit-content;align-items:center;gap:23px;margin-top:45px;padding-bottom:15px;border-bottom:1px solid #bd8b56;color:#eee9df;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;transition:.18s ease}
+.home-description{margin:18px 0 0;color:rgba(239,234,225,.62);font-size:15px;line-height:1.6;letter-spacing:.1em}
+.home-cta{display:inline-flex;width:fit-content;align-items:center;gap:23px;margin-top:28px;padding-bottom:15px;border-bottom:1px solid #bd8b56;color:#eee9df;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;transition:.18s ease}
 .home-cta:hover{color:#d2a06c;gap:29px}.home-arrow{font-size:18px;line-height:.5;letter-spacing:0}
 
 /* The journey is a central idea of MBA Lab, so it belongs in the main composition. */
