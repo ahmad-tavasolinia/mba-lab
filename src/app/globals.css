@@ -446,3 +446,30 @@ main { margin-left: var(--rail-width); }
     margin-bottom: 18px;
   }
 }
+
+/* ===== Final homepage viewport fit ===== */
+html:has(.home-hero),
+body:has(.home-hero) {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body:has(.home-hero) main {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-hero {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+/* The reference has no functional menu mark in the top-right. */
+.home-menu {
+  display: none !important;
+}
