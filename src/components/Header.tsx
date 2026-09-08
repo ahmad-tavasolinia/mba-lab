@@ -26,18 +26,20 @@ export default function Header() {
   return (
     <>
       <aside className="site-rail hidden md:flex" aria-label="Primary navigation">
-        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">AT</Link>
+        <Link href="/" className="rail-mark" aria-label="Ahmad Tavasolinia — Home">
+          <span>AT</span>
+        </Link>
         <nav className="rail-nav">
-          {navItems.map((item) => (
+          <span className="rail-spine" aria-hidden="true" />
+          {navItems.map((item, i) => (
             <Link key={item.href} href={item.href} className={`rail-link ${isActive(item.href) ? 'is-active' : ''}`}>
-              <span className="rail-dot" aria-hidden="true" />
+              <span className="rail-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <span>{item.label}</span>
             </Link>
           ))}
         </nav>
         <div className="rail-note" aria-label="Site philosophy">
-          <span className="rail-note-line" aria-hidden="true" />
-          <p>Better<br />questions.<br />Deeper<br />thinking.<br />A bigger<br />future.</p>
+          <span>MBA LAB · INDEPENDENT STUDY</span>
         </div>
       </aside>
 
