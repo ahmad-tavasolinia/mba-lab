@@ -333,102 +333,87 @@ main { margin-left: var(--rail-width); }
   .home-menu { top:25px; right:22px; }
 }
 
+/* ===== Sidebar: preserve the reference composition at every desktop viewport ===== */
+@media (min-width: 768px) {
+  :root { --rail-width: 16.507vw; }
 
-/* ===== Sidebar precision pass — matched to the supplied 279×941 reference ===== */
-.site-rail {
-  width: var(--rail-width);
-  overflow: hidden;
-  background-color: #050607;
-  background-image: url('/mba-lab/rail-texture.png');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% auto;
+  .site-rail {
+    width: var(--rail-width);
+    height: 100dvh;
+    min-height: 0;
+    background-color: #050607;
+    background-image: url('/mba-lab/rail-texture.png');
+    background-repeat: no-repeat;
+    /* Preserve the artwork's aspect ratio.  In a normal browser window the
+       top of the texture may crop slightly; the mountain remains anchored to
+       the bottom and is never vertically stretched. */
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  /* Reference coordinates are expressed as viewport proportions rather than
+     fixed pixels, so F11 and normal desktop windows keep the same composition. */
+  .rail-brand {
+    top: 9.14vh;
+    left: 21.0%;
+    right: 18%;
+  }
+
+  .rail-title { font-size: clamp(20px, 1.45vw, 26px); }
+
+  .rail-nav {
+    top: 21.47vh;
+    gap: 2.45vh;
+    padding-left: 10.8%;
+    padding-right: 12%;
+  }
+
+  /* The reference has a quiet vertical guide beside the navigation.  The
+     active Home state is the brighter gold segment laid over it. */
+  .rail-nav::before {
+    content: '';
+    position: absolute;
+    left: 10.8%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(238,233,223,.16);
+    pointer-events: none;
+  }
+
+  .rail-link {
+    min-height: 30px;
+    gap: 20px;
+  }
+
+  .rail-link.is-active::before {
+    z-index: 2;
+    left: 0;
+    top: -8px;
+    height: 46px;
+    background: #d3a16c;
+  }
+
+  .rail-link.is-active::after {
+    z-index: 3;
+  }
+
+  /* Keep the quote clearly above the mountain artwork, as in the reference. */
+  .rail-note {
+    left: 21.0%;
+    bottom: clamp(88px, 19.5vh, 150px);
+  }
+
+  .rail-note-rule {
+    width: 40px;
+    margin-bottom: 22px;
+  }
 }
 
-.rail-brand {
-  top: 86px;
-  left: 21.2%;
-  right: auto;
-}
-
-.rail-title {
-  font-size: 21px;
-  line-height: 1;
-  letter-spacing: .30em;
-}
-
-.rail-name {
-  margin-top: 12px;
-  font-size: 8px;
-  letter-spacing: .24em;
-}
-
-.rail-rule {
-  width: 40px;
-  height: 1px;
-  margin-top: 33px;
-}
-
-.rail-nav {
-  top: 214px;
-  left: 0;
-  right: 0;
-  padding: 0;
-  gap: 26px;
-}
-
-.rail-link {
-  min-height: 30px;
-  padding-left: 21.2%;
-  gap: 25px;
-  font-size: 15px;
-  line-height: 1;
-  letter-spacing: .045em;
-}
-
-.rail-link.is-active {
-  padding-left: 21.2%;
-}
-
-.rail-link.is-active::before {
-  left: 10.4%;
-  top: -8px;
-  height: 46px;
-}
-
-.rail-link.is-active::after {
-  left: calc(10.4% - 3px);
-  top: 13px;
-}
-
-.rail-icon {
-  width: 25px;
-  height: 25px;
-  flex-basis: 25px;
-}
-
-.rail-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.rail-note {
-  left: 21.2%;
-  bottom: 170px;
-}
-
-.rail-note-rule {
-  width: 40px;
-  height: 1px;
-  margin-bottom: 27px;
-}
-
-.rail-note p {
-  font-size: 15px;
-  line-height: 1.16;
-}
-
-/* The decorative hamburger icon stays hidden. */
-.home-menu {
-  display: none !important;
+@media (max-width: 767px) {
+  /* Never distort the hero artwork on phones. */
+  .home-hero-image {
+    object-fit: cover;
+    object-position: 72% center;
+  }
 }
