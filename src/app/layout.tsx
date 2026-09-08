@@ -53,7 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
       </head>
       <body className="font-sans antialiased">
-        <div className="flex min-h-screen flex-col">
+        <div className="site-bg" aria-hidden="true" />
+        <div className="relative z-[1] flex min-h-screen flex-col">
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
