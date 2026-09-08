@@ -9,6 +9,13 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 ::selection { background:#c8965d; color:#090a0a; }
 :focus-visible { outline:1px solid #c8965d; outline-offset:4px; }
 
+/* Global backdrop: the same hero artwork, heavily blurred and darkened, sitting
+   behind every page's content. Oversized (negative inset) so the blur's own
+   soft edge falls outside the viewport instead of leaving a visible seam.
+   The homepage's own sharp hero paints an opaque layer on top of this, so it
+   is only ever visible on the other pages. */
+.site-bg{position:fixed;inset:-60px;z-index:0;background-image:linear-gradient(rgba(5,7,8,.87),rgba(5,7,8,.87)),url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:center;background-size:cover;filter:blur(32px);pointer-events:none}
+
 /* Desktop editorial rail — quiet and understated: a serif wordmark, a plain
    list of links with no icons or numbers, and a small signature line at the
    foot. No decorative motifs borrowed from elsewhere on the site. */
