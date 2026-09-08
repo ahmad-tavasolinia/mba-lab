@@ -720,3 +720,140 @@ body:has(.home-hero) main {
   main{margin-left:0!important}
   .home-menu{display:none!important}
 }
+/* ===========================
+   JOURNEY — REFERENCE VERSION
+   =========================== */
+
+.journey-wrapper{
+  width:100%;
+}
+
+.journey-title{
+  margin:0 0 26px;
+  color:#C99660;
+  font-family:var(--font-mono),monospace;
+  font-size:11px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+}
+
+.journey-track{
+  display:flex;
+  align-items:flex-start;
+}
+
+.journey-step{
+  display:flex;
+  align-items:flex-start;
+  flex:1;
+}
+
+.journey-step.last{
+  flex:0;
+}
+
+.journey-phase{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+
+.journey-circle{
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+  border:1px solid rgba(238,233,223,.36);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:var(--font-mono),monospace;
+  font-size:11px;
+  letter-spacing:.12em;
+
+  background:rgba(8,10,11,.30);
+
+  transition:.25s ease;
+}
+
+.journey-name{
+  margin-top:14px;
+
+  color:rgba(238,233,223,.42);
+
+  font-family:var(--font-mono),monospace;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.journey-line{
+  flex:1;
+  height:1px;
+  margin:27px 26px 0;
+  background:rgba(238,233,223,.24);
+}
+
+.journey-line.filled{
+  background:#C99660;
+}
+
+.journey-phase.active .journey-circle{
+  border-color:#C99660;
+  color:#F4E2C9;
+  background:rgba(201,150,96,.12);
+  box-shadow:
+    0 0 0 5px rgba(201,150,96,.04),
+    0 0 24px rgba(201,150,96,.20);
+}
+
+.journey-phase.active .journey-name{
+  color:#C99660;
+}
+
+.journey-phase.complete .journey-circle{
+  border-color:#C99660;
+  color:#F4E2C9;
+  background:rgba(201,150,96,.10);
+}
+
+.journey-phase.complete .journey-name{
+  color:rgba(238,233,223,.78);
+}
+
+.journey-phase.upcoming:hover .journey-circle{
+  border-color:#C99660;
+}
+
+.journey-phase.upcoming:hover .journey-name{
+  color:#C99660;
+}
+
+@media (max-width:768px){
+
+  .journey-track{
+    overflow-x:auto;
+    padding-bottom:6px;
+  }
+
+  .journey-step{
+    flex:0 0 150px;
+  }
+
+  .journey-circle{
+    width:44px;
+    height:44px;
+    font-size:10px;
+  }
+
+  .journey-line{
+    margin-top:22px;
+  }
+
+}
+
