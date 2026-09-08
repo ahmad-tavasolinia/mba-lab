@@ -542,3 +542,93 @@ body:has(.home-hero) main {
     margin-top: 21px;
   }
 }
+
+/* ================================================================
+   SIDEBAR — TRUE VIEWPORT FIT
+   Keep the complete desktop rail visible in a normal Chrome window,
+   not only in F11. The artwork and the navigation scale with the
+   actual visible viewport height.
+   ================================================================ */
+@media (min-width: 768px) {
+  .site-rail {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    /* Show the complete supplied 279×941 sidebar artwork in the available
+       rail instead of letting the lower mountain fall below the viewport. */
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+
+  /* Use viewport-relative vertical positions so Chrome's normal-height
+     window and F11 preserve the same complete composition. */
+  .rail-brand {
+    top: 9.0vh;
+  }
+
+  .rail-nav {
+    top: 22.0vh;
+    gap: clamp(10px, 2.35vh, 24px);
+  }
+
+  .rail-link,
+  .rail-link.is-active {
+    min-height: clamp(25px, 4.25vh, 40px);
+  }
+
+  .rail-link.is-active::before {
+    top: clamp(-6px, -0.9vh, -4px);
+    height: clamp(38px, 6.8vh, 46px);
+  }
+
+  .rail-link.is-active::after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .rail-note {
+    left: 21.2%;
+    bottom: 4.0vh;
+  }
+
+  .rail-note-rule {
+    margin-bottom: clamp(14px, 2.4vh, 27px);
+  }
+}
+
+/* Short normal desktop windows: give the navigation a little more room
+   without changing its visual hierarchy. */
+@media (min-width: 768px) and (max-height: 720px) {
+  .rail-brand {
+    top: 8.2vh;
+  }
+
+  .rail-nav {
+    top: 21.0vh;
+    gap: clamp(8px, 1.9vh, 16px);
+  }
+
+  .rail-link,
+  .rail-link.is-active {
+    min-height: 26px;
+  }
+
+  .rail-icon,
+  .rail-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .rail-link {
+    font-size: 14px;
+    gap: 22px;
+  }
+
+  .rail-note {
+    bottom: 3.0vh;
+  }
+
+  .rail-note p {
+    font-size: 14px;
+  }
+}
