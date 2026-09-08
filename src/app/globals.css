@@ -40,16 +40,16 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 
 /* Match the reference composition: the copy sits in the open black workspace, not at the edge
    and not centered. At a 1536px-wide reference it begins around x=315px. */
-.home-copy{position:absolute;z-index:2;left:clamp(260px,20.5vw,315px);top:25.5vh;width:min(540px,38vw);display:block;padding:0}
+.home-copy{position:absolute;z-index:2;left:clamp(64px,8vw,140px);top:20vh;width:min(540px,38vw);display:block;padding:0}
 .home-eyebrow{margin:0 0 23px;color:rgba(242,237,228,.92);font-family:var(--font-mono),monospace;font-size:13px;letter-spacing:.36em}
-.home-copy h1{margin:0;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:clamp(56px,5.1vw,88px);font-weight:400;line-height:.94;letter-spacing:-.045em;text-wrap:balance}
+.home-copy h1{margin:0;color:#f2eee7;font-family:var(--font-display),Georgia,serif;font-size:clamp(42px,3.6vw,64px);font-weight:400;line-height:.98;letter-spacing:-.04em;text-wrap:balance}
 .home-copy h1 em{color:#d19b63;font-style:normal}
 .home-description{margin:33px 0 0;color:rgba(239,234,225,.62);font-size:15px;line-height:1.95;letter-spacing:.16em}
 .home-cta{display:inline-flex;width:fit-content;align-items:center;gap:23px;margin-top:45px;padding-bottom:15px;border-bottom:1px solid #bd8b56;color:#eee9df;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;transition:.18s ease}
 .home-cta:hover{color:#d2a06c;gap:29px}.home-arrow{font-size:18px;line-height:.5;letter-spacing:0}
 
 /* The journey is a central idea of MBA Lab, so it belongs in the main composition. */
-.home-journey{position:absolute;z-index:3;left:clamp(300px,23.5vw,360px);right:clamp(44px,6vw,92px);bottom:64px;padding:20px 28px 22px;border-top:1px solid rgba(238,233,223,.24);background:linear-gradient(90deg,rgba(5,7,8,.42),rgba(5,7,8,.18) 72%,rgba(5,7,8,.04));backdrop-filter:blur(2px)}
+.home-journey{position:absolute;z-index:3;left:clamp(64px,8vw,140px);right:clamp(44px,6vw,92px);bottom:56px;padding:18px 24px 20px;border-top:1px solid rgba(238,233,223,.24);background:rgba(5,7,8,.55)}
 .home-journey > div > p{margin:0 0 18px;color:#d3a16c;font-family:var(--font-mono),monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase}
 .home-journey > div > div{margin-top:0;display:flex;align-items:flex-start;width:100%}
 .home-journey .group{min-width:190px;align-items:flex-start}
