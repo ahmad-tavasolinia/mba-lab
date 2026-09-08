@@ -9,17 +9,25 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 ::selection { background:#c8965d; color:#090a0a; }
 :focus-visible { outline:1px solid #c8965d; outline-offset:4px; }
 
-/* Desktop editorial rail */
+/* Desktop editorial rail — an "index" design: numbered nav items strung along
+   a thin vertical spine, echoing the numbered-circle journey visual used on
+   the homepage, so the nav and the homepage share one visual language. */
 .site-rail{position:fixed;inset:0 auto 0 0;z-index:50;width:151px;flex-direction:column;border-right:1px solid rgba(238,233,223,.10);background:#050708}
-.rail-mark{display:block;padding:50px 0 0 67px;color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:34px;line-height:1;letter-spacing:-.07em;text-decoration:none}
-.rail-nav{display:flex;flex-direction:column;gap:25px;margin-top:88px;padding-left:43px}
-.rail-link{position:relative;display:flex;align-items:center;gap:16px;color:rgba(232,228,219,.56);font-family:var(--font-mono),monospace;font-size:12px;letter-spacing:.10em;text-transform:uppercase;text-decoration:none;transition:color .18s ease}
-.rail-link:hover,.rail-link.is-active{color:#d3a16c}
-.rail-dot{width:5px;height:5px;margin-left:-21px;border-radius:50%;background:transparent}
-.rail-link.is-active .rail-dot{background:#d3a16c;box-shadow:0 0 7px rgba(211,161,108,.7)}
-.rail-note{position:absolute;left:64px;bottom:58px;color:rgba(238,233,223,.58)}
-.rail-note-line{display:block;width:1px;height:22px;margin-bottom:15px;background:rgba(238,233,223,.35)}
-.rail-note p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:14px;font-style:italic;line-height:1.55;letter-spacing:.01em}
+
+.rail-mark{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:46px 0 0 44px;border:1px solid rgba(211,161,108,.45);border-radius:50%;color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:15px;letter-spacing:-.03em;text-decoration:none;transition:border-color .2s ease,box-shadow .2s ease}
+.rail-mark:hover{border-color:#d3a16c;box-shadow:0 0 0 4px rgba(211,161,108,.08)}
+
+.rail-nav{position:relative;display:flex;flex-direction:column;gap:27px;margin-top:76px;padding-left:44px}
+.rail-spine{position:absolute;top:6px;bottom:6px;left:52px;width:1px;background:rgba(238,233,223,.14)}
+.rail-link{position:relative;display:flex;align-items:baseline;gap:14px;color:rgba(232,228,219,.5);font-family:var(--font-mono),monospace;font-size:12px;letter-spacing:.10em;text-transform:uppercase;text-decoration:none;transition:color .18s ease}
+.rail-link:hover{color:rgba(238,233,223,.85)}
+.rail-link.is-active{color:#d3a16c}
+.rail-index{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:17px;height:17px;margin-left:-1px;border-radius:50%;background:#050708;color:rgba(232,228,219,.4);font-size:9px;letter-spacing:0;transition:color .18s ease,box-shadow .18s ease}
+.rail-link:hover .rail-index{color:rgba(238,233,223,.8)}
+.rail-link.is-active .rail-index{color:#050708;background:#d3a16c;box-shadow:0 0 10px rgba(211,161,108,.55)}
+
+.rail-note{position:absolute;left:0;bottom:0;display:flex;align-items:center;justify-content:center;width:100%;height:120px;border-top:1px solid rgba(238,233,223,.10)}
+.rail-note span{display:block;color:rgba(238,233,223,.32);font-family:var(--font-mono),monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;white-space:nowrap;transform:rotate(-90deg)}
 
 .mobile-header{position:fixed;inset:0 0 auto;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid rgba(238,233,223,.10);background:rgba(4,6,7,.90);backdrop-filter:blur(10px)}
 .mobile-mark{color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:29px;letter-spacing:-.08em;text-decoration:none}
