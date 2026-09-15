@@ -4,7 +4,7 @@ date: "2026-08-23"
 code: "MBA·LAB·16"
 journeyPhase: "phase-1"
 category: "essays"
-topics: ["finance"]
+topics: ["finance", "artificial-intelligence"]
 summary: "Why I chose this as the first course before my MBA — and what it means to treat markets as a living ecosystem instead of a rational calculator."
 centralQuestion: "If financial markets are neither fully rational nor fully irrational, but constantly adapting like a biological ecosystem, what does that actually demand of a decision-maker?"
 keyIdeas:
