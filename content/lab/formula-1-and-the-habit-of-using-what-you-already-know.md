@@ -1,7 +1,7 @@
 ---
 title: "Formula 1 and the Habit of Using What You Already Know"
 date: "2026-09-07"
-code: "MBA·STRAT·10"
+code: "MBA·LAB·17"
 journeyPhase: "phase-1"
 category: "cases"
 topics: ["strategy"]

@@ -1,7 +1,7 @@
 ---
 title: "Venture Southeast Asia and the Melting Ice Cube"
 date: "2026-08-22"
-code: "MBA·FIN·04"
+code: "MBA·LAB·12"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["finance", "strategy"]

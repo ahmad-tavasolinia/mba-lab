@@ -1,7 +1,7 @@
 ---
 title: "ESPN and the Question Underneath the Question"
 date: "2026-08-22"
-code: "MBA·STRAT·08"
+code: "MBA·LAB·03"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["strategy", "technology"]

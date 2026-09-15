@@ -1,7 +1,7 @@
 ---
 title: "Old Spice and the Answer That Was Already on the Table"
 date: "2026-08-22"
-code: "MBA·MKT·13"
+code: "MBA·LAB·07"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]

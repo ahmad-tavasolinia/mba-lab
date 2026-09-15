@@ -1,7 +1,7 @@
 ---
 title: "The Ripening Chemical and the Case for Moving First"
 date: "2026-08-22"
-code: "MBA·STRAT·09"
+code: "MBA·LAB·11"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["strategy", "finance"]

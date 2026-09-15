@@ -1,7 +1,7 @@
 ---
 title: "Real Burger World and the Contradiction Built Into the Name"
 date: "2026-08-22"
-code: "MBA·STRAT·07"
+code: "MBA·LAB·10"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["entrepreneurship", "strategy"]

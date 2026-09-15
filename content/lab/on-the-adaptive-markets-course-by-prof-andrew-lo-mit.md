@@ -1,7 +1,7 @@
 ---
-title: "On the Adaptive Markets Course by Prof. Andrew Lo, MIT"
+title: "The Environment Matters More Than the Model"
 date: "2026-08-23"
-code: "MBA·FIN·05"
+code: "MBA·LAB·15"
 journeyPhase: "phase-1"
 category: "essays"
 topics: ["finance"]
@@ -19,17 +19,17 @@ openQuestions:
 finalPerspective: "More than learning another financial model, the real lesson was learning how to recognize the environment, understand human behavior, understand my own reactions, and adapt when the rules of the game change."
 sources: ["mit-adaptive-markets"]
 ---
-To me, this course is particularly important in today's world, which we can call the age of AI. Everything is changing rapidly, and even before we get the chance to fully understand and internalize something, it can already be long gone. The market is also following the same trend, especially with the advent of AI. I chose this course as the first course I attended before starting my MBA because I wanted to instill an adaptive mindset in myself from the very beginning.
-
 ## Markets as a living ecosystem, not a calculator
 
-The premise of many economic models is Homo economicus, meaning that people in the market make their decisions completely based on rationality, logic, and self-interest. However, I think everyone has made economic decisions in their lives that they would not consider rational, or at least we all know someone who has. So we know that people are not always rational when it comes to economic decisions. There are other factors involved, such as fear, greed, and jealousy. Therefore, if we consider the market to be an emotionless calculator, we are mistaken. It is much more like a living biological ecosystem.
+The premise of many economic models is Homo economicus, meaning that people in the market make their decisions completely based on rationality, logic, and self-interest. However, I think everyone has made economic decisions in their lives that they would not consider rational, or at least we all know someone who has. So we know that people are not always rational when it comes to economic decisions. There are other factors involved, such as fear, greed, and jealousy.
 
-People are neither completely rational nor completely irrational; financial markets are constantly adapting. Just like in nature, everyone is trying to survive, avoid danger, and find different ways to deal with changing circumstances through trial and error. They learn, and they adapt. So yes, there are times when the market behaves like the rational market described in classic economic models. But this usually lasts only until a major shock enters the system. Then, we can see those classic models start to collapse, because the market is suddenly made up of people who are acting in Fight-or-Flight mode, and no one can easily predict the behavior of a herd of scared creatures.
+Therefore, if we consider the market to be an emotionless calculator, we are mistaken. It is much more like a living biological ecosystem.
+
+People are neither completely rational nor completely irrational; financial markets are constantly adapting. Just like in nature, everyone is trying to survive, avoid danger, and find different ways to deal with changing circumstances through trial and error. They learn, and they adapt.
+
+So yes, there are times when the market behaves like the rational market described in classic economic models. But this usually lasts only until a major shock enters the system. Then, we can see those classic models start to collapse, because the market is suddenly made up of people who are acting in Fight-or-Flight mode, and no one can easily predict the behavior of a herd of scared creatures.
 
 A quite interesting example would be the behavior of hedge funds during the 2008 financial crisis. Hedge funds, which usually consist of some of the most intelligent financial people, were investing in gold and even guns during the crisis: gold to preserve the value of their capital, and guns to defend themselves and their capital in case of the collapse of society and the beginning of civil war. I mean, it sounds strange until we look at it from an evolutionary perspective. From that perspective, it actually makes sense, because they are simply parts of this living biological ecosystem that have been shocked by a disaster and are now in a Fight-or-Flight mode. This is their nature. They are acting based on fear and the instinct to survive.
-
-So that's why those classic models don't work in times of crisis: the market sometimes behaves smartly, and sometimes it behaves like a scared herd.
 
 ## Independence, imitation, and bubbles
 
@@ -41,11 +41,15 @@ Classic financial models are not necessarily wrong; they simply aren't complete.
 
 ## The environment matters more than the model
 
-The second thing I learned is about the importance of the environment, and this is something we tend to simply overlook. The fact is that people adapt to their environments. If the environment changes, human behavior changes, and if human behavior changes, the market changes as well. From this, we can infer that the environment may matter more than the model itself. So instead of simply asking, "What is the best model?" we should ask, "When does this model work, and when does it fail to operate?"
+The second thing I learned is about the importance of the environment, and this is something we tend to simply overlook. The fact is that people adapt to their environments. If the environment changes, human behavior changes, and if human behavior changes, the market changes as well. From this, we can infer that the environment may matter more than the model itself.
+
+So instead of simply asking, "What is the best model?" we should ask, "When does this model work, and when does it fail to operate?"
 
 ## Financial CBT and the amygdala hijack
 
-This idea also made me think about our own brains. If we all have these primitive brains that are functioning mainly for survival, what should we do to minimize the fearful reactions of our brain? A great tool that I absolutely loved in this course was the notion of financial CBT. In markets, highly tense meetings, or difficult situations in business, everyone is prone to what is called an Amygdala Hijack. The amygdala is the part of the brain that becomes highly active when it perceives danger. So, at the exact moment when I need clear thinking the most, my thinking can be hijacked by the amygdala.
+This idea also made me think about our own brains. If we all have these primitive brains that are functioning mainly for survival, what should we do to minimize the fearful reactions of our brain?
+
+A great tool that I absolutely loved in this course was the notion of financial CBT. In markets, highly tense meetings, or difficult situations in business, everyone is prone to what is called an Amygdala Hijack. The amygdala is the part of the brain that becomes highly active when it perceives danger. So, at the exact moment when I need clear thinking the most, my thinking can be hijacked by the amygdala.
 
 The interesting part is that we can actually try to reverse this process by asking ourselves a couple of simple questions. For example: Why would this decision work? Why wouldn't it work? What am I missing? By doing this, we can move away from the immediate emotional reaction and bring our thinking back to the parts of the brain responsible for more rational thinking.
 
@@ -53,8 +57,14 @@ And why is this so important? Because, as I mentioned earlier, the era we live i
 
 ## Why this matters now
 
-This is where I became fundamentally interested in the idea of adaptive financial markets, because this is no longer simply a financial issue. It is far more complex than that. Now you have to be adaptive and resilient, understand the nature of the market and understand yourself as a part of it, with many of the same characteristics. You have to recognize when your own Fight-or-Flight mode comes in and tries to save you in the financial jungle. You have to diagnose it, use financial CBT to regain your clear thinking, and understand that some models work in specific situations but may fail completely in others.
+This is where I became fundamentally interested in the idea of adaptive financial markets, because this is no longer simply a financial issue. It is far more complex than that.
 
-Ultimately, I think these are some of the main characteristics of our current business arena. For me, as a beginner on this road, it is essential to take them seriously and consciously practice developing them. More than learning another financial model, I think the real lesson of this course was learning how to recognize the environment, understand human behavior, understand my own reactions, and adapt when the rules of the game change.
+Now you have to be adaptive and resilient, understand the nature of the market and understand yourself as a part of it, with many of the same characteristics. You have to recognize when your own Fight-or-Flight mode comes in and tries to save you in the financial jungle. You have to diagnose it, use financial CBT to regain your clear thinking, and understand that some models work in specific situations but may fail completely in others.
+
+Ultimately, I think these are some of the main characteristics of our current business arena. For me, as a beginner on this road, it is essential to take them seriously and consciously practice developing them.
+
+More than learning another financial model, I think the real lesson of this course was learning how to recognize the environment, understand human behavior, understand my own reactions, and adapt when the rules of the game change.
 
 And I can't stop asking myself this question: in a future market that is probably going to be dominated by AI agents and algorithms, will they also behave like a herd? And if they do, would it still be a biological ecosystem, or would we be dealing with something completely different?
+
+This essay is based on my study of Andrew Lo’s *Adaptive Markets* course at MIT OpenCourseWare.

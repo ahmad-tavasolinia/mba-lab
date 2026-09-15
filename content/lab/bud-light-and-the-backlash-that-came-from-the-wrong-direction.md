@@ -1,7 +1,7 @@
 ---
 title: "Bud Light and the Backlash That Came From the Wrong Direction"
 date: "2026-08-22"
-code: "MBA·MKT·11"
+code: "MBA·LAB·01"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]

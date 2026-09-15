@@ -1,7 +1,7 @@
 ---
 title: "Burger King and the Habit They Were Actually Selling"
 date: "2026-08-22"
-code: "MBA·MKT·12"
+code: "MBA·LAB·02"
 category: "cases"
 journeyPhase: "phase-1"
 topics: ["business-philosophy", "strategy"]
