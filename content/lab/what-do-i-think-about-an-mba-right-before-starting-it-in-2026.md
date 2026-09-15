@@ -1,6 +1,6 @@
 ---
 title: "What Do I Think About an MBA, Right Before Starting It in 2026?"
-date: "2026-08-23"
+date: "2026-08-22"
 code: "MBA·LAB·16"
 journeyPhase: "phase-1"
 category: "essays"
