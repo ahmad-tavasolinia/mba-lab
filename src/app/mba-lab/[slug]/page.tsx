@@ -34,37 +34,37 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
   return (
     <article>
       <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-16 md:py-20">
+        <Container className="py-8 md:py-10">
           <Link
             href="/mba-lab/category/projects"
             className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
           >
             ← Projects
           </Link>
-          <p className="mt-7 font-mono text-[11px] uppercase tracking-widest text-gold">
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-gold">
             {entry.projectType ?? 'Project'}
           </p>
           <h1 className="mt-3 max-w-4xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
             {entry.title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/65 dark:text-dark-soft">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink/65 dark:text-dark-soft">
             {entry.summary}
           </p>
-          <div className="mt-5 text-sm text-ink/45 dark:text-dark-soft/60">
+          <div className="mt-3 text-sm text-ink/45 dark:text-dark-soft/60">
             {formatDate(entry.date)}
           </div>
         </Container>
       </section>
 
-      <Container className="py-10 md:py-14">
+      <Container className="py-6 md:py-8">
         <div className="max-w-3xl prose-lab text-ink dark:text-dark-ink" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
 
         {practice.length > 0 && (
-          <section className="mt-10 border-t border-rule pt-7 dark:border-dark-rule">
+          <section className="mt-6 border-t border-rule pt-4 dark:border-dark-rule">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               What I practiced
             </p>
-            <div className="mt-5 flex flex-wrap gap-2.5">
+            <div className="mt-3 flex flex-wrap gap-2.5">
               {practice.map((item) => (
                 <span
                   key={item}
@@ -78,11 +78,11 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
         )}
 
         {screenshots.length > 0 && (
-          <section className="mt-10 border-t border-rule pt-7 dark:border-dark-rule">
+          <section className="mt-6 border-t border-rule pt-4 dark:border-dark-rule">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               Project
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
               {screenshots.map((shot) => (
                 <figure key={shot.src} className="min-w-0">
                   <a
@@ -108,18 +108,18 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
         )}
 
         {entry.download && (
-          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+          <section className="mt-8 border-t border-rule pt-6 dark:border-dark-rule">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               Explore the model
             </p>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
               Want to see how the model works? Open the original workbook and explore the
               formulas, calculations, and underlying transaction data.
             </p>
             <a
               href={entry.download.href}
               download
-              className="mt-5 inline-flex items-center gap-4 border-b border-gold pb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink hover:text-gold dark:text-dark-ink"
+              className="mt-4 inline-flex items-center gap-4 border-b border-gold pb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink hover:text-gold dark:text-dark-ink"
             >
               {entry.download.label}
               <span className="text-base">↓</span>
