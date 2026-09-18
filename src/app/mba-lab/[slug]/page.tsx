@@ -23,7 +23,12 @@ export async function generateMetadata({
 }
 
 function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntry>> }) {
-  const screenshots = entry.screenshots ?? [];
+  const screenshotOrder = ['dataset', 'summary', 'income', 'monthly'];
+  const screenshots = [...(entry.screenshots ?? [])].sort((a, b) => {
+    const ai = screenshotOrder.findIndex((key) => `${a.alt} ${a.caption}`.toLowerCase().includes(key));
+    const bi = screenshotOrder.findIndex((key) => `${b.alt} ${b.caption}`.toLowerCase().includes(key));
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
   const practice = entry.practice ?? [];
 
   return (
@@ -51,11 +56,11 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
         </Container>
       </section>
 
-      <Container className="py-14 md:py-20">
+      <Container className="py-10 md:py-14">
         <div className="max-w-3xl prose-lab text-ink dark:text-dark-ink" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
 
         {practice.length > 0 && (
-          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+          <section className="mt-10 border-t border-rule pt-7 dark:border-dark-rule">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               What I practiced
             </p>
@@ -73,11 +78,11 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
         )}
 
         {screenshots.length > 0 && (
-          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+          <section className="mt-10 border-t border-rule pt-7 dark:border-dark-rule">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               Project
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
               {screenshots.map((shot) => (
                 <figure key={shot.src} className="min-w-0">
                   <a
@@ -90,7 +95,7 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
                     <img
                       src={shot.src}
                       alt={shot.alt}
-                      className="block h-auto w-full transition-opacity group-hover:opacity-80"
+                      className="block h-32 w-full object-cover transition-opacity group-hover:opacity-80"
                     />
                   </a>
                   <figcaption className="mt-2 text-xs leading-relaxed text-ink/50 dark:text-dark-soft/65">
