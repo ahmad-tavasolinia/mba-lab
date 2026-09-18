@@ -77,13 +77,23 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               Project
             </p>
-            <div className="mt-8 space-y-12">
+            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
               {screenshots.map((shot) => (
-                <figure key={shot.src}>
-                  <div className="overflow-hidden border border-rule bg-black/20 dark:border-dark-rule">
-                    <img src={shot.src} alt={shot.alt} className="block h-auto w-full" />
-                  </div>
-                  <figcaption className="mt-3 text-sm leading-relaxed text-ink/50 dark:text-dark-soft/65">
+                <figure key={shot.src} className="min-w-0">
+                  <a
+                    href={shot.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${shot.alt} at full size`}
+                    className="group block overflow-hidden border border-rule bg-black/20 dark:border-dark-rule"
+                  >
+                    <img
+                      src={shot.src}
+                      alt={shot.alt}
+                      className="block h-auto w-full transition-opacity group-hover:opacity-80"
+                    />
+                  </a>
+                  <figcaption className="mt-2 text-xs leading-relaxed text-ink/50 dark:text-dark-soft/65">
                     {shot.caption}
                   </figcaption>
                 </figure>
