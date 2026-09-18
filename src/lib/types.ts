@@ -23,6 +23,10 @@ export interface LabEntryFrontmatter {
   openQuestions: string[];
   finalPerspective: string;
   sources: string[]; // source slugs
+  projectType?: string;
+  practice?: string[];
+  screenshots?: { src: string; alt: string; caption: string }[];
+  download?: { label: string; href: string };
 }
 
 export interface LabEntry extends LabEntryFrontmatter {
