@@ -16,10 +16,105 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const entry = await getLabEntry(params.slug);
+  if (entry.category === 'projects') return <ProjectDetails entry={entry} />;
     return { title: entry.title, description: entry.summary };
   } catch {
     return { title: 'Entry not found' };
   }
+}
+
+function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntry>> }) {
+  const screenshots = entry.screenshots ?? [];
+  const practice = entry.practice ?? [];
+
+  return (
+    <article>
+      <section className="border-b border-rule dark:border-dark-rule">
+        <Container className="py-16 md:py-20">
+          <Link
+            href="/mba-lab/category/projects"
+            className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
+          >
+            ← Projects
+          </Link>
+          <p className="mt-7 font-mono text-[11px] uppercase tracking-widest text-gold">
+            {entry.projectType ?? 'Project'}
+          </p>
+          <h1 className="mt-3 max-w-4xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
+            {entry.title}
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/65 dark:text-dark-soft">
+            {entry.summary}
+          </p>
+          <div className="mt-5 text-sm text-ink/45 dark:text-dark-soft/60">
+            {formatDate(entry.date)}
+          </div>
+        </Container>
+      </section>
+
+      <Container className="py-14 md:py-20">
+        <div className="max-w-3xl prose-lab text-ink dark:text-dark-ink" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
+
+        {practice.length > 0 && (
+          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
+              What I practiced
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              {practice.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-rule px-3 py-1.5 font-mono text-[12px] text-ink/65 dark:border-dark-rule dark:text-dark-soft"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {screenshots.length > 0 && (
+          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
+              Project
+            </p>
+            <div className="mt-8 space-y-12">
+              {screenshots.map((shot) => (
+                <figure key={shot.src}>
+                  <div className="overflow-hidden border border-rule bg-black/20 dark:border-dark-rule">
+                    <img src={shot.src} alt={shot.alt} className="block h-auto w-full" />
+                  </div>
+                  <figcaption className="mt-3 text-sm leading-relaxed text-ink/50 dark:text-dark-soft/65">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {entry.download && (
+          <section className="mt-16 border-t border-rule pt-10 dark:border-dark-rule">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
+              Explore the model
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
+              Want to see how the model works? Open the original workbook and explore the
+              formulas, calculations, and underlying transaction data.
+            </p>
+            <a
+              href={entry.download.href}
+              download
+              className="mt-5 inline-flex items-center gap-4 border-b border-gold pb-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink hover:text-gold dark:text-dark-ink"
+            >
+              {entry.download.label}
+              <span className="text-base">↓</span>
+            </a>
+          </section>
+        )}
+      </Container>
+    </article>
+  );
 }
 
 export default async function LabEntryPage({ params }: { params: { slug: string } }) {
