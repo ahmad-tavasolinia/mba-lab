@@ -30,6 +30,7 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
   });
   const practice = entry.practice ?? [];
+  const journeyPhase = getPhase(entry.journeyPhase);
 
   return (
     <article>
@@ -41,9 +42,19 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
           >
             ← Projects
           </Link>
-          <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-gold">
-            {entry.projectType ?? 'Project'}
-          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
+              {entry.projectType ?? 'Project'}
+            </p>
+            {journeyPhase && (
+              <Link
+                href={`/mba-lab/phase/${journeyPhase.slug}`}
+                className="rounded-full border border-gold/40 bg-gold/5 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-gold hover:border-gold"
+              >
+                {journeyPhase.name}
+              </Link>
+            )}
+          </div>
           <h1 className="mt-3 max-w-4xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
             {entry.title}
           </h1>
@@ -57,7 +68,7 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
       </section>
 
       <Container className="py-6 md:py-8">
-        <div className="max-w-3xl prose-lab text-ink dark:text-dark-ink" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
+        <div className="prose-lab text-ink dark:text-dark-ink" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
 
         {practice.length > 0 && (
           <section className="mt-6 border-t border-rule pt-4 dark:border-dark-rule">
