@@ -354,3 +354,50 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 .page-mba-lab{zoom:1.10}
 .page-topics{zoom:1.15}
 .page-about{zoom:1.10}
+
+/* =========================================================
+   MBA LAB NOTEBOOK PAGE — visual treatment based on the
+   supplied reference composition. The global sidebar remains
+   untouched; these rules style only the Lab page content.
+   ========================================================= */
+.lab-page{background:#05090d;color:#eee9df;overflow:hidden}
+.lab-hero{position:relative;min-height:376px;border-bottom:1px solid rgba(238,233,223,.14);overflow:hidden}
+.lab-hero-image{position:absolute;inset:0;background-image:url('/mba-lab/lab-hero.jpg');background-size:cover;background-position:center right;filter:saturate(.92) contrast(1.04)}
+.lab-hero-vignette{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.98) 0%,rgba(3,7,10,.93) 29%,rgba(3,7,10,.35) 57%,rgba(3,7,10,.04) 100%),linear-gradient(180deg,rgba(3,7,10,.06),rgba(3,7,10,.12))}
+.lab-hero-copy{position:relative;z-index:2;padding:48px 0 42px 3.7%;width:min(560px,43%)}
+.lab-eyebrow,.lab-section-title,.lab-big-picture-label{font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:#d3a16c}
+.lab-hero h1{margin:20px 0 0;font-family:var(--font-display),Georgia,serif;font-size:clamp(56px,5vw,78px);font-weight:500;line-height:.94;letter-spacing:-.045em;color:#eee9df}
+.lab-tagline{margin:20px 0 0;font-family:var(--font-display),Georgia,serif;font-size:24px;line-height:1.15;font-style:italic;color:rgba(238,233,223,.88)}
+.lab-gold-rule{display:block;width:39px;height:2px;margin-top:20px;background:#c8965d}
+.lab-intro{margin:21px 0 0;max-width:490px;font-family:var(--font-body),system-ui,sans-serif;font-size:14px;line-height:1.52;color:rgba(238,233,223,.82)}
+.lab-hero-side{position:absolute;z-index:2;right:6.3%;top:205px;width:190px}
+.lab-hero-side p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:22px;line-height:1.2;font-style:italic;color:rgba(238,233,223,.9)}
+.lab-hero-side .lab-gold-rule{margin-top:20px}
+.lab-kinds{padding:29px 3.7% 27px;background:#05090d}
+.lab-section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.lab-section-title{display:flex;align-items:center;gap:18px}
+.lab-section-title i,.lab-big-picture-label i{display:block;width:43px;height:1px;background:#c8965d}
+.lab-view-all{font-family:var(--font-body),system-ui,sans-serif;font-size:12px;color:rgba(238,233,223,.56);text-decoration:none}
+.lab-view-all span{margin-left:8px;font-size:17px}
+.lab-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:21px}
+.lab-kind-card{position:relative;display:block;min-height:235px;overflow:hidden;border:1px solid rgba(238,233,223,.22);border-radius:8px;background-size:cover;background-position:center;text-decoration:none;transition:border-color .25s ease,transform .25s ease}
+.lab-kind-card:hover{border-color:rgba(211,161,108,.65);transform:translateY(-2px)}
+.lab-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,9,.12) 0%,rgba(2,6,9,.35) 43%,rgba(2,6,9,.88) 100%)}
+.lab-card-content{position:relative;z-index:2;height:100%;min-height:235px;padding:17px 19px 15px;display:flex;flex-direction:column}
+.lab-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.22em;color:#d3a16c;font-size:10px}
+.lab-card-top small{font-size:10px;letter-spacing:0;color:rgba(238,233,223,.7);text-transform:none}
+.lab-card-content h2{margin:17px 0 0;font-family:var(--font-display),Georgia,serif;font-size:27px;font-weight:500;line-height:1;color:#f1ede5}
+.lab-card-content p{margin:12px 0 0;max-width:245px;font-family:var(--font-body),system-ui,sans-serif;font-size:13px;line-height:1.45;color:rgba(238,233,223,.84)}
+.lab-card-arrow{margin-top:auto;font-family:var(--font-body),system-ui,sans-serif;font-size:24px;line-height:1;color:#eee9df}
+.lab-big-picture{position:relative;min-height:166px;border-top:1px solid rgba(238,233,223,.14);border-bottom:1px solid rgba(238,233,223,.14);overflow:hidden}
+.lab-big-picture-image{position:absolute;inset:0;background:url('/mba-lab/lab-big-picture.jpg') center right/cover no-repeat}
+.lab-big-picture-shade{position:absolute;inset:0;background:linear-gradient(90deg,#05090d 0%,rgba(5,9,13,.96) 18%,rgba(5,9,13,.5) 49%,rgba(5,9,13,.05) 100%)}
+.lab-big-picture-label{position:absolute;left:3.7%;top:24px;display:flex;align-items:center;gap:18px}
+.lab-big-picture-copy{position:relative;z-index:2;padding:51px 0 26px 16.4%}
+.lab-big-picture-copy p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:27px;line-height:1.22;font-style:italic;color:#eee9df}
+.lab-big-picture-copy .lab-gold-rule{margin-top:16px}
+.page-mba-lab + footer{background:#05090d}
+
+@media (max-width:1100px){.lab-card-grid{gap:14px}.lab-hero-copy{width:52%}.lab-hero-side{right:5%;top:190px}}
+@media (max-width:800px){.lab-hero{min-height:520px}.lab-hero-copy{width:calc(100% - 56px);padding:108px 28px 36px}.lab-hero-side{left:28px;right:auto;top:auto;bottom:38px;width:auto}.lab-hero-side p{font-size:20px}.lab-kinds{padding:28px}.lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-big-picture-copy{padding-left:28px}.lab-big-picture{min-height:220px}}
+@media (max-width:560px){.lab-hero{min-height:610px}.lab-hero-image{background-position:67% center}.lab-hero-copy{padding-top:92px}.lab-hero h1{font-size:56px}.lab-tagline{font-size:21px}.lab-intro{font-size:13px}.lab-card-grid{grid-template-columns:1fr}.lab-kind-card,.lab-card-content{min-height:220px}.lab-section-head{margin-bottom:17px}.lab-big-picture-copy{padding-top:72px}.lab-big-picture-copy p{font-size:24px}}
