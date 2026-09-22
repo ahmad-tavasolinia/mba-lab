@@ -412,63 +412,99 @@ body:has(.site-rail.is-collapsed) main{margin-left:0;}
 .rail-collapse-toggle{
   position:fixed;
   z-index:70;
-  left:calc(var(--rail-width) - 18px);
-  bottom:28px;
+  top:28px;
+  left:calc(var(--rail-width) - 15px);
   width:30px;
-  height:30px;
+  height:42px;
+  display:flex;
   align-items:center;
   justify-content:center;
   border:1px solid rgba(238,233,223,.18);
-  border-radius:50%;
-  background:rgba(5,6,7,.88);
-  color:rgba(238,233,223,.78);
+  border-left-color:rgba(200,150,93,.55);
+  border-radius:0 10px 10px 0;
+  background:rgba(5,6,7,.94);
+  color:rgba(238,233,223,.82);
   cursor:pointer;
-  font-family:var(--font-body),system-ui,sans-serif;
-  font-size:21px;
+  font-family:Georgia,serif;
+  font-size:22px;
   line-height:1;
-  transition:left .34s cubic-bezier(.22,.61,.36,1), background .2s ease, color .2s ease;
+  transition:left .34s cubic-bezier(.22,.61,.36,1), background .2s ease, color .2s ease, border-color .2s ease;
   backdrop-filter:blur(8px);
+  box-shadow:0 6px 20px rgba(0,0,0,.22);
 }
-.rail-collapse-toggle:hover{background:#111417;color:#eee9df;}
-.rail-collapse-toggle.is-collapsed{left:12px;}
+.rail-collapse-toggle::before{
+  content:'';
+  position:absolute;
+  top:8px;
+  width:10px;
+  height:1px;
+  background:#c8965d;
+  opacity:.9;
+}
+.rail-collapse-toggle:hover{background:#111417;color:#eee9df;border-color:rgba(200,150,93,.65);}
+.rail-collapse-toggle.is-collapsed{left:0;border-left-color:rgba(238,233,223,.18);border-right-color:rgba(200,150,93,.55);border-radius:0 10px 10px 0;}
 
-.lab-reference-page{background:#050607;color:#eee9df;overflow:hidden;}
-.lab-room-hero{min-height:352px;height:352px;border-bottom:1px solid rgba(238,233,223,.14);}
-.lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center center/cover no-repeat;}
-.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,5,.90) 0%,rgba(3,4,5,.72) 37%,rgba(3,4,5,.20) 70%,rgba(3,4,5,.10) 100%);}
+.lab-reference-page{background:#050607;color:#eee9df;overflow:hidden;min-height:calc(100dvh - 104px);}
+.lab-room-hero{min-height:318px;height:318px;border-bottom:1px solid rgba(238,233,223,.14);}
+.lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center 44%/cover no-repeat;}
+.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.90) 0%,rgba(3,7,10,.73) 37%,rgba(3,7,10,.16) 70%,rgba(3,7,10,.10) 100%);}
 .lab-reference-page .lab-hero-copy{padding:50px 0 38px 3.7%;width:min(560px,48%);}
 .lab-reference-page .lab-eyebrow{letter-spacing:.28em;}
 .lab-reference-page .lab-hero h1{font-size:clamp(56px,5vw,74px);margin-top:20px;}
 .lab-reference-page .lab-tagline{font-size:23px;margin-top:17px;}
 .lab-reference-page .lab-gold-rule{margin-top:19px;}
+.lab-reference-page .lab-intro{max-width:470px;margin-top:20px;line-height:1.5;}
+.lab-reference-page .lab-hero-side{right:7.7%;top:146px;width:185px;}
+.lab-reference-page .lab-hero-side p{font-size:20px;line-height:1.2;}
 
-.lab-reference-kinds{padding:34px 3.7% 34px;background:#050607;}
-.lab-reference-kinds .lab-section-head{margin-bottom:23px;}
+.lab-reference-kinds{padding:27px 3.7% 26px;background:#050607;}
+.lab-reference-kinds .lab-section-head{margin-bottom:17px;}
 .lab-reference-kinds .lab-section-title{gap:18px;}
 .lab-reference-kinds .lab-section-title i{background:rgba(238,233,223,.35);width:285px;}
 .lab-reference-kinds .lab-card-grid{gap:20px;}
-.lab-reference-card{min-height:188px;height:188px;background:#080909;border:1px solid rgba(238,233,223,.20);border-radius:6px;transform:none!important;}
-.lab-reference-card:first-child{border-color:#c8965d;}
-.lab-reference-card:hover{border-color:rgba(211,161,108,.75);background:#0b0d0e;}
-.lab-reference-card .lab-card-content{min-height:188px;padding:18px 20px 15px;}
+.lab-reference-card{min-height:178px;height:178px;background:#071016;border:1px solid rgba(123,157,181,.34);border-radius:6px;transform:none!important;}
+.lab-reference-card:hover{border-color:rgba(238,233,223,.30);background:#0b0c0d;}
+.lab-reference-card .lab-card-content{min-height:178px;padding:18px 20px 15px;}
 .lab-reference-card .lab-card-top{font-size:10px;letter-spacing:.22em;}
 .lab-reference-card .lab-card-top small{font-size:10px;}
 .lab-reference-card .lab-card-content h2{font-size:25px;margin-top:17px;}
 .lab-reference-card .lab-card-content p{font-size:13px;line-height:1.45;max-width:245px;margin-top:11px;}
 .lab-reference-card .lab-card-arrow{font-size:22px;}
 
+.lab-featured{position:relative;min-height:228px;display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);align-items:stretch;padding:0 3.7%;border-top:1px solid rgba(238,233,223,.14);border-bottom:1px solid rgba(238,233,223,.14);background:#05090d;overflow:hidden;}
+.lab-featured-copy{padding:27px 36px 27px 0;}
+.lab-featured-eyebrow{display:block;font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:#7fb4cf;}
+.lab-featured-copy h2{margin:13px 0 0;font-family:var(--font-display),Georgia,serif;font-size:31px;font-weight:500;line-height:1.05;color:#eee9df;}
+.lab-featured-copy p{margin:13px 0 0;max-width:500px;font-family:var(--font-body),system-ui,sans-serif;font-size:13px;line-height:1.45;color:rgba(238,233,223,.76);}
+.lab-featured-link{display:inline-block;margin-top:13px;color:#7fb4cf;font-family:var(--font-body),system-ui,sans-serif;font-size:12px;text-decoration:none;}
+.lab-featured-link span{margin-left:7px;font-size:16px;}
+.lab-featured-divider{width:1px;height:130px;align-self:center;background:rgba(238,233,223,.24);}
+.lab-featured-quote{position:relative;min-width:0;padding:47px 0 25px 8%;overflow:hidden;}
+.lab-featured-quote .lab-gold-rule{width:32px;height:1px;margin:0 0 18px;}
+.lab-featured-quote p{position:relative;z-index:2;margin:0;font-family:var(--font-display),Georgia,serif;font-size:21px;line-height:1.35;font-style:italic;color:#eee9df;}
+.lab-trajectory{position:absolute;right:-20px;bottom:-3px;width:72%;height:155px;overflow:visible;opacity:.72;}
+.lab-trajectory path{fill:none;stroke:#5b8aa5;stroke-width:1.1;}
+.lab-trajectory circle{fill:#9cc4d9;}
 
-.page-mba-lab + footer{background:#050607;}
+.page-mba-lab + footer{background:#05090d;}
 
 @media (max-width:1100px){
   .lab-reference-page .lab-hero-copy{width:54%;}
+  .lab-reference-page .lab-hero-side{right:6%;}
   .lab-reference-kinds .lab-section-title i{width:170px;}
+  .lab-featured-copy h2{font-size:28px;}
 }
 @media (max-width:800px){
   .lab-room-hero{height:auto;min-height:520px;}
   .lab-reference-page .lab-hero-copy{width:calc(100% - 56px);padding:96px 28px 35px;}
+  .lab-reference-page .lab-hero-side{left:28px;right:auto;top:auto;bottom:36px;width:auto;}
   .lab-reference-kinds{padding:28px;}
   .lab-reference-kinds .lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .lab-featured{grid-template-columns:1fr;min-height:0;padding:0 28px;}
+  .lab-featured-copy{padding:27px 0;}
+  .lab-featured-divider{display:none;}
+  .lab-featured-quote{padding:27px 0 80px;}
+  .lab-trajectory{width:90%;}
 }
 @media (max-width:560px){
   .lab-reference-kinds .lab-card-grid{grid-template-columns:1fr;}
