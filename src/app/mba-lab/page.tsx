@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 
 export default async function MbaLabPage() {
   const entries = await getAllLabEntries();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   return (
     <div className="page-mba-lab lab-page lab-reference-page">
       <section className="lab-hero lab-room-hero">
-        <div className="lab-room-image" aria-hidden="true" />
+        <div className="lab-room-image" aria-hidden="true" style={{ backgroundImage: `url("${basePath}/mba-lab/lab-room.png")` }} />
         <div className="lab-room-shade" aria-hidden="true" />
         <div className="lab-hero-copy">
           <span className="lab-eyebrow">The Lab Notebook</span>
