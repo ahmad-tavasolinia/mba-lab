@@ -614,10 +614,7 @@ body:has(.home-hero) main{
   position:absolute;
   inset:0;
   z-index:0;
-  background-image:url('/mba-lab/images/home-lab-bg.png');
-  background-repeat:no-repeat;
-  background-position:center center;
-  background-size:cover;
+  background:url('/images/home-lab-bg.png') center center / cover no-repeat;
 }
 .home-topbar{
   position:absolute;
@@ -736,24 +733,24 @@ body:has(.home-hero) main{
 .home-cta::before{
   content:'';
   position:absolute;
-  right:-18px;
-  bottom:-2px;
-  width:72px;
+  right:-19px;
+  bottom:-1px;
+  width:78px;
   height:1px;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.72),rgba(255,255,255,.98));
-  box-shadow:0 0 7px rgba(255,255,255,.72),0 0 18px rgba(255,255,255,.30);
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.62),rgba(255,255,255,.96));
+  box-shadow:0 0 7px rgba(255,255,255,.72),0 0 16px rgba(255,255,255,.30);
 }
 .home-cta::after{
   content:'';
   position:absolute;
   right:-2px;
-  bottom:-7px;
-  width:58px;
-  height:27px;
+  bottom:-8px;
+  width:66px;
+  height:29px;
   pointer-events:none;
-  background:radial-gradient(ellipse at 100% 8%,rgba(255,255,255,.95) 0,rgba(255,255,255,.58) 9%,rgba(255,255,255,.20) 28%,rgba(255,255,255,0) 70%);
-  filter:blur(2.5px);
+  background:radial-gradient(ellipse at 100% 8%,rgba(255,255,255,.98) 0,rgba(255,255,255,.58) 10%,rgba(255,255,255,.20) 28%,rgba(255,255,255,0) 72%);
+  filter:blur(2.4px);
 }
 .home-cta:hover{
   border-color:rgba(255,255,255,.65);
@@ -765,7 +762,7 @@ body:has(.home-hero) main{
   position:absolute;
   z-index:4;
   left:6.6%;
-  bottom:16.5%;
+  bottom:10.5%;
   width:min(700px,44vw);
   padding:0;
   background:transparent;
@@ -777,21 +774,21 @@ body:has(.home-hero) main{
 .home-journey .journey-step:not(.last){flex:1 1 auto}
 .home-journey .journey-phase{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;text-decoration:none}
 .home-journey .journey-circle{
-  width:43px;height:43px;border:1px solid rgba(242,238,231,.65);border-radius:50%;
-  background:rgba(4,9,13,.22);color:rgba(242,238,231,.84);
-  font-family:var(--font-body),system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:.01em;
-  box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 12px rgba(255,255,255,.08),inset 0 0 10px rgba(255,255,255,.025);
+  width:36px;height:36px;border:1px solid rgba(242,238,231,.68);border-radius:50%;
+  background:rgba(4,9,13,.28);color:rgba(242,238,231,.88);
+  font-family:var(--font-body),system-ui,sans-serif;font-size:11px;font-weight:400;letter-spacing:.01em;
+  box-shadow:0 0 0 1px rgba(255,255,255,.035),0 0 10px rgba(255,255,255,.13),inset 0 0 8px rgba(255,255,255,.025);
 }
 .home-journey .journey-name{
-  margin-top:18px;color:rgba(242,238,231,.78);font-family:var(--font-body),system-ui,sans-serif;
-  font-size:11px;font-weight:400;letter-spacing:.19em;text-transform:uppercase;white-space:nowrap;
+  margin-top:13px;color:rgba(242,238,231,.82);font-family:var(--font-body),system-ui,sans-serif;
+  font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
 }
-.home-journey .journey-line{flex:1 1 auto;min-width:24px;margin:21px 0 0;height:1px;background:linear-gradient(90deg,rgba(242,238,231,.26),rgba(242,238,231,.58),rgba(242,238,231,.26));box-shadow:0 0 6px rgba(255,255,255,.06)}
+.home-journey .journey-line{flex:1 1 auto;min-width:24px;margin:18px 0 0;height:1px;background:linear-gradient(90deg,rgba(242,238,231,.38),rgba(242,238,231,.66),rgba(242,238,231,.38));box-shadow:0 0 5px rgba(255,255,255,.08)}
 .home-journey .journey-phase.active .journey-circle,
 .home-journey .journey-phase.complete .journey-circle,
 .home-journey .journey-phase.upcoming .journey-circle{
-  border-color:rgba(242,238,231,.65)!important;color:rgba(242,238,231,.84)!important;
-  background:rgba(4,9,13,.22)!important;box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 12px rgba(255,255,255,.08),inset 0 0 10px rgba(255,255,255,.025)!important;
+  border-color:rgba(242,238,231,.68)!important;color:rgba(242,238,231,.88)!important;
+  background:rgba(4,9,13,.28)!important;box-shadow:0 0 0 1px rgba(255,255,255,.035),0 0 10px rgba(255,255,255,.13),inset 0 0 8px rgba(255,255,255,.025)!important;
 }
 .home-journey .journey-phase.active .journey-name,
 .home-journey .journey-phase.complete .journey-name,
@@ -809,7 +806,7 @@ body:has(.home-hero) main{
   .home-cta{width:245px;height:50px;margin-top:30px;padding-left:26px;padding-right:24px}
   .home-journey{left:28px;right:28px;bottom:32px;width:auto;overflow:hidden}
   .home-journey .journey-track{overflow:hidden}
-  .home-journey .journey-circle{width:39px;height:39px;font-size:10px}
-  .home-journey .journey-name{font-size:8px;margin-top:12px;letter-spacing:.13em}
-  .home-journey .journey-line{margin-top:19px}
+  .home-journey .journey-circle{width:36px;height:36px;font-size:10px}
+  .home-journey .journey-name{font-size:8px;margin-top:11px;letter-spacing:.13em}
+  .home-journey .journey-line{margin-top:18px}
 }
