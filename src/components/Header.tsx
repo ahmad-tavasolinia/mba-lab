@@ -33,12 +33,10 @@ export default function Header() {
 
   const isReadingPage = Boolean(
     pathname && (
-      pathname.startsWith('/mba-lab/category/') ||
-      pathname.startsWith('/mba-lab/phase/') ||
-      (pathname.startsWith('/mba-lab/') && pathname !== '/mba-lab') ||
-      pathname.startsWith('/essays/') ||
-      pathname.startsWith('/courses/') ||
-      pathname.startsWith('/topics/')
+      (pathname.startsWith('/mba-lab/') && pathname !== '/mba-lab' &&
+        !pathname.startsWith('/mba-lab/category/') &&
+        !pathname.startsWith('/mba-lab/phase/')) ||
+      pathname.startsWith('/essays/')
     )
   );
 
@@ -58,6 +56,11 @@ export default function Header() {
       delete document.body.dataset.readingPage;
     };
   }, [isReadingPage]);
+
+  useEffect(() => {
+    document.body.classList.toggle('rail-collapsed', railCollapsed);
+    return () => document.body.classList.remove('rail-collapsed');
+  }, [railCollapsed]);
 
   function toggleReadingTheme() {
     const next = readingTheme === 'dark' ? 'light' : 'dark';

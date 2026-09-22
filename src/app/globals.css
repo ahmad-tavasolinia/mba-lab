@@ -351,7 +351,6 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 
 /* Page-specific sizing: tuned to match the user's preferred browser-zoom appearance.
    Home remains untouched. */
-.page-mba-lab{zoom:1.10}
 .page-topics{zoom:1.15}
 .page-about{zoom:1.10}
 
@@ -408,7 +407,7 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 .site-rail{transition:transform .34s cubic-bezier(.22,.61,.36,1);}
 .site-rail.is-collapsed{transform:translateX(-100%);}
 main{transition:margin-left .34s cubic-bezier(.22,.61,.36,1);}
-body:has(.site-rail.is-collapsed) main{margin-left:0;}
+body.rail-collapsed main{margin-left:0;}
 .rail-collapse-toggle{
   position:fixed;
   z-index:70;
@@ -446,8 +445,8 @@ body:has(.site-rail.is-collapsed) main{margin-left:0;}
 
 .lab-reference-page{background:#050607;color:#eee9df;overflow:hidden;min-height:calc(100dvh - 104px);}
 .lab-room-hero{min-height:318px;height:318px;border-bottom:1px solid rgba(238,233,223,.14);}
-.lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center 44%/cover no-repeat;}
-.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.90) 0%,rgba(3,7,10,.73) 37%,rgba(3,7,10,.16) 70%,rgba(3,7,10,.10) 100%);}
+.lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center center/100% auto no-repeat;background-color:#050607;}
+.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.72) 0%,rgba(3,7,10,.42) 34%,rgba(3,7,10,.10) 68%,rgba(3,7,10,.03) 100%);}
 .lab-reference-page .lab-hero-copy{padding:50px 0 38px 3.7%;width:min(560px,48%);}
 .lab-reference-page .lab-eyebrow{letter-spacing:.28em;}
 .lab-reference-page .lab-hero h1{font-size:clamp(56px,5vw,74px);margin-top:20px;}
@@ -519,8 +518,8 @@ body:has(.site-rail.is-collapsed) main{margin-left:0;}
 .reading-theme-toggle{
   position:fixed;
   z-index:76;
-  top:18px;
-  left:calc(var(--rail-width) + 18px);
+  right:24px;
+  bottom:24px;
   width:38px;
   height:38px;
   display:flex;
@@ -533,11 +532,10 @@ body:has(.site-rail.is-collapsed) main{margin-left:0;}
   cursor:pointer;
   box-shadow:0 6px 18px rgba(0,0,0,.20);
   backdrop-filter:blur(8px);
-  transition:left .34s cubic-bezier(.22,.61,.36,1), background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
 .reading-theme-toggle:hover{transform:translateY(-1px);border-color:#d3a16c;color:#eee9df;}
 .reading-theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
-body:has(.site-rail.is-collapsed) .reading-theme-toggle{left:18px;}
 
 /* The main reading area moves with the rail. The rail itself always stays black. */
 body[data-reading-page][data-reading-theme="light"] main{
@@ -571,8 +569,13 @@ body[data-reading-page][data-reading-theme="light"] footer [class*="dark:border-
   body:has(.lab-reference-page){overflow:hidden;}
 }
 
+/* Keep the sidebar collapse layout in sync on every desktop page. */
+@media (min-width:768px){
+  body.rail-collapsed main{margin-left:0;}
+}
+
 /* No decorative line above the sidebar collapse arrow. */
 .rail-collapse-toggle::before{display:none;}
 @media (max-width:767px){
-  .reading-theme-toggle{left:18px;top:82px;}
+  .reading-theme-toggle{right:18px;bottom:18px;}
 }
