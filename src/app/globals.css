@@ -614,7 +614,10 @@ body:has(.home-hero) main{
   position:absolute;
   inset:0;
   z-index:0;
-  background:url('/images/home-lab-bg.png') center center / cover no-repeat;
+  background-image:url('/mba-lab/images/home-lab-bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
 }
 .home-topbar{
   position:absolute;
@@ -730,16 +733,27 @@ body:has(.home-hero) main{
   box-shadow:0 0 0 1px rgba(255,255,255,.025) inset;
   transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
+.home-cta::before{
+  content:'';
+  position:absolute;
+  right:-18px;
+  bottom:-2px;
+  width:72px;
+  height:1px;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.72),rgba(255,255,255,.98));
+  box-shadow:0 0 7px rgba(255,255,255,.72),0 0 18px rgba(255,255,255,.30);
+}
 .home-cta::after{
   content:'';
   position:absolute;
-  right:-1px;
-  bottom:-1px;
-  width:76px;
-  height:22px;
+  right:-2px;
+  bottom:-7px;
+  width:58px;
+  height:27px;
   pointer-events:none;
-  background:radial-gradient(ellipse at 100% 100%,rgba(255,255,255,.92) 0,rgba(255,255,255,.42) 12%,rgba(255,255,255,0) 68%);
-  filter:blur(2px);
+  background:radial-gradient(ellipse at 100% 8%,rgba(255,255,255,.95) 0,rgba(255,255,255,.58) 9%,rgba(255,255,255,.20) 28%,rgba(255,255,255,0) 70%);
+  filter:blur(2.5px);
 }
 .home-cta:hover{
   border-color:rgba(255,255,255,.65);
@@ -751,7 +765,7 @@ body:has(.home-hero) main{
   position:absolute;
   z-index:4;
   left:6.6%;
-  bottom:11.5%;
+  bottom:16.5%;
   width:min(700px,44vw);
   padding:0;
   background:transparent;
@@ -766,18 +780,18 @@ body:has(.home-hero) main{
   width:43px;height:43px;border:1px solid rgba(242,238,231,.65);border-radius:50%;
   background:rgba(4,9,13,.22);color:rgba(242,238,231,.84);
   font-family:var(--font-body),system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:.01em;
-  box-shadow:0 0 12px rgba(0,0,0,.10);
+  box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 12px rgba(255,255,255,.08),inset 0 0 10px rgba(255,255,255,.025);
 }
 .home-journey .journey-name{
   margin-top:18px;color:rgba(242,238,231,.78);font-family:var(--font-body),system-ui,sans-serif;
   font-size:11px;font-weight:400;letter-spacing:.19em;text-transform:uppercase;white-space:nowrap;
 }
-.home-journey .journey-line{flex:1 1 auto;min-width:24px;margin:21px 0 0;height:1px;background:rgba(242,238,231,.43);box-shadow:none}
+.home-journey .journey-line{flex:1 1 auto;min-width:24px;margin:21px 0 0;height:1px;background:linear-gradient(90deg,rgba(242,238,231,.26),rgba(242,238,231,.58),rgba(242,238,231,.26));box-shadow:0 0 6px rgba(255,255,255,.06)}
 .home-journey .journey-phase.active .journey-circle,
 .home-journey .journey-phase.complete .journey-circle,
 .home-journey .journey-phase.upcoming .journey-circle{
   border-color:rgba(242,238,231,.65)!important;color:rgba(242,238,231,.84)!important;
-  background:rgba(4,9,13,.22)!important;box-shadow:0 0 12px rgba(0,0,0,.10)!important;
+  background:rgba(4,9,13,.22)!important;box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 12px rgba(255,255,255,.08),inset 0 0 10px rgba(255,255,255,.025)!important;
 }
 .home-journey .journey-phase.active .journey-name,
 .home-journey .journey-phase.complete .journey-name,
