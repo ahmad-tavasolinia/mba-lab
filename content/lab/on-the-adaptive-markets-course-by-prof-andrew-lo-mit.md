@@ -5,17 +5,17 @@ code: "MBA·LAB·16"
 journeyPhase: "phase-1"
 category: "essays"
 topics: ["finance", "artificial-intelligence"]
-summary: "Why I chose this as the first course before my MBA — and what it means to treat markets as a living ecosystem instead of a rational calculator."
+summary: "Why I chose this as the first course before my MBA, and what it means to treat markets as a living ecosystem instead of a rational calculator."
 centralQuestion: "If financial markets are neither fully rational nor fully irrational, but constantly adapting like a biological ecosystem, what does that actually demand of a decision-maker?"
 keyIdeas:
-  - "Classic models assume Homo economicus — pure rationality and self-interest — but people visibly make decisions driven by fear, greed, and jealousy, so the market behaves more like a living ecosystem than an emotionless calculator."
-  - "Markets behave rationally until a major shock hits, at which point participants shift into Fight-or-Flight mode and classic models start to collapse — hedge funds buying gold and guns during the 2008 crisis makes sense once viewed through that evolutionary lens."
-  - "Markets behave rationally when people decide independently; herd behavior begins the moment people start imitating each other instead — bubbles form as independence fades."
-  - "Classic financial models aren't wrong, just incomplete — the real question isn't 'what is the best model' but 'when does this model work, and when does it fail.'"
-  - "Financial CBT: at the exact moment clear thinking is needed most, the amygdala can hijack it — asking simple questions like 'why would this work, why wouldn't it, what am I missing' pulls thinking back from pure emotional reaction toward rational analysis."
+  - "Classic models assume Homo economicus, pure rationality and self-interest, but people visibly make decisions driven by fear, greed, and jealousy, so the market behaves more like a living ecosystem than an emotionless calculator."
+  - "Markets behave rationally until a major shock hits, at which point participants shift into Fight-or-Flight mode and classic models start to collapse, hedge funds buying gold and guns during the 2008 crisis makes sense once viewed through that evolutionary lens."
+  - "Markets behave rationally when people decide independently; herd behavior begins the moment people start imitating each other instead, bubbles form as independence fades."
+  - "Classic financial models aren't wrong, just incomplete, the real question isn't 'what is the best model' but 'when does this model work, and when does it fail.'"
+  - "Financial CBT: at the exact moment clear thinking is needed most, the amygdala can hijack it, asking simple questions like 'why would this work, why wouldn't it, what am I missing' pulls thinking back from pure emotional reaction toward rational analysis."
 connections: []
 openQuestions:
-  - "In a future market dominated by AI agents and algorithms, will they also behave like a herd — and if they do, is that still a biological ecosystem, or something else entirely?"
+  - "In a future market dominated by AI agents and algorithms, will they also behave like a herd, and if they do, is that still a biological ecosystem, or something else entirely?"
 finalPerspective: "More than learning another financial model, the real lesson was learning how to recognize the environment, understand human behavior, understand my own reactions, and adapt when the rules of the game change."
 sources: ["mit-adaptive-markets"]
 ---

@@ -5,13 +5,13 @@ code: "MBA·LAB·15"
 journeyPhase: "phase-1"
 category: "essays"
 topics: ["artificial-intelligence"]
-summary: "A bet under uncertainty: if AI turns solo founders into one-person startups, the edge won't be the tool — it'll be knowing how to run a business."
-centralQuestion: "If AI keeps lowering the cost of building things, what becomes the actual competitive advantage — and is an MBA still worth it in that world?"
+summary: "A bet under uncertainty: if AI turns solo founders into one-person startups, the edge won't be the tool, it'll be knowing how to run a business."
+centralQuestion: "If AI keeps lowering the cost of building things, what becomes the actual competitive advantage, and is an MBA still worth it in that world?"
 keyIdeas:
-  - "In 2010, a brilliant startup idea needed a team of experts before almost anything else — finance came second, because sponsors are useless without people who can actually do the work."
-  - "In 2026, AI is already capable of a huge range of that work — which points toward an era of one-person startups, where AI becomes the team a founder doesn't have."
-  - "If the tool is equally available to everyone, the edge shifts to who knows how to use it — an amateur with a brilliant idea and AI versus a business expert with the same AI are not competing on equal footing."
-  - "This is explicitly a bet under uncertainty, not a prediction claimed to be correct — the position is chosen so it still pays off even if the specific scenario (AI, regulation, pace of progress) plays out differently than expected."
+  - "In 2010, a brilliant startup idea needed a team of experts before almost anything else, finance came second, because sponsors are useless without people who can actually do the work."
+  - "In 2026, AI is already capable of a huge range of that work, which points toward an era of one-person startups, where AI becomes the team a founder doesn't have."
+  - "If the tool is equally available to everyone, the edge shifts to who knows how to use it, an amateur with a brilliant idea and AI versus a business expert with the same AI are not competing on equal footing."
+  - "This is explicitly a bet under uncertainty, not a prediction claimed to be correct, the position is chosen so it still pays off even if the specific scenario (AI, regulation, pace of progress) plays out differently than expected."
 connections: []
 openQuestions:
   - "If AI progress slows or regulation reshapes the landscape entirely, which specific skills from this bet still hold up, and which turn out to have been built for a future that didn't arrive?"

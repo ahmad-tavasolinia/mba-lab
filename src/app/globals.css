@@ -17,7 +17,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 .site-bg{position:fixed;inset:-60px;z-index:0;background-image:linear-gradient(rgba(5,7,8,.87),rgba(5,7,8,.87)),url('/mba-lab/hero-mba-lab.png');background-repeat:no-repeat;background-position:center;background-size:cover;filter:blur(32px);pointer-events:none}
 
 /* =========================================================
-   SIDEBAR — matched to the reference composition, scaled off
+   SIDEBAR ,  matched to the reference composition, scaled off
    viewport WIDTH (not height) so it stays proportional and
    never gets squeezed on a shorter browser window.
    ========================================================= */
@@ -148,7 +148,7 @@ main{ margin-left:var(--rail-width); min-width:0; }
 .mobile-nav a.is-active{color:#d3a16c}
 
 /* =========================================================
-   HOMEPAGE HERO — full-bleed viewport, native artwork geometry.
+   HOMEPAGE HERO ,  full-bleed viewport, native artwork geometry.
    The artwork (1385x1024) is NOT the same aspect ratio as a
    widescreen browser window. object-fit:cover would zoom/crop
    the chair and window; object-fit:fill would stretch and
@@ -356,7 +356,7 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 .page-about{zoom:1.10}
 
 /* =========================================================
-   MBA LAB NOTEBOOK PAGE — visual treatment based on the
+   MBA LAB NOTEBOOK PAGE ,  visual treatment based on the
    supplied reference composition. The global sidebar remains
    untouched; these rules style only the Lab page content.
    ========================================================= */
@@ -509,4 +509,70 @@ body:has(.site-rail.is-collapsed) main{margin-left:0;}
 @media (max-width:560px){
   .lab-reference-kinds .lab-card-grid{grid-template-columns:1fr;}
   .lab-reference-card,.lab-reference-card .lab-card-content{min-height:185px;height:185px;}
+}
+
+/* =========================================================
+   READING MODE
+   Default remains dark. Individual reading pages can switch
+   to a warm camel paper tone without changing the black rail.
+   ========================================================= */
+.reading-theme-toggle{
+  position:fixed;
+  z-index:76;
+  top:18px;
+  left:calc(var(--rail-width) + 18px);
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(200,150,93,.55);
+  border-radius:50%;
+  background:rgba(5,6,7,.92);
+  color:#d3a16c;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.20);
+  backdrop-filter:blur(8px);
+  transition:left .34s cubic-bezier(.22,.61,.36,1), background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.reading-theme-toggle:hover{transform:translateY(-1px);border-color:#d3a16c;color:#eee9df;}
+.reading-theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+body:has(.site-rail.is-collapsed) .reading-theme-toggle{left:18px;}
+
+/* The main reading area moves with the rail. The rail itself always stays black. */
+body[data-reading-page][data-reading-theme="light"] main{
+  background:#c7b08a;
+  color:#2c261f;
+}
+body[data-reading-page][data-reading-theme="light"] footer{
+  background:#bfa77f;
+  color:#2c261f;
+  border-color:rgba(62,48,33,.20);
+}
+body[data-reading-page][data-reading-theme="light"] main [class*="text-ink"],
+body[data-reading-page][data-reading-theme="light"] main [class*="dark:text-dark-ink"],
+body[data-reading-page][data-reading-theme="light"] main [class*="text-dark-ink"]{color:#2c261f !important;}
+body[data-reading-page][data-reading-theme="light"] main [class*="text-ink/"]{color:rgba(44,38,31,.72) !important;}
+body[data-reading-page][data-reading-theme="light"] main [class*="dark:text-dark-soft"]{color:rgba(44,38,31,.68) !important;}
+body[data-reading-page][data-reading-theme="light"] main [class*="border-rule"],
+body[data-reading-page][data-reading-theme="light"] main [class*="dark:border-dark-rule"]{border-color:rgba(62,48,33,.22) !important;}
+body[data-reading-page][data-reading-theme="light"] main .prose-lab,
+body[data-reading-page][data-reading-theme="light"] main .prose-lab h2{color:#2c261f !important;}
+body[data-reading-page][data-reading-theme="light"] main .prose-lab a{color:#7c5427;}
+body[data-reading-page][data-reading-theme="light"] main .prose-lab a:hover{color:#5f3e1d;}
+body[data-reading-page][data-reading-theme="light"] footer [class*="text-ink"],
+body[data-reading-page][data-reading-theme="light"] footer [class*="dark:text-dark-soft"]{color:rgba(44,38,31,.72) !important;}
+body[data-reading-page][data-reading-theme="light"] footer [class*="border-rule"],
+body[data-reading-page][data-reading-theme="light"] footer [class*="dark:border-dark-rule"]{border-color:rgba(62,48,33,.20) !important;}
+
+/* MBA Lab landing page is intentionally one viewport on desktop. */
+@media (min-width:768px){
+  html:has(.lab-reference-page),
+  body:has(.lab-reference-page){overflow:hidden;}
+}
+
+/* No decorative line above the sidebar collapse arrow. */
+.rail-collapse-toggle::before{display:none;}
+@media (max-width:767px){
+  .reading-theme-toggle{left:18px;top:82px;}
 }

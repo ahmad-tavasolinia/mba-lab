@@ -4,7 +4,7 @@ import { Container, Eyebrow } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'CV',
-  description: 'Curriculum vitae — Ahmad Tavasolinia.',
+  description: 'Curriculum vitae, Ahmad Tavasolinia.',
 };
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -66,7 +66,7 @@ export default function CvPage() {
             <div>
               <SectionHeading>Independent Project</SectionHeading>
               <div className="mt-4">
-                <Entry role="Founder & Author — MBA Lab" place="Independent intellectual project" time="2026 – Present">
+                <Entry role="Founder & Author, MBA Lab" place="Independent intellectual project" time="2026 – Present">
                   <p>
                     Founded and developed an independent digital platform exploring business,
                     strategy, finance, technology, and management through the synthesis of
@@ -83,7 +83,7 @@ export default function CvPage() {
               <SectionHeading>Education</SectionHeading>
               <div className="mt-4">
                 <Entry role="Self-directed graduate-level study" place="MIT OpenCourseWare, Yale open lectures, independent reading" time="2026">
-                  <p>Strategy, finance, economics, organizational behavior, and the intersection of AI and business — see Courses &amp; Sources for full detail.</p>
+                  <p>Strategy, finance, economics, organizational behavior, and the intersection of AI and business, see Courses &amp; Sources for full detail.</p>
                 </Entry>
                 <Entry role="[Add your degree here]" place="[Add your university]" time="[Years]" />
               </div>
@@ -100,7 +100,7 @@ export default function CvPage() {
                   <ul className="list-disc space-y-1.5 pl-5">
                     <li>
                       Served as interim team lead for a pre-revenue, 5-person startup with no
-                      formal business background — evaluated three competing MVP concepts and
+                      formal business background, evaluated three competing MVP concepts and
                       narrowed the team to the direction they ultimately built and shipped
                     </li>
                     <li>
@@ -139,7 +139,7 @@ export default function CvPage() {
               <div className="mt-4">
                 <Entry
                   role="NODET Graduate"
-                  place="National Organization for Development of Exceptional Talents — Iran's selective national high school program for gifted students"
+                  place="National Organization for Development of Exceptional Talents, Iran's selective national high school program for gifted students"
                   time="2016"
                 >
                   <p>
@@ -149,7 +149,7 @@ export default function CvPage() {
                     thinking from an early age.
                   </p>
                 </Entry>
-                <Entry role="IELTS Academic — Band 7.0 (CEFR C1)" place="English language proficiency" time="2022" />
+                <Entry role="IELTS Academic, Band 7.0 (CEFR C1)" place="English language proficiency" time="2022" />
                 <Entry
                   role="Management of Smart Cities"
                   place="École Polytechnique Fédérale de Lausanne (EPFL), via Coursera"

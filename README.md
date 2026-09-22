@@ -1,4 +1,4 @@
-# MBA Lab — Ahmad Tavasolinia
+# MBA Lab ,  Ahmad Tavasolinia
 
 An independent intellectual laboratory exploring business, strategy, finance, technology,
 and leadership. Built with Next.js, TypeScript, and Tailwind CSS. Content lives in plain
@@ -31,7 +31,7 @@ included so you can see the design with real content. Edit or delete them freely
 
 You don't need to know how to code to do this. Just follow the steps in order.
 
-### Step 1 — Create a GitHub account and a new repository
+### Step 1 ,  Create a GitHub account and a new repository
 1. Go to [github.com](https://github.com) and sign in (or create a free account).
 2. Click the **+** icon top-right → **New repository**.
 3. Name it anything you like, for example `mba-lab`.
@@ -42,11 +42,11 @@ You don't need to know how to code to do this. Just follow the steps in order.
 4. Leave it **Public**. Don't add a README, .gitignore, or license (this project already
    has them). Click **Create repository**.
 
-### Step 2 — Upload this project to your new repository
+### Step 2 ,  Upload this project to your new repository
 The simplest way, with no command line required:
 1. On your new (empty) repository page, click **uploading an existing file**.
 2. Drag the entire contents of this project folder into the upload box.
-   (Everything inside `mba-lab/` — not the outer folder itself.)
+   (Everything inside `mba-lab/` ,  not the outer folder itself.)
 3. Scroll down and click **Commit changes**.
 
 If you're comfortable with the command line instead, from inside this folder:
@@ -59,17 +59,17 @@ git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
 git push -u origin main
 ```
 
-### Step 3 — Turn on GitHub Pages with GitHub Actions
+### Step 3 ,  Turn on GitHub Pages with GitHub Actions
 1. In your repository, click **Settings** (top menu).
 2. In the left sidebar, click **Pages**.
 3. Under **Build and deployment → Source**, choose **GitHub Actions**.
-4. That's it — you don't need to configure anything else here.
+4. That's it ,  you don't need to configure anything else here.
 
-### Step 4 — Let it build
+### Step 4 ,  Let it build
 1. Click the **Actions** tab at the top of your repository.
 2. You should see a workflow called **Deploy MBA Lab to GitHub Pages** running
    (it starts automatically after you push/upload your files).
-3. Wait for it to finish — it takes 1–3 minutes. A green checkmark means success.
+3. Wait for it to finish ,  it takes 1–3 minutes. A green checkmark means success.
 4. Go back to **Settings → Pages**. Your live URL will be shown at the top of the page,
    for example:
    - `https://yourusername.github.io` (if you named the repo `yourusername.github.io`)
@@ -91,7 +91,7 @@ pattern (copy an existing file in that folder as a starting template):
 title: "Your Title Here"
 date: "2026-08-01"
 code: "MBA·TOPIC·01"
-phase: "Phase 03 — Strategy and Competition"
+phase: "Phase 03 ,  Strategy and Competition"
 topics: ["strategy"]
 summary: "One or two sentences summarizing the entry."
 centralQuestion: "The one big question this entry explores."
@@ -142,7 +142,7 @@ Available topic slugs: `strategy`, `finance`, `economics`, `entrepreneurship`,
 `leadership`, `organizational-behavior`, `innovation`, `artificial-intelligence`,
 `technology`, `business-philosophy`.
 
-After adding or editing files, upload/commit/push the changes the same way as Step 2 —
+After adding or editing files, upload/commit/push the changes the same way as Step 2 , 
 the site rebuilds automatically.
 
 ---
@@ -170,13 +170,13 @@ The output goes to the `out/` folder.
 ## 5. Personalizing the site
 
 A few things worth updating before you share the site widely:
-- **`src/app/contact/page.tsx`** — replace the placeholder email and social links.
-- **`src/app/cv/page.tsx`** — replace the placeholder education/experience entries.
-- **`public/cv.pdf`** — add a real PDF here if you want the "Download PDF" button on
+- **`src/app/contact/page.tsx`** ,  replace the placeholder email and social links.
+- **`src/app/cv/page.tsx`** ,  replace the placeholder education/experience entries.
+- **`public/cv.pdf`** ,  add a real PDF here if you want the "Download PDF" button on
   the CV page to work (or remove that button).
-- **`src/app/layout.tsx` and `src/app/sitemap.ts` / `src/app/robots.ts`** — replace
+- **`src/app/layout.tsx` and `src/app/sitemap.ts` / `src/app/robots.ts`** ,  replace
   `https://example.com` with your real domain once you have one.
-- **`src/app/icon.svg`** — replace with your own monogram or logo if you'd like.
+- **`src/app/icon.svg`** ,  replace with your own monogram or logo if you'd like.
 
 ---
 

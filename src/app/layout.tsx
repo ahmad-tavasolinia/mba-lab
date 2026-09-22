@@ -28,14 +28,14 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'MBA Lab — Ahmad Tavasolinia',
-    template: '%s — MBA Lab',
+    default: 'MBA Lab, Ahmad Tavasolinia',
+    template: '%s, MBA Lab',
   },
   description:
-    'An independent intellectual laboratory exploring business, strategy, finance, technology, and leadership — synthesized from academic sources, real-world cases, and original analysis.',
+    'An independent intellectual laboratory exploring business, strategy, finance, technology, and leadership, synthesized from academic sources, real-world cases, and original analysis.',
   metadataBase: new URL('https://example.com'),
   openGraph: {
-    title: 'MBA Lab — Ahmad Tavasolinia',
+    title: 'MBA Lab, Ahmad Tavasolinia',
     description:
       'An independent intellectual laboratory exploring business, strategy, finance, technology, and leadership.',
     type: 'website',

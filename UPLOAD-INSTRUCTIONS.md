@@ -1,4 +1,4 @@
-# MBA Lab redesign — GitHub upload
+# MBA Lab redesign ,  GitHub upload
 
 ## Background image
 The new homepage background is already included in this package.
@@ -21,4 +21,4 @@ Do not put the image in `src/`, and do not rename it unless you also change the 
 4. Commit and push the changes.
 5. GitHub Actions will deploy the Next.js site using the existing `.github/workflows/deploy.yml` workflow.
 
-If you use GitHub's web interface, upload the extracted repository files/folders — GitHub will not automatically turn a ZIP uploaded through the normal file-upload interface into a repository tree.
+If you use GitHub's web interface, upload the extracted repository files/folders ,  GitHub will not automatically turn a ZIP uploaded through the normal file-upload interface into a repository tree.
