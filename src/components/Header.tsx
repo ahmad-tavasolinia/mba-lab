@@ -31,6 +31,8 @@ export default function Header() {
   const [railCollapsed, setRailCollapsed] = useState(false);
   const [readingTheme, setReadingTheme] = useState<'dark' | 'light'>('dark');
 
+  const isHome = pathname === '/';
+
   const isReadingPage = Boolean(
     pathname && (
       (pathname.startsWith('/mba-lab/') && pathname !== '/mba-lab' &&
@@ -73,6 +75,8 @@ export default function Header() {
     if (href === '/') return pathname === '/';
     return pathname?.startsWith(href);
   }
+
+  if (isHome) return null;
 
   return (
     <>
