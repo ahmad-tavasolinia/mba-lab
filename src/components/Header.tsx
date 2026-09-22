@@ -28,6 +28,7 @@ function Icon({ type }: { type: string }) {
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [railCollapsed, setRailCollapsed] = useState(false);
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/';
@@ -36,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <aside className="site-rail hidden md:flex" aria-label="Primary navigation">
+      <aside className={`site-rail hidden md:flex ${railCollapsed ? 'is-collapsed' : ''}`} aria-label="Primary navigation">
         <div className="rail-brand">
           <Link href="/" className="rail-title">MBA LAB</Link>
           <span className="rail-name">AHMAD TAVASOLINIA</span>
@@ -53,6 +54,16 @@ export default function Header() {
         </nav>
 
       </aside>
+
+      <button
+        type="button"
+        className={`rail-collapse-toggle hidden md:flex ${railCollapsed ? 'is-collapsed' : ''}`}
+        onClick={() => setRailCollapsed(v => !v)}
+        aria-label={railCollapsed ? 'Open sidebar' : 'Close sidebar'}
+        aria-expanded={!railCollapsed}
+      >
+        <span aria-hidden="true">{railCollapsed ? '›' : '‹'}</span>
+      </button>
 
       <header className="mobile-header md:hidden">
         <Link href="/" className="mobile-mark">MBA LAB</Link>
