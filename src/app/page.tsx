@@ -1,34 +1,40 @@
 import Link from 'next/link';
 import JourneyPhases from '@/components/JourneyPhases';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 export default function HomePage() {
   return (
     <div className="home-hero">
-      <img
-        className="home-hero-image"
-        src={`${basePath}/hero-mba-lab.png`}
-        alt=""
-        aria-hidden="true"
-      />
-      <div className="home-hero-shade" aria-hidden="true" />
+      <div className="home-hero-background" aria-hidden="true" />
+
+      <header className="home-topbar">
+        <Link href="/" className="home-wordmark" aria-label="Tavasolinia MBA Lab">
+          tavasolinia <span>/</span> mba <span>/</span> lab
+        </Link>
+
+        <nav className="home-topnav" aria-label="Homepage navigation">
+          <Link href="/" className="is-active">HOME</Link>
+          <Link href="/topics">TOPICS</Link>
+          <Link href="/about">ABOUT</Link>
+          <button type="button" className="home-search" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8" />
+              <path d="m16 16 5 5" />
+            </svg>
+          </button>
+        </nav>
+      </header>
 
       <section className="home-copy" aria-labelledby="home-title">
-        <p className="home-eyebrow">MBA LAB</p>
-
         <h1 id="home-title">
-          Ideas today.
+          Building the next
           <br />
-          Impact <em>tomorrow.</em>
+          chapter, deliberately.
         </h1>
 
         <p className="home-description">
-          A personal intellectual workspace
+          Exploring ideas, skills and opportunities
           <br />
-          to study ideas, build knowledge,
-          <br />
-          and prepare for what's next.
+          for a meaningful MBA journey.
         </p>
 
         <Link href="/mba-lab" className="home-cta">
@@ -37,7 +43,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <div className="home-journey">
+      <div className="home-journey" aria-label="MBA journey phases">
         <JourneyPhases />
       </div>
     </div>
