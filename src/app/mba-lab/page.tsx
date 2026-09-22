@@ -8,21 +8,14 @@ export const metadata: Metadata = {
   description: 'A personal laboratory for exploring the ideas behind business.',
 };
 
-const cardImages: Record<string, string> = {
-  cases: '/mba-lab/lab-case.jpg',
-  essays: '/mba-lab/lab-essay.jpg',
-  projects: '/mba-lab/lab-project.jpg',
-  interviews: '/mba-lab/lab-interview.jpg',
-};
-
 export default async function MbaLabPage() {
   const entries = await getAllLabEntries();
 
   return (
-    <div className="page-mba-lab lab-page">
-      <section className="lab-hero">
-        <div className="lab-hero-image" aria-hidden="true" />
-        <div className="lab-hero-vignette" aria-hidden="true" />
+    <div className="page-mba-lab lab-page lab-reference-page">
+      <section className="lab-hero lab-room-hero">
+        <div className="lab-room-image" aria-hidden="true" />
+        <div className="lab-room-shade" aria-hidden="true" />
         <div className="lab-hero-copy">
           <span className="lab-eyebrow">The Lab Notebook</span>
           <h1>MBA Lab</h1>
@@ -38,13 +31,13 @@ export default async function MbaLabPage() {
         </div>
       </section>
 
-      <section className="lab-kinds" id="browse">
+      <section className="lab-kinds lab-reference-kinds" id="browse">
         <div className="lab-section-head">
           <div className="lab-section-title">
             <span>Browse by kind</span>
             <i />
           </div>
-          <span className="lab-view-all">View all <span>→</span></span>
+          <Link href="/mba-lab" className="lab-view-all">View all <span>→</span></Link>
         </div>
 
         <div className="lab-card-grid">
@@ -54,13 +47,11 @@ export default async function MbaLabPage() {
               <Link
                 key={category.slug}
                 href={`/mba-lab/category/${category.slug}`}
-                className="lab-kind-card"
-                style={{ backgroundImage: `url(${cardImages[category.slug]})` }}
+                className="lab-kind-card lab-reference-card"
               >
-                <div className="lab-card-shade" />
                 <div className="lab-card-content">
                   <div className="lab-card-top">
-                    <span>{category.code === 'PROJ' ? 'PROJECT' : category.code === 'INTV' ? 'INTERVIEWS' : category.code}</span>
+                    <span>{category.code === 'PROJ' ? 'PROJ' : category.code === 'INTV' ? 'INTV' : category.code}</span>
                     <small>{count} {count === 1 ? 'piece' : 'pieces'}</small>
                   </div>
                   <h2>{category.name}</h2>
@@ -73,16 +64,22 @@ export default async function MbaLabPage() {
         </div>
       </section>
 
-      <section className="lab-big-picture">
-        <div className="lab-big-picture-image" aria-hidden="true" />
-        <div className="lab-big-picture-shade" aria-hidden="true" />
-        <div className="lab-big-picture-label">
-          <span>The Big Picture</span>
-          <i />
+      <section className="lab-featured">
+        <div className="lab-featured-copy">
+          <span className="lab-featured-eyebrow">Featured</span>
+          <h2>The Fundamentals<br />of Business Strategy</h2>
+          <p>A structured look at how strategy is built, tested, and adapted in the real world.</p>
+          <Link href="/mba-lab/category/essays" className="lab-featured-link">Read essay <span>→</span></Link>
         </div>
-        <div className="lab-big-picture-copy">
-          <p>A straight line is boring.<br />I choose the roller coaster.</p>
+        <div className="lab-featured-divider" />
+        <div className="lab-featured-quote">
           <span className="lab-gold-rule" />
+          <p>A straight line is boring.<br />I choose the roller coaster.</p>
+          <svg viewBox="0 0 520 180" aria-hidden="true" className="lab-trajectory">
+            <path d="M8 164 C118 112 170 112 246 135 C330 160 383 65 510 31" />
+            <path d="M8 177 C118 125 171 125 250 148 C334 173 387 78 510 44" />
+            <circle cx="510" cy="31" r="5" />
+          </svg>
         </div>
       </section>
     </div>
