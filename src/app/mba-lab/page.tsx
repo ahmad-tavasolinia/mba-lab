@@ -2,73 +2,88 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllLabEntries } from '@/lib/content';
 import { categories } from '@/lib/categories';
-import { getCategoryColor } from '@/lib/keyColors';
-import { Container, Eyebrow } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'MBA Lab',
   description: 'A personal laboratory for exploring the ideas behind business.',
 };
 
+const cardImages: Record<string, string> = {
+  cases: '/mba-lab/lab-case.jpg',
+  essays: '/mba-lab/lab-essay.jpg',
+  projects: '/mba-lab/lab-project.jpg',
+  interviews: '/mba-lab/lab-interview.jpg',
+};
+
 export default async function MbaLabPage() {
   const entries = await getAllLabEntries();
 
   return (
-    <div className="flex flex-1 flex-col page-mba-lab">
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-8 md:py-10">
-          <Eyebrow>The lab notebook</Eyebrow>
-          <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
-            MBA Lab
-          </h1>
-          <p className="mt-3 max-w-2xl font-serif text-xl italic text-ink/70 dark:text-dark-soft">
-            A personal laboratory for exploring the ideas behind business.
+    <div className="page-mba-lab lab-page">
+      <section className="lab-hero">
+        <div className="lab-hero-image" aria-hidden="true" />
+        <div className="lab-hero-vignette" aria-hidden="true" />
+        <div className="lab-hero-copy">
+          <span className="lab-eyebrow">The Lab Notebook</span>
+          <h1>MBA Lab</h1>
+          <p className="lab-tagline">Ideas. Research. Projects. A new chapter.</p>
+          <span className="lab-gold-rule" />
+          <p className="lab-intro">
+            Not a collection of course notes — a public record of an ongoing intellectual journey through the core ideas of business and management, synthesized, connected, and questioned as I study them.
           </p>
-          <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-            Not a collection of course notes — a public record of an ongoing intellectual journey
-            through the core ideas of business and management, synthesized, connected, and
-            questioned as I study them.
-          </p>
-        </Container>
+        </div>
+        <div className="lab-hero-side">
+          <p>Better questions.<br />Bigger horizons.</p>
+          <span className="lab-gold-rule" />
+        </div>
       </section>
 
-      <section className="flex flex-1 flex-col justify-center">
-        <Container className="py-6">
-          <Eyebrow>Browse by kind</Eyebrow>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60 dark:text-dark-soft">
-            Every entry lives under one of three keys, depending on what kind of work it is.
-          </p>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((c) => {
-              const count = entries.filter((e) => e.category === c.slug).length;
-              const col = getCategoryColor(c.slug);
-              return (
-                <Link
-                  key={c.slug}
-                  href={`/mba-lab/category/${c.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-4 transition ${col.border} ${col.bg} ${col.hoverBorder}`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className={`font-mono text-[10px] uppercase tracking-widest ${col.code}`}>
-                        {c.code}
-                      </span>
-                      <span className="font-mono text-[10px] text-ink/30 dark:text-dark-soft/50">
-                        {count} {count === 1 ? 'piece' : 'pieces'}
-                      </span>
-                    </div>
-                    <h3 className={`mt-2 font-serif text-lg font-medium leading-snug text-ink transition-colors dark:text-dark-ink ${col.hoverTitle}`}>
-                      {c.name}
-                    </h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-ink/60 dark:text-dark-soft">
-                      {c.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+      <section className="lab-kinds" id="browse">
+        <div className="lab-section-head">
+          <div className="lab-section-title">
+            <span>Browse by kind</span>
+            <i />
           </div>
-        </Container>
+          <span className="lab-view-all">View all <span>→</span></span>
+        </div>
+
+        <div className="lab-card-grid">
+          {categories.map((category) => {
+            const count = entries.filter((entry) => entry.category === category.slug).length;
+            return (
+              <Link
+                key={category.slug}
+                href={`/mba-lab/category/${category.slug}`}
+                className="lab-kind-card"
+                style={{ backgroundImage: `url(${cardImages[category.slug]})` }}
+              >
+                <div className="lab-card-shade" />
+                <div className="lab-card-content">
+                  <div className="lab-card-top">
+                    <span>{category.code === 'PROJ' ? 'PROJECT' : category.code === 'INTV' ? 'INTERVIEWS' : category.code}</span>
+                    <small>{count} {count === 1 ? 'piece' : 'pieces'}</small>
+                  </div>
+                  <h2>{category.name}</h2>
+                  <p>{category.description}</p>
+                  <span className="lab-card-arrow">→</span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="lab-big-picture">
+        <div className="lab-big-picture-image" aria-hidden="true" />
+        <div className="lab-big-picture-shade" aria-hidden="true" />
+        <div className="lab-big-picture-label">
+          <span>The Big Picture</span>
+          <i />
+        </div>
+        <div className="lab-big-picture-copy">
+          <p>A straight line is boring.<br />I choose the roller coaster.</p>
+          <span className="lab-gold-rule" />
+        </div>
       </section>
     </div>
   );
