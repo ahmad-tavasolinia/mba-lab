@@ -138,6 +138,7 @@ body { margin:0; background:#050708; color:#eee9df; font-family:var(--font-body)
 }
 
 main{ margin-left:var(--rail-width); min-width:0; }
+footer{ margin-left:var(--rail-width); transition:margin-left .34s cubic-bezier(.22,.61,.36,1); }
 
 .mobile-header{position:fixed;inset:0 0 auto;z-index:60;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid rgba(238,233,223,.10);background:rgba(4,6,7,.90);backdrop-filter:blur(10px)}
 .mobile-mark{color:#d2a06c;font-family:var(--font-display),Georgia,serif;font-size:29px;letter-spacing:-.08em;text-decoration:none}
@@ -395,7 +396,7 @@ body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-c
 .lab-big-picture-copy{position:relative;z-index:2;padding:51px 0 26px 16.4%}
 .lab-big-picture-copy p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:27px;line-height:1.22;font-style:italic;color:#eee9df}
 .lab-big-picture-copy .lab-gold-rule{margin-top:16px}
-.page-mba-lab + footer{background:#05090d}
+.page-mba-lab + footer{background:#050607}
 
 @media (max-width:1100px){.lab-card-grid{gap:14px}.lab-hero-copy{width:52%}.lab-hero-side{right:5%;top:190px}}
 @media (max-width:800px){.lab-hero{min-height:520px}.lab-hero-copy{width:calc(100% - 56px);padding:108px 28px 36px}.lab-hero-side{left:28px;right:auto;top:auto;bottom:38px;width:auto}.lab-hero-side p{font-size:20px}.lab-kinds{padding:28px}.lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-big-picture-copy{padding-left:28px}.lab-big-picture{min-height:220px}}
@@ -446,7 +447,7 @@ body.rail-collapsed main{margin-left:0;}
 .lab-reference-page{background:#050607;color:#eee9df;overflow:hidden;min-height:calc(100dvh - 104px);}
 .lab-room-hero{min-height:318px;height:318px;border-bottom:1px solid rgba(238,233,223,.14);}
 .lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center center/100% auto no-repeat;background-color:#050607;}
-.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.72) 0%,rgba(3,7,10,.42) 34%,rgba(3,7,10,.10) 68%,rgba(3,7,10,.03) 100%);}
+.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,6,.48) 0%,rgba(3,5,6,.24) 34%,rgba(3,5,6,.06) 68%,rgba(3,5,6,.02) 100%);}
 .lab-reference-page .lab-hero-copy{padding:50px 0 38px 3.7%;width:min(560px,48%);}
 .lab-reference-page .lab-eyebrow{letter-spacing:.28em;}
 .lab-reference-page .lab-hero h1{font-size:clamp(56px,5vw,74px);margin-top:20px;}
@@ -461,8 +462,8 @@ body.rail-collapsed main{margin-left:0;}
 .lab-reference-kinds .lab-section-title{gap:18px;}
 .lab-reference-kinds .lab-section-title i{background:rgba(238,233,223,.35);width:285px;}
 .lab-reference-kinds .lab-card-grid{gap:20px;}
-.lab-reference-card{min-height:178px;height:178px;background:#071016;border:1px solid rgba(123,157,181,.34);border-radius:6px;transform:none!important;}
-.lab-reference-card:hover{border-color:rgba(238,233,223,.30);background:#0b0c0d;}
+.lab-reference-card{min-height:178px;height:178px;background:#0a0a0a;border:1px solid rgba(238,233,223,.20);border-radius:6px;transform:none!important;}
+.lab-reference-card:hover{border-color:rgba(200,150,93,.42);background:#101010;}
 .lab-reference-card .lab-card-content{min-height:178px;padding:18px 20px 15px;}
 .lab-reference-card .lab-card-top{font-size:10px;letter-spacing:.22em;}
 .lab-reference-card .lab-card-top small{font-size:10px;}
@@ -485,7 +486,7 @@ body.rail-collapsed main{margin-left:0;}
 .lab-trajectory path{fill:none;stroke:#5b8aa5;stroke-width:1.1;}
 .lab-trajectory circle{fill:#9cc4d9;}
 
-.page-mba-lab + footer{background:#05090d;}
+.page-mba-lab + footer{background:#050607;}
 
 @media (max-width:1100px){
   .lab-reference-page .lab-hero-copy{width:54%;}
@@ -572,10 +573,12 @@ body[data-reading-page][data-reading-theme="light"] footer [class*="dark:border-
 /* Keep the sidebar collapse layout in sync on every desktop page. */
 @media (min-width:768px){
   body.rail-collapsed main{margin-left:0;}
+  body.rail-collapsed footer{margin-left:0;}
 }
 
 /* No decorative line above the sidebar collapse arrow. */
 .rail-collapse-toggle::before{display:none;}
 @media (max-width:767px){
-  .reading-theme-toggle{right:18px;bottom:18px;}
+  .reading-theme-toggle{right:18px;top:18px;bottom:auto;}
+  footer{margin-left:0;}
 }
