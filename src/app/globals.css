@@ -222,363 +222,101 @@ body:has(.home-hero) main { height:100dvh; min-height:0; }
   letter-spacing:.015em;
 }
 .home-cta{
-  display:inline-flex;
+  position:relative;
+  display:flex;
   align-items:center;
-  gap:26px;
+  justify-content:flex-start;
+  gap:34px;
+  width:310px;
+  height:58px;
   margin-top:34px;
-  padding-bottom:12px;
-  border-bottom:1px solid #bd8b56;
-  color:#e9e2d8;
-  font-family:var(--font-mono), monospace;
-  font-size:10px;
-  letter-spacing:.30em;
+  padding:0 0 18px 12px;
+  border:0;
+  color:#eeeae3;
+  font-family:var(--font-body),system-ui,sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.22em;
   text-transform:uppercase;
   text-decoration:none;
-}
-.home-arrow{ font-size:20px; line-height:.4; letter-spacing:0; }
-.home-journey{
-  position:absolute;
-  z-index:3;
-  left:5.7%;
-  right:5.2%;
-  bottom:62px;
-  padding-top:27px;
-  border-top:1px solid rgba(238,233,223,.30);
   background:transparent;
+  box-shadow:none;
 }
-.home-journey .journey-title{
-  margin:0 0 24px;
-  color:#d3a16c;
-  font-family:var(--font-mono),monospace;
-  font-size:11px;
-  letter-spacing:.34em;
-  text-transform:uppercase;
-}
-.home-journey .journey-track{ display:flex; align-items:flex-start; width:100%; }
-
-.journey-step{ display:flex; align-items:flex-start; flex:0 0 auto; min-width:0; }
-.journey-step:not(.last){ flex:1 1 auto; }
-
-.journey-phase{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  flex:0 0 auto;
-  text-decoration:none;
-}
-.journey-circle{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:54px;
-  height:54px;
-  border:1px solid rgba(238,233,223,.55);
-  border-radius:50%;
-  background:rgba(5,7,8,.55);
-  color:rgba(238,233,223,.80);
-  font-family:var(--font-mono),monospace;
-  font-size:11px;
-  letter-spacing:.02em;
-  transition:border-color .2s ease, color .2s ease, background .2s ease, box-shadow .2s ease;
-}
-.journey-name{
-  margin-top:14px;
-  color:rgba(238,233,223,.55);
-  font-family:var(--font-mono),monospace;
-  font-size:10px;
-  letter-spacing:.20em;
-  text-transform:uppercase;
-  white-space:nowrap;
-  transition:color .2s ease;
-}
-.journey-line{
-  flex:1 1 auto;
-  min-width:24px;
-  margin:27px 26px 0;
-  height:1.5px;
-  background:rgba(238,233,223,.30);
-  box-shadow:0 0 6px rgba(0,0,0,.6);
-}
-.journey-line.filled{ background:rgba(238,233,223,.55); }
-
-.journey-phase.active .journey-circle{
-  border-color:#d3a16c!important;
-  color:#e8bd8a!important;
-  background:rgba(211,161,108,.10)!important;
-  box-shadow:0 0 0 5px rgba(211,161,108,.04),0 0 20px rgba(211,161,108,.16);
-}
-.journey-phase.active .journey-name{ color:#d3a16c!important; }
-.journey-phase.complete .journey-circle{
-  border-color:rgba(238,233,223,.75);
-  color:#eee9df;
-}
-.journey-phase.complete .journey-name{ color:rgba(238,233,223,.75); }
-
-/* Short desktop viewport: keep the hero and journey from colliding when the
-   browser's own chrome eats into the available height. */
-@media (min-width: 768px) and (max-height: 700px) {
-  .home-copy{ top:12.5vh; }
-  .home-eyebrow{ margin-bottom:18px; font-size:11px; }
-  .home-copy h1{ font-size:clamp(43px, 3.8vw, 58px); line-height:.96; }
-  .home-description{ margin-top:22px; font-size:14px; line-height:1.45; }
-  .home-cta{ margin-top:18px; padding-bottom:9px; }
-  .home-journey{ bottom:20px; padding-top:14px; }
-  .home-journey .journey-title{ margin-bottom:11px; font-size:10px; }
-  .journey-circle{ width:44px; height:44px; font-size:10px; }
-  .journey-name{ margin-top:8px; font-size:9px; }
-  .journey-line{ margin-top:21px; }
-}
-
-@media (max-width: 767px) {
-  main{ margin-left:0; }
-  .site-rail{ display:none; }
-  .home-hero-image{ object-position:64% center; }
-  .home-copy{ left:28px; top:112px; width:calc(100% - 56px); }
-  .home-copy h1{ font-size:clamp(48px, 14vw, 68px); }
-  .home-description{ margin-top:28px; }
-  .home-journey{ left:28px; right:28px; bottom:30px; overflow:hidden; }
-  .home-journey .journey-track{ overflow-x:auto; padding-bottom:5px; }
-  .rail-note{ display:none; }
-}
-
-/* Compact non-home pages: don't vertically center catalog content. */
-body > div > main > div.flex-1.flex-col > section.flex-1.flex-col.justify-center{justify-content:flex-start}
-body > div > main > div.flex.flex-1.flex-col > section.flex-1.flex-col.justify-center{justify-content:flex-start}
-
-.prose-lab{font-family:var(--font-display),Georgia,serif;font-size:1.125rem;line-height:1.85}
-.prose-lab h2{font-family:var(--font-display),Georgia,serif;font-size:1.5rem;font-weight:600;margin-top:2.75rem;margin-bottom:1rem;color:#eee9df}
-.prose-lab p{margin-bottom:1.4rem}.prose-lab strong{font-weight:600}.prose-lab a{color:#c8965d;text-underline-offset:3px}.prose-lab a:hover{color:#d8ac77}
-.code-chip{font-family:var(--font-mono),monospace;letter-spacing:.02em}.hr-rule{border-top:1px solid rgba(238,233,223,.14)}
-
-/* Page-specific sizing: tuned to match the user's preferred browser-zoom appearance.
-   Home remains untouched. */
-.page-topics{zoom:1.15}
-.page-about{zoom:1.10}
-
-/* =========================================================
-   MBA LAB NOTEBOOK PAGE ,  visual treatment based on the
-   supplied reference composition. The global sidebar remains
-   untouched; these rules style only the Lab page content.
-   ========================================================= */
-.lab-page{background:#05090d;color:#eee9df;overflow:hidden}
-.lab-hero{position:relative;min-height:376px;border-bottom:1px solid rgba(238,233,223,.14);overflow:hidden}
-.lab-hero-image{position:absolute;inset:0;background-image:url('/mba-lab/lab-hero.jpg');background-size:cover;background-position:center right;filter:saturate(.92) contrast(1.04)}
-.lab-hero-vignette{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,10,.98) 0%,rgba(3,7,10,.93) 29%,rgba(3,7,10,.35) 57%,rgba(3,7,10,.04) 100%),linear-gradient(180deg,rgba(3,7,10,.06),rgba(3,7,10,.12))}
-.lab-hero-copy{position:relative;z-index:2;padding:48px 0 42px 3.7%;width:min(560px,43%)}
-.lab-eyebrow,.lab-section-title,.lab-big-picture-label{font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:#d3a16c}
-.lab-hero h1{margin:20px 0 0;font-family:var(--font-display),Georgia,serif;font-size:clamp(56px,5vw,78px);font-weight:500;line-height:.94;letter-spacing:-.045em;color:#eee9df}
-.lab-tagline{margin:20px 0 0;font-family:var(--font-display),Georgia,serif;font-size:24px;line-height:1.15;font-style:italic;color:rgba(238,233,223,.88)}
-.lab-gold-rule{display:block;width:39px;height:2px;margin-top:20px;background:#c8965d}
-.lab-intro{margin:21px 0 0;max-width:490px;font-family:var(--font-body),system-ui,sans-serif;font-size:14px;line-height:1.52;color:rgba(238,233,223,.82)}
-.lab-hero-side{position:absolute;z-index:2;right:6.3%;top:205px;width:190px}
-.lab-hero-side p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:22px;line-height:1.2;font-style:italic;color:rgba(238,233,223,.9)}
-.lab-hero-side .lab-gold-rule{margin-top:20px}
-.lab-kinds{padding:29px 3.7% 27px;background:#05090d}
-.lab-section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
-.lab-section-title{display:flex;align-items:center;gap:18px}
-.lab-section-title i,.lab-big-picture-label i{display:block;width:43px;height:1px;background:#c8965d}
-.lab-view-all{font-family:var(--font-body),system-ui,sans-serif;font-size:12px;color:rgba(238,233,223,.56);text-decoration:none}
-.lab-view-all span{margin-left:8px;font-size:17px}
-.lab-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:21px}
-.lab-kind-card{position:relative;display:block;min-height:235px;overflow:hidden;border:1px solid rgba(238,233,223,.22);border-radius:8px;background-size:cover;background-position:center;text-decoration:none;transition:border-color .25s ease,transform .25s ease}
-.lab-kind-card:hover{border-color:rgba(211,161,108,.65);transform:translateY(-2px)}
-.lab-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,9,.12) 0%,rgba(2,6,9,.35) 43%,rgba(2,6,9,.88) 100%)}
-.lab-card-content{position:relative;z-index:2;height:100%;min-height:235px;padding:17px 19px 15px;display:flex;flex-direction:column}
-.lab-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.22em;color:#d3a16c;font-size:10px}
-.lab-card-top small{font-size:10px;letter-spacing:0;color:rgba(238,233,223,.7);text-transform:none}
-.lab-card-content h2{margin:17px 0 0;font-family:var(--font-display),Georgia,serif;font-size:27px;font-weight:500;line-height:1;color:#f1ede5}
-.lab-card-content p{margin:12px 0 0;max-width:245px;font-family:var(--font-body),system-ui,sans-serif;font-size:13px;line-height:1.45;color:rgba(238,233,223,.84)}
-.lab-card-arrow{margin-top:auto;font-family:var(--font-body),system-ui,sans-serif;font-size:24px;line-height:1;color:#eee9df}
-.lab-big-picture{position:relative;min-height:166px;border-top:1px solid rgba(238,233,223,.14);border-bottom:1px solid rgba(238,233,223,.14);overflow:hidden}
-.lab-big-picture-image{position:absolute;inset:0;background:url('/mba-lab/lab-big-picture.jpg') center right/cover no-repeat}
-.lab-big-picture-shade{position:absolute;inset:0;background:linear-gradient(90deg,#05090d 0%,rgba(5,9,13,.96) 18%,rgba(5,9,13,.5) 49%,rgba(5,9,13,.05) 100%)}
-.lab-big-picture-label{position:absolute;left:3.7%;top:24px;display:flex;align-items:center;gap:18px}
-.lab-big-picture-copy{position:relative;z-index:2;padding:51px 0 26px 16.4%}
-.lab-big-picture-copy p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:27px;line-height:1.22;font-style:italic;color:#eee9df}
-.lab-big-picture-copy .lab-gold-rule{margin-top:16px}
-.page-mba-lab + footer{background:#050607}
-
-@media (max-width:1100px){.lab-card-grid{gap:14px}.lab-hero-copy{width:52%}.lab-hero-side{right:5%;top:190px}}
-@media (max-width:800px){.lab-hero{min-height:520px}.lab-hero-copy{width:calc(100% - 56px);padding:108px 28px 36px}.lab-hero-side{left:28px;right:auto;top:auto;bottom:38px;width:auto}.lab-hero-side p{font-size:20px}.lab-kinds{padding:28px}.lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-big-picture-copy{padding-left:28px}.lab-big-picture{min-height:220px}}
-@media (max-width:560px){.lab-hero{min-height:610px}.lab-hero-image{background-position:67% center}.lab-hero-copy{padding-top:92px}.lab-hero h1{font-size:56px}.lab-tagline{font-size:21px}.lab-intro{font-size:13px}.lab-card-grid{grid-template-columns:1fr}.lab-kind-card,.lab-card-content{min-height:220px}.lab-section-head{margin-bottom:17px}.lab-big-picture-copy{padding-top:72px}.lab-big-picture-copy p{font-size:24px}}
-
-/* =========================================================
-   MBA LAB REFERENCE PAGE + COLLAPSIBLE DESKTOP SIDEBAR
-   ========================================================= */
-.site-rail{transition:transform .34s cubic-bezier(.22,.61,.36,1);}
-.site-rail.is-collapsed{transform:translateX(-100%);}
-main{transition:margin-left .34s cubic-bezier(.22,.61,.36,1);}
-body.rail-collapsed main{margin-left:0;}
-.rail-collapse-toggle{
-  position:fixed;
-  z-index:70;
-  top:28px;
-  left:calc(var(--rail-width) - 15px);
-  width:30px;
-  height:42px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(238,233,223,.18);
-  border-left-color:rgba(200,150,93,.55);
-  border-radius:0 10px 10px 0;
-  background:rgba(5,6,7,.94);
-  color:rgba(238,233,223,.82);
-  cursor:pointer;
-  font-family:Georgia,serif;
-  font-size:22px;
-  line-height:1;
-  transition:left .34s cubic-bezier(.22,.61,.36,1), background .2s ease, color .2s ease, border-color .2s ease;
-  backdrop-filter:blur(8px);
-  box-shadow:0 6px 20px rgba(0,0,0,.22);
-}
-.rail-collapse-toggle::before{
+.home-cta::before{
   content:'';
   position:absolute;
-  top:8px;
-  width:10px;
+  left:0;
+  bottom:5px;
+  width:300px;
   height:1px;
-  background:#c8965d;
-  opacity:.9;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.98) 0,
+    rgba(244,246,246,.82) 3%,
+    rgba(216,221,223,.52) 11%,
+    rgba(188,196,199,.27) 34%,
+    rgba(160,170,174,.12) 72%,
+    rgba(150,160,164,0) 100%);
+  box-shadow:0 0 4px rgba(235,239,240,.55),0 0 13px rgba(220,225,227,.18);
 }
-.rail-collapse-toggle:hover{background:#111417;color:#eee9df;border-color:rgba(200,150,93,.65);}
-.rail-collapse-toggle.is-collapsed{left:0;border-left-color:rgba(238,233,223,.18);border-right-color:rgba(200,150,93,.55);border-radius:0 10px 10px 0;}
-
-.lab-reference-page{background:#050607;color:#eee9df;overflow:hidden;min-height:calc(100dvh - 104px);}
-.lab-room-hero{min-height:318px;height:318px;border-bottom:1px solid rgba(238,233,223,.14);}
-.lab-room-image{position:absolute;inset:0;background:url('/mba-lab/lab-room.png') center center/100% auto no-repeat;background-color:#050607;}
-.lab-room-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,6,.48) 0%,rgba(3,5,6,.24) 34%,rgba(3,5,6,.06) 68%,rgba(3,5,6,.02) 100%);}
-.lab-reference-page .lab-hero-copy{padding:50px 0 38px 3.7%;width:min(560px,48%);}
-.lab-reference-page .lab-eyebrow{letter-spacing:.28em;}
-.lab-reference-page .lab-hero h1{font-size:clamp(56px,5vw,74px);margin-top:20px;}
-.lab-reference-page .lab-tagline{font-size:23px;margin-top:17px;}
-.lab-reference-page .lab-gold-rule{margin-top:19px;}
-.lab-reference-page .lab-intro{max-width:470px;margin-top:20px;line-height:1.5;}
-.lab-reference-page .lab-hero-side{right:7.7%;top:146px;width:185px;}
-.lab-reference-page .lab-hero-side p{font-size:20px;line-height:1.2;}
-
-.lab-reference-kinds{padding:27px 3.7% 26px;background:#050607;}
-.lab-reference-kinds .lab-section-head{margin-bottom:17px;}
-.lab-reference-kinds .lab-section-title{gap:18px;}
-.lab-reference-kinds .lab-section-title i{background:rgba(238,233,223,.35);width:285px;}
-.lab-reference-kinds .lab-card-grid{gap:20px;}
-.lab-reference-card{min-height:178px;height:178px;background:#0a0a0a;border:1px solid rgba(238,233,223,.20);border-radius:6px;transform:none!important;}
-.lab-reference-card:hover{border-color:rgba(200,150,93,.42);background:#101010;}
-.lab-reference-card .lab-card-content{min-height:178px;padding:18px 20px 15px;}
-.lab-reference-card .lab-card-top{font-size:10px;letter-spacing:.22em;}
-.lab-reference-card .lab-card-top small{font-size:10px;}
-.lab-reference-card .lab-card-content h2{font-size:25px;margin-top:17px;}
-.lab-reference-card .lab-card-content p{font-size:13px;line-height:1.45;max-width:245px;margin-top:11px;}
-.lab-reference-card .lab-card-arrow{font-size:22px;}
-
-.lab-featured{position:relative;min-height:228px;display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);align-items:stretch;padding:0 3.7%;border-top:1px solid rgba(238,233,223,.14);border-bottom:1px solid rgba(238,233,223,.14);background:#05090d;overflow:hidden;}
-.lab-featured-copy{padding:27px 36px 27px 0;}
-.lab-featured-eyebrow{display:block;font-family:var(--font-mono),monospace;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:#7fb4cf;}
-.lab-featured-copy h2{margin:13px 0 0;font-family:var(--font-display),Georgia,serif;font-size:31px;font-weight:500;line-height:1.05;color:#eee9df;}
-.lab-featured-copy p{margin:13px 0 0;max-width:500px;font-family:var(--font-body),system-ui,sans-serif;font-size:13px;line-height:1.45;color:rgba(238,233,223,.76);}
-.lab-featured-link{display:inline-block;margin-top:13px;color:#7fb4cf;font-family:var(--font-body),system-ui,sans-serif;font-size:12px;text-decoration:none;}
-.lab-featured-link span{margin-left:7px;font-size:16px;}
-.lab-featured-divider{width:1px;height:130px;align-self:center;background:rgba(238,233,223,.24);}
-.lab-featured-quote{position:relative;min-width:0;padding:47px 0 25px 8%;overflow:hidden;}
-.lab-featured-quote .lab-gold-rule{width:32px;height:1px;margin:0 0 18px;}
-.lab-featured-quote p{position:relative;z-index:2;margin:0;font-family:var(--font-display),Georgia,serif;font-size:21px;line-height:1.35;font-style:italic;color:#eee9df;}
-.lab-trajectory{position:absolute;right:-20px;bottom:-3px;width:72%;height:155px;overflow:visible;opacity:.72;}
-.lab-trajectory path{fill:none;stroke:#5b8aa5;stroke-width:1.1;}
-.lab-trajectory circle{fill:#9cc4d9;}
-
-.page-mba-lab + footer{background:#050607;}
-
-@media (max-width:1100px){
-  .lab-reference-page .lab-hero-copy{width:54%;}
-  .lab-reference-page .lab-hero-side{right:6%;}
-  .lab-reference-kinds .lab-section-title i{width:170px;}
-  .lab-featured-copy h2{font-size:28px;}
+.home-cta::after{
+  content:'';
+  position:absolute;
+  left:-3px;
+  bottom:2px;
+  width:15px;
+  height:7px;
+  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.98) 0,rgba(241,244,245,.58) 20%,rgba(220,225,227,.20) 48%,rgba(255,255,255,0) 78%);
+  filter:blur(1.3px);
 }
-@media (max-width:800px){
-  .lab-room-hero{height:auto;min-height:520px;}
-  .lab-reference-page .lab-hero-copy{width:calc(100% - 56px);padding:96px 28px 35px;}
-  .lab-reference-page .lab-hero-side{left:28px;right:auto;top:auto;bottom:36px;width:auto;}
-  .lab-reference-kinds{padding:28px;}
-  .lab-reference-kinds .lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .lab-featured{grid-template-columns:1fr;min-height:0;padding:0 28px;}
-  .lab-featured-copy{padding:27px 0;}
-  .lab-featured-divider{display:none;}
-  .lab-featured-quote{padding:27px 0 80px;}
-  .lab-trajectory{width:90%;}
+.home-cta:hover{color:#fff}
+.home-arrow{font-size:20px;line-height:1;letter-spacing:0;margin-top:-1px}
+.home-journey{
+  position:absolute;
+  z-index:4;
+  left:6.6%;
+  bottom:16.5%;
+  width:min(700px,44vw);
+  padding:0;
+  background:transparent;
 }
-@media (max-width:560px){
-  .lab-reference-kinds .lab-card-grid{grid-template-columns:1fr;}
-  .lab-reference-card,.lab-reference-card .lab-card-content{min-height:185px;height:185px;}
+.home-journey .journey-title{display:none}
+.home-journey .journey-wrapper{width:100%}
+.home-journey .journey-track{display:flex;align-items:flex-start;width:100%}
+.home-journey .journey-step{display:flex;align-items:flex-start;flex:0 0 auto;min-width:0}
+.home-journey .journey-step:not(.last){flex:1 1 auto}
+.home-journey .journey-phase{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;text-decoration:none}
+.home-journey .journey-circle{
+  width:37px;height:37px;border:1px solid rgba(242,238,231,.48);border-radius:50%;
+  background:rgba(4,9,13,.20);color:rgba(242,238,231,.70);
+  font-family:var(--font-body),system-ui,sans-serif;font-size:11px;font-weight:400;letter-spacing:.01em;
+  box-shadow:0 0 0 1px rgba(255,255,255,.018),0 0 6px rgba(255,255,255,.025),inset 0 0 7px rgba(255,255,255,.014);
 }
-
-/* =========================================================
-   READING MODE
-   Default remains dark. Individual reading pages can switch
-   to a warm camel paper tone without changing the black rail.
-   ========================================================= */
-.reading-theme-toggle{
-  position:fixed;
-  z-index:76;
-  right:24px;
-  top:24px;
-  bottom:auto;
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(200,150,93,.55);
-  border-radius:50%;
-  background:rgba(5,6,7,.92);
-  color:#d3a16c;
-  cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,.20);
-  backdrop-filter:blur(8px);
-  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+.home-journey .journey-name{
+  margin-top:14px;color:rgba(242,238,231,.70);font-family:var(--font-body),system-ui,sans-serif;
+  font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
 }
-.reading-theme-toggle:hover{transform:translateY(-1px);border-color:#d3a16c;color:#eee9df;}
-.reading-theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
-
-/* The main reading area moves with the rail. The rail itself always stays black. */
-body[data-reading-page][data-reading-theme="light"] main{
-  background:#c7b08a;
-  color:#2c261f;
+.home-journey .journey-line{
+  flex:1 1 auto;min-width:24px;margin:18px 0 0;height:1px;
+  background:rgba(232,234,234,.36);
+  box-shadow:none;
 }
-body[data-reading-page][data-reading-theme="light"] footer{
-  background:#bfa77f;
-  color:#2c261f;
-  border-color:rgba(62,48,33,.20);
+.home-journey .journey-phase.active .journey-circle{
+  border-color:rgba(248,248,246,.88)!important;
+  color:rgba(248,248,246,.94)!important;
+  background:rgba(7,12,16,.24)!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 8px rgba(255,255,255,.16),0 0 15px rgba(255,255,255,.055),inset 0 0 8px rgba(255,255,255,.025)!important;
 }
-body[data-reading-page][data-reading-theme="light"] main [class*="text-ink"],
-body[data-reading-page][data-reading-theme="light"] main [class*="dark:text-dark-ink"],
-body[data-reading-page][data-reading-theme="light"] main [class*="text-dark-ink"]{color:#2c261f !important;}
-body[data-reading-page][data-reading-theme="light"] main [class*="text-ink/"]{color:rgba(44,38,31,.72) !important;}
-body[data-reading-page][data-reading-theme="light"] main [class*="dark:text-dark-soft"]{color:rgba(44,38,31,.68) !important;}
-body[data-reading-page][data-reading-theme="light"] main [class*="border-rule"],
-body[data-reading-page][data-reading-theme="light"] main [class*="dark:border-dark-rule"]{border-color:rgba(62,48,33,.22) !important;}
-body[data-reading-page][data-reading-theme="light"] main .prose-lab,
-body[data-reading-page][data-reading-theme="light"] main .prose-lab h2{color:#2c261f !important;}
-body[data-reading-page][data-reading-theme="light"] main .prose-lab a{color:#7c5427;}
-body[data-reading-page][data-reading-theme="light"] main .prose-lab a:hover{color:#5f3e1d;}
-body[data-reading-page][data-reading-theme="light"] footer [class*="text-ink"],
-body[data-reading-page][data-reading-theme="light"] footer [class*="dark:text-dark-soft"]{color:rgba(44,38,31,.72) !important;}
-body[data-reading-page][data-reading-theme="light"] footer [class*="border-rule"],
-body[data-reading-page][data-reading-theme="light"] footer [class*="dark:border-dark-rule"]{border-color:rgba(62,48,33,.20) !important;}
-
-/* MBA Lab landing page is intentionally one viewport on desktop. */
-@media (min-width:768px){
-  html:has(.lab-reference-page),
-  body:has(.lab-reference-page){overflow:hidden;}
+.home-journey .journey-phase.active .journey-name{color:rgba(248,248,246,.86)!important}
+.home-journey .journey-phase.complete .journey-circle,
+.home-journey .journey-phase.upcoming .journey-circle{
+  border-color:rgba(242,238,231,.48)!important;
+  color:rgba(242,238,231,.70)!important;
+  background:rgba(4,9,13,.20)!important;
 }
-
-/* Keep the sidebar collapse layout in sync on every desktop page. */
-@media (min-width:768px){
-  body.rail-collapsed main{margin-left:0;}
-  body.rail-collapsed footer{margin-left:0;}
-}
-
-/* No decorative line above the sidebar collapse arrow. */
-.rail-collapse-toggle::before{display:none;}
+.home-journey .journey-phase.complete .journey-name,
+.home-journey .journey-phase.upcoming .journey-name{color:rgba(242,238,231,.70)!important}
 @media (max-width:767px){
   .reading-theme-toggle{right:18px;top:18px;bottom:auto;}
   footer{margin-left:0;}
@@ -816,10 +554,126 @@ body:has(.home-hero) main{
   .home-copy{left:28px;top:25%;width:calc(100% - 56px)}
   .home-copy h1{font-size:clamp(43px,12vw,62px)}
   .home-description{font-size:15px;margin-top:25px}
-  .home-cta{width:245px;height:50px;margin-top:30px;padding-left:26px;padding-right:24px}
+  .home-cta{width:245px;height:50px;margin-top:30px;padding-left:8px;padding-bottom:16px;gap:24px}
   .home-journey{left:28px;right:28px;bottom:32px;width:auto;overflow:hidden}
   .home-journey .journey-track{overflow:hidden}
-  .home-journey .journey-circle{width:39px;height:39px;font-size:10px}
-  .home-journey .journey-name{font-size:8px;margin-top:12px;letter-spacing:.13em}
-  .home-journey .journey-line{margin-top:19px}
+  .home-journey .journey-circle{width:37px;height:37px;font-size:10px}
+  .home-journey .journey-name{font-size:8px;margin-top:11px;letter-spacing:.13em}
+  .home-journey .journey-line{margin-top:18px}
+}
+
+/* =========================================================
+   HOMEPAGE REFERENCE FINISH
+   Exact visual treatment for the Lab CTA and journey timeline.
+   This block intentionally overrides only the homepage details.
+   ========================================================= */
+.home-cta{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:34px;
+  width:310px;
+  height:58px;
+  margin-top:34px;
+  padding:0 0 18px 12px;
+  border:0;
+  color:#eeeae3;
+  background:transparent;
+  box-shadow:none;
+}
+.home-cta::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:auto;
+  bottom:5px;
+  width:300px;
+  height:1px;
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.98) 0,
+    rgba(244,246,246,.82) 3%,
+    rgba(216,221,223,.52) 11%,
+    rgba(188,196,199,.27) 34%,
+    rgba(160,170,174,.12) 72%,
+    rgba(150,160,164,0) 100%);
+  box-shadow:0 0 4px rgba(235,239,240,.55),0 0 13px rgba(220,225,227,.18);
+}
+.home-cta::after{
+  content:'';
+  position:absolute;
+  left:-3px;
+  right:auto;
+  bottom:2px;
+  width:15px;
+  height:7px;
+  background:radial-gradient(ellipse at 50% 50%,
+    rgba(255,255,255,.98) 0,
+    rgba(241,244,245,.58) 20%,
+    rgba(220,225,227,.20) 48%,
+    rgba(255,255,255,0) 78%);
+  filter:blur(1.3px);
+}
+.home-cta:hover{
+  color:#fff;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+}
+.home-journey{
+  left:6.6%;
+  bottom:16.5%;
+  width:min(700px,44vw);
+}
+.home-journey .journey-circle{
+  width:37px;
+  height:37px;
+  border:1px solid rgba(242,238,231,.48);
+  background:rgba(4,9,13,.20);
+  color:rgba(242,238,231,.70);
+  font-size:11px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.018),0 0 6px rgba(255,255,255,.025),inset 0 0 7px rgba(255,255,255,.014);
+}
+.home-journey .journey-name{
+  margin-top:14px;
+  color:rgba(242,238,231,.70);
+  font-size:10px;
+  letter-spacing:.18em;
+}
+.home-journey .journey-line{
+  margin:18px 0 0;
+  height:1px;
+  background:rgba(232,234,234,.36);
+  box-shadow:none;
+}
+.home-journey .journey-phase.active .journey-circle{
+  border-color:rgba(248,248,246,.88)!important;
+  color:rgba(248,248,246,.94)!important;
+  background:rgba(7,12,16,.24)!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 8px rgba(255,255,255,.16),0 0 15px rgba(255,255,255,.055),inset 0 0 8px rgba(255,255,255,.025)!important;
+}
+.home-journey .journey-phase.active .journey-name{
+  color:rgba(248,248,246,.86)!important;
+}
+.home-journey .journey-phase.complete .journey-circle,
+.home-journey .journey-phase.upcoming .journey-circle{
+  border-color:rgba(242,238,231,.48)!important;
+  color:rgba(242,238,231,.70)!important;
+  background:rgba(4,9,13,.20)!important;
+}
+.home-journey .journey-phase.complete .journey-name,
+.home-journey .journey-phase.upcoming .journey-name{
+  color:rgba(242,238,231,.70)!important;
+}
+@media (max-width:767px){
+  .home-cta{
+    width:245px;
+    height:50px;
+    margin-top:30px;
+    padding:0 0 16px 8px;
+    gap:24px;
+  }
+  .home-cta::before{width:238px}
+  .home-journey .journey-circle{width:37px;height:37px;font-size:10px}
+  .home-journey .journey-name{font-size:8px;margin-top:11px;letter-spacing:.13em}
+  .home-journey .journey-line{margin-top:18px}
 }
