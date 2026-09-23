@@ -199,7 +199,6 @@ body:has(.home-hero) main { height:100dvh; min-height:0; }
 .home-journey .journey-phase.complete .journey-name,
 .home-journey .journey-phase.upcoming .journey-name{color:rgba(242,238,231,.70)!important}
 @media (max-width:767px){
-  .reading-theme-toggle{right:18px;top:18px;bottom:auto;}
   footer{margin-left:0;}
 }
 
