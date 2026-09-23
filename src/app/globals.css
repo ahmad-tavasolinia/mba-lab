@@ -640,9 +640,15 @@ body:has(.home-hero) main{
   letter-spacing:.18em;
 }
 .home-journey .journey-phase.active .journey-circle{
-  border-color:rgba(255,255,255,.92)!important;
-  color:rgba(255,255,255,.96)!important;
-  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 8px rgba(255,255,255,.20),0 0 16px rgba(255,255,255,.07)!important;
+  border-color:rgba(222,226,228,.98)!important;
+  color:rgba(238,240,240,.98)!important;
+  background:rgba(7,11,14,.24)!important;
+  box-shadow:
+    0 0 0 1px rgba(211,216,218,.16),
+    0 0 5px rgba(224,228,229,.72),
+    0 0 13px rgba(211,216,218,.34),
+    0 0 24px rgba(190,198,201,.14),
+    inset 0 0 7px rgba(235,238,239,.08)!important;
 }
 .home-journey .journey-phase.active .journey-name{color:rgba(248,248,246,.88)!important}
 @media (max-width:767px){
