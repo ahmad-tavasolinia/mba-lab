@@ -963,20 +963,31 @@ body:not(:has(.home-hero)) main > *:first-child{
   }
 
   body:has(.lab-reference-page) .lab-kinds.lab-reference-kinds{
-    padding:30px 0 34px;
+    height:57%;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    padding:28px 0 30px;
   }
 
   body:has(.lab-reference-page) .lab-section-head{
+    flex:0 0 auto;
     margin-bottom:16px;
+  }
+
+  body:has(.lab-reference-page) .lab-card-grid{
+    flex:1 1 auto;
+    min-height:0;
   }
 
   body:has(.lab-reference-page) .lab-kind-card.lab-reference-card,
   body:has(.lab-reference-page) .lab-card-content{
-    min-height:150px;
+    min-height:0;
+    height:100%;
   }
 
   body:has(.lab-reference-page) .lab-card-content{
-    padding:17px 18px 18px;
+    padding:19px 18px 18px;
   }
 
   body:has(.lab-reference-page) .lab-card-content h2{
