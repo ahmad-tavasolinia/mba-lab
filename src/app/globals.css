@@ -955,19 +955,19 @@ body:not(:has(.home-hero)) main > *:first-child{
 
   body:has(.lab-reference-page) .lab-hero.lab-room-hero{
     min-height:0;
-    height:43%;
+    height:46%;
   }
 
   body:has(.lab-reference-page) .lab-hero-copy{
-    padding:42px 0 38px;
+    padding:24px 0 30px;
   }
 
   body:has(.lab-reference-page) .lab-kinds.lab-reference-kinds{
-    height:57%;
+    height:54%;
     min-height:0;
     display:flex;
     flex-direction:column;
-    padding:28px 0 30px;
+    padding:24px 0 28px;
   }
 
   body:has(.lab-reference-page) .lab-section-head{
@@ -976,8 +976,12 @@ body:not(:has(.home-hero)) main > *:first-child{
   }
 
   body:has(.lab-reference-page) .lab-card-grid{
-    flex:1 1 auto;
+    flex:0 0 auto;
     min-height:0;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card{
+    height:170px;
   }
 
   body:has(.lab-reference-page) .lab-kind-card.lab-reference-card,
@@ -987,22 +991,22 @@ body:not(:has(.home-hero)) main > *:first-child{
   }
 
   body:has(.lab-reference-page) .lab-card-content{
-    padding:19px 18px 18px;
+    padding:16px 17px 16px;
   }
 
   body:has(.lab-reference-page) .lab-card-content h2{
     margin-top:18px;
-    font-size:22px;
+    font-size:20px;
   }
 
   body:has(.lab-reference-page) .lab-card-content p{
-    margin-top:7px;
-    line-height:1.45;
+    margin-top:6px;
+    line-height:1.4;
   }
 
   body:has(.lab-reference-page) .lab-card-arrow{
-    right:17px;
-    bottom:14px;
+    right:16px;
+    bottom:13px;
   }
 
   body:has(.lab-reference-page) footer{
