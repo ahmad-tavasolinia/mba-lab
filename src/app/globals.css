@@ -934,3 +934,68 @@ body:not(:has(.home-hero)) main > *:first-child{
 @media (max-width:767px){
   body:not(:has(.home-hero)) main{padding-top:68px !important;}
 }
+
+/* MBA Lab landing: use the available viewport instead of creating a second scroll area. */
+@media (min-width:768px){
+  html:has(.lab-reference-page),
+  body:has(.lab-reference-page){
+    overflow:hidden;
+  }
+
+  body:has(.lab-reference-page) main{
+    min-height:0;
+    flex:1 1 auto;
+  }
+
+  body:has(.lab-reference-page) .page-mba-lab.lab-reference-page{
+    height:calc(100dvh - 104px);
+    min-height:0;
+    overflow:hidden;
+  }
+
+  body:has(.lab-reference-page) .lab-hero.lab-room-hero{
+    min-height:0;
+    height:43%;
+  }
+
+  body:has(.lab-reference-page) .lab-hero-copy{
+    padding:42px 0 38px;
+  }
+
+  body:has(.lab-reference-page) .lab-kinds.lab-reference-kinds{
+    padding:30px 0 34px;
+  }
+
+  body:has(.lab-reference-page) .lab-section-head{
+    margin-bottom:16px;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card,
+  body:has(.lab-reference-page) .lab-card-content{
+    min-height:150px;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content{
+    padding:17px 18px 18px;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content h2{
+    margin-top:18px;
+    font-size:22px;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content p{
+    margin-top:7px;
+    line-height:1.45;
+  }
+
+  body:has(.lab-reference-page) .lab-card-arrow{
+    right:17px;
+    bottom:14px;
+  }
+
+  body:has(.lab-reference-page) footer{
+    height:104px;
+    overflow:hidden;
+  }
+}

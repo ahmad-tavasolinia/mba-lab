@@ -8,7 +8,7 @@ export default function HomePage() {
 
       <header className="home-topbar">
         <Link href="/" className="home-wordmark" aria-label="Tavasolinia MBA Lab">
-          tavasolinia <span>/</span> mba lab
+          tavasolinia <span>/</span> mba <span>/</span> lab
         </Link>
 
         <nav className="home-topnav" aria-label="Homepage navigation">
