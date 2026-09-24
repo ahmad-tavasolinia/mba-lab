@@ -719,355 +719,268 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   color:#b9c8d0;
 }
 
-/* MBA Lab landing page: restore the intended cinematic notebook layout. */
+/* MBA Lab landing page: match the supplied reference composition. */
+.internal-home-topbar{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:60;
+  height:92px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding:32px 7% 0;
+  pointer-events:none;
+}
+.internal-home-topbar a{pointer-events:auto;}
+.internal-home-wordmark{
+  color:#f0eee8;
+  font-family:var(--font-mono),monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.30em;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.internal-home-wordmark::after{
+  content:"";
+  display:inline-block;
+  width:116px;
+  height:1px;
+  margin:0 0 3px 17px;
+  background:rgba(220,229,233,.52);
+  vertical-align:middle;
+}
+.internal-home-topnav{
+  display:flex;
+  align-items:flex-start;
+  gap:39px;
+}
+.internal-home-topnav a{
+  position:relative;
+  color:rgba(239,242,241,.86);
+  font-family:var(--font-mono),monospace;
+  font-size:9px;
+  letter-spacing:.20em;
+  line-height:1;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.internal-home-topnav a.is-active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-14px;
+  height:1px;
+  background:rgba(235,239,238,.86);
+}
+
 .page-mba-lab.lab-reference-page{
   position:relative;
   z-index:1;
   width:100%;
-  min-height:calc(100vh - 1px);
-  color:#e7edf0;
-  background:#07131c;
+  height:100%;
+  min-height:0;
   overflow:hidden;
+  color:#f0eee8;
+  background:#061016;
 }
-
 .lab-hero.lab-room-hero{
   position:relative;
-  min-height:390px;
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
-  border-bottom:1px solid rgba(174,193,204,.14);
-}
-
-.lab-topbar{
-  position:absolute;
-  z-index:2;
-  top:32px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(1180px,calc(100% - 80px));
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.lab-topbar-mark{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  color:#e7edf0;
-  font-family:var(--font-mono),monospace;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:.20em;
-  text-transform:uppercase;
-}
-.lab-topbar-mark i{
+  height:62.3%;
+  min-height:0;
   display:block;
-  width:220px;
-  height:1px;
-  background:rgba(231,237,240,.30);
+  overflow:hidden;
+  border-bottom:1px solid rgba(180,199,208,.18);
 }
-.lab-topnav{
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
-.lab-topnav a{
-  position:relative;
-  color:rgba(226,235,239,.82);
-  font-family:var(--font-mono),monospace;
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.14em;
-  text-decoration:none;
-}
-.lab-topnav a:hover{color:#fff}
-.lab-topnav a.is-active{color:#edf2f4}
-.lab-topnav a.is-active::after{
-  content:'';
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-6px;
-  height:1px;
-  background:#edf2f4;
-}
-@media (max-width:767px){
-  .lab-topbar{display:none;}
-}
-
 .lab-room-image{
   position:absolute;
   inset:0;
-  background-image:url('/mba-lab/lab-hero-desk.png');
+  background-image:url('/mba-lab/mba-lab/lab-room-reference.png');
   background-repeat:no-repeat;
   background-position:center center;
   background-size:cover;
-  transform:none;
 }
-
 .lab-room-shade{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg,rgba(4,13,20,.78) 0%,rgba(5,15,23,.48) 46%,rgba(5,15,23,.68) 100%),
-    linear-gradient(0deg,rgba(4,13,20,.92) 0%,rgba(4,13,20,.15) 62%,rgba(4,13,20,.48) 100%);
+    linear-gradient(90deg,rgba(2,11,16,.78) 0%,rgba(3,13,19,.54) 53%,rgba(3,13,19,.12) 100%),
+    linear-gradient(180deg,rgba(2,10,15,.22) 0%,rgba(2,10,15,.10) 58%,rgba(2,10,15,.46) 100%);
 }
-
 .lab-hero-copy{
   position:relative;
-  z-index:1;
-  width:min(1180px,calc(100% - 80px));
+  z-index:2;
+  width:86%;
   margin:0 auto;
-  padding:76px 0 62px;
+  padding-top:150px;
 }
-
 .lab-eyebrow{
-  display:block;
-  color:#b7c7cf;
-  font-family:var(--font-mono),monospace;
-  font-size:10px;
-  font-weight:500;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+  display:none;
 }
-
 .lab-hero-copy h1{
-  margin:12px 0 0;
-  color:#edf2f4;
+  margin:0;
+  color:#f3f0ea;
   font-family:var(--font-display),Georgia,serif;
-  font-size:clamp(48px,6vw,82px);
+  font-size:clamp(70px,6.2vw,104px);
   font-weight:400;
-  line-height:.95;
-  letter-spacing:-.045em;
+  line-height:.91;
+  letter-spacing:-.055em;
 }
-
 .lab-tagline{
-  margin:18px 0 0;
-  color:rgba(226,235,239,.72);
+  margin:23px 0 0;
+  color:rgba(224,231,233,.84);
   font-family:var(--font-display),Georgia,serif;
-  font-size:20px;
+  font-size:27px;
   font-style:italic;
+  line-height:1.15;
 }
-
 .lab-gold-rule{
   display:block;
-  width:54px;
-  height:1px;
-  margin-top:27px;
-  background:#b7c7cf;
-  box-shadow:0 0 8px rgba(183,199,207,.22);
+  width:64px;
+  height:2px;
+  margin-top:35px;
+  background:#c5d1d5;
 }
-
 .lab-intro{
-  max-width:650px;
-  margin:23px 0 0;
-  color:rgba(221,232,237,.72);
+  width:535px;
+  max-width:100%;
+  margin:26px 0 0;
+  color:rgba(218,228,232,.78);
   font-size:15px;
-  line-height:1.8;
+  line-height:1.55;
 }
-
 .lab-kinds.lab-reference-kinds{
-  width:min(1180px,calc(100% - 80px));
+  position:relative;
+  height:37.7%;
+  min-height:0;
+  width:86%;
   margin:0 auto;
-  padding:50px 0 72px;
+  padding:34px 0 0;
 }
-
-.lab-section-head{margin-bottom:22px;}
+.lab-section-head{
+  margin:0 0 28px;
+}
 .lab-section-title{
   display:flex;
   align-items:center;
-  gap:14px;
-  color:#aebfc8;
+  gap:18px;
+  color:#d8dfe1;
   font-family:var(--font-mono),monospace;
   font-size:10px;
-  letter-spacing:.20em;
+  letter-spacing:.30em;
+  line-height:1;
   text-transform:uppercase;
 }
 .lab-section-title i{
   display:block;
-  width:58px;
+  width:122px;
   height:1px;
-  background:rgba(174,193,204,.30);
+  background:rgba(191,205,211,.38);
 }
-
 .lab-card-grid{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:14px;
+  gap:0;
+  height:196px;
 }
-
 .lab-kind-card.lab-reference-card{
   position:relative;
-  min-height:210px;
   display:block;
-  overflow:hidden;
-  border:1px solid rgba(174,193,204,.14);
-  background:linear-gradient(145deg,rgba(18,38,51,.82),rgba(7,20,29,.72));
-  color:#e7edf0;
+  height:196px;
+  min-height:0;
+  overflow:visible;
+  border:0;
+  border-right:1px solid rgba(173,195,204,.24);
+  background:transparent;
+  color:#eef0ed;
   text-decoration:none;
-  transition:border-color .22s ease,background .22s ease,transform .22s ease;
 }
+.lab-kind-card.lab-reference-card:last-child{border-right:0;}
 .lab-kind-card.lab-reference-card:hover{
-  border-color:rgba(196,211,219,.42);
-  background:linear-gradient(145deg,rgba(22,45,59,.90),rgba(8,23,33,.82));
-  transform:translateY(-2px);
+  border-color:rgba(173,195,204,.24);
+  background:transparent;
+  transform:none;
 }
 .lab-card-content{
   position:relative;
-  min-height:210px;
-  padding:22px 21px 24px;
+  min-height:0;
+  height:100%;
+  padding:0 44px 0 4px;
 }
+.lab-kind-card:first-child .lab-card-content{padding-left:4px;}
 .lab-card-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  color:#9fb2bc;
+  display:block;
+  color:#c6d0d4;
   font-family:var(--font-mono),monospace;
-  font-size:9px;
-  letter-spacing:.16em;
+  font-size:10px;
+  letter-spacing:.28em;
+  line-height:1;
   text-transform:uppercase;
 }
-.lab-card-top small{color:rgba(194,207,214,.46);font-size:9px;letter-spacing:.06em;}
+.lab-card-top small{display:none;}
 .lab-card-content h2{
-  margin:28px 0 0;
-  color:#e8eef1;
+  margin:22px 0 0;
+  color:#f0eee8;
   font-family:var(--font-display),Georgia,serif;
-  font-size:25px;
+  font-size:30px;
   font-weight:400;
-  letter-spacing:-.02em;
+  line-height:1;
+  letter-spacing:-.025em;
 }
 .lab-card-content p{
-  max-width:230px;
-  margin:9px 0 0;
-  color:rgba(193,207,215,.62);
-  font-size:12px;
-  line-height:1.65;
+  max-width:330px;
+  margin:18px 0 0;
+  color:rgba(208,219,224,.79);
+  font-size:14px;
+  line-height:1.48;
 }
 .lab-card-arrow{
   position:absolute;
-  right:20px;
-  bottom:18px;
-  color:#b9c9d1;
-  font-size:18px;
+  left:4px;
+  right:auto;
+  bottom:0;
+  color:#d9e0e1;
+  font-size:27px;
+  line-height:1;
   transition:transform .2s ease;
 }
 .lab-kind-card:hover .lab-card-arrow{transform:translateX(4px);}
 
-/* Remove vertical centering left over from the previous full-height layout. */
-.page-topics > section:nth-child(2),
-body:not(:has(.home-hero)) section.flex.flex-1.flex-col.justify-center{
-  justify-content:flex-start;
-}
-
-@media (max-width:900px){
-  .lab-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-}
-@media (max-width:767px){
-  .lab-hero.lab-room-hero{min-height:420px;}
-  .lab-hero-copy,
-  .lab-kinds.lab-reference-kinds{width:calc(100% - 40px);}
-  .lab-hero-copy{padding:70px 0 48px;}
-  .lab-card-grid{grid-template-columns:1fr;}
-  .lab-kind-card.lab-reference-card,
-  .lab-card-content{min-height:185px;}
-}
-
-/* Internal pages begin at the top of the document. The homepage is excluded. */
-body:not(:has(.home-hero)) > div.relative.z-\[1\].flex.min-h-screen.flex-col{
-  min-height:0;
-}
-body:not(:has(.home-hero)) main{
-  flex:0 0 auto;
-  justify-content:flex-start;
-  min-height:0;
-  margin-top:0 !important;
-  padding-top:0 !important;
-}
-body:not(:has(.home-hero)) main > .page-mba-lab,
-body:not(:has(.home-hero)) main > *:first-child{
-  margin-top:0 !important;
-}
-@media (max-width:767px){
-  body:not(:has(.home-hero)) main{padding-top:68px !important;}
-}
-
-/* MBA Lab landing: use the available viewport instead of creating a second scroll area. */
+/* Keep the MBA Lab page itself fixed to the viewport. The shared footer remains visible. */
 @media (min-width:768px){
   html:has(.lab-reference-page),
   body:has(.lab-reference-page){
     overflow:hidden;
   }
-
   body:has(.lab-reference-page) main{
     min-height:0;
     flex:1 1 auto;
+    padding:0 !important;
   }
-
   body:has(.lab-reference-page) .page-mba-lab.lab-reference-page{
-    height:calc(100dvh - 104px);
-    min-height:0;
-    overflow:hidden;
-  }
-
-  body:has(.lab-reference-page) .lab-hero.lab-room-hero{
-    min-height:0;
-    height:46%;
-  }
-
-  body:has(.lab-reference-page) .lab-hero-copy{
-    padding:24px 0 30px;
-  }
-
-  body:has(.lab-reference-page) .lab-kinds.lab-reference-kinds{
-    height:54%;
-    min-height:0;
-    display:flex;
-    flex-direction:column;
-    padding:24px 0 28px;
-  }
-
-  body:has(.lab-reference-page) .lab-section-head{
-    flex:0 0 auto;
-    margin-bottom:16px;
-  }
-
-  body:has(.lab-reference-page) .lab-card-grid{
-    flex:0 0 auto;
+    height:calc(100dvh - 138px);
     min-height:0;
   }
-
-  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card{
-    height:170px;
-  }
-
-  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card,
-  body:has(.lab-reference-page) .lab-card-content{
-    min-height:0;
-    height:100%;
-  }
-
-  body:has(.lab-reference-page) .lab-card-content{
-    padding:16px 17px 16px;
-  }
-
-  body:has(.lab-reference-page) .lab-card-content h2{
-    margin-top:18px;
-    font-size:20px;
-  }
-
-  body:has(.lab-reference-page) .lab-card-content p{
-    margin-top:6px;
-    line-height:1.4;
-  }
-
-  body:has(.lab-reference-page) .lab-card-arrow{
-    right:16px;
-    bottom:13px;
-  }
-
   body:has(.lab-reference-page) footer{
-    height:104px;
+    height:138px;
+    min-height:138px;
     overflow:hidden;
   }
+}
+
+@media (max-width:767px){
+  .internal-home-topbar{display:none;}
+  .lab-hero.lab-room-hero{height:520px;min-height:520px;}
+  .lab-hero-copy{width:calc(100% - 40px);padding-top:125px;}
+  .lab-hero-copy h1{font-size:60px;}
+  .lab-tagline{font-size:20px;}
+  .lab-kinds.lab-reference-kinds{width:calc(100% - 40px);height:auto;padding:30px 0 50px;}
+  .lab-card-grid{grid-template-columns:1fr;height:auto;}
+  .lab-kind-card.lab-reference-card{height:150px;border-right:0;border-bottom:1px solid rgba(173,195,204,.24);}
+  .lab-card-content{padding:20px 0;}
+  .lab-card-arrow{bottom:20px;}
 }
