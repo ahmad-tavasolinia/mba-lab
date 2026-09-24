@@ -16,21 +16,8 @@ export default async function MbaLabPage() {
       <section className="lab-hero lab-room-hero">
         <div className="lab-room-image" aria-hidden="true" />
         <div className="lab-room-shade" aria-hidden="true" />
-
-        <div className="lab-topbar">
-          <div className="lab-topbar-mark">
-            <span>The Lab Notebook</span>
-            <i />
-          </div>
-          <nav className="lab-topnav" aria-label="Lab notebook navigation">
-            <Link href="/">HOME</Link>
-            <Link href="/topics">TOPICS</Link>
-            <Link href="/about">ABOUT</Link>
-            <Link href="/contact">CONTACT</Link>
-          </nav>
-        </div>
-
         <div className="lab-hero-copy">
+          <span className="lab-eyebrow">The Lab Notebook</span>
           <h1>MBA Lab</h1>
           <p className="lab-tagline">Ideas. Research. Projects. A new chapter.</p>
           <span className="lab-gold-rule" />
@@ -59,7 +46,7 @@ export default async function MbaLabPage() {
               >
                 <div className="lab-card-content">
                   <div className="lab-card-top">
-                    <span>{category.name}</span>
+                    <span>{category.code === 'PROJ' ? 'PROJ' : category.code === 'INTV' ? 'INTV' : category.code}</span>
                     <small>{count} {count === 1 ? 'piece' : 'pieces'}</small>
                   </div>
                   <h2>{category.name}</h2>
@@ -71,7 +58,6 @@ export default async function MbaLabPage() {
           })}
         </div>
       </section>
-
     </div>
   );
 }
