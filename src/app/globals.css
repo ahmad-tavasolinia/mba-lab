@@ -1014,3 +1014,339 @@ body:not(:has(.home-hero)) main > *:first-child{
     overflow:hidden;
   }
 }
+
+/* =========================================================
+   MBA LAB LANDING PAGE - reference composition only.
+   Everything here is scoped to .lab-reference-page and does
+   not alter the homepage.
+   ========================================================= */
+@media (min-width:768px){
+  html:has(.lab-reference-page),
+  body:has(.lab-reference-page){
+    overflow:hidden;
+    background:#061016;
+  }
+
+  body:has(.lab-reference-page) .site-bg{
+    display:none;
+  }
+
+  body:has(.lab-reference-page) main{
+    height:84.5dvh;
+    min-height:0;
+    flex:0 0 84.5dvh;
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  body:has(.lab-reference-page) .page-mba-lab.lab-reference-page{
+    position:relative;
+    width:100%;
+    height:84.5dvh;
+    min-height:84.5dvh;
+    overflow:hidden;
+    background:#061016;
+  }
+
+  body:has(.lab-reference-page) .lab-page-backdrop{
+    position:absolute;
+    z-index:0;
+    left:0;
+    top:0;
+    width:100%;
+    height:84.5dvh;
+    background-image:
+      linear-gradient(180deg,rgba(3,10,14,.30) 0%,rgba(3,10,14,.42) 48%,rgba(3,10,14,.88) 100%),
+      linear-gradient(90deg,rgba(3,10,14,.66) 0%,rgba(3,10,14,.20) 47%,rgba(3,10,14,.14) 100%),
+      url('/mba-lab/lab-room-reference.png');
+    background-position:center top;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav{
+    position:absolute;
+    z-index:5;
+    top:0;
+    left:0;
+    width:100%;
+    height:112px;
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav-inner{
+    width:min(1440px,calc(100% - 80px));
+    height:100%;
+    margin:0 auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    padding-top:48px;
+  }
+
+  body:has(.lab-reference-page) .lab-page-mark{
+    color:#f0ede6;
+    font-family:var(--font-mono),monospace;
+    font-size:11px;
+    font-weight:500;
+    line-height:1;
+    letter-spacing:.27em;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  body:has(.lab-reference-page) .lab-page-mark::after{
+    content:"";
+    display:inline-block;
+    width:112px;
+    height:1px;
+    margin-left:18px;
+    margin-bottom:3px;
+    background:rgba(224,231,232,.52);
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav nav{
+    display:flex;
+    align-items:flex-start;
+    gap:38px;
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav nav a{
+    position:relative;
+    color:rgba(235,239,239,.76);
+    font-family:var(--font-mono),monospace;
+    font-size:10px;
+    line-height:1;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav nav a.is-active{
+    color:#f0f1ed;
+  }
+
+  body:has(.lab-reference-page) .lab-page-nav nav a.is-active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-13px;
+    height:1px;
+    background:rgba(239,242,239,.82);
+  }
+
+  body:has(.lab-reference-page) .lab-hero.lab-room-hero{
+    position:relative;
+    z-index:1;
+    height:52.6dvh;
+    min-height:52.6dvh;
+    display:block;
+    border-bottom:1px solid rgba(177,199,207,.18);
+    overflow:hidden;
+  }
+
+  body:has(.lab-reference-page) .lab-room-shade{
+    display:none;
+  }
+
+  body:has(.lab-reference-page) .lab-hero-copy{
+    position:relative;
+    z-index:2;
+    width:min(1440px,calc(100% - 80px));
+    height:100%;
+    margin:0 auto;
+    padding:139px 0 0;
+  }
+
+  body:has(.lab-reference-page) .lab-hero-copy h1{
+    margin:0;
+    color:#f2eee7;
+    font-family:var(--font-display),Georgia,serif;
+    font-size:clamp(76px,6.3vw,105px);
+    font-weight:400;
+    line-height:.92;
+    letter-spacing:-.055em;
+  }
+
+  body:has(.lab-reference-page) .lab-tagline{
+    margin:19px 0 0;
+    color:rgba(228,235,238,.78);
+    font-family:var(--font-display),Georgia,serif;
+    font-size:27px;
+    font-style:italic;
+    line-height:1.15;
+  }
+
+  body:has(.lab-reference-page) .lab-gold-rule{
+    width:64px;
+    height:2px;
+    margin-top:34px;
+    background:#b8cbd2;
+    box-shadow:0 0 8px rgba(184,203,210,.18);
+  }
+
+  body:has(.lab-reference-page) .lab-intro{
+    width:550px;
+    max-width:550px;
+    margin:25px 0 0;
+    color:rgba(221,231,235,.77);
+    font-size:16px;
+    line-height:1.72;
+  }
+
+  body:has(.lab-reference-page) .lab-kinds.lab-reference-kinds{
+    position:relative;
+    z-index:2;
+    width:min(1440px,calc(100% - 80px));
+    height:31.9dvh;
+    min-height:31.9dvh;
+    margin:0 auto;
+    padding:34px 0 0;
+  }
+
+  body:has(.lab-reference-page) .lab-section-head{
+    margin:0 0 28px;
+  }
+
+  body:has(.lab-reference-page) .lab-section-title{
+    gap:20px;
+    color:#e6e8e4;
+    font-family:var(--font-mono),monospace;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.27em;
+  }
+
+  body:has(.lab-reference-page) .lab-section-title i{
+    width:122px;
+    background:rgba(190,205,211,.42);
+  }
+
+  body:has(.lab-reference-page) .lab-card-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    height:190px;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card{
+    height:190px;
+    min-height:0;
+    border:0;
+    border-left:1px solid rgba(174,198,207,.22);
+    border-radius:0;
+    background:transparent;
+    transform:none;
+    transition:none;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card:first-child{
+    border-left:0;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card.lab-reference-card:hover{
+    border-color:rgba(174,198,207,.22);
+    background:transparent;
+    transform:none;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content{
+    height:100%;
+    min-height:0;
+    padding:0 45px;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card:first-child .lab-card-content{
+    padding-left:0;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card:last-child .lab-card-content{
+    padding-right:0;
+  }
+
+  body:has(.lab-reference-page) .lab-card-top{
+    color:#d5dcde;
+    font-size:10px;
+    letter-spacing:.27em;
+  }
+
+  body:has(.lab-reference-page) .lab-card-top small{
+    display:none;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content h2{
+    margin:15px 0 0;
+    color:#f0ece5;
+    font-size:31px;
+    line-height:1;
+    letter-spacing:-.025em;
+  }
+
+  body:has(.lab-reference-page) .lab-card-content p{
+    max-width:310px;
+    margin:15px 0 0;
+    color:rgba(215,225,229,.72);
+    font-size:14px;
+    line-height:1.52;
+  }
+
+  body:has(.lab-reference-page) .lab-card-arrow{
+    left:0;
+    right:auto;
+    bottom:13px;
+    color:#e0e4e1;
+    font-size:25px;
+  }
+
+  body:has(.lab-reference-page) .lab-kind-card:hover .lab-card-arrow{
+    transform:none;
+  }
+
+  body:has(.lab-reference-page) footer{
+    position:relative;
+    z-index:5;
+    height:15.5dvh;
+    min-height:15.5dvh;
+    margin:0;
+    overflow:hidden;
+    background:#061016;
+    border-top:1px solid rgba(177,199,207,.18);
+  }
+
+  body:has(.lab-reference-page) footer > div{
+    width:min(1440px,calc(100% - 80px));
+    max-width:none;
+    height:100%;
+    margin:0 auto;
+    padding:36px 0 0;
+  }
+
+  body:has(.lab-reference-page) footer > div > div:first-child{
+    align-items:center;
+  }
+
+  body:has(.lab-reference-page) footer > div > div:first-child p{
+    margin:0;
+    color:#eeeae2;
+    font-size:18px;
+  }
+
+  body:has(.lab-reference-page) footer > div > div:first-child p span{
+    margin-left:18px;
+    color:rgba(221,228,230,.58);
+    font-size:12px;
+  }
+
+  body:has(.lab-reference-page) footer nav{
+    gap:26px;
+    color:rgba(221,228,230,.64);
+  }
+
+  body:has(.lab-reference-page) footer > div > div:last-child{
+    margin-top:14px;
+    padding-top:14px;
+    border-top-color:rgba(177,199,207,.18);
+  }
+}
