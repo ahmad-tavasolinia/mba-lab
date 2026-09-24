@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { topics } from '@/lib/topics';
 import { getAllLabEntries } from '@/lib/content';
-import { getTopicColor } from '@/lib/keyColors';
-import { Container, Eyebrow } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Topics',
@@ -14,53 +12,42 @@ export default async function TopicsPage() {
   const labEntries = await getAllLabEntries();
 
   return (
-    <div className="flex flex-1 flex-col page-topics">
-      <section className="border-b border-rule dark:border-dark-rule">
-        <Container className="py-10 md:py-12">
-          <Eyebrow>Browse by idea</Eyebrow>
-          <h1 className="mt-3 max-w-3xl font-serif text-5xl font-medium tracking-tight text-ink dark:text-dark-ink md:text-6xl">
-            Topics
-          </h1>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-            Ideas in MBA Lab rarely stay inside one discipline. Use topics to follow a thread , 
+    <div className="topics-reference-page">
+      <section className="topics-reference-hero">
+        <div className="topics-reference-shade" aria-hidden="true" />
+        <div className="topics-reference-copy">
+          <div className="topics-reference-eyebrow">
+            <span>Browse by topic</span>
+            <i />
+          </div>
+          <h1>Topics</h1>
+          <p>
+            Ideas in MBA Lab rarely stay inside one discipline. Use topics to follow a thread,
+            <br />
             strategy into AI, finance into psychology, across entries, essays, and sources.
           </p>
-        </Container>
+        </div>
       </section>
 
-      <section className="flex flex-1 flex-col justify-center">
-        <Container className="py-8">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {topics.map((t) => {
-              const count = labEntries.filter((e) => e.topics.includes(t.slug)).length;
-              const c = getTopicColor(t.slug);
-              return (
-                <Link
-                  key={t.slug}
-                  href={`/topics/${t.slug}`}
-                  className={`group flex flex-col justify-between rounded-lg border p-4 transition ${c.border} ${c.bg} ${c.hoverBorder}`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className={`font-mono text-[10px] uppercase tracking-widest ${c.code}`}>
-                        {t.code}
-                      </span>
-                      <span className="font-mono text-[10px] text-ink/30 dark:text-dark-soft/50">
-                        {count} {count === 1 ? 'piece' : 'pieces'}
-                      </span>
-                    </div>
-                    <h2 className={`mt-2 font-serif text-lg font-medium leading-snug text-ink transition-colors dark:text-dark-ink ${c.hoverTitle}`}>
-                      {t.name}
-                    </h2>
-                    <p className="mt-1.5 text-xs leading-relaxed text-ink/60 dark:text-dark-soft">
-                      {t.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </Container>
+      <section className="topics-reference-grid" aria-label="Topics">
+        <div className="topics-reference-columns">
+          {topics.map((topic, index) => {
+            const count = labEntries.filter((entry) => entry.topics.includes(topic.slug)).length;
+            return (
+              <Link key={topic.slug} href={`/topics/${topic.slug}`} className="topics-reference-card">
+                <div className="topics-reference-card-top">
+                  <span className="topics-reference-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="topics-reference-code">{topic.name === 'Artificial Intelligence' ? 'AI' : topic.name.toUpperCase()}</span>
+                </div>
+                <h2>{topic.name}</h2>
+                <span className="topics-reference-rule" />
+                <p>{topic.description}</p>
+                <span className="topics-reference-arrow" aria-hidden="true">→</span>
+                <span className="sr-only">{count} {count === 1 ? 'piece' : 'pieces'}</span>
+              </Link>
+            );
+          })}
+        </div>
       </section>
     </div>
   );
