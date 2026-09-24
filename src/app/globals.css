@@ -816,7 +816,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   z-index:2;
   width:86%;
   margin:0 auto;
-  padding-top:16.5dvh;
+  padding-top:150px;
 }
 .lab-eyebrow{
   display:none;
@@ -885,12 +885,12 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:0;
-  height:clamp(156px,20.8dvh,196px);
+  height:196px;
 }
 .lab-kind-card.lab-reference-card{
   position:relative;
   display:block;
-  height:clamp(156px,20.8dvh,196px);
+  height:196px;
   min-height:0;
   overflow:visible;
   border:0;
@@ -950,144 +950,25 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
 }
 .lab-kind-card:hover .lab-card-arrow{transform:translateX(4px);}
 
-/* MBA Lab reference fit: preserve the supplied composition at normal and F11 viewports. */
+/* Keep the MBA Lab page itself fixed to the viewport. The shared footer remains visible. */
 @media (min-width:768px){
   html:has(.lab-reference-page),
   body:has(.lab-reference-page){
-    width:100%;
-    height:100%;
     overflow:hidden;
   }
-
-  /* The supplied reference is a 16:9 composition. Size the page by viewport
-     height so browser chrome / F11 does not distort the proportions. */
   body:has(.lab-reference-page) main{
-    position:relative;
-    z-index:1;
-    width:100%;
-    min-width:0;
-    height:84.6vh;
-    min-height:0 !important;
-    max-height:none;
-    flex:0 0 84.6vh !important;
-    margin:0 !important;
+    min-height:0;
+    flex:1 1 auto;
     padding:0 !important;
   }
-
   body:has(.lab-reference-page) .page-mba-lab.lab-reference-page{
-    width:100%;
-    height:100%;
+    height:calc(100dvh - 138px);
     min-height:0;
-    margin:0;
-    overflow:hidden;
   }
-
   body:has(.lab-reference-page) footer{
-    position:relative;
-    z-index:1;
-    width:100%;
-    height:15.4vh;
-    min-height:0 !important;
-    max-height:none;
-    margin:0 !important;
-    flex:0 0 15.4vh !important;
+    height:138px;
+    min-height:138px;
     overflow:hidden;
-  }
-
-  .lab-hero.lab-room-hero{
-    height:62.3%;
-    min-height:0;
-  }
-
-  .lab-hero-copy{
-    width:86%;
-    margin:0 auto;
-    padding-top:5.12vw;
-  }
-
-  .lab-hero-copy h1{
-    font-size:clamp(80px,6vw,104px);
-    transform:scaleX(1.08) scaleY(.92);
-    transform-origin:left top;
-  }
-
-  .lab-tagline{
-    margin-top:10px;
-    font-size:clamp(22px,1.62vw,27px);
-  }
-
-  .lab-gold-rule{
-    margin-top:28px;
-  }
-
-  .lab-intro{
-    width:32vw;
-    max-width:100%;
-    margin-top:30px;
-    font-size:clamp(12px,.84vw,14px);
-    line-height:1.55;
-  }
-
-  .lab-kinds.lab-reference-kinds{
-    height:37.7%;
-    min-height:0;
-    padding-top:2vw;
-  }
-
-  .lab-section-head{
-    margin-bottom:1.25vw;
-  }
-
-  .lab-section-title{
-    gap:1.08vw;
-    font-size:clamp(8px,.6vw,10px);
-  }
-
-  .lab-section-title i{
-    width:7.3vw;
-  }
-
-  .lab-card-grid{
-    grid-template-columns:.9fr 1fr 1fr .9fr;
-    height:11vw;
-  }
-
-  .lab-kind-card.lab-reference-card{
-    height:11vw;
-  }
-
-  .lab-card-content{
-    padding:1.2vw 2.3vw 0 2.4vw;
-  }
-
-  .lab-kind-card:first-child .lab-card-content{
-    padding-left:.25vw;
-  }
-
-  .lab-card-top{
-    font-size:clamp(8px,.6vw,10px);
-  }
-
-  .lab-card-content h2{
-    margin-top:.5vw;
-    font-size:1.8vw;
-  }
-
-  .lab-card-content p{
-    max-width:21vw;
-    margin-top:1.08vw;
-    font-size:clamp(11px,.84vw,14px);
-    line-height:1.48;
-  }
-
-  .lab-card-arrow{
-    left:2.4vw;
-    bottom:0;
-    font-size:1.6vw;
-  }
-
-  .lab-kind-card:first-child .lab-card-arrow{
-    left:.25vw;
   }
 }
 
@@ -1104,9 +985,11 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   .lab-card-arrow{bottom:20px;}
 }
 
+
 /* =========================================================
-   TOPICS PAGE: reference-matched desktop composition
-   Scoped only to the Topics page. MBA Lab and homepage stay untouched.
+   TOPICS REFERENCE PAGE
+   The desktop composition follows the supplied 1672 x 941 reference.
+   It is isolated from the homepage and the finished MBA Lab page.
    ========================================================= */
 .topics-reference-topbar{
   position:absolute;
@@ -1114,20 +997,20 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   left:0;
   right:0;
   z-index:60;
-  height:92px;
+  height:86px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  padding:32px 6.2% 0;
+  padding:34px 6.2% 0;
   pointer-events:none;
 }
-.topics-reference-topbar a{pointer-events:auto;}
 .topics-reference-brand{
   display:flex;
   align-items:center;
   gap:21px;
   color:#f0eee8;
   text-decoration:none;
+  pointer-events:auto;
   white-space:nowrap;
 }
 .topics-reference-brand-name{
@@ -1152,6 +1035,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   align-items:flex-start;
   gap:45px;
   padding-top:7px;
+  pointer-events:auto;
 }
 .topics-reference-nav a{
   position:relative;
@@ -1183,20 +1067,27 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
 }
 .topics-reference-hero{
   position:relative;
-  height:49.4%;
+  height:49.9%;
   min-height:0;
   overflow:hidden;
   border-bottom:1px solid rgba(180,199,208,.20);
+  background:#031016;
+}
+.topics-reference-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
   background-image:url('/mba-lab/topics/topics-room-reference.png');
   background-repeat:no-repeat;
-  background-position:center center;
+  background-position:center top;
   background-size:cover;
 }
 .topics-reference-shade{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg,rgba(1,10,15,.48) 0%,rgba(2,12,17,.22) 57%,rgba(2,12,17,.04) 100%),
+    linear-gradient(90deg,rgba(1,10,15,.46) 0%,rgba(2,12,17,.20) 57%,rgba(2,12,17,.04) 100%),
     linear-gradient(180deg,rgba(1,9,14,.16) 0%,rgba(1,9,14,.03) 58%,rgba(1,9,14,.26) 100%);
 }
 .topics-reference-copy{
@@ -1205,7 +1096,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   width:87.7%;
   height:100%;
   margin:0 auto;
-  padding-top:15.9vh;
+  padding-top:15.5%;
 }
 .topics-reference-eyebrow{
   display:flex;
@@ -1228,7 +1119,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   margin:25px 0 0;
   color:#f3f0ea;
   font-family:var(--font-display),Georgia,serif;
-  font-size:clamp(70px,5.1vw,86px);
+  font-size:clamp(65px,5.1vw,86px);
   font-weight:400;
   line-height:.92;
   letter-spacing:-.055em;
@@ -1242,7 +1133,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
 }
 .topics-reference-grid{
   position:relative;
-  height:50.6%;
+  height:50.1%;
   min-height:0;
   background:rgba(2,13,19,.78);
 }
@@ -1321,89 +1212,18 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   transition:transform .2s ease;
 }
 .topics-reference-card:hover .topics-reference-arrow{transform:translateX(4px);}
-
 @media (min-width:768px){
   html:has(.topics-reference-page),
-  body:has(.topics-reference-page){
-    width:100%;
-    height:100%;
-    overflow:hidden;
-  }
-  body:has(.topics-reference-page) main{
-    position:relative;
-    z-index:1;
-    width:100%;
-    min-width:0;
-    height:84.6vh;
-    min-height:0 !important;
-    max-height:none;
-    flex:0 0 84.6vh !important;
-    margin:0 !important;
-    padding:0 !important;
-  }
-  body:has(.topics-reference-page) .topics-reference-page{
-    width:100%;
-    height:100%;
-    min-height:0;
-    margin:0;
-    overflow:hidden;
-  }
-  body:has(.topics-reference-page) footer{
-    position:relative;
-    z-index:1;
-    width:100%;
-    height:15.4vh;
-    min-height:0 !important;
-    max-height:none;
-    margin:0 !important;
-    flex:0 0 15.4vh !important;
-    overflow:hidden;
-  }
-
-  .topics-reference-copy{padding-top:15.9vh;}
-  .topics-reference-copy h1{
-    font-size:clamp(80px,5.1vw,86px);
-    transform:scaleX(1.03) scaleY(.95);
-    transform-origin:left top;
-  }
-  .topics-reference-copy p{
-    width:540px;
-    max-width:42vw;
-    margin-top:18px;
-    font-size:clamp(12px,.84vw,14px);
-  }
-  .topics-reference-columns{
-    padding-top:6.4vh;
-  }
-  .topics-reference-card{
-    height:29.5vh;
-    padding:0 2.05vw 0 1.9vw;
-  }
-  .topics-reference-card:first-child{padding-left:1.9vw;}
-  .topics-reference-number{font-size:clamp(11px,.84vw,14px);}
-  .topics-reference-code{font-size:clamp(8px,.6vw,10px);}
-  .topics-reference-card h2{
-    margin-top:1.7vw;
-    font-size:1.7vw;
-  }
-  .topics-reference-rule{margin-top:1.25vw;}
-  .topics-reference-card p{
-    max-width:15.5vw;
-    margin-top:1.05vw;
-    font-size:clamp(11px,.84vw,14px);
-    line-height:1.62;
-  }
-  .topics-reference-arrow{
-    left:1.9vw;
-    bottom:0;
-    font-size:1.55vw;
-  }
+  body:has(.topics-reference-page){overflow:hidden;}
+  body:has(.topics-reference-page) main{min-height:0;flex:1 1 auto;padding:0 !important;}
+  body:has(.topics-reference-page) .topics-reference-page{height:calc(100dvh - 151px);}
+  body:has(.topics-reference-page) footer{height:151px;min-height:151px;overflow:hidden;}
 }
-
 @media (max-width:767px){
   .topics-reference-topbar{display:none;}
   .topics-reference-page{height:auto;min-height:0;overflow:visible;}
-  .topics-reference-hero{height:520px;min-height:520px;background-size:auto 520px;background-position:center top;}
+  .topics-reference-hero{height:520px;min-height:520px;}
+  .topics-reference-hero::before{background-size:auto 520px;background-position:center top;}
   .topics-reference-copy{width:calc(100% - 40px);padding-top:125px;}
   .topics-reference-copy h1{font-size:60px;}
   .topics-reference-copy p{font-size:14px;}
