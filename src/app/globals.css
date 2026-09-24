@@ -1073,18 +1073,19 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   border-bottom:1px solid rgba(180,199,208,.20);
   background:#031016;
 }
-.topics-reference-hero::before{
-  content:"";
+.topics-reference-image{
   position:absolute;
   inset:0;
   z-index:0;
-  background-image:url('/mba-lab/topics/topics-room-reference.png');
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:cover;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center top;
 }
 .topics-reference-shade{
   position:absolute;
+  z-index:1;
   inset:0;
   background:
     linear-gradient(90deg,rgba(1,10,15,.46) 0%,rgba(2,12,17,.20) 57%,rgba(2,12,17,.04) 100%),
@@ -1222,8 +1223,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
 @media (max-width:767px){
   .topics-reference-topbar{display:none;}
   .topics-reference-page{height:auto;min-height:0;overflow:visible;}
-  .topics-reference-hero{height:520px;min-height:520px;}
-  .topics-reference-hero::before{background-size:auto 520px;background-position:center top;}
+  .topics-reference-hero{height:520px;min-height:520px;background-size:auto 520px;background-position:center top;}
   .topics-reference-copy{width:calc(100% - 40px);padding-top:125px;}
   .topics-reference-copy h1{font-size:60px;}
   .topics-reference-copy p{font-size:14px;}
