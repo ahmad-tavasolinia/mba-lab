@@ -12,42 +12,66 @@ export default async function MbaLabPage() {
   const entries = await getAllLabEntries();
 
   return (
-    <div className="page-mba-lab lab-reference-page">
-      <section className="lab-notebook-hero">
-        <div className="lab-notebook-background" aria-hidden="true" />
-        <div className="lab-notebook-overlay" aria-hidden="true" />
+    <div className="page-mba-lab lab-page lab-reference-page">
+      <section className="lab-hero lab-room-hero">
+        <div className="lab-room-image" aria-hidden="true" />
+        <div className="lab-room-shade" aria-hidden="true" />
 
-        <div className="lab-notebook-copy">
-          <span className="lab-notebook-eyebrow">The Lab Notebook</span>
+        <div className="lab-topbar">
+          <div className="lab-topbar-mark">
+            <span>The Lab Notebook</span>
+            <i />
+          </div>
+          <nav className="lab-topnav" aria-label="Lab notebook navigation">
+            <Link href="/">HOME</Link>
+            <Link href="/topics">TOPICS</Link>
+            <Link href="/about">ABOUT</Link>
+            <Link href="/contact">CONTACT</Link>
+          </nav>
+        </div>
+
+        <div className="lab-hero-copy">
           <h1>MBA Lab</h1>
-          <p className="lab-notebook-tagline">Ideas. Research. Projects. A new chapter.</p>
-          <span className="lab-notebook-rule" aria-hidden="true" />
-          <p className="lab-notebook-intro">
+          <p className="lab-tagline">Ideas. Research. Projects. A new chapter.</p>
+          <span className="lab-gold-rule" />
+          <p className="lab-intro">
             A public record of an ongoing intellectual journey through the core ideas of business and management, synthesized, connected, and questioned as I study them.
           </p>
         </div>
       </section>
 
-      <section className="lab-notebook-kinds" id="browse">
-        <div className="lab-notebook-section-title">
-          <span>Browse by kind</span>
-          <i aria-hidden="true" />
+      <section className="lab-kinds lab-reference-kinds" id="browse">
+        <div className="lab-section-head">
+          <div className="lab-section-title">
+            <span>Browse by kind</span>
+            <i />
+          </div>
         </div>
 
-        <div className="lab-notebook-grid">
+        <div className="lab-card-grid">
           {categories.map((category) => {
             const count = entries.filter((entry) => entry.category === category.slug).length;
             return (
-              <Link key={category.slug} href={`/mba-lab/category/${category.slug}`} className="lab-notebook-kind">
-                <span className="lab-notebook-kind-code">{category.code === 'PROJ' ? 'PROJECTS' : category.code === 'INTV' ? 'INTERVIEWS' : category.code === 'CASE' ? 'CASES' : 'ESSAYS'}</span>
-                <h2>{category.name}</h2>
-                <p>{category.description}</p>
-                <span className="lab-notebook-arrow" aria-hidden="true">→</span>
+              <Link
+                key={category.slug}
+                href={`/mba-lab/category/${category.slug}`}
+                className="lab-kind-card lab-reference-card"
+              >
+                <div className="lab-card-content">
+                  <div className="lab-card-top">
+                    <span>{category.name}</span>
+                    <small>{count} {count === 1 ? 'piece' : 'pieces'}</small>
+                  </div>
+                  <h2>{category.name}</h2>
+                  <p>{category.description}</p>
+                  <span className="lab-card-arrow">→</span>
+                </div>
               </Link>
             );
           })}
         </div>
       </section>
+
     </div>
   );
 }
