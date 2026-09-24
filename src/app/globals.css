@@ -950,25 +950,113 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
 }
 .lab-kind-card:hover .lab-card-arrow{transform:translateX(4px);}
 
-/* Keep the MBA Lab page itself fixed to the viewport. The shared footer remains visible. */
+/* MBA Lab reference fit: preserve the supplied composition at normal and F11 viewports. */
 @media (min-width:768px){
   html:has(.lab-reference-page),
   body:has(.lab-reference-page){
+    width:100%;
+    height:100%;
     overflow:hidden;
   }
+
   body:has(.lab-reference-page) main{
-    min-height:0;
-    flex:1 1 auto;
+    position:relative;
+    z-index:1;
+    width:100%;
+    min-width:0;
+    height:47.55vw;
+    min-height:0 !important;
+    max-height:none;
+    flex:0 0 47.55vw !important;
+    margin:0 !important;
     padding:0 !important;
   }
+
   body:has(.lab-reference-page) .page-mba-lab.lab-reference-page{
-    height:84.5dvh;
+    width:100%;
+    height:100%;
+    min-height:0;
+    margin:0;
+    overflow:hidden;
+  }
+
+  body:has(.lab-reference-page) footer{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:8.67vw;
+    min-height:0 !important;
+    max-height:none;
+    margin:0 !important;
+    flex:0 0 8.67vw !important;
+    overflow:hidden;
+  }
+
+  .lab-hero.lab-room-hero{
+    height:62.3%;
     min-height:0;
   }
-  body:has(.lab-reference-page) footer{
-    height:15.5dvh;
-    min-height:15.5dvh;
-    overflow:hidden;
+
+  .lab-hero-copy{
+    width:86%;
+    margin:0 auto;
+    padding-top:9.22vw;
+  }
+
+  .lab-hero-copy h1{
+    font-size:clamp(72px,6.2vw,104px);
+  }
+
+  .lab-tagline{
+    margin-top:22px;
+    font-size:clamp(22px,1.62vw,27px);
+  }
+
+  .lab-gold-rule{
+    margin-top:34px;
+  }
+
+  .lab-intro{
+    width:535px;
+    margin-top:26px;
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  .lab-kinds.lab-reference-kinds{
+    height:37.7%;
+    min-height:0;
+    padding-top:34px;
+  }
+
+  .lab-section-head{
+    margin-bottom:35px;
+  }
+
+  .lab-card-grid,
+  .lab-kind-card.lab-reference-card{
+    height:clamp(150px,20.8dvh,196px);
+  }
+
+  .lab-card-content{
+    padding-left:4px;
+    padding-right:38px;
+  }
+
+  .lab-card-content h2{
+    margin-top:20px;
+    font-size:30px;
+  }
+
+  .lab-card-content p{
+    margin-top:17px;
+    max-width:300px;
+    font-size:14px;
+    line-height:1.48;
+  }
+
+  .lab-card-arrow{
+    bottom:0;
   }
 }
 
