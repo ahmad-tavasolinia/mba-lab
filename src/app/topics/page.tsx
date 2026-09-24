@@ -14,6 +14,12 @@ export default async function TopicsPage() {
   return (
     <div className="topics-reference-page">
       <section className="topics-reference-hero">
+        <img
+          className="topics-reference-image"
+          src="/mba-lab/topics/topics-room-reference.png"
+          alt=""
+          aria-hidden="true"
+        />
         <div className="topics-reference-shade" aria-hidden="true" />
         <div className="topics-reference-copy">
           <div className="topics-reference-eyebrow">
