@@ -959,15 +959,17 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
     overflow:hidden;
   }
 
+  /* The supplied reference is a 16:9 composition. Size the page by viewport
+     height so browser chrome / F11 does not distort the proportions. */
   body:has(.lab-reference-page) main{
     position:relative;
     z-index:1;
     width:100%;
     min-width:0;
-    height:47.55vw;
+    height:84.6vh;
     min-height:0 !important;
     max-height:none;
-    flex:0 0 47.55vw !important;
+    flex:0 0 84.6vh !important;
     margin:0 !important;
     padding:0 !important;
   }
@@ -984,11 +986,11 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
     position:relative;
     z-index:1;
     width:100%;
-    height:8.67vw;
+    height:15.4vh;
     min-height:0 !important;
     max-height:none;
     margin:0 !important;
-    flex:0 0 8.67vw !important;
+    flex:0 0 15.4vh !important;
     overflow:hidden;
   }
 
@@ -1000,63 +1002,92 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   .lab-hero-copy{
     width:86%;
     margin:0 auto;
-    padding-top:9.22vw;
+    padding-top:5.12vw;
   }
 
   .lab-hero-copy h1{
-    font-size:clamp(72px,6.2vw,104px);
+    font-size:clamp(80px,6vw,104px);
+    transform:scaleX(1.08) scaleY(.92);
+    transform-origin:left top;
   }
 
   .lab-tagline{
-    margin-top:22px;
+    margin-top:10px;
     font-size:clamp(22px,1.62vw,27px);
   }
 
   .lab-gold-rule{
-    margin-top:34px;
+    margin-top:28px;
   }
 
   .lab-intro{
-    width:535px;
-    margin-top:26px;
-    font-size:15px;
+    width:32vw;
+    max-width:100%;
+    margin-top:30px;
+    font-size:clamp(12px,.84vw,14px);
     line-height:1.55;
   }
 
   .lab-kinds.lab-reference-kinds{
     height:37.7%;
     min-height:0;
-    padding-top:34px;
+    padding-top:2vw;
   }
 
   .lab-section-head{
-    margin-bottom:35px;
+    margin-bottom:1.25vw;
   }
 
-  .lab-card-grid,
+  .lab-section-title{
+    gap:1.08vw;
+    font-size:clamp(8px,.6vw,10px);
+  }
+
+  .lab-section-title i{
+    width:7.3vw;
+  }
+
+  .lab-card-grid{
+    grid-template-columns:.9fr 1fr 1fr .9fr;
+    height:11vw;
+  }
+
   .lab-kind-card.lab-reference-card{
-    height:clamp(150px,20.8dvh,196px);
+    height:11vw;
   }
 
   .lab-card-content{
-    padding-left:4px;
-    padding-right:38px;
+    padding:1.2vw 2.3vw 0 2.4vw;
+  }
+
+  .lab-kind-card:first-child .lab-card-content{
+    padding-left:.25vw;
+  }
+
+  .lab-card-top{
+    font-size:clamp(8px,.6vw,10px);
   }
 
   .lab-card-content h2{
-    margin-top:20px;
-    font-size:30px;
+    margin-top:.5vw;
+    font-size:1.8vw;
   }
 
   .lab-card-content p{
-    margin-top:17px;
-    max-width:300px;
-    font-size:14px;
+    max-width:21vw;
+    margin-top:1.08vw;
+    font-size:clamp(11px,.84vw,14px);
     line-height:1.48;
   }
 
   .lab-card-arrow{
+    left:2.4vw;
     bottom:0;
+    font-size:1.6vw;
+  }
+
+  .lab-kind-card:first-child .lab-card-arrow{
+    left:.25vw;
   }
 }
 
