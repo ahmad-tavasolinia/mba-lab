@@ -13,11 +13,23 @@ export default async function MbaLabPage() {
 
   return (
     <div className="page-mba-lab lab-page lab-reference-page">
+      <div className="lab-page-backdrop" aria-hidden="true" />
+
+      <header className="lab-page-nav">
+        <div className="lab-page-nav-inner">
+          <Link href="/" className="lab-page-mark" aria-label="The Lab Notebook">THE LAB NOTEBOOK</Link>
+          <nav aria-label="MBA Lab navigation">
+            <Link href="/" className="is-active">HOME</Link>
+            <Link href="/topics">TOPICS</Link>
+            <Link href="/about">ABOUT</Link>
+            <Link href="/contact">CONTACT</Link>
+          </nav>
+        </div>
+      </header>
+
       <section className="lab-hero lab-room-hero">
-        <div className="lab-room-image" aria-hidden="true" />
         <div className="lab-room-shade" aria-hidden="true" />
         <div className="lab-hero-copy">
-          <span className="lab-eyebrow">The Lab Notebook</span>
           <h1>MBA Lab</h1>
           <p className="lab-tagline">Ideas. Research. Projects. A new chapter.</p>
           <span className="lab-gold-rule" />
@@ -46,8 +58,7 @@ export default async function MbaLabPage() {
               >
                 <div className="lab-card-content">
                   <div className="lab-card-top">
-                    <span>{category.code === 'PROJ' ? 'PROJ' : category.code === 'INTV' ? 'INTV' : category.code}</span>
-                    <small>{count} {count === 1 ? 'piece' : 'pieces'}</small>
+                    <span>{category.code === 'PROJ' ? 'PROJECTS' : category.code === 'INTV' ? 'INTERVIEWS' : category.code === 'CASE' ? 'CASES' : category.code === 'ESSAY' ? 'ESSAYS' : category.code}</span>
                   </div>
                   <h2>{category.name}</h2>
                   <p>{category.description}</p>
