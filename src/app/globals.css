@@ -710,12 +710,12 @@ body:not(:has(.home-hero)) .rail-collapse-toggle{
 
 /* Shared internal-page typography and blue-night surfaces. */
 body:not(:has(.home-hero)) .border-rule,
-body:not(:has(.home-hero)) .dark\\:border-dark-rule{
+body:not(:has(.home-hero)) .dark\:border-dark-rule{
   border-color:rgba(174,193,204,.14);
 }
 
 body:not(:has(.home-hero)) .text-gold,
-body:not(:has(.home-hero)) .dark\\:text-gold-bright{
+body:not(:has(.home-hero)) .dark\:text-gold-bright{
   color:#b9c8d0;
 }
 
@@ -1071,7 +1071,7 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   min-height:0;
   overflow:hidden;
   border-bottom:1px solid rgba(180,199,208,.20);
-  background-image:url('/mba-lab/topics/topics-room-reference.png');
+  background-image:url('/mba-lab/topcis/topics-room-reference.png');
   background-repeat:no-repeat;
   background-position:center top;
   background-size:cover;
@@ -1236,4 +1236,184 @@ body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   .topics-reference-card:last-child{border-bottom:0;}
   .topics-reference-card h2{font-size:27px;}
   .topics-reference-arrow{left:0;bottom:22px;}
+}
+
+/* =========================================================
+   INTERNAL SITE SYSTEM
+   One visual language for every page after the homepage.
+   The finished homepage, MBA Lab landing page, and Topics
+   composition remain isolated above.
+   ========================================================= */
+body:not(:has(.home-hero)) {
+  background:#07131c;
+  color:#dce5e9;
+  font-family:var(--font-body),Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+body:not(:has(.home-hero)) .site-bg {
+  display:none !important;
+}
+
+body:not(:has(.home-hero)) main,
+body:not(:has(.home-hero)) footer {
+  background:#07131c;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main {
+  color:#dce5e9;
+}
+
+/* Shared content pages use the same topbar clearance without changing
+   the fixed compositions of MBA Lab and Topics. */
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * {
+  position:relative;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * > section:first-child {
+  padding-top:18px;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main section {
+  border-color:rgba(173,195,204,.17) !important;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h1,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h2,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h3,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h4 {
+  font-family:var(--font-display),Georgia,"Times New Roman",serif;
+  font-weight:400;
+  color:#edf1ef;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main p,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main li {
+  color:#bfcbd0;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a {
+  color:#dce5e9;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a:hover {
+  color:#f4f6f5;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .font-mono {
+  font-family:var(--font-mono),"Courier New",monospace;
+  color:#9eafb7;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .text-gold,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .dark\:text-gold-bright {
+  color:#c6d1d5 !important;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold\/40,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold\/30,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-forest\/30,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-rule,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .dark\:border-dark-rule {
+  border-color:rgba(173,195,204,.22) !important;
+}
+
+/* Replace the old warm pill language with the same restrained notebook
+   treatment used by the MBA Lab and Topics pages. */
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a.rounded-full,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main button.rounded-full,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main span.rounded-full {
+  border-radius:2px !important;
+  border-color:rgba(173,195,204,.24) !important;
+  background:rgba(7,19,28,.36) !important;
+  color:#c6d1d5 !important;
+}
+
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a.rounded-full:hover,
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main button.rounded-full:hover {
+  border-color:rgba(221,229,231,.48) !important;
+  color:#f0f3f2 !important;
+}
+
+/* Search/filter controls. */
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main input {
+  border-color:rgba(173,195,204,.25) !important;
+  border-radius:2px !important;
+  background:rgba(3,12,18,.55) !important;
+  color:#e5ebed !important;
+  box-shadow:none !important;
+}
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main input::placeholder {
+  color:rgba(191,203,208,.48) !important;
+}
+
+/* Long-form writing uses the same readable serif/body pairing everywhere. */
+body:not(:has(.home-hero)) .prose-lab {
+  max-width:44rem;
+  color:#c7d2d6;
+  font-family:var(--font-body),Arial,Helvetica,sans-serif;
+  font-size:15px;
+  line-height:1.78;
+}
+body:not(:has(.home-hero)) .prose-lab p {
+  margin:0 0 1.35rem;
+  color:#c7d2d6;
+}
+body:not(:has(.home-hero)) .prose-lab strong {
+  color:#e7edef;
+  font-weight:600;
+}
+body:not(:has(.home-hero)) .prose-lab h2,
+body:not(:has(.home-hero)) .prose-lab h3 {
+  margin:2.4rem 0 1rem;
+  color:#edf1ef;
+  font-family:var(--font-display),Georgia,serif;
+  font-weight:400;
+}
+body:not(:has(.home-hero)) .prose-lab blockquote {
+  margin:2rem 0;
+  padding-left:1.25rem;
+  border-left:1px solid rgba(173,195,204,.42);
+  color:#b9c7cc;
+  font-family:var(--font-display),Georgia,serif;
+  font-style:italic;
+}
+
+/* Generic page header rhythm. */
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * > section:first-child h1 {
+  letter-spacing:-.045em;
+}
+
+/* About / contact / CV side surfaces. */
+body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main aside > div,
+body:not(:has(.home-hero)) main .rounded-lg {
+  border-color:rgba(173,195,204,.20) !important;
+  border-radius:2px !important;
+  background:rgba(8,20,28,.28);
+}
+
+/* Footer belongs to the same dark notebook system. */
+body:not(:has(.home-hero)) footer {
+  color:#aebdc3;
+  border-color:rgba(173,195,204,.16) !important;
+  background:#07131c !important;
+}
+body:not(:has(.home-hero)) footer p,
+body:not(:has(.home-hero)) footer a {
+  color:#9eafb7 !important;
+}
+body:not(:has(.home-hero)) footer a:hover {
+  color:#edf1ef !important;
+}
+
+/* Mobile keeps the same visual system without forcing desktop geometry. */
+@media (max-width:767px){
+  body:not(:has(.home-hero)) main > * > section:first-child {
+    padding-top:0;
+  }
+  body:not(:has(.home-hero)) main h1 {
+    font-size:clamp(44px,13vw,64px);
+  }
 }
