@@ -20,10 +20,10 @@ This is not a small distinction. It suggests that AI is currently eating the ana
 
 ## The actual question
 
-If that's roughly right, the honest version of "is an MBA worth it" becomes: does the specific judgment an MBA trains — reading ambiguous situations, weighing competing incentives, deciding under uncertainty — become more valuable as the surrounding analytical work gets cheaper, or does the credential mostly retain value for reasons unrelated to that judgment, like signaling and network access?
+If that's roughly right, the honest version of "is an MBA worth it" becomes: does the specific judgment an MBA trains, reading ambiguous situations, weighing competing incentives, deciding under uncertainty, become more valuable as the surrounding analytical work gets cheaper, or does the credential mostly retain value for reasons unrelated to that judgment, like signaling and network access?
 
-My tentative answer is that the judgment component becomes more valuable, not less, precisely because it's now the bottleneck rather than one input among several. But that answer only holds if the program actually trains judgment rather than analytical technique dressed up as judgment — and that is a claim about a specific program's design, not about the credential as a category.
+My tentative answer is that the judgment component becomes more valuable, not less, precisely because it's now the bottleneck rather than one input among several. But that answer only holds if the program actually trains judgment rather than analytical technique dressed up as judgment, and that is a claim about a specific program's design, not about the credential as a category.
 
 ## Where this leaves me
 
-I don't think the right response to AI is to ask whether an MBA is worth it in the abstract. It's to ask, of any specific program, which of its two historical products — trained judgment, or credentialing and access — is actually being purchased, and to be honest that AI is putting real pressure on only one of those two things, in the opposite direction than most people assume.
+I don't think the right response to AI is to ask whether an MBA is worth it in the abstract. It's to ask, of any specific program, which of its two historical products, trained judgment, or credentialing and access, is actually being purchased, and to be honest that AI is putting real pressure on only one of those two things, in the opposite direction than most people assume.
