@@ -710,12 +710,12 @@ body:not(:has(.home-hero)) .rail-collapse-toggle{
 
 /* Shared internal-page typography and blue-night surfaces. */
 body:not(:has(.home-hero)) .border-rule,
-body:not(:has(.home-hero)) .dark\:border-dark-rule{
+body:not(:has(.home-hero)) .dark\\:border-dark-rule{
   border-color:rgba(174,193,204,.14);
 }
 
 body:not(:has(.home-hero)) .text-gold,
-body:not(:has(.home-hero)) .dark\:text-gold-bright{
+body:not(:has(.home-hero)) .dark\\:text-gold-bright{
   color:#b9c8d0;
 }
 
@@ -988,8 +988,7 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
 
 /* =========================================================
    TOPICS REFERENCE PAGE
-   The desktop composition follows the supplied 1672 x 941 reference.
-   It is isolated from the homepage and the finished MBA Lab page.
+   Uses the same top-right navigation treatment as the homepage.
    ========================================================= */
 .topics-reference-topbar{
   position:absolute;
@@ -997,11 +996,11 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   left:0;
   right:0;
   z-index:60;
-  height:86px;
+  height:auto;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  padding:34px 6.2% 0;
+  padding:5.2% 8.4% 0 5.75%;
   pointer-events:none;
 }
 .topics-reference-brand{
@@ -1030,20 +1029,23 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   font-size:12px;
   line-height:1;
 }
+/* Exact homepage nav geometry/type, with the Topics active underline. */
 .topics-reference-nav{
   display:flex;
   align-items:flex-start;
-  gap:45px;
-  padding-top:7px;
+  gap:47px;
+  margin-top:2px;
+  padding-top:0;
   pointer-events:auto;
 }
 .topics-reference-nav a{
   position:relative;
-  color:rgba(239,242,241,.90);
-  font-family:var(--font-mono),monospace;
-  font-size:10px;
-  letter-spacing:.15em;
+  color:rgba(242,238,231,.92);
+  font-family:var(--font-body),system-ui,sans-serif;
+  font-size:12px;
+  font-weight:500;
   line-height:1;
+  letter-spacing:.17em;
   text-decoration:none;
 }
 .topics-reference-nav a.is-active::after{
@@ -1051,9 +1053,9 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   position:absolute;
   left:0;
   right:0;
-  bottom:-16px;
+  bottom:-18px;
   height:1px;
-  background:rgba(235,239,238,.90);
+  background:#f0ece5;
 }
 .topics-reference-page{
   position:relative;
@@ -1067,19 +1069,17 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
 }
 .topics-reference-hero{
   position:relative;
-  height:49.9%;
+  height:43%;
   min-height:0;
   overflow:hidden;
   border-bottom:1px solid rgba(180,199,208,.20);
-  background-image:url('/mba-lab/topcis/topics-room-reference.png');
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:cover;
+  background:#031016;
 }
 .topics-reference-image{
   position:absolute;
   inset:0;
   z-index:0;
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -1091,7 +1091,7 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   z-index:1;
   background:
     linear-gradient(90deg,rgba(1,10,15,.46) 0%,rgba(2,12,17,.20) 57%,rgba(2,12,17,.04) 100%),
-    linear-gradient(180deg,rgba(1,9,14,.16) 0%,rgba(1,9,14,.03) 58%,rgba(1,9,14,.26) 100%);
+    linear-gradient(180deg,rgba(1,9,14,.16) 0%,rgba(1,9,14,.03) 58%,rgba(1,9,14,.30) 100%);
 }
 .topics-reference-copy{
   position:relative;
@@ -1099,7 +1099,7 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   width:87.7%;
   height:100%;
   margin:0 auto;
-  padding-top:15.5%;
+  padding-top:11.5%;
 }
 .topics-reference-eyebrow{
   display:flex;
@@ -1119,47 +1119,60 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   background:rgba(191,205,211,.58);
 }
 .topics-reference-copy h1{
-  margin:25px 0 0;
+  margin:18px 0 0;
   color:#f3f0ea;
   font-family:var(--font-display),Georgia,serif;
-  font-size:clamp(65px,5.1vw,86px);
+  font-size:clamp(58px,5vw,78px);
   font-weight:400;
   line-height:.92;
   letter-spacing:-.055em;
 }
 .topics-reference-copy p{
-  margin:20px 0 0;
+  margin:16px 0 0;
+  max-width:780px;
   color:rgba(224,231,233,.87);
   font-family:var(--font-body),Arial,sans-serif;
   font-size:15px;
-  line-height:1.55;
+  line-height:1.5;
 }
 .topics-reference-grid{
   position:relative;
-  height:50.1%;
+  height:57%;
   min-height:0;
-  background:rgba(2,13,19,.78);
+  background:#031016;
 }
 .topics-reference-columns{
   width:87.7%;
   height:100%;
   margin:0 auto;
-  padding-top:7.6%;
+  padding:5.5% 0 4.5%;
   display:grid;
   grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+  box-sizing:border-box;
 }
+/* Five real boxes instead of open-ended columns. */
 .topics-reference-card{
   position:relative;
   display:block;
-  height:73%;
-  padding:0 31px 0 32px;
-  border-right:1px solid rgba(173,195,204,.25);
+  min-width:0;
+  height:100%;
+  box-sizing:border-box;
+  padding:20px 20px 34px;
+  border:1px solid rgba(173,195,204,.28);
+  background:rgba(7,22,29,.34);
   color:#eef0ed;
   text-decoration:none;
+  overflow:hidden;
+  transition:border-color .2s ease,background .2s ease;
 }
-.topics-reference-card:first-child{padding-left:32px;}
-.topics-reference-card:last-child{border-right:0;}
-.topics-reference-card:hover{color:#eef0ed;}
+.topics-reference-card:first-child,
+.topics-reference-card:last-child{padding-left:20px;padding-right:20px;border-right:1px solid rgba(173,195,204,.28);}
+.topics-reference-card:hover{
+  color:#eef0ed;
+  border-color:rgba(215,225,228,.48);
+  background:rgba(10,27,35,.54);
+}
 .topics-reference-card-top{
   display:flex;
   align-items:center;
@@ -1167,50 +1180,49 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
   min-height:15px;
 }
 .topics-reference-number{
-  color:rgba(185,196,202,.52);
+  color:rgba(185,196,202,.62);
   font-family:var(--font-body),Arial,sans-serif;
-  font-size:14px;
+  font-size:13px;
   line-height:1;
 }
 .topics-reference-code{
   color:#c9d1d4;
   font-family:var(--font-mono),monospace;
-  font-size:10px;
-  letter-spacing:.28em;
+  font-size:9px;
+  letter-spacing:.24em;
   line-height:1;
   text-transform:uppercase;
   text-align:right;
 }
 .topics-reference-card h2{
-  margin:21px 0 0;
+  margin:20px 0 0;
   color:#f0eee8;
   font-family:var(--font-display),Georgia,serif;
-  font-size:28px;
+  font-size:clamp(22px,1.85vw,29px);
   font-weight:400;
-  line-height:1.03;
+  line-height:1.04;
   letter-spacing:-.025em;
 }
 .topics-reference-rule{
   display:block;
   width:32px;
   height:1px;
-  margin-top:21px;
+  margin-top:17px;
   background:rgba(221,227,228,.74);
 }
 .topics-reference-card p{
-  max-width:245px;
-  margin:17px 0 0;
-  color:rgba(210,220,224,.82);
+  margin:14px 0 0;
+  color:rgba(210,220,224,.86);
   font-family:var(--font-body),Arial,sans-serif;
-  font-size:14px;
-  line-height:1.62;
+  font-size:13px;
+  line-height:1.48;
 }
 .topics-reference-arrow{
   position:absolute;
-  left:32px;
-  bottom:0;
+  left:20px;
+  bottom:13px;
   color:#dce2e2;
-  font-size:26px;
+  font-size:24px;
   line-height:1;
   transition:transform .2s ease;
 }
@@ -1225,195 +1237,15 @@ body:not(:has(.home-hero)) .dark\:text-gold-bright{
 @media (max-width:767px){
   .topics-reference-topbar{display:none;}
   .topics-reference-page{height:auto;min-height:0;overflow:visible;}
-  .topics-reference-hero{height:520px;min-height:520px;background-size:auto 520px;background-position:center top;}
+  .topics-reference-hero{height:520px;min-height:520px;}
   .topics-reference-copy{width:calc(100% - 40px);padding-top:125px;}
   .topics-reference-copy h1{font-size:60px;}
   .topics-reference-copy p{font-size:14px;}
   .topics-reference-copy p br{display:none;}
   .topics-reference-grid{height:auto;}
-  .topics-reference-columns{width:calc(100% - 40px);height:auto;padding:30px 0 50px;display:grid;grid-template-columns:1fr;}
-  .topics-reference-card,.topics-reference-card:first-child{height:185px;padding:20px 0;border-right:0;border-bottom:1px solid rgba(173,195,204,.25);}
-  .topics-reference-card:last-child{border-bottom:0;}
+  .topics-reference-columns{width:calc(100% - 40px);height:auto;padding:30px 0 50px;display:grid;grid-template-columns:1fr;gap:12px;}
+  .topics-reference-card,.topics-reference-card:first-child{height:185px;padding:20px;border:1px solid rgba(173,195,204,.25);}
+  .topics-reference-card:last-child{border:1px solid rgba(173,195,204,.25);}
   .topics-reference-card h2{font-size:27px;}
-  .topics-reference-arrow{left:0;bottom:22px;}
-}
-
-/* =========================================================
-   INTERNAL SITE SYSTEM
-   One visual language for every page after the homepage.
-   The finished homepage, MBA Lab landing page, and Topics
-   composition remain isolated above.
-   ========================================================= */
-body:not(:has(.home-hero)) {
-  background:#07131c;
-  color:#dce5e9;
-  font-family:var(--font-body),Arial,Helvetica,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-
-body:not(:has(.home-hero)) .site-bg {
-  display:none !important;
-}
-
-body:not(:has(.home-hero)) main,
-body:not(:has(.home-hero)) footer {
-  background:#07131c;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main {
-  color:#dce5e9;
-}
-
-/* Shared content pages use the same topbar clearance without changing
-   the fixed compositions of MBA Lab and Topics. */
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * {
-  position:relative;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * > section:first-child {
-  padding-top:18px;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main section {
-  border-color:rgba(173,195,204,.17) !important;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h1,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h2,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h3,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main h4 {
-  font-family:var(--font-display),Georgia,"Times New Roman",serif;
-  font-weight:400;
-  color:#edf1ef;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main p,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main li {
-  color:#bfcbd0;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a {
-  color:#dce5e9;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a:hover {
-  color:#f4f6f5;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .font-mono {
-  font-family:var(--font-mono),"Courier New",monospace;
-  color:#9eafb7;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .text-gold,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .dark\:text-gold-bright {
-  color:#c6d1d5 !important;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold\/40,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-gold\/30,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-forest\/30,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .border-rule,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main .dark\:border-dark-rule {
-  border-color:rgba(173,195,204,.22) !important;
-}
-
-/* Replace the old warm pill language with the same restrained notebook
-   treatment used by the MBA Lab and Topics pages. */
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a.rounded-full,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main button.rounded-full,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main span.rounded-full {
-  border-radius:2px !important;
-  border-color:rgba(173,195,204,.24) !important;
-  background:rgba(7,19,28,.36) !important;
-  color:#c6d1d5 !important;
-}
-
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main a.rounded-full:hover,
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main button.rounded-full:hover {
-  border-color:rgba(221,229,231,.48) !important;
-  color:#f0f3f2 !important;
-}
-
-/* Search/filter controls. */
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main input {
-  border-color:rgba(173,195,204,.25) !important;
-  border-radius:2px !important;
-  background:rgba(3,12,18,.55) !important;
-  color:#e5ebed !important;
-  box-shadow:none !important;
-}
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main input::placeholder {
-  color:rgba(191,203,208,.48) !important;
-}
-
-/* Long-form writing uses the same readable serif/body pairing everywhere. */
-body:not(:has(.home-hero)) .prose-lab {
-  max-width:44rem;
-  color:#c7d2d6;
-  font-family:var(--font-body),Arial,Helvetica,sans-serif;
-  font-size:15px;
-  line-height:1.78;
-}
-body:not(:has(.home-hero)) .prose-lab p {
-  margin:0 0 1.35rem;
-  color:#c7d2d6;
-}
-body:not(:has(.home-hero)) .prose-lab strong {
-  color:#e7edef;
-  font-weight:600;
-}
-body:not(:has(.home-hero)) .prose-lab h2,
-body:not(:has(.home-hero)) .prose-lab h3 {
-  margin:2.4rem 0 1rem;
-  color:#edf1ef;
-  font-family:var(--font-display),Georgia,serif;
-  font-weight:400;
-}
-body:not(:has(.home-hero)) .prose-lab blockquote {
-  margin:2rem 0;
-  padding-left:1.25rem;
-  border-left:1px solid rgba(173,195,204,.42);
-  color:#b9c7cc;
-  font-family:var(--font-display),Georgia,serif;
-  font-style:italic;
-}
-
-/* Generic page header rhythm. */
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main > * > section:first-child h1 {
-  letter-spacing:-.045em;
-}
-
-/* About / contact / CV side surfaces. */
-body:not(:has(.home-hero)):not(:has(.lab-reference-page)):not(:has(.topics-reference-page)) main aside > div,
-body:not(:has(.home-hero)) main .rounded-lg {
-  border-color:rgba(173,195,204,.20) !important;
-  border-radius:2px !important;
-  background:rgba(8,20,28,.28);
-}
-
-/* Footer belongs to the same dark notebook system. */
-body:not(:has(.home-hero)) footer {
-  color:#aebdc3;
-  border-color:rgba(173,195,204,.16) !important;
-  background:#07131c !important;
-}
-body:not(:has(.home-hero)) footer p,
-body:not(:has(.home-hero)) footer a {
-  color:#9eafb7 !important;
-}
-body:not(:has(.home-hero)) footer a:hover {
-  color:#edf1ef !important;
-}
-
-/* Mobile keeps the same visual system without forcing desktop geometry. */
-@media (max-width:767px){
-  body:not(:has(.home-hero)) main > * > section:first-child {
-    padding-top:0;
-  }
-  body:not(:has(.home-hero)) main h1 {
-    font-size:clamp(44px,13vw,64px);
-  }
+  .topics-reference-arrow{left:20px;bottom:16px;}
 }
