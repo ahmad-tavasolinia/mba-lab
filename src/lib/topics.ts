@@ -6,7 +6,7 @@ export const topics: Topic[] = [
     name: 'Strategy',
     code: 'STRAT',
     description:
-      'How advantage is built, defended, and eventually lost — and what that reveals about the nature of competition itself.',
+      'How advantage is built, defended, and eventually lost, and what that reveals about the nature of competition itself.',
   },
   {
     slug: 'finance',
@@ -26,7 +26,7 @@ export const topics: Topic[] = [
     name: 'Entrepreneurship',
     code: 'ENTR',
     description:
-      'Building under uncertainty — how opportunity is recognized, tested, and turned into an organization.',
+      'Building under uncertainty, how opportunity is recognized, tested, and turned into an organization.',
   },
   {
     slug: 'artificial-intelligence',

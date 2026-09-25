@@ -16,8 +16,8 @@ const config: Config = {
           faint: '#8A8678',
         },
         gold: {
-          DEFAULT: '#A67C3D',
-          bright: '#C79A52',
+          DEFAULT: '#C79A52',
+          bright: '#DEB772',
         },
         forest: {
           DEFAULT: '#2F4A3D',

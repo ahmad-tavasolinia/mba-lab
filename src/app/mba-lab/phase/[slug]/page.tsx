@@ -58,7 +58,7 @@ export default async function PhasePage({ params }: { params: { slug: string } }
         <Container className="py-10 md:py-12">
           {entries.length === 0 ? (
             <p className="text-sm text-ink/50 dark:text-dark-soft">
-              Nothing published in this phase yet — check back soon.
+              Nothing published in this phase yet, check back soon.
             </p>
           ) : (
             <div className="space-y-14">

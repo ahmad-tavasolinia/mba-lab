@@ -1,5 +1,5 @@
 // Each "key" (topic or category) gets one accent color from the site's warm
-// palette — gold plus the camel/caramel/cognac/coffee/chocolate family.
+// palette, gold plus the camel/caramel/cognac/coffee/chocolate family.
 // Classes are written out in full (not interpolated) so Tailwind's JIT
 // scanner can find them at build time.
 

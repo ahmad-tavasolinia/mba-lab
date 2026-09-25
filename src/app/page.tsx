@@ -1,34 +1,22 @@
 import Link from 'next/link';
 import JourneyPhases from '@/components/JourneyPhases';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 export default function HomePage() {
   return (
     <div className="home-hero">
-      <img
-        className="home-hero-image"
-        src={`${basePath}/hero-mba-lab.png`}
-        alt=""
-        aria-hidden="true"
-      />
-      <div className="home-hero-shade" aria-hidden="true" />
+      <div className="home-hero-background" aria-hidden="true" />
 
       <section className="home-copy" aria-labelledby="home-title">
-        <p className="home-eyebrow">MBA LAB</p>
-
         <h1 id="home-title">
-          Ideas today.
+          Building the next
           <br />
-          Impact <em>tomorrow.</em>
+          chapter, deliberately.
         </h1>
 
         <p className="home-description">
-          A personal intellectual workspace
+          Exploring ideas, skills and opportunities
           <br />
-          to study ideas, build knowledge,
-          <br />
-          and prepare for what's next.
+          for a meaningful MBA journey.
         </p>
 
         <Link href="/mba-lab" className="home-cta">
@@ -37,7 +25,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <div className="home-journey">
+      <div className="home-journey" aria-label="MBA journey phases">
         <JourneyPhases />
       </div>
     </div>

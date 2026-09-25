@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 const links = [
   { href: '/mba-lab', label: 'MBA Lab' },
   { href: '/topics', label: 'Topics' },
+  { href: '/essays', label: 'Essays' },
   { href: '/courses', label: 'Courses & Sources' },
   { href: '/about', label: 'About Ahmad' },
   { href: '/cv', label: 'CV' },
@@ -18,24 +19,23 @@ export default function Footer() {
   if (pathname === '/') return null;
 
   return (
-    <footer className="border-t border-rule dark:border-dark-rule">
-      <div className="mx-auto max-w-content px-6 py-5 md:px-10">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-serif text-base text-ink dark:text-dark-ink">
+    <footer className="site-footer">
+      <div className="site-footer-inner">
+        <div className="site-footer-top">
+          <p className="site-footer-brand">
             MBA Lab
-            <span className="ml-2 font-sans text-xs font-normal text-ink/50 dark:text-dark-soft">
-              — an independent record of study, not a course-completion tracker.
-            </span>
+            <span>is an independent record of study.</span>
           </p>
-          <nav className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink/60 dark:text-dark-soft">
-            {links.map((l) => (
-              <Link key={l.href} className="hover:text-gold" href={l.href}>
-                {l.label}
+          <nav className="site-footer-links" aria-label="Footer navigation">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
               </Link>
             ))}
           </nav>
         </div>
-        <div className="mt-3 flex flex-col gap-1 border-t border-rule pt-3 text-[11px] text-ink/40 dark:border-dark-rule dark:text-dark-soft/50 sm:flex-row sm:items-center sm:justify-between">
+
+        <div className="site-footer-meta">
           <p>© {new Date().getFullYear()} Ahmad Tavasolinia. MBA Lab is an independent personal project.</p>
           <p>Not affiliated with or endorsed by any university named within.</p>
         </div>
