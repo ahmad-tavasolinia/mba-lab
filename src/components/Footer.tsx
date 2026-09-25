@@ -24,7 +24,7 @@ export default function Footer() {
           <p className="font-serif text-base text-ink dark:text-dark-ink">
             MBA Lab
             <span className="ml-2 font-sans text-xs font-normal text-ink/50 dark:text-dark-soft">
-              is an independent record of study.
+              — an independent record of study, not a course-completion tracker.
             </span>
           </p>
           <nav className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink/60 dark:text-dark-soft">

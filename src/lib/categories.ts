@@ -24,13 +24,13 @@ export const categories: Category[] = [
     slug: 'projects',
     name: 'Projects',
     code: 'PROJ',
-    description: 'Applied work, models, frameworks, and things actually built.',
+    description: 'Applied work — models, frameworks, and things actually built.',
   },
   {
     slug: 'interviews',
     name: 'Interviews',
     code: 'INTV',
-    description: 'Field conversations with people actually doing the work, what they worry about, off the slide deck.',
+    description: 'Field conversations with people actually doing the work — what they worry about, off the slide deck.',
   },
 ];
 

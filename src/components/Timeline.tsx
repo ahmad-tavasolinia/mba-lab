@@ -2,13 +2,13 @@ const phases = [
   {
     n: '01',
     title: 'Foundations',
-    desc: 'Economics, finance, and accounting, the vocabulary everything else is built on.',
+    desc: 'Economics, finance, and accounting — the vocabulary everything else is built on.',
     status: 'complete',
   },
   {
     n: '02',
     title: 'Understanding Organizations',
-    desc: 'Leadership, organizational behavior, and management, how people actually coordinate.',
+    desc: 'Leadership, organizational behavior, and management — how people actually coordinate.',
     status: 'complete',
   },
   {

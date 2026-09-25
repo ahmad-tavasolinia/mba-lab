@@ -22,8 +22,8 @@ export default async function TopicsPage() {
             Topics
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-            Ideas in MBA Lab rarely stay inside one discipline. Use topics to follow a thread , 
-            strategy into AI, finance into psychology, across entries, essays, and sources.
+            Ideas in MBA Lab rarely stay inside one discipline. Use topics to follow a thread —
+            strategy into AI, finance into psychology — across entries, essays, and sources.
           </p>
         </Container>
       </section>

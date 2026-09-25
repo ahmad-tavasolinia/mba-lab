@@ -57,7 +57,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
         <Container className="py-8">
           {entries.length === 0 ? (
             <p className="text-sm text-ink/50 dark:text-dark-soft">
-              Nothing under {category.name} yet, check back soon.
+              Nothing under {category.name} yet — check back soon.
             </p>
           ) : (
             <LabLibrary entries={entries} />

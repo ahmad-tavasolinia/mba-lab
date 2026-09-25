@@ -48,7 +48,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>MBA Lab, Ahmad Tavasolinia</title>
+    <title>MBA Lab — Ahmad Tavasolinia</title>
     <link>${SITE_URL}</link>
     <description>Essays and MBA Lab entries on business, strategy, and technology.</description>
     ${itemsXml}

@@ -4,11 +4,11 @@ date: "2026-07-14"
 topics: ["business-philosophy", "economics", "artificial-intelligence"]
 summary: "Every time a category of knowledge gets cheap, something else quietly becomes the new bottleneck. It's worth asking, ahead of time, what that's likely to be this round."
 ---
-This has happened before. When information became cheap to distribute, first through print, later through the internet, the value of simply possessing information fell, and the value of being able to judge, curate, and act on it rose in its place. AI is running a version of this same pattern on a much larger category: not just information, but analysis, synthesis, and increasingly, well-structured reasoning itself.
+This has happened before. When information became cheap to distribute — first through print, later through the internet — the value of simply possessing information fell, and the value of being able to judge, curate, and act on it rose in its place. AI is running a version of this same pattern on a much larger category: not just information, but analysis, synthesis, and increasingly, well-structured reasoning itself.
 
 ## The pattern, stated plainly
 
-When a category of knowledge becomes cheap, the economic value doesn't disappear from the system. It relocates, usually toward whatever remains scarce once the newly cheap thing is available to everyone at once. After the printing press, the scarce resource stopped being access to a text and became the ability to interpret and use it well. After the internet, the scarce resource stopped being access to information and became the ability to filter and evaluate it.
+When a category of knowledge becomes cheap, the economic value doesn't disappear from the system. It relocates — usually toward whatever remains scarce once the newly cheap thing is available to everyone at once. After the printing press, the scarce resource stopped being access to a text and became the ability to interpret and use it well. After the internet, the scarce resource stopped being access to information and became the ability to filter and evaluate it.
 
 ## What's becoming cheap now
 
@@ -22,4 +22,4 @@ None of those three are things AI clearly does today. They may become easier ove
 
 ## Where this leaves me
 
-If the pattern holds, the practical response isn't to compete with AI on the newly cheap thing, producing more analysis, faster, but to invest deliberately in the three things above: framing better questions, holding context that isn't written down anywhere, and being willing to own a decision. Those look, from here, like the closest thing to durable value in a world where the analysis itself is no longer scarce.
+If the pattern holds, the practical response isn't to compete with AI on the newly cheap thing — producing more analysis, faster — but to invest deliberately in the three things above: framing better questions, holding context that isn't written down anywhere, and being willing to own a decision. Those look, from here, like the closest thing to durable value in a world where the analysis itself is no longer scarce.

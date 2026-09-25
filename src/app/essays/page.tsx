@@ -19,7 +19,7 @@ export default async function EssaysPage() {
             Essays
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/70 dark:text-dark-soft">
-            Broader, independent essays that don't come from a single course, a serious personal
+            Broader, independent essays that don't come from a single course — a serious personal
             publication on business, technology, and the future of work.
           </p>
         </Container>
