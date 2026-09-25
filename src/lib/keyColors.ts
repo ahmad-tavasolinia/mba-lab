@@ -1,5 +1,5 @@
-// Each "key" (topic or category) gets one accent color from the site's warm
-// palette, gold plus the camel/caramel/cognac/coffee/chocolate family.
+// Each "key" (topic or category) gets one accent color from the site's
+// cool blue palette and its related slate-blue shades.
 // Classes are written out in full (not interpolated) so Tailwind's JIT
 // scanner can find them at build time.
 
@@ -74,17 +74,17 @@ const coffee: KeyColorClasses = {
 
 export const topicColors: Record<string, KeyColorClasses> = {
   strategy: cognac,
-  finance: cognac,
-  marketing: cognac,
-  entrepreneurship: cognac,
-  'artificial-intelligence': cognac,
+  finance: chocolate,
+  marketing: caramel,
+  entrepreneurship: coffee,
+  'artificial-intelligence': gold,
 };
 
 export const categoryColors: Record<string, KeyColorClasses> = {
   cases: cognac,
-  essays: cognac,
-  projects: cognac,
-  interviews: cognac,
+  essays: gold,
+  projects: chocolate,
+  interviews: caramel,
 };
 
 const fallback: KeyColorClasses = gold;

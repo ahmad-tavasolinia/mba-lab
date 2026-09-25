@@ -1,8 +1,16 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const navFont = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-nav',
+});
 
 const fontVariables = {
   display: 'Georgia, \"Times New Roman\", serif',
@@ -37,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className="dark"
+      className={'dark ' + navFont.variable}
       style={{
         '--font-display': fontVariables.display,
         '--font-body': fontVariables.body,
