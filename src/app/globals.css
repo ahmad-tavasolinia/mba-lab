@@ -13,6 +13,7 @@
   --site-rule: rgba(198, 216, 228, 0.15);
   --site-silver: #e4edf3;
   --site-width: 82.8rem;
+  --site-header-height: 82px;
 }
 
 html {
@@ -81,7 +82,7 @@ main {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 50;
   display: flex;
@@ -95,6 +96,15 @@ main {
   background: rgba(5, 15, 25, 0.28);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   backdrop-filter: blur(20px) saturate(140%);
+}
+
+.site-header:not(.site-header-home) + main {
+  padding-top: var(--site-header-height);
+}
+
+.site-header:not(.site-header-home) + main:has(.lab-room-hero),
+.site-header:not(.site-header-home) + main:has(.topics-reference-hero) {
+  padding-top: 0;
 }
 
 .site-header-home {
@@ -927,8 +937,12 @@ main {
 
 /* Small screens and tablet navigation */
 @media (max-width: 1050px) {
+  :root {
+    --site-header-height: 74px;
+  }
+
   .site-header {
-    height: 74px;
+    height: var(--site-header-height);
   }
 
   .site-nav {
@@ -960,8 +974,12 @@ main {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --site-header-height: 68px;
+  }
+
   .site-header {
-    height: 68px;
+    height: var(--site-header-height);
     padding: 0 22px;
   }
 
