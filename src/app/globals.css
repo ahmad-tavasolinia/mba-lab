@@ -113,7 +113,8 @@ main {
 .site-header-home {
   inset: 0 0 auto;
   border-bottom-color: transparent;
-  background: linear-gradient(180deg, rgba(5, 12, 20, 0.72), transparent);
+  background: transparent;
+  box-shadow: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
@@ -434,8 +435,10 @@ main {
 
 .home-description {
   margin: 26px 0 0;
-  color: rgba(224, 234, 241, 0.82);
-  font-size: clamp(15px, 1.25vw, 18px);
+  color: rgba(190, 198, 207, 0.9);
+  font-family: var(--font-nav), "Montserrat", Arial, sans-serif;
+  font-size: clamp(16px, 1.35vw, 20px);
+  letter-spacing: 0.025em;
   line-height: 1.6;
 }
 
