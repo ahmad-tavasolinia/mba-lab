@@ -427,7 +427,8 @@ main {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(48px, 5vw, 76px);
   font-weight: 400;
-  letter-spacing: -0.045em;
+  letter-spacing: normal;
+  word-spacing: normal;
   line-height: 0.99;
 }
 
