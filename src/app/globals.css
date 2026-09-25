@@ -418,7 +418,7 @@ main {
   z-index: 2;
   top: clamp(165px, 27vh, 270px);
   left: clamp(28px, 7vw, 118px);
-  width: min(660px, 54vw);
+  width: min(720px, 60vw);
 }
 
 .home-copy h1 {
