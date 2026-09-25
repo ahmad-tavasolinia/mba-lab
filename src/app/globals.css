@@ -90,8 +90,9 @@ main {
   gap: 32px;
   padding: 0 clamp(24px, 6vw, 96px);
   border-bottom: 1px solid var(--site-rule);
-  background: rgba(20, 30, 25, 0.94);
-  backdrop-filter: blur(16px);
+  background: rgba(20, 30, 25, 0.62);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
 }
 
 .site-header-home {
@@ -99,6 +100,7 @@ main {
   inset: 0 0 auto;
   border-bottom-color: transparent;
   background: linear-gradient(180deg, rgba(10, 17, 13, 0.72), transparent);
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
