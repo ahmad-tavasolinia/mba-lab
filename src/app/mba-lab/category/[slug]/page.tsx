@@ -54,7 +54,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       </section>
 
       <section className="flex flex-1 flex-col justify-center">
-        <Container className="py-8">
+        <Container className="w-full py-8">
           {entries.length === 0 ? (
             <p className="text-sm text-ink/50 dark:text-dark-soft">
               Nothing under {category.name} yet, check back soon.
