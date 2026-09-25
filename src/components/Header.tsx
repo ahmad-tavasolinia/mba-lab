@@ -8,10 +8,8 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/mba-lab', label: 'The Lab' },
   { href: '/topics', label: 'Topics' },
-  { href: '/essays', label: 'Essays' },
-  { href: '/courses', label: 'Sources' },
+  { href: '/courses', label: 'Library' },
   { href: '/about', label: 'About' },
-  { href: '/cv', label: 'CV' },
   { href: '/contact', label: 'Contact' },
 ];
 
