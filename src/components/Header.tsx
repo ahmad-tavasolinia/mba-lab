@@ -58,7 +58,7 @@ export default function Header() {
             <span className="topics-reference-brand-divider" aria-hidden="true" />
             <span className="topics-reference-brand-tagline">Ideas. Research. Projects. A new chapter.</span>
           </Link>
-          <nav className="topics-reference-nav" aria-label="Site navigation">
+          <nav className="topics-reference-nav home-topnav" aria-label="Site navigation">
             <Link href="/">HOME</Link>
             <Link href="/topics" className="is-active">TOPICS</Link>
             <Link href="/about">ABOUT</Link>
