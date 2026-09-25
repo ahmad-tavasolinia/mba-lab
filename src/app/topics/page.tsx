@@ -16,7 +16,7 @@ export default async function TopicsPage() {
       <section className="topics-reference-hero">
         <img
           className="topics-reference-image"
-          src="/mba-lab/topics/topics-room-reference.png"
+          src="/mba-lab/topcis/topics-room-reference.png"
           alt=""
           aria-hidden="true"
         />
