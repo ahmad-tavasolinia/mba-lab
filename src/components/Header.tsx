@@ -47,37 +47,8 @@ export default function Header() {
 
   if (isHome) return null;
 
-  const isTopics = pathname?.startsWith('/topics');
-
   return (
     <>
-      {isTopics ? (
-        <header className="topics-reference-topbar">
-          <Link href="/mba-lab" className="topics-reference-brand" aria-label="MBA Lab">
-            <span className="topics-reference-brand-name">MBA Lab</span>
-            <span className="topics-reference-brand-divider" aria-hidden="true" />
-            <span className="topics-reference-brand-tagline">Ideas. Research. Projects. A new chapter.</span>
-          </Link>
-          <nav className="topics-reference-nav home-topnav" aria-label="Site navigation">
-            <Link href="/">HOME</Link>
-            <Link href="/topics" className="is-active">TOPICS</Link>
-            <Link href="/about">ABOUT</Link>
-            <Link href="/contact">CONTACT</Link>
-          </nav>
-        </header>
-      ) : (
-        <header className="internal-home-topbar">
-          <Link href="/mba-lab" className="internal-home-wordmark" aria-label="The Lab Notebook">
-            THE LAB NOTEBOOK
-          </Link>
-          <nav className="internal-home-topnav" aria-label="Site navigation">
-            <Link href="/" className={pathname === '/' ? 'is-active' : ''}>HOME</Link>
-            <Link href="/topics" className={pathname?.startsWith('/topics') ? 'is-active' : ''}>TOPICS</Link>
-            <Link href="/about" className={pathname?.startsWith('/about') ? 'is-active' : ''}>ABOUT</Link>
-            <Link href="/contact" className={pathname?.startsWith('/contact') ? 'is-active' : ''}>CONTACT</Link>
-          </nav>
-        </header>
-      )}
       <header className="mobile-header md:hidden">
         <Link href="/" className="mobile-mark">MBA LAB</Link>
         <button aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(v => !v)} className="mobile-menu">
