@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('mba-lab-theme');
+    const savedTheme = sessionStorage.getItem('mba-lab-theme');
     const startDark = savedTheme !== 'light';
     document.documentElement.classList.toggle('dark', startDark);
     document.documentElement.dataset.theme = startDark ? 'dark' : 'light';
@@ -22,7 +22,7 @@ export default function ThemeToggle() {
     const next = !document.documentElement.classList.contains('dark');
     document.documentElement.classList.toggle('dark', next);
     document.documentElement.dataset.theme = next ? 'dark' : 'light';
-    localStorage.setItem('mba-lab-theme', next ? 'dark' : 'light');
+    sessionStorage.setItem('mba-lab-theme', next ? 'dark' : 'light');
     setIsDark(next);
   }
 
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? 'Switch to day mode' : 'Switch to night mode'}
       title={isDark ? 'Switch to day mode' : 'Switch to night mode'}
-      className="flex h-8 w-8 items-center justify-center rounded-full border border-rule text-ink/70 transition hover:border-gold hover:text-gold dark:border-dark-rule dark:text-dark-soft dark:hover:border-gold dark:hover:text-gold-bright"
+      className="reader-theme-toggle flex h-8 w-8 items-center justify-center rounded-full border border-rule text-ink/70 transition hover:border-gold hover:text-gold dark:border-dark-rule dark:text-dark-soft dark:hover:border-gold dark:hover:text-gold-bright"
     >
       {isDark === null ? null : isDark ? (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">

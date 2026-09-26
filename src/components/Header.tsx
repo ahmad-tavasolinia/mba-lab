@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -17,6 +18,11 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isHome = pathname === '/';
+  const isReaderPage =
+    pathname?.startsWith('/essays/') ||
+    (pathname?.startsWith('/mba-lab/') &&
+      !pathname.startsWith('/mba-lab/category') &&
+      !pathname.startsWith('/mba-lab/phase'));
 
   useEffect(() => {
     setOpen(false);
@@ -33,6 +39,8 @@ export default function Header() {
         <span className="site-brand-name">MBA Lab</span>
         <span className="site-brand-byline">Ahmad Tavasolinia</span>
       </Link>
+
+      {isReaderPage && <ThemeToggle />}
 
       <nav className="site-nav" aria-label="Site navigation">
         {navItems.map((item) => (
