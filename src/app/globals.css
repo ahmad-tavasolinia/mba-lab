@@ -152,6 +152,12 @@ main {
   gap: clamp(14px, 1.75vw, 27px);
 }
 
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.75vw, 27px);
+}
+
 .site-nav a {
   position: relative;
   padding: 8px 0;
@@ -992,6 +998,11 @@ main {
 
   .site-header {
     height: var(--site-header-height);
+    gap: 16px;
+  }
+
+  .site-header-actions {
+    margin-left: auto;
   }
 
   .site-nav {
