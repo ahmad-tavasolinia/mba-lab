@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEssay, getEssaySlugs } from '@/lib/content';
 import { Container, TopicChip, formatDate } from '@/components/ui';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export async function generateStaticParams() {
   return getEssaySlugs().map((slug) => ({ slug }));
@@ -27,15 +28,18 @@ export default async function EssayPage({ params }: { params: { slug: string } }
   const essay = await getEssay(params.slug);
 
   return (
-    <article>
+    <article className="reader-page">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-16 md:py-20">
-          <Link
-            href="/essays"
-            className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
-          >
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              href="/essays"
+              className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
+            >
             ← Essays
-          </Link>
+            </Link>
+            <ThemeToggle />
+          </div>
           <h1 className="mt-6 max-w-3xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
             {essay.title}
           </h1>
