@@ -46,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       className={'dark ' + navFont.variable}
+      data-theme="dark"
       style={{
         '--font-display': fontVariables.display,
         '--font-body': fontVariables.body,
