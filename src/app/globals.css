@@ -153,9 +153,7 @@ main {
 }
 
 .site-header-actions {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 1.75vw, 27px);
+  display: contents;
 }
 
 .site-nav a {
@@ -1002,7 +1000,10 @@ main {
   }
 
   .site-header-actions {
+    display: flex;
+    align-items: center;
     margin-left: auto;
+    gap: 16px;
   }
 
   .site-nav {
@@ -1024,6 +1025,15 @@ main {
 
   .topics-reference-card:nth-child(3n) {
     border-right: 0;
+  }
+}
+
+@media (min-width: 1051px) {
+  .site-header-actions .reader-theme-toggle {
+    position: absolute;
+    top: 50%;
+    right: calc(clamp(24px, 6vw, 96px) - clamp(14px, 1.75vw, 27px) - 32px);
+    transform: translateY(-50%);
   }
 }
 
