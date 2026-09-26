@@ -18,11 +18,12 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isHome = pathname === '/';
+  const pathSegments = pathname?.split('/').filter(Boolean) ?? [];
+  const routeParent = pathSegments[pathSegments.length - 2];
+  const routeSlug = pathSegments[pathSegments.length - 1];
   const isReaderPage =
-    pathname?.startsWith('/essays/') ||
-    (pathname?.startsWith('/mba-lab/') &&
-      !pathname.startsWith('/mba-lab/category') &&
-      !pathname.startsWith('/mba-lab/phase'));
+    routeParent === 'essays' ||
+    (routeParent === 'mba-lab' && routeSlug !== 'mba-lab');
 
   useEffect(() => {
     setOpen(false);
