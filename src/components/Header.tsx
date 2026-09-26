@@ -40,19 +40,20 @@ export default function Header() {
         <span className="site-brand-byline">Ahmad Tavasolinia</span>
       </Link>
 
-      {isReaderPage && <ThemeToggle />}
-
-      <nav className="site-nav" aria-label="Site navigation">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={isActive(item.href) ? 'page' : undefined}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
+      <div className="site-header-actions">
+        <nav className="site-nav" aria-label="Site navigation">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        {isReaderPage && <ThemeToggle />}
+      </div>
 
       <button
         type="button"
