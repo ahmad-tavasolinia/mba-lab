@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getAllLabEntries, getLabEntry, getLabSlugs, getAllSources } from '@/lib/content';
 import { getPhase } from '@/lib/phases';
 import { Container, Eyebrow, TopicChip, CodeChip, formatDate } from '@/components/ui';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export async function generateStaticParams() {
   return getLabSlugs().map((slug) => ({ slug }));
@@ -33,15 +34,18 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
   const journeyPhase = getPhase(entry.journeyPhase);
 
   return (
-    <article>
+    <article className="reader-page">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-8 md:py-10">
-          <Link
-            href="/mba-lab/category/projects"
-            className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
-          >
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              href="/mba-lab/category/projects"
+              className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
+            >
             ← Projects
-          </Link>
+            </Link>
+            <ThemeToggle />
+          </div>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
               {entry.projectType ?? 'Project'}
@@ -154,15 +158,18 @@ export default async function LabEntryPage({ params }: { params: { slug: string 
   const journeyPhase = getPhase(entry.journeyPhase);
 
   return (
-    <article>
+    <article className="reader-page">
       <section className="border-b border-rule dark:border-dark-rule">
         <Container className="py-16 md:py-20">
-          <Link
-            href="/mba-lab"
-            className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
-          >
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              href="/mba-lab"
+              className="font-mono text-[11px] uppercase tracking-widest text-ink/40 hover:text-gold dark:text-dark-soft/60"
+            >
             ← MBA Lab
-          </Link>
+            </Link>
+            <ThemeToggle />
+          </div>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <CodeChip>{entry.code}</CodeChip>
             {journeyPhase && (
