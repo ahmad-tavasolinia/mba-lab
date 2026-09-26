@@ -77,7 +77,7 @@ export default async function PhasePage({ params }: { params: { slug: string } }
                       </h2>
                     </div>
                     <div className="mt-6">
-                      <LabLibrary entries={catEntries} />
+                      <LabLibrary entries={catEntries} initialVisibleCount={1} />
                     </div>
                   </div>
                 );
