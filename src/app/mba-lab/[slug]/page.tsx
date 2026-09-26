@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { getAllLabEntries, getLabEntry, getLabSlugs, getAllSources } from '@/lib/content';
 import { getPhase } from '@/lib/phases';
 import { Container, Eyebrow, TopicChip, CodeChip, formatDate } from '@/components/ui';
-import ThemeToggle from '@/components/ThemeToggle';
 
 export async function generateStaticParams() {
   return getLabSlugs().map((slug) => ({ slug }));
@@ -44,7 +43,6 @@ function ProjectDetails({ entry }: { entry: Awaited<ReturnType<typeof getLabEntr
             >
             ← Projects
             </Link>
-            <ThemeToggle />
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <p className="font-mono text-[11px] uppercase tracking-widest text-gold">
@@ -168,7 +166,6 @@ export default async function LabEntryPage({ params }: { params: { slug: string 
             >
             ← MBA Lab
             </Link>
-            <ThemeToggle />
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <CodeChip>{entry.code}</CodeChip>
