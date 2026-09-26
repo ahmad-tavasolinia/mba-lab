@@ -1,13 +1,21 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import { LabEntry } from '@/lib/types';
 import { topics } from '@/lib/topics';
 import LabEntryCard from './LabEntryCard';
 
-export default function LabLibrary({ entries }: { entries: LabEntry[] }) {
+export default function LabLibrary({
+  entries,
+  initialVisibleCount,
+}: {
+  entries: LabEntry[];
+  initialVisibleCount?: number;
+}) {
   const [query, setQuery] = useState('');
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount ?? entries.length);
+  const listId = useId();
 
   const usedTopics = topics.filter((t) => entries.some((e) => e.topics.includes(t.slug)));
 
@@ -23,6 +31,10 @@ export default function LabLibrary({ entries }: { entries: LabEntry[] }) {
       return matchesTopic && matchesQuery;
     });
   }, [entries, query, activeTopic]);
+
+  useEffect(() => {
+    setVisibleCount(initialVisibleCount ?? entries.length);
+  }, [query, activeTopic, initialVisibleCount, entries.length]);
 
   return (
     <div>
@@ -68,10 +80,28 @@ export default function LabLibrary({ entries }: { entries: LabEntry[] }) {
           No lab notes match that search yet.
         </p>
       ) : (
-        <div>
-          {filtered.map((entry) => (
+        <div id={listId}>
+          {filtered.slice(0, visibleCount).map((entry) => (
             <LabEntryCard key={entry.slug} entry={entry} />
           ))}
+          {initialVisibleCount !== undefined && filtered.length > initialVisibleCount && (
+            <button
+              type="button"
+              className="lab-library-more"
+              aria-controls={listId}
+              aria-expanded={visibleCount > initialVisibleCount}
+              onClick={() =>
+                setVisibleCount((count) =>
+                  count >= filtered.length
+                    ? initialVisibleCount
+                    : Math.min(count + 3, filtered.length),
+                )
+              }
+            >
+              {visibleCount >= filtered.length ? 'Show less' : 'Load more'}
+              <span aria-hidden="true">{visibleCount >= filtered.length ? '↑' : '↓'}</span>
+            </button>
+          )}
         </div>
       )}
     </div>
