@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEssay, getEssaySlugs } from '@/lib/content';
 import { Container, TopicChip, formatDate } from '@/components/ui';
-import ThemeToggle from '@/components/ThemeToggle';
 
 export async function generateStaticParams() {
   return getEssaySlugs().map((slug) => ({ slug }));
@@ -38,7 +37,6 @@ export default async function EssayPage({ params }: { params: { slug: string } }
             >
             ← Essays
             </Link>
-            <ThemeToggle />
           </div>
           <h1 className="mt-6 max-w-3xl font-serif text-4xl font-medium leading-tight tracking-tight text-ink dark:text-dark-ink md:text-5xl">
             {essay.title}
