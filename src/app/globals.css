@@ -252,29 +252,35 @@ main {
 .lab-library-more {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  min-width: 176px;
   margin-top: 20px;
-  padding: 9px 14px;
-  border: 1px solid var(--site-rule);
+  padding: 12px 24px;
+  border: 1px solid rgba(198, 216, 228, 0.36);
   border-radius: 999px;
-  background: transparent;
-  color: var(--site-accent);
+  background: rgba(174, 198, 216, 0.06);
+  color: var(--site-silver);
   cursor: pointer;
   font-family: var(--font-mono), "Courier New", monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .lab-library-more:hover {
-  border-color: var(--site-accent);
-  background: color-mix(in srgb, var(--site-accent) 8%, transparent);
+  border-color: rgba(228, 237, 243, 0.72);
+  background: rgba(174, 198, 216, 0.12);
 }
 
 .lab-library-more:focus-visible {
   outline: 2px solid var(--site-accent);
   outline-offset: 3px;
+}
+
+.reader-theme-toggle {
+  flex: 0 0 auto;
 }
 
 .site-footer {
@@ -1370,6 +1376,16 @@ html[data-theme="light"] .reader-page [class~="text-gold-bright"] {
   color: var(--site-accent);
 }
 
+html[data-theme="light"] .reader-theme-toggle {
+  border-color: var(--site-rule);
+  color: var(--site-accent);
+}
+
+html[data-theme="light"] .reader-theme-toggle:hover {
+  border-color: #426b86;
+  color: #294f68;
+}
+
 html[data-theme="light"] .reader-page [class*="hover:text-gold"]:hover {
   color: #294f68;
 }
@@ -1380,5 +1396,16 @@ html[data-theme="light"] .reader-page [class*="border-gold"] {
 
 html[data-theme="light"] .reader-page a {
   text-decoration-color: rgba(66, 107, 134, 0.42);
+}
+
+html[data-theme="light"] .lab-library-more {
+  border-color: rgba(45, 73, 93, 0.28);
+  background: rgba(66, 107, 134, 0.06);
+  color: #355f7b;
+}
+
+html[data-theme="light"] .lab-library-more:hover {
+  border-color: rgba(45, 73, 93, 0.5);
+  background: rgba(66, 107, 134, 0.12);
 }
 
