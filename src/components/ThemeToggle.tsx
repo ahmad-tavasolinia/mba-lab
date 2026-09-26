@@ -6,12 +6,22 @@ export default function ThemeToggle() {
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains('dark'));
+    const savedTheme = localStorage.getItem('mba-lab-theme');
+    const startDark = savedTheme !== 'light';
+    document.documentElement.classList.toggle('dark', startDark);
+    document.documentElement.dataset.theme = startDark ? 'dark' : 'light';
+    setIsDark(startDark);
+
+    return () => {
+      document.documentElement.classList.add('dark');
+      document.documentElement.dataset.theme = 'dark';
+    };
   }, []);
 
   function toggle() {
     const next = !document.documentElement.classList.contains('dark');
     document.documentElement.classList.toggle('dark', next);
+    document.documentElement.dataset.theme = next ? 'dark' : 'light';
     localStorage.setItem('mba-lab-theme', next ? 'dark' : 'light');
     setIsDark(next);
   }
@@ -19,7 +29,8 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label="Toggle dark mode"
+      aria-label={isDark ? 'Switch to day mode' : 'Switch to night mode'}
+      title={isDark ? 'Switch to day mode' : 'Switch to night mode'}
       className="flex h-8 w-8 items-center justify-center rounded-full border border-rule text-ink/70 transition hover:border-gold hover:text-gold dark:border-dark-rule dark:text-dark-soft dark:hover:border-gold dark:hover:text-gold-bright"
     >
       {isDark === null ? null : isDark ? (
