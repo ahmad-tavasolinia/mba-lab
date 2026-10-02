@@ -175,6 +175,13 @@ main {
   color: var(--site-accent);
 }
 
+.site-header[lang="fa"] .site-nav a,
+.site-header[lang="fa"] .site-mobile-nav a {
+  font-family: var(--font-persian), Tahoma, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .site-menu-button {
   display: none;
   width: 42px;
@@ -1445,6 +1452,7 @@ html[data-theme="light"] .lab-library-more:hover {
 .fa-site {
   min-height: 100%;
   color: var(--site-text);
+  font-family: var(--font-persian), Tahoma, sans-serif;
 }
 
 .fa-site h1,
@@ -1454,7 +1462,9 @@ html[data-theme="light"] .lab-library-more:hover {
 .fa-site a,
 .fa-site button,
 .fa-site summary {
-  font-family: var(--font-persian), Tahoma, sans-serif;
+  font-family: inherit;
+  letter-spacing: 0;
+  word-spacing: normal;
 }
 
 .fa-site .home-hero-background,
@@ -1506,9 +1516,10 @@ html[data-theme="light"] .lab-library-more:hover {
   align-items: center;
   gap: 10px;
   color: rgba(232, 240, 245, 0.74);
-  font-family: var(--font-nav), Arial, sans-serif !important;
+  font-family: var(--font-persian), Arial, sans-serif;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .home-language-switch {
@@ -1528,8 +1539,27 @@ html[data-theme="light"] .lab-library-more:hover {
   color: white;
 }
 
-.fa-language-switch {
-  margin-bottom: 28px;
+.site-nav .fa-header-language-switch {
+  flex: 0 0 auto;
+}
+
+.site-nav .fa-header-language-switch a {
+  padding: 8px 0;
+  font-family: var(--font-persian), Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.fa-mobile-language-switch {
+  display: none;
+}
+
+.site-nav .fa-mobile-language-switch a {
+  border: 0;
+  font-family: var(--font-persian), Tahoma, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .fa-site .home-journey {
@@ -1816,6 +1846,8 @@ html[data-theme="light"] .lab-library-more:hover {
 .site-footer[dir="rtl"] .site-footer-meta { flex-direction: column; align-items: flex-start; }
 
 @media (max-width: 760px) {
+  .fa-mobile-language-switch { display: flex; align-items: center; align-self: flex-start; gap: 10px; padding-top: 12px; color: rgba(232, 240, 245, 0.74); }
+  .site-mobile-nav .fa-mobile-language-switch a { padding: 0; border: 0; font-size: 12px; }
   .fa-site .home-copy { top: calc(50% - 1.5cm); right: 24px; left: auto; width: calc(100% - 48px); }
   .fa-site .home-copy h1 { font-size: clamp(27px, 7.4vw, 38px); line-height: 1.5; }
   .fa-site .home-description { font-size: clamp(13px, 3.7vw, 16px); line-height: 2; }
