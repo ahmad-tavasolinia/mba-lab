@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const navItems = [
@@ -53,13 +53,21 @@ export default function Header() {
       <div className="site-header-actions">
         <nav className="site-nav" aria-label="Site navigation">
           {localizedNavItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.baseHref) ? 'page' : undefined}
-            >
-              {item.label}
-            </Link>
+            <Fragment key={item.href}>
+              {isPersian && isHome && item.baseHref === '/contact' && (
+                <div className="fa-language-switch fa-header-language-switch" dir="ltr" aria-label="Language">
+                  <Link href="/" lang="en">English</Link>
+                  <span aria-hidden="true">/</span>
+                  <span lang="fa" aria-current="page">فارسی</span>
+                </div>
+              )}
+              <Link
+                href={item.href}
+                aria-current={isActive(item.baseHref) ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            </Fragment>
           ))}
         </nav>
         {isReaderPage && <ThemeToggle />}
@@ -89,6 +97,13 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          {isPersian && isHome && (
+            <div className="fa-language-switch fa-mobile-language-switch" dir="ltr" aria-label="Language">
+              <Link href="/" lang="en">English</Link>
+              <span aria-hidden="true">/</span>
+              <span lang="fa" aria-current="page">فارسی</span>
+            </div>
+          )}
         </nav>
       )}
     </header>
