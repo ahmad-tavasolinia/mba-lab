@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import JourneyPhases from '@/components/JourneyPhases';
 
+function LanguageSwitch() {
+  return (
+    <nav className="home-language-switch" aria-label="Choose language" dir="ltr">
+      <span aria-current="page">English</span><span aria-hidden="true">/</span><Link href="/fa" lang="fa">فارسی</Link>
+    </nav>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="home-hero">
@@ -12,6 +20,8 @@ export default function HomePage() {
           <br />
           chapter, deliberately.
         </h1>
+
+        <LanguageSwitch />
 
         <p className="home-description">
           Exploring ideas, skills and opportunities
