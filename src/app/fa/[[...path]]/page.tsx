@@ -27,14 +27,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return { title: params.path?.length ? 'Ø¢Ø²Ù…Ø§ÛŒØ´Ú¯Ø§Ù‡ MBA' : 'Ø¢Ø²Ù…Ø§ÛŒØ´Ú¯Ø§Ù‡ MBAØŒ Ø§Ø­Ù…Ø¯ ØªÙˆØ³Ù„ÛŒâ€ŒÙ†ÛŒØ§', description: 'ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒØŒ Ù¾Ú˜ÙˆÙ‡Ø´ Ùˆ Ø³Ø§Ø®ØªÙ† Ø¯Ø± Ú©Ø³Ø¨â€ŒÙˆÚ©Ø§Ø±Ø› Ø¨Ù‡ Ø±ÙˆØ§ÛŒØª Ø§Ø­Ù…Ø¯ ØªÙˆØ³Ù„ÛŒâ€ŒÙ†ÛŒØ§.' };
 }
 
-function LanguageSwitch() {
-  return (
-    <nav className="fa-language-switch" aria-label="Ø§Ù†ØªØ®Ø§Ø¨ Ø²Ø¨Ø§Ù†" dir="ltr">
-      <Link href="/" lang="en">English</Link><span aria-hidden="true">/</span><span aria-current="page">ÙØ§Ø±Ø³ÛŒ</span>
-    </nav>
-  );
-}
-
 function FaEntryLink({ entry }: { entry: Awaited<ReturnType<typeof getLabEntry>> }) {
   return (
     <Link href={`/fa/mba-lab/${entry.slug}`} className="fa-entry-card">
@@ -61,7 +53,7 @@ function FaHome() {
       <div className="home-hero">
         <div className="home-hero-background" aria-hidden="true" />
         <section className="home-copy" aria-labelledby="fa-home-title">
-          <LanguageSwitch />
+          
           <h1 id="fa-home-title">Ø³Ø§Ø®ØªÙ† ÙØµÙ„ Ø¨Ø¹Ø¯ØŒ<br />Ø¢Ú¯Ø§Ù‡Ø§Ù†Ù‡ Ùˆ Ø³Ù†Ø¬ÛŒØ¯Ù‡.</h1>
           <p className="home-description">Ø§ÛŒØ¯Ù‡â€ŒÙ‡Ø§ Ø±Ø§ Ù…ÛŒâ€ŒÚ©Ø§ÙˆÙ…ØŒ Ù…ÛŒâ€ŒØ¢Ø²Ù…Ø§ÛŒÙ… Ùˆ Ø¨Ù‡ Ù¾Ø±ÙˆÚ˜Ù‡ ØªØ¨Ø¯ÛŒÙ„ Ù…ÛŒâ€ŒÚ©Ù†Ù…Ø›<br />Ø¨Ø±Ø§ÛŒ Ø³ÙØ±ÛŒ Ù…Ø¹Ù†Ø§Ø¯Ø§Ø± Ø¯Ø± Ø¯Ù†ÛŒØ§ÛŒ Ù…Ø¯ÛŒØ±ÛŒØª Ùˆ Ú©Ø³Ø¨â€ŒÙˆÚ©Ø§Ø±.</p>
           <Link href="/fa/mba-lab" className="home-cta"><span>ÙˆØ±ÙˆØ¯ Ø¨Ù‡ Ø¢Ø²Ù…Ø§ÛŒØ´Ú¯Ø§Ù‡</span><span className="home-arrow" aria-hidden="true">â†</span></Link>
