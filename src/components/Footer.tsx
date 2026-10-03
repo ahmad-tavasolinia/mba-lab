@@ -16,29 +16,28 @@ const links = [
 
 export default function Footer() {
   const pathname = usePathname();
-  const isPersian = pathname === '/fa' || pathname?.startsWith('/fa/');
-  if (pathname === '/' || pathname === '/fa') return null;
+  if (pathname === '/') return null;
 
   return (
-    <footer lang={isPersian ? 'fa' : 'en'} className="site-footer" dir={isPersian ? 'rtl' : 'ltr'}>
+    <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="site-footer-top">
           <p className="site-footer-brand">
             MBA Lab
-            <span>{isPersian ? 'روایتی مستقل از مسیر یادگیری.' : 'is an independent record of study.'}</span>
+            <span>is an independent record of study.</span>
           </p>
-          <nav className="site-footer-links" aria-label={isPersian ? 'پیوندهای پایانی' : 'Footer navigation'}>
-            {links.map((link, index) => (
-              <Link key={link.href} href={isPersian && link.href !== '/rss.xml' ? `/fa${link.href}` : link.href}>
-                {isPersian ? ['آزمایشگاه MBA', 'موضوع‌ها', 'جستارها', 'دوره‌ها و منابع', 'دربارهٔ احمد', 'رزومه', 'تماس', 'خوراک RSS'][index] : link.label}
+          <nav className="site-footer-links" aria-label="Footer navigation">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
               </Link>
             ))}
           </nav>
         </div>
 
         <div className="site-footer-meta">
-          <p>{isPersian ? `© ${new Date().getFullYear()} احمد توسلی‌نیا. آزمایشگاه MBA پروژه‌ای شخصی و مستقل است.` : `© ${new Date().getFullYear()} Ahmad Tavasolinia. MBA Lab is an independent personal project.`}</p>
-          <p>{isPersian ? 'این پروژه وابسته به هیچ‌یک از دانشگاه‌های نام‌برده نیست و از سوی آن‌ها تأیید نشده است.' : 'Not affiliated with or endorsed by any university named within.'}</p>
+          <p>© {new Date().getFullYear()} Ahmad Tavasolinia. MBA Lab is an independent personal project.</p>
+          <p>Not affiliated with or endorsed by any university named within.</p>
         </div>
       </div>
     </footer>
