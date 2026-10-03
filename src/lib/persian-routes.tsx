@@ -9,19 +9,6 @@ import { faCategories, faEntrySummary, faEntryTitle, faEssaySummaries, faEssayTi
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-export function getPersianRoutePaths() {
-  const paths: string[][] = [
-    [], ['mba-lab'], ['topics'], ['about'], ['contact'], ['cv'], ['courses'], ['essays'],
-    ...topics.map((topic) => ['topics', topic.slug]),
-    ...categories.map((category) => ['mba-lab', 'category', category.slug]),
-    ...phases.map((phase) => ['mba-lab', 'phase', phase.slug]),
-    ...getLabSlugs().map((slug) => ['mba-lab', slug]),
-    ...getEssaySlugs().map((slug) => ['essays', slug]),
-    ...getSourceSlugs().map((slug) => ['courses', slug]),
-  ];
-  return paths;
-}
-
 export function getPersianMetadata(path: string[]): Metadata {
   return { title: path.length ? 'آزمایشگاه MBA' : 'آزمایشگاه MBA، احمد توسلی‌نیا', description: 'یادگیری، پژوهش و ساختن در کسب‌وکار؛ به روایت احمد توسلی‌نیا.' };
 }
