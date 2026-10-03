@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const navItems = [
@@ -17,40 +17,57 @@ const navItems = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const isHome = pathname === '/';
-  const pathSegments = pathname?.split('/').filter(Boolean) ?? [];
+  const isPersian = pathname === '/fa' || pathname?.startsWith('/fa/');
+  const routePath = isPersian ? pathname?.replace(/^\/fa(?=\/|$)/, '') || '/' : pathname;
+  const isHome = routePath === '/';
+  const pathSegments = routePath?.split('/').filter(Boolean) ?? [];
   const routeParent = pathSegments[pathSegments.length - 2];
   const routeSlug = pathSegments[pathSegments.length - 1];
-  const isReaderPage =
+  const isReaderPage = !isPersian && (
     routeParent === 'essays' ||
-    (routeParent === 'mba-lab' && routeSlug !== 'mba-lab');
+    (routeParent === 'mba-lab' && routeSlug !== 'mba-lab'));
+
+  const localizedNavItems = navItems.map((item, index) => ({
+    ...item,
+    baseHref: item.href,
+    href: isPersian ? `/fa${item.href === '/' ? '' : item.href}` : item.href,
+    label: isPersian ? ['خانه', 'آزمایشگاه', 'موضوع‌ها', 'کتابخانه', 'درباره', 'تماس'][index] : item.label,
+  }));
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   function isActive(href: string) {
-    if (href === '/') return pathname === '/';
-    return pathname === href || pathname?.startsWith(href + '/');
+    if (href === '/') return routePath === '/';
+    return routePath === href || routePath?.startsWith(href + '/');
   }
 
   return (
-    <header className={isHome ? 'site-header site-header-home' : 'site-header'}>
-      <Link href="/" className="site-brand" aria-label="MBA Lab by Ahmad Tavasolinia">
-        <span className="site-brand-name">MBA Lab</span>
-        <span className="site-brand-byline">Ahmad Tavasolinia</span>
+    <header lang={isPersian ? 'fa' : 'en'} dir={isPersian ? 'rtl' : 'ltr'} className={isHome ? 'site-header site-header-home' : 'site-header'}>
+      <Link href={isPersian ? '/fa' : '/'} className="site-brand" aria-label={isPersian ? 'آزمایشگاه MBA، احمد توسلی‌نیا' : 'MBA Lab by Ahmad Tavasolinia'}>
+        <span dir="ltr" className="site-brand-name">MBA Lab</span>
+        <span dir="ltr" className="site-brand-byline">Ahmad Tavasolinia</span>
       </Link>
 
       <div className="site-header-actions">
         <nav className="site-nav" aria-label="Site navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </Link>
+          {localizedNavItems.map((item) => (
+            <Fragment key={item.href}>
+              {isPersian && isHome && item.baseHref === '/contact' && (
+                <div className="fa-language-switch fa-header-language-switch" dir="ltr" aria-label="Language">
+                  <Link href="/" lang="en">English</Link>
+                  <span aria-hidden="true">/</span>
+                  <span lang="fa" aria-current="page">فارسی</span>
+                </div>
+              )}
+              <Link
+                href={item.href}
+                aria-current={isActive(item.baseHref) ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            </Fragment>
           ))}
         </nav>
         {isReaderPage && <ThemeToggle />}
@@ -59,7 +76,7 @@ export default function Header() {
       <button
         type="button"
         className={open ? 'site-menu-button is-open' : 'site-menu-button'}
-        aria-label={open ? 'Close navigation' : 'Open navigation'}
+        aria-label={isPersian ? (open ? 'بستن فهرست' : 'باز کردن فهرست') : (open ? 'Close navigation' : 'Open navigation')}
         aria-expanded={open}
         aria-controls="site-mobile-nav"
         onClick={() => setOpen((value) => !value)}
@@ -69,17 +86,24 @@ export default function Header() {
       </button>
 
       {open && (
-        <nav id="site-mobile-nav" className="site-mobile-nav" aria-label="Mobile navigation">
-          {navItems.map((item) => (
+        <nav id="site-mobile-nav" className="site-mobile-nav" aria-label={isPersian ? 'پیمایش' : 'Mobile navigation'}>
+          {localizedNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
+              aria-current={isActive(item.baseHref) ? 'page' : undefined}
               onClick={() => setOpen(false)}
             >
               {item.label}
             </Link>
           ))}
+          {isPersian && isHome && (
+            <div className="fa-language-switch fa-mobile-language-switch" dir="ltr" aria-label="Language">
+              <Link href="/" lang="en">English</Link>
+              <span aria-hidden="true">/</span>
+              <span lang="fa" aria-current="page">فارسی</span>
+            </div>
+          )}
         </nav>
       )}
     </header>

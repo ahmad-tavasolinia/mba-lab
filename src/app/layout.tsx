@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Vazirmatn } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,6 +10,13 @@ const navFont = Montserrat({
   weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-nav',
+});
+
+const persianFont = Vazirmatn({
+  subsets: ['arabic', 'latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-persian',
 });
 
 const fontVariables = {
@@ -45,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={'dark ' + navFont.variable}
+      className={'dark ' + navFont.variable + ' ' + persianFont.variable}
       data-theme="dark"
       style={{
         '--font-display': fontVariables.display,
@@ -53,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         '--font-mono': fontVariables.mono,
         '--asset-home': 'url("' + basePath + '/images/home-lab-bg.png")',
         '--asset-lab': 'url("' + basePath + '/mba-lab/lab-room-reference.png")',
+        '--asset-topics': 'url("' + basePath + '/topcis/topics-room-reference.png")',
       } as CSSProperties}
     >
       <body className="font-sans antialiased">
