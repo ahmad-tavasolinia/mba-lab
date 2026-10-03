@@ -14,6 +14,26 @@ const navItems = [
   { href: '/contact', label: 'Contact' },
 ];
 
+const persianLanguageName = '\u0641\u0627\u0631\u0633\u06cc';
+
+function HomeLanguageSwitch({ isPersian, className }: { isPersian: boolean; className: string }) {
+  return (
+    <div className={`home-language-switch ${className}`} dir="ltr" role="group" aria-label="Choose language">
+      {isPersian ? (
+        <Link href="/" lang="en" aria-label="Switch to English">EN</Link>
+      ) : (
+        <span lang="en" aria-current="page">EN</span>
+      )}
+      <span aria-hidden="true">/</span>
+      {isPersian ? (
+        <span lang="fa" aria-current="page">{persianLanguageName}</span>
+      ) : (
+        <Link href="/fa" lang="fa" aria-label="Switch to Persian">{persianLanguageName}</Link>
+      )}
+    </div>
+  );
+}
+
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -69,7 +89,9 @@ export default function Header() {
               </Link>
             </Fragment>
           ))}
+          {isHome && <HomeLanguageSwitch isPersian={isPersian} className="home-header-language-switch" />}
         </nav>
+        {isHome && <HomeLanguageSwitch isPersian={isPersian} className="home-mobile-header-language-switch" />}
         {isReaderPage && <ThemeToggle />}
       </div>
 

@@ -1562,6 +1562,75 @@ html[data-theme="light"] .lab-library-more:hover {
   text-transform: none;
 }
 
+/* Keep the language selector in the homepage header, beside the final nav item. */
+.home-copy > .home-language-switch,
+.fa-header-language-switch,
+.fa-mobile-language-switch {
+  display: none !important;
+}
+
+.home-header-language-switch {
+  position: absolute;
+  top: 50%;
+  right: clamp(8px, 1vw, 16px);
+  gap: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  transform: translateY(-50%);
+}
+
+.site-header[dir="rtl"] .home-header-language-switch {
+  right: auto;
+  left: clamp(8px, 1vw, 16px);
+}
+
+.site-nav .home-header-language-switch a {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.home-language-switch [lang="fa"] {
+  font-family: var(--font-persian), Tahoma, sans-serif;
+  letter-spacing: 0;
+}
+
+.home-language-switch [aria-current="page"] {
+  color: var(--site-text);
+}
+
+.home-mobile-header-language-switch {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 1050px) {
+  .home-mobile-header-language-switch {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(232, 240, 245, 0.86);
+    top: auto;
+    right: auto;
+    transform: none;
+  }
+
+  .home-mobile-header-language-switch a {
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+}
+
 .fa-site .home-journey {
   right: clamp(28px, 7vw, 118px);
   left: auto;
